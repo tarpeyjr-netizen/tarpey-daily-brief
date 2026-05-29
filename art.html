@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Daily Art — The Daily Brief</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0f0f0f; color: #f0ede8; font-family: 'Georgia', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    header { width: 100%; padding: 28px 32px 20px; text-align: center; border-bottom: 1px solid #222; }
+    .header-label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #777; margin-bottom: 6px; }
+    header h1 { font-size: clamp(22px, 4vw, 34px); font-weight: normal; letter-spacing: 0.02em; }
+    .header-date { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #555; margin-top: 8px; letter-spacing: 1px; }
+    .back { display: inline-block; font-size: 13px; color: #555; text-decoration: none; margin-top: 10px; }
+    .back:hover { color: #999; }
+    main { max-width: 880px; width: 100%; padding: 52px 24px 64px; }
+    .artwork-frame { text-align: center; margin-bottom: 44px; }
+    .artwork-frame img { max-width: 100%; max-height: 74vh; object-fit: contain; border: 1px solid #2a2a2a; box-shadow: 0 0 0 8px #141414, 0 0 0 9px #272727, 0 32px 90px rgba(0,0,0,0.8); display: block; margin: 0 auto; }
+    .meta h2 { font-size: clamp(22px, 3.5vw, 30px); font-weight: normal; line-height: 1.25; margin-bottom: 16px; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 18px 28px; border-top: 1px solid #1e1e1e; padding-top: 20px; margin-bottom: 32px; }
+    .meta-item { display: flex; flex-direction: column; gap: 5px; }
+    .meta-label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #5a5a5a; }
+    .meta-value { font-size: 15px; color: #ccc9c2; line-height: 1.4; }
+    .fact-block { background: #141414; border-left: 2px solid #3a3a3a; border-radius: 2px; padding: 20px 24px; }
+    .fact-label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 10px; }
+    .fact-block p { font-size: 16px; line-height: 1.78; color: #b0aca6; }
+    footer { margin-top: auto; padding: 28px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #333; letter-spacing: 1px; text-align: center; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-label">Tarpey Daily Brief</div>
+  <h1>Daily Art</h1>
+  <div class="header-date">Thursday, May 28, 2026</div>
+  <a class='back' href='/'>&larr; Back to dashboard</a>
+</header>
+<main>
+  <div class="artwork-frame">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Ludolf_Backhuysen_-_Marinha.jpg" alt="Seascape" onerror="this.style.opacity=0.3">
+  </div>
+  <div class="meta">
+    <h2>Seascape</h2>
+    <div class="meta-grid">
+      <div class="meta-item"><span class="meta-label">Artist</span><span class="meta-value">Ludolf Backhuysen (1630–1708)</span></div>
+      <div class="meta-item"><span class="meta-label">Style</span><span class="meta-value">Dutch Golden Age, Baroque Marine</span></div>
+      <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">c. 1650</span></div>
+      <div class="meta-item"><span class="meta-label">Museum</span><span class="meta-value">Museu de Arte de São Paulo (MASP), São Paulo, Brazil</span></div>
+    </div>
+    <div class="fact-block">
+      <div class="fact-label">Interesting Fact</div>
+      <p>When the two great Willem van de Veldes — father and son — emigrated to England in 1672, Backhuysen became the undisputed master of Dutch marine painting almost overnight. His reputation for capturing the raw fury of the North Sea grew so large that Czar Peter the Great of Russia, during his famous incognito visit to Amsterdam in 1697, personally sought out Backhuysen's studio to commission paintings and receive instruction in his technique — an extraordinary honor that few artists of any era have received from a reigning monarch.</p>
+    </div>
+  </div>
+</main>
+<footer>Updated daily &middot; Tarpey Daily Brief</footer>
+</body>
+</html>
