@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Daily Brief — Dashboard</title>
+<style>
+  :root { --navy:#1f3a5f; --ink:#1c2330; --muted:#6a7280; --line:#e3e6ec; --bg:#f4f6fa; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; }
+  header { background:var(--navy); color:#fff; padding:38px 24px 32px; }
+  .wrap { max-width:980px; margin:0 auto; }
+  header h1 { font-size:28px; font-weight:700; letter-spacing:-0.3px; }
+  header p { margin-top:6px; font-size:14px; color:#b9c6da; }
+  main { padding:32px 24px 56px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; }
+  a.card { text-decoration:none; color:inherit; background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px; display:flex; flex-direction:column; min-height:158px; transition:transform .12s ease, box-shadow .12s ease; }
+  a.card:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(31,58,95,.13); }
+  .card h2 { font-size:17px; margin:0 0 6px; font-weight:700; }
+  .card .desc { font-size:13.5px; color:var(--muted); line-height:1.5; flex-grow:1; }
+  .card .meta { font-size:12px; color:var(--muted); margin-top:14px; padding-top:12px; border-top:1px solid var(--line); }
+  .section-label { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:14px; }
+  .section-label.tools { margin-top:32px; }
+  footer { text-align:center; font-size:12px; color:var(--muted); padding:24px; border-top:1px solid var(--line); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>The Daily Brief</h1>
+    <p>Your scheduled reports, in one place &mdash; each page rebuilds itself automatically.</p>
+  </div>
+</header>
+<main class="wrap">
+  <div class="section-label">Reports</div>
+  <div class="grid">
+    <!-- Daily -->
+    <a class='card' href='/curio'><h2>Morning Curio</h2><div class="desc">A daily digest of curious, evergreen facts.</div><div class="meta">Updated daily</div></a>
+    <a class='card' href='/art'><h2>Daily Art</h2><div class="desc">A new painting or photograph from a world-class museum, with context and an interesting fact.</div><div class="meta">Updated daily</div></a>
+    <a class='card' href='/world-news'><h2>World News Digest</h2><div class="desc">2 unique news stories per country, rotating by continent each weekday &mdash; Africa, Asia, Europe, Americas, and Oceania.</div><div class="meta">Updated daily</div></a>
+    <!-- Monday -->
+    <a class='card' href='/baseball'><h2>College Baseball Weekly</h2><div class="desc">Weekly and season stats for your tracked college players.</div><div class="meta">Updated Mondays</div></a>
+    <!-- Tuesday -->
+    <a class='card' href='/nba'><h2>NBA Weekly Recap</h2><div class="desc">Weekly recaps for your tracked NBA and G-League players.</div><div class="meta">Updated Tuesdays</div></a>
+    <a class='card' href='/music'><h2>Music News</h2><div class="desc">Weekly news on upcoming releases, music videos, and tour dates for tracked artists. Alerts for NC, Philly, and Houston shows.</div><div class="meta">Updated Tuesdays</div></a>
+    <!-- Wednesday -->
+    <a class='card' href='/mlb'><h2>MLB Weekly Recap</h2><div class="desc">Weekly stats and news for your tracked MLB players.</div><div class="meta">Updated Wednesdays</div></a>
+    <a class='card' href='/people'><h2>People Update</h2><div class="desc">Latest news and articles on tracked writers, thinkers, athletes, and podcasters.</div><div class="meta">Updated Wednesdays</div></a>
+    <!-- Thursday -->
+    <a class='card' href='/book'><h2>Book of the Week</h2><div class="desc">A randomly selected book from a curated list &mdash; cover, synopsis, and why you should read it.</div><div class="meta">Updated Thursdays</div></a>
+    <a class='card' href='/sports'><h2>Sports News Digest</h2><div class="desc">Injuries, trades, strategies &amp; player profiles for your tracked teams. No game recaps.</div><div class="meta">Updated Mon &amp; Thu</div></a>
+    <!-- Friday -->
+    <a class='card' href='/stocks'><h2>Weekly Stock Report</h2><div class="desc">Markets, US &amp; global economy, your tracked portfolio, and a watchlist idea.</div><div class="meta">Updated Fridays</div></a>
+    <!-- Saturday -->
+    <a class='card' href='/ireland'><h2>Ireland Weekly Digest</h2><div class="desc">A newspaper-style digest of the week's news from Ireland.</div><div class="meta">Updated Saturdays</div></a>
+    <a class='card' href='/track'><h2>Track and Field Weekly</h2><div class="desc">Weekly results and news for your tracked pro track and field athletes.</div><div class="meta">Updated Saturdays</div></a>
+    <a class='card' href='/cities'><h2>US City News Digest</h2><div class="desc">2 unique local news stories for every tracked US metro area.</div><div class="meta">Updated Saturdays</div></a>
+    <!-- Sunday -->
+    <a class='card' href='/nfl'><h2>NFL Player News</h2><div class="desc">Bi-weekly news and updates for your tracked NFL players.</div><div class="meta">Updated bi-weekly (Sundays)</div></a>
+  </div>
+
+  <div class="section-label tools">Tools &amp; Research</div>
+  <div class="grid">
+    <a class='card' href='/galway'><h2>Galway Apartment Search</h2><div class="desc">Available apartment listings in Salthill, Newcastle, and Rahoon near University of Galway for September 2026.</div><div class="meta">Run on demand</div></a>
+  </div>
+</main>
+<footer>The Daily Brief</footer>
+</body>
+</html>
