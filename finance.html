@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarpey Daily Finance Brief</title>
+<style>
+:root{--bg:#0d1117;--surface:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--pos:#3fb950;--neg:#f85149;--flat:#8b949e;--accent:#58a6ff;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:0 0 60px}
+header{background:#1f2937;border-bottom:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+header h1{font-size:1.4rem;font-weight:700;color:var(--accent)}
+.ts{font-size:.8rem;color:var(--muted)}
+.container{max-width:1100px;margin:0 auto;padding:32px 24px}
+.section-title{font-size:.7rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.idx-wrap{overflow-x:auto;margin-bottom:48px}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+thead th{background:var(--surface);padding:10px 14px;text-align:right;font-size:.72rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap}
+thead th:first-child{text-align:left}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:hover{background:var(--surface)}
+tbody td{padding:14px;text-align:right}
+tbody td:first-child{text-align:left}
+.idx-name{font-weight:600;display:flex;flex-direction:column;gap:2px}
+.idx-desc{font-size:.72rem;color:var(--muted);font-weight:400}
+.price{font-family:'SFMono-Regular',Consolas,monospace;font-weight:600;font-size:1rem}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.flat{color:var(--flat)}
+.movers-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px}
+@media(max-width:640px){.movers-grid{grid-template-columns:1fr}}
+.mover-list{display:flex;flex-direction:column;gap:10px}
+.mover-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 16px;border-left:3px solid transparent}
+.pos-card{border-left-color:var(--pos)}.neg-card{border-left-color:var(--neg)}
+.mover-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.mover-sym{font-weight:700;font-size:1rem;color:var(--accent);font-family:'SFMono-Regular',monospace}
+.mover-pct{font-weight:700;font-size:1rem}
+.mover-name{font-size:.78rem;color:var(--muted);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mover-price{font-size:.88rem;font-family:'SFMono-Regular',monospace}
+.mover-chg{font-size:.82rem}
+.footer{text-align:center;color:var(--muted);font-size:.75rem;margin-top:48px;padding-top:24px;border-top:1px solid var(--border)}
+</style></head>
+<body>
+<header><h1>📈 Tarpey Daily Finance Brief</h1><span class="ts">As of Saturday, May 30 2026 — 00:08 UTC</span></header>
+<div class="container">
+<p class="section-title">Global Indices — Daily Close</p>
+<div class="idx-wrap"><table>
+<thead><tr><th>Index</th><th>Close</th><th>Day</th><th>Week</th><th>Month</th><th>1 Year</th></tr></thead>
+<tbody><tr>
+          <td class="idx-name">NASDAQ<span class="idx-desc">tech-heavy</span></td>
+          <td class="price">26,973</td>
+          <td><span class="pos">▲ 0.20%</span></td>
+          <td><span class="pos">+2.58%</span></td>
+          <td><span class="pos">+9.32%</span></td>
+          <td><span class="pos">+41.12%</span></td>
+        </tr><tr>
+          <td class="idx-name">S&P 500<span class="idx-desc">broad market</span></td>
+          <td class="price">7,580.06</td>
+          <td><span class="pos">▲ 0.22%</span></td>
+          <td><span class="pos">+1.80%</span></td>
+          <td><span class="pos">+6.22%</span></td>
+          <td><span class="pos">+28.22%</span></td>
+        </tr><tr>
+          <td class="idx-name">Dow Jones<span class="idx-desc">blue chip</span></td>
+          <td class="price">51,032</td>
+          <td><span class="pos">▲ 0.72%</span></td>
+          <td><span class="pos">+1.49%</span></td>
+          <td><span class="pos">+4.44%</span></td>
+          <td><span class="pos">+20.73%</span></td>
+        </tr><tr>
+          <td class="idx-name">ISEQ (Ireland)<span class="idx-desc">Irish market</span></td>
+          <td class="price">13,112</td>
+          <td><span class="neg">▼ 0.98%</span></td>
+          <td><span class="pos">+2.49%</span></td>
+          <td><span class="pos">+7.28%</span></td>
+          <td><span class="pos">+14.26%</span></td>
+        </tr><tr>
+          <td class="idx-name">Nifty 50 (India)<span class="idx-desc">Indian market</span></td>
+          <td class="price">23,907</td>
+          <td><span class="neg">▼ 0.03%</span></td>
+          <td><span class="pos">+1.05%</span></td>
+          <td><span class="neg">-0.77%</span></td>
+          <td><span class="neg">-3.73%</span></td>
+        </tr><tr>
+          <td class="idx-name">MSCI World<span class="idx-desc">global ETF</span></td>
+          <td class="price">204.93</td>
+          <td><span class="pos">▲ 0.06%</span></td>
+          <td><span class="pos">+1.42%</span></td>
+          <td><span class="pos">+5.70%</span></td>
+          <td><span class="pos">+25.49%</span></td>
+        </tr></tbody>
+</table></div>
+<p class="section-title">S&P 500 — Biggest Movers Today</p>
+<div class="movers-grid">
+<div>
+<p class="section-title" style="margin-bottom:10px;border:none;padding:0;color:var(--pos)">▲ Top 5 Gainers</p>
+<div class="mover-list"><div class="mover-card pos-card">
+      <div class="mover-top"><span class="mover-sym">DELL</span>
+      <span class="mover-pct pos">▲ 32.76%</span></div>
+      <div class="mover-name">Dell Technologies Inc.</div>
+      <div class="mover-price">$420.91 <span class="mover-chg pos">(+103.86)</span></div>
+    </div><div class="mover-card pos-card">
+      <div class="mover-top"><span class="mover-sym">NTAP</span>
+      <span class="mover-pct pos">▲ 22.39%</span></div>
+      <div class="mover-name">NetApp, Inc.</div>
+      <div class="mover-price">$174.29 <span class="mover-chg pos">(+31.89)</span></div>
+    </div><div class="mover-card pos-card">
+      <div class="mover-top"><span class="mover-sym">NOW</span>
+      <span class="mover-pct pos">▲ 14.38%</span></div>
+      <div class="mover-name">ServiceNow, Inc.</div>
+      <div class="mover-price">$124.37 <span class="mover-chg pos">(+15.64)</span></div>
+    </div><div class="mover-card pos-card">
+      <div class="mover-top"><span class="mover-sym">IBM</span>
+      <span class="mover-pct pos">▲ 12.71%</span></div>
+      <div class="mover-name">International Business Machines </div>
+      <div class="mover-price">$297.80 <span class="mover-chg pos">(+33.58)</span></div>
+    </div><div class="mover-card pos-card">
+      <div class="mover-top"><span class="mover-sym">HPE</span>
+      <span class="mover-pct pos">▲ 12.64%</span></div>
+      <div class="mover-name">Hewlett Packard Enterprise Compa</div>
+      <div class="mover-price">$43.04 <span class="mover-chg pos">(+4.83)</span></div>
+    </div></div>
+</div>
+<div>
+<p class="section-title" style="margin-bottom:10px;border:none;padding:0;color:var(--neg)">▼ Top 5 Losers</p>
+<div class="mover-list"><div class="mover-card neg-card">
+      <div class="mover-top"><span class="mover-sym">CLX</span>
+      <span class="mover-pct neg">▼ 6.42%</span></div>
+      <div class="mover-name">The Clorox Company</div>
+      <div class="mover-price">$90.02 <span class="mover-chg neg">(-6.18)</span></div>
+    </div><div class="mover-card neg-card">
+      <div class="mover-top"><span class="mover-sym">RMD</span>
+      <span class="mover-pct neg">▼ 6.32%</span></div>
+      <div class="mover-name">ResMed Inc.</div>
+      <div class="mover-price">$190.57 <span class="mover-chg neg">(-12.85)</span></div>
+    </div><div class="mover-card neg-card">
+      <div class="mover-top"><span class="mover-sym">INTC</span>
+      <span class="mover-pct neg">▼ 5.14%</span></div>
+      <div class="mover-name">Intel Corporation</div>
+      <div class="mover-price">$114.68 <span class="mover-chg neg">(-6.21)</span></div>
+    </div><div class="mover-card neg-card">
+      <div class="mover-top"><span class="mover-sym">SWKS</span>
+      <span class="mover-pct neg">▼ 4.37%</span></div>
+      <div class="mover-name">Skyworks Solutions, Inc.</div>
+      <div class="mover-price">$77.85 <span class="mover-chg neg">(-3.56)</span></div>
+    </div><div class="mover-card neg-card">
+      <div class="mover-top"><span class="mover-sym">COHR</span>
+      <span class="mover-pct neg">▼ 4.11%</span></div>
+      <div class="mover-name">Coherent Corp.</div>
+      <div class="mover-price">$361.47 <span class="mover-chg neg">(-15.48)</span></div>
+    </div></div>
+</div>
+</div>
+<div class="footer">Data sourced from Yahoo Finance · Tarpey Daily Finance Brief · Saturday, May 30 2026 — 00:08 UTC</div>
+</div></body></html>
