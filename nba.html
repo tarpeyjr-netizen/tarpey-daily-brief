@@ -12,33 +12,67 @@
   .wrap { max-width:900px; margin:0 auto; }
   header { background:var(--navy); color:#fff; padding:30px 24px 26px; }
   .back { display:inline-block; font-size:13px; color:#b9c6da; text-decoration:none; margin-bottom:14px; }
-  .back:hover { color:#fff; }
-  header h1 { font-size:25px; font-weight:700; letter-spacing:-0.3px; }
+  header h1 { font-size:25px; font-weight:700; }
   header .sub { margin-top:6px; font-size:13.5px; color:#b9c6da; }
   main { padding:28px 24px 56px; }
+  article.edition { margin-bottom:32px; }
+  article.edition + article.edition { border-top:3px solid var(--navy); padding-top:20px; }
+  .ed-head { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:14px; }
   section { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; margin-bottom:20px; }
-  .placeholder { text-align:center; padding:34px 12px; }
-  .placeholder .big { font-size:17px; font-weight:700; color:var(--navy); margin-bottom:10px; }
-  .placeholder p { font-size:14px; line-height:1.6; color:var(--muted); }
+  h2 { font-size:17px; color:var(--navy); margin-bottom:12px; }
+  h3 { font-size:15px; margin:14px 0 4px; }
+  p { font-size:14px; line-height:1.6; margin-bottom:8px; }
+  ul { padding-left:20px; } li { font-size:14px; line-height:1.6; margin-bottom:5px; }
+  .muted { color:var(--muted); font-size:13px; }
   footer { text-align:center; font-size:12px; color:var(--muted); padding:24px; }
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <a class='back' href='/'>&larr; Back to dashboard</a>
-    <h1>NBA Weekly Recap</h1>
-    <div class="sub">Awaiting first scheduled update</div>
-  </div>
-</header>
+<header><div class="wrap">
+<a class="back" href="index.html">&larr; Back to dashboard</a>
+<h1>NBA Weekly Recap</h1>
+<div class="sub">Latest: week ending June 01, 2026 &middot; showing the last 8 days</div>
+</div></header>
 <main class="wrap">
-  <section>
-    <div class="placeholder">
-      <div class="big">This page is ready &mdash; content coming soon</div>
-      <p>It will populate automatically after the next scheduled run (every Tuesday morning).</p>
-    </div>
-  </section>
+<article class="edition" data-date="2026-06-02">
+<div class="ed-head">Week ending June 01, 2026</div>
+<section><h2>This Week</h2><p>May 26 &ndash; June 1, 2026 &middot; Jalen Brunson delivered a defining performance, dropping 38 points in an OT opener as the Knicks swept the Cavaliers to reach their first NBA Finals since 1999 &mdash; they face the San Antonio Spurs starting June 3.</p></section>
+<section><h2>Players</h2>
+
+<h3>Jalen Brunson &mdash; New York Knicks</h3>
+<p>This week: 3 games (ECF vs. Cleveland) &middot; Highlights: 38 pts / 5 reb / 6 ast / 3 stl in Game 1 OT win (115-104); 19 pts / 14 ast in Game 2 blowout (109-93); 30 pts / 6 ast in Game 3 (121-108). The Knicks swept the Cavs in 4 games, clinching the franchise's first Finals berth since 1999. &middot; News: Brunson becomes the first Knick this century to lead the team to the Finals; Game 1 vs. Spurs is June 3.</p>
+
+<h3>Josh Hart &mdash; New York Knicks</h3>
+<p>This week: 3+ games (ECF) &middot; Highlights: 26 pts / 7 ast in Game 2 win; 3 pts with a team-high +16 in the clinching Game 4. Consistent two-way contributor throughout the sweep. &middot; News: Hart and the Knicks advance to the NBA Finals.</p>
+
+<h3>Mikal Bridges &mdash; New York Knicks</h3>
+<p>This week: 3+ games (ECF) &middot; Highlights: 19 pts in Game 2; 10 pts in the clinching Game 4. Steady scoring and defensive anchor for New York throughout the series. &middot; News: Knicks advance; NBA Finals tip off June 3 vs. Spurs.</p>
+
+<h3>Donte DiVincenzo &mdash; Minnesota Timberwolves</h3>
+<p>This week: 0 games &middot; Status: Out for season &mdash; torn right Achilles tendon suffered on April 25, 2026 (G4, first round). DiVincenzo missed the Timberwolves' full playoff run. &middot; News: Recovery timeline TBD; expected to miss the start of 2026-27 season.</p>
+
+<h3>Collin Gillespie &mdash; Phoenix Suns</h3>
+<p>This week: 0 games &middot; Status: Season over &mdash; Suns eliminated in the Play-In. Gillespie had 5 pts (1-4 FG) in the Play-In loss to Portland (114-110). Full season: 12.7 PPG / 4.6 APG / 4.1 RPG / 1.2 SPG in 80 games, shooting 40.1% from three. A breakout regular season capped by a shift to a smaller role once the Suns got healthy. &middot; News: No injury concerns heading into the offseason.</p>
+
+<h3>Cam Whitmore &mdash; Washington Wizards</h3>
+<p>This week: 0 games &middot; Status: Out for season &mdash; diagnosed with deep vein thrombosis (DVT) in his right shoulder; last played December 4, 2025 (4 pts in a 146-101 loss to Boston). Full-season avg: 9.2 PPG / 2.8 RPG on 46/29/74 splits. &middot; News: Whitmore is in recovery; no timetable given for a return to play.</p>
+
+<h3>Saddiq Bey &mdash; New Orleans Pelicans</h3>
+<p>This week: 0 games &middot; Status: Season over &mdash; Pelicans did not advance to the playoffs. Bey had a strong bounce-back year: career-best 17.7 PPG on 45.1% FG with the Pelicans after being traded there in July 2025. In one of his final regular-season appearances, he posted 18 pts (7-13 FG, 4-6 3Pt) and 7 reb in a 134-102 loss. &middot; News: Heading into a key offseason for New Orleans' roster.</p>
+
+<h3>Jermaine Samuels &mdash; Houston Rockets (overseas)</h3>
+<p>This week: N/A &middot; Status: Not in the NBA &mdash; Samuels was waived by Houston in October 2024 and signed with San Pablo Burgos of Spain's Liga ACB in August 2025. He played 14 NBA games across his Rockets tenure (4.3 MPG). &middot; News: Playing professional basketball in Europe.</p>
+
+<h3>Jeremiah Robinson-Earl &mdash; Texas Legends (G-League)</h3>
+<p>This week: 0 games &middot; Status: G-League season concluded. Robinson-Earl had a dominant G-League run: 19.3 PPG (52.2% FG, 34.7% 3PT, 94.4% FT), 11.7 RPG, 2.6 APG across 11+ appearances. Season highlights included a 29-pt / 16-reb game vs. Cleveland (Jan. 10) and a 21-reb performance vs. Delaware (Dec. 22). &middot; News: Continued strong two-way play puts him firmly on the NBA radar.</p>
+
+<h3>Eric Dixon &mdash; Greensboro Swarm (G-League)</h3>
+<p>This week: 0 games &middot; Status: G-League season concluded. Dixon (Villanova) went undrafted in 2025, had brief stints with the Lakers and Hornets before landing with the Charlotte Hornets' G-League affiliate, the Greensboro Swarm. &middot; News: Still pursuing an NBA contract; detailed seasonal stats not yet widely published.</p>
+
+</section>
+</article>
 </main>
 <footer>The Daily Brief &middot; NBA Weekly Recap</footer>
+<script>document.querySelectorAll('main a[href]').forEach(a=>{a.target='_blank';a.rel='noopener noreferrer';});</script>
 </body>
 </html>
