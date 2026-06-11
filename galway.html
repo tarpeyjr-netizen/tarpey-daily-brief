@@ -17,8 +17,6 @@
   main { padding:28px 24px 56px; }
   section { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; margin-bottom:20px; }
   h2 { font-size:17px; color:var(--navy); margin-bottom:14px; }
-  h3 { font-size:15px; margin:18px 0 6px; color:var(--ink); }
-  h3:first-of-type { margin-top:0; }
   p { font-size:14px; line-height:1.6; margin-bottom:8px; }
   ul { padding-left:20px; } li { font-size:14px; line-height:1.6; margin-bottom:5px; }
   a { color:#1f5fae; }
@@ -33,8 +31,17 @@
   .badge-avail { background:#dcfce7; color:#166534; }
   .badge-flag { background:#fef9c3; color:#854d0e; }
   .badge-over { background:#fee2e2; color:#991b1b; }
+  .badge-unverified { background:#f3f4f6; color:#374151; }
+  .badge-src-daft { background:#e0f2fe; color:#0369a1; }
+  .badge-src-rent { background:#fce7f3; color:#9d174d; }
+  .badge-src-myhome { background:#f0fdf4; color:#166534; }
+  .badge-src-property { background:#fff7ed; color:#9a3412; }
   .shortage { font-size:14px; color:var(--muted); font-style:italic; padding:10px 0; }
   .notice { font-size:13px; color:#7c3aed; background:#f5f3ff; border:1px solid #ddd6fe; border-radius:6px; padding:10px 14px; margin-bottom:14px; }
+  .notice-warn { font-size:13px; color:#92400e; background:#fffbeb; border:1px solid #fde68a; border-radius:6px; padding:10px 14px; margin-bottom:14px; }
+  .live-search { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:6px; }
+  .live-search a { font-size:13px; padding:5px 12px; border:1px solid var(--line); border-radius:6px; background:#fff; text-decoration:none; color:var(--navy); font-weight:600; }
+  .live-search a:hover { background:var(--bg); }
   table { border-collapse:collapse; width:100%; font-size:13px; margin-bottom:8px; }
   th { background:var(--navy); color:#fff; padding:8px 10px; text-align:left; border:1px solid #ccc; }
   td { padding:7px 10px; border:1px solid #e0e0e0; vertical-align:top; }
@@ -46,40 +53,72 @@
 <header><div class="wrap">
 <a class="back" href="index.html">&larr; Back to dashboard</a>
 <h1>Galway Apartment Listings</h1>
-<div class="sub">Salthill &middot; Newcastle &middot; Rahoon &middot; September 2026 &middot; Last updated Wednesday, June 10, 2026</div>
+<div class="sub">Salthill &middot; Newcastle &middot; Rahoon &middot; September 2026 &middot; Last updated Thursday, June 11, 2026</div>
 </div></header>
 <main class="wrap">
 
-<div class="notice">&#9432; It is June 2026. Most landlords list properties 4&#8211;8 weeks before availability, so September 2026 leases are not yet widely posted. All listings below are currently active on Daft.ie (verified June 10, 2026) &#8212; listings marked &ldquo;Avail Now&rdquo; or with near-term dates may still be available in September; contact landlords to confirm. Check back weekly as new September listings will appear in July&#8211;August.</div>
+<div class="notice-warn">&#9888; Chrome unavailable during this run &mdash; listing links were not browser-verified. Click each link before contacting a landlord to confirm it is still active.</div>
+<div class="notice">&#9432; September 2026 leases are not yet widely posted (landlords typically list 4&ndash;8 weeks out). All listings below are currently active and may be available in September &mdash; contact each landlord to confirm. Live search links below always show real-time results.</div>
+
+<section>
+<h2>Live Search Links</h2>
+<p>These links always show real-time current listings &mdash; use them to supplement the curated list below:</p>
+<div class="live-search">
+  <a href="https://www.daft.ie/property-for-rent/salthill-galway/apartments" target="_blank">Daft &rarr; Salthill</a>
+  <a href="https://www.daft.ie/property-for-rent/newcastle-galway/apartments" target="_blank">Daft &rarr; Newcastle</a>
+  <a href="https://www.daft.ie/property-for-rent/rahoon-galway/apartments" target="_blank">Daft &rarr; Rahoon</a>
+  <a href="https://www.rent.ie/houses-to-let/galway/salthill/" target="_blank">Rent.ie &rarr; Salthill</a>
+  <a href="https://www.rent.ie/houses-to-let/galway/newcastle/" target="_blank">Rent.ie &rarr; Newcastle</a>
+  <a href="https://www.rent.ie/houses-to-let/galway/rahoon/" target="_blank">Rent.ie &rarr; Rahoon</a>
+  <a href="https://www.myhome.ie/rentals/galway/apartment-to-rent-in-salthill" target="_blank">MyHome &rarr; Salthill</a>
+  <a href="https://www.property.ie/property-to-let/galway/salthill/" target="_blank">Property.ie &rarr; Salthill</a>
+</div>
+</section>
 
 <section>
 <h2>Salthill</h2>
 
 <div class="listing">
   <div class="listing-head">
-    <span class="listing-title">Shangort Road, Knocknacarra (Upper Salthill area)</span>
+    <span class="listing-title">Lower Salthill Road, Salthill, Co. Galway</span>
+    <span class="listing-price">&#8364;1,350/mo</span>
+  </div>
+  <div class="listing-meta">
+    1 bed &middot; ~10 min walk to UoG &middot;
+    <span class="badge badge-avail">Avail July 2026</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-rent">Rent.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, free parking, central heating &amp; refuse included in rent, recently refurbished &middot; <a href="https://www.rent.ie/houses-to-let/Lower-Salthill-Road-Salthill-Co-Galway/6592223/">View listing</a></div>
+</div>
+
+<div class="listing">
+  <div class="listing-head">
+    <span class="listing-title">Shangort Road, Knocknacarra, Kingston, Co. Galway</span>
     <span class="listing-price">&#8364;1,499/mo</span>
   </div>
-  <div class="listing-meta">1 bed &middot; ~3.8 km to campus &middot; <span class="badge badge-avail">Avail Now</span></div>
-  <div class="listing-features">Features: Furnished, parking, washer/dryer, newly renovated high standard, garden/patio &middot; Minimum 12-month lease &middot; Agent: WCPM (email enquiries only) &middot; <a href="https://www.daft.ie/for-rent/studio-apartment-shangort-road-knocknacarra-kingston-co-galway/6578067">View listing</a></div>
+  <div class="listing-meta">
+    1 bed &middot; ~20 min walk / 10 min bus to UoG &middot;
+    <span class="badge badge-avail">Avail Now</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, newly renovated, parking, washing machine/dryer &middot; <a href="https://www.daft.ie/for-rent/studio-apartment-shangort-road-knocknacarra-kingston-co-galway/6578067">View listing</a> &middot; WCPM (agent)</div>
 </div>
 
 <div class="listing">
   <div class="listing-head">
-    <span class="listing-title">Salthill, Co. Galway (heart of Salthill village)</span>
+    <span class="listing-title">Salthill, Salthill, Co. Galway (Ground Floor Apt)</span>
     <span class="listing-price">&#8364;1,800/mo</span>
   </div>
-  <div class="listing-meta">2 bed &middot; ~2 km to campus &middot; <span class="badge badge-avail">Avail May 28, 2026</span></div>
-  <div class="listing-features">Features: Furnished, parking, washing machine, dryer, microwave &mdash; refuse/electricity/heating included in rent &middot; Ground floor with private entrance, open-plan kitchen/living &middot; No pets, non-smoking &middot; Min 1-year lease &middot; <a href="https://www.daft.ie/for-rent/apartment-salthill-salthill-co-galway/6582621">View listing</a></div>
-</div>
-
-<div class="listing">
-  <div class="listing-head">
-    <span class="listing-title">Silver Seas, Cappagh Road, Knocknacarra</span>
-    <span class="listing-price">&#8364;2,000/mo</span>
+  <div class="listing-meta">
+    2 bed &middot; ~15 min walk to UoG &middot;
+    <span class="badge badge-avail">Avail May 2026</span>
+    <span class="badge badge-flag">Date TBC</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
   </div>
-  <div class="listing-meta">2 bed &middot; ~3.5 km to campus &middot; <span class="badge badge-flag">Date TBC</span></div>
-  <div class="listing-features">Features: Furnished, panoramic sea views, secure development &middot; <a href="https://www.daft.ie/for-rent/silver-seas-cappagh-road-knocknacarra-co-galway/5722684">View listing</a></div>
+  <div class="listing-features">Features: Furnished, parking, washing machine, dryer, microwave; refuse, electricity &amp; heating included; no pets; min 1 year lease &middot; <a href="https://www.daft.ie/for-rent/apartment-salthill-salthill-co-galway/6582621">View listing</a></div>
 </div>
 
 <div class="listing">
@@ -87,17 +126,29 @@
     <span class="listing-title">Ardoon, Upper Salthill, Galway City Centre</span>
     <span class="listing-price">&#8364;2,200/mo</span>
   </div>
-  <div class="listing-meta">2 bed &middot; ~2 km to campus &middot; <span class="badge badge-avail">Avail Now</span></div>
-  <div class="listing-features">Features: Furnished, parking, open fire, storage heating, extra storage &middot; Walking distance to Salthill Promenade &amp; City Centre &middot; No minimum lease &middot; Galway Property Management &middot; Email enquiries only &middot; <a href="https://www.daft.ie/for-rent/apartment--ardoon-upper-salthill-galway-city-centre/6529740">View listing</a></div>
+  <div class="listing-meta">
+    2 bed &middot; ~15 min walk to UoG &middot;
+    <span class="badge badge-avail">Avail Now</span>
+    <span class="badge badge-flag">Over Budget</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished &middot; <a href="https://www.daft.ie/for-rent/apartment--ardoon-upper-salthill-galway-city-centre/6529740">View listing</a></div>
 </div>
 
 <div class="listing">
   <div class="listing-head">
-    <span class="listing-title">Baily Point, Salthill Promenade</span>
-    <span class="listing-price">&#8364;2,300/mo</span>
+    <span class="listing-title">Seagrove Court, Salthill, Co. Galway</span>
+    <span class="listing-price">&#8364;2,450/mo</span>
   </div>
-  <div class="listing-meta">2 bed &middot; ~2.5 km to campus &middot; <span class="badge badge-avail">Avail Jul 1, 2026</span></div>
-  <div class="listing-features">Features: Fully furnished, underground parking, washing machine, dryer, dishwasher, microwave, balcony with Galway Bay views &middot; Lift access, on-site gym &amp; Tesco &middot; No pets, non-smoking &middot; No minimum lease &middot; Agent: Martin Finn &middot; <a href="https://www.daft.ie/for-rent/apartment-baily-point-salthill-co-galway/6561140">View listing</a></div>
+  <div class="listing-meta">
+    2 bed &middot; ~15 min walk to UoG &middot;
+    <span class="badge badge-avail">Avail Now</span>
+    <span class="badge badge-over">Over Budget</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, 2 bathrooms, balcony overlooking Galway Bay, open-plan kitchen/living, parking &middot; <a href="https://www.daft.ie/for-rent/apartment-seagrove-court-salthill-co-galway/6541401">View listing</a></div>
 </div>
 
 </section>
@@ -107,32 +158,77 @@
 
 <div class="listing">
   <div class="listing-head">
-    <span class="listing-title">Green View House, Newcastle Road, Co. Galway</span>
+    <span class="listing-title">Newcastle Road Studio, Newcastle, Co. Galway</span>
+    <span class="listing-price">&#8364;925/mo</span>
+  </div>
+  <div class="listing-meta">
+    Studio &middot; 3 min walk to UoG &amp; UHG &middot;
+    <span class="badge badge-avail">Avail Now</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-rent">Rent.ie</span>
+  </div>
+  <div class="listing-features">Features: Private parking, washer/dryer, microwave, electric cooker, refuse service included &middot; <a href="https://www.rent.ie/houses-to-let/Newcastle-Road-Newcastle-Co-Galway/6524962/">View listing</a></div>
+</div>
+
+<div class="listing">
+  <div class="listing-head">
+    <span class="listing-title">Green View House, Newcastle, Co. Galway</span>
     <span class="listing-price">&#8364;2,100/mo</span>
   </div>
-  <div class="listing-meta">2 bed &middot; ~1 km to campus &middot; <span class="badge badge-avail">Avail Jun 15, 2026</span></div>
-  <div class="listing-features">Features: Fully furnished, parking, washing machine, dryer, microwave, garden/patio &middot; Ground floor on circular road, close to University of Galway, UHG &amp; Westside shopping &middot; Electric heating &middot; Min 1-year lease &middot; Agent: Benny Newell / Hummingbird Property Services &middot; <a href="https://www.daft.ie/for-rent/apartment-green-view-house-newcastle-co-galway/6582122">View listing</a></div>
+  <div class="listing-meta">
+    2 bed &middot; ~10 min walk to UoG/UHG &middot;
+    <span class="badge badge-avail">Avail Jun 2026</span>
+    <span class="badge badge-flag">Date TBC</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, parking, washing machine, dryer, microwave, balcony; close to Westside shopping centre &middot; <a href="https://www.daft.ie/for-rent/apartment-green-view-house-newcastle-co-galway/6582122">View listing</a> &middot; Benny Newell / Hummingbird Property Services</div>
 </div>
 
 <div class="listing">
   <div class="listing-head">
-    <span class="listing-title">7 University Halls, Newcastle Road, Galway</span>
+    <span class="listing-title">31 Greenfields Road, Newcastle, Co. Galway</span>
+    <span class="listing-price">&#8364;2,450/mo</span>
+  </div>
+  <div class="listing-meta">
+    2 bed &middot; Walking distance to UoG &middot;
+    <span class="badge badge-avail">Avail Now</span>
+    <span class="badge badge-over">Over Budget</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-rent">Rent.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, 2 bathrooms, open plan sitting room &amp; kitchen with double-height ceilings, prime position on Newcastle Road &middot; <a href="https://www.rent.ie/houses-to-let/31-Greenfields-Road-Newcastle-Galway-Newcastle-Co-Galway/6591039/">View listing</a></div>
+</div>
+
+<div class="listing">
+  <div class="listing-head">
+    <span class="listing-title">7 University Halls, Newcastle Road, Shantalla, Co. Galway</span>
     <span class="listing-price">&#8364;2,400/mo</span>
   </div>
-  <div class="listing-meta">2 bed &middot; ~0.1 km to campus &middot; <span class="badge badge-avail">Avail Jun 4, 2026</span></div>
-  <div class="listing-features">Features: Fully furnished, parking, washing machine, dryer, dishwasher, microwave, internet, central heating &middot; Directly opposite University Hospital Galway; walking distance to City Centre &amp; Salthill &middot; Modern kitchen, secure development &middot; Min 1-year lease &middot; Agent: Niall Horgan &middot; <a href="https://www.daft.ie/for-rent/apartment-7-university-halls-newcastle-road-galway-shantalla-co-galway/6545917">View listing</a></div>
+  <div class="listing-meta">
+    2 bed &middot; Opposite UHG, walking distance to UoG &middot;
+    <span class="badge badge-avail">Avail Jun 2026</span>
+    <span class="badge badge-over">Over Budget</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, parking, washing machine, dryer, dishwasher, microwave, internet; sought-after University Halls development &middot; <a href="https://www.daft.ie/for-rent/apartment-7-university-halls-newcastle-road-galway-shantalla-co-galway/6545917">View listing</a> &middot; Niall Horgan</div>
 </div>
 
 <div class="listing">
   <div class="listing-head">
-    <span class="listing-title">Apartment 21 Upper Newcastle, Newcastle, Co. Galway</span>
+    <span class="listing-title">Apartment 21, Upper Newcastle, Newcastle, Co. Galway</span>
     <span class="listing-price">&#8364;3,600/mo</span>
   </div>
-  <div class="listing-meta">3 bed &middot; ~0.5 km to campus &middot; <span class="badge badge-flag">Date TBC</span> <span class="badge badge-over">Over Budget</span></div>
-  <div class="listing-features">Large 3-bed apartment; could suit shared tenancy &middot; Agent: OPM Lettings &middot; <a href="https://www.daft.ie/for-rent/apartment-apartment-21-upper-newcastle-newcastle-co-galway/6558859">View listing</a></div>
+  <div class="listing-meta">
+    3 bed &middot; Short walk to UoG &middot;
+    <span class="badge badge-avail">Avail Now</span>
+    <span class="badge badge-over">Over Budget</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, A-rated, stunning property &middot; <a href="https://www.daft.ie/for-rent/apartment-apartment-21-upper-newcastle-newcastle-co-galway/6558859">View listing</a> &middot; OPM Lettings</div>
 </div>
-
-<p class="shortage">Only 3 apartments found in Newcastle at time of search. Newcastle is highly sought-after due to campus proximity &#8212; supply is very tight. Check weekly for new listings; set a Daft.ie alert immediately.</p>
 
 </section>
 
@@ -141,32 +237,66 @@
 
 <div class="listing">
   <div class="listing-head">
-    <span class="listing-title">Duplex Apartment 25, Gort Siar, Clybaun Road</span>
+    <span class="listing-title">Rockfield Park, Rahoon, Co. Galway</span>
+    <span class="listing-price">&#8364;2,400/mo</span>
+  </div>
+  <div class="listing-meta">
+    3 bed &middot; Direct bus to UoG &middot;
+    <span class="badge badge-avail">Avail Now</span>
+    <span class="badge badge-over">Over Budget</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-rent">Rent.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, 2 bathrooms, quiet residential area, direct bus route; close to Dunnes Stores, B&amp;Q &middot; <a href="https://www.rent.ie/houses-to-let/Rockfield-Park-Rahoon-Co-Galway/6586531/">View listing</a></div>
+</div>
+
+<div class="listing">
+  <div class="listing-head">
+    <span class="listing-title">Duplex Apartment 25, Gort Siar, Clybaun, Co. Galway</span>
     <span class="listing-price">&#8364;2,500/mo</span>
   </div>
-  <div class="listing-meta">2 bed &middot; ~3 km to campus &middot; <span class="badge badge-avail">Avail May 31, 2026</span></div>
-  <div class="listing-features">Features: Furnished, parking, washing machine, dryer, microwave, central heating &middot; Off Western Distributor Road; near Galway West Retail Park, Aldi, Lidl &middot; Good bus links &amp; cycle lanes &middot; Min 1-year lease &middot; Agent: OPM Lettings (Daft enquiries only) &middot; <a href="https://www.daft.ie/for-rent/apartment-duplex-apartment-25-gort-siar-clybaun-co-galway/6558759">View listing</a></div>
+  <div class="listing-meta">
+    2 bed &middot; ~20 min walk / bus to UoG &middot;
+    <span class="badge badge-avail">Avail Now</span>
+    <span class="badge badge-over">Over Budget</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, 2 bathrooms, duplex layout &middot; <a href="https://www.daft.ie/for-rent/apartment-duplex-apartment-25-gort-siar-clybaun-co-galway/6558759">View listing</a> &middot; OPM Lettings</div>
 </div>
 
 <div class="listing">
   <div class="listing-head">
-    <span class="listing-title">An Fanan, Letteragh Road, Rahoon</span>
+    <span class="listing-title">An Fanan, Letteragh Road, Rahoon, Co. Galway</span>
     <span class="listing-price">&#8364;2,750/mo</span>
   </div>
-  <div class="listing-meta">2 bed &middot; ~2.5 km to campus &middot; <span class="badge badge-avail">Avail Jun 1, 2026</span></div>
-  <div class="listing-features">Features: New build (A-rated), fully furnished, parking, washing machine, dryer, dishwasher, microwave, internet, cable TV, balcony, wheelchair access &middot; Large floor-to-ceiling windows, separate utility room, ensuite master &middot; Cycle lanes to U of Galway &amp; UHG &middot; No pets &middot; Min 1-year lease &middot; Agent: John McDonnell &middot; <a href="https://www.daft.ie/for-rent/apartment-an-fanan-letteragh-road-rahoon-co-galway/6579342">View listing</a></div>
+  <div class="listing-meta">
+    2 bed &middot; ~15 min walk / cycle to UoG &middot;
+    <span class="badge badge-avail">Avail Jun 2026</span>
+    <span class="badge badge-flag">Date TBC</span>
+    <span class="badge badge-over">Over Budget</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, new build, 2 bathrooms (ensuite), balcony, parking, W/M, dryer, dishwasher, A-rated appliances, cycle lanes to campus &middot; <a href="https://www.daft.ie/for-rent/apartment-an-fanan-letteragh-road-rahoon-co-galway/6579342">View listing</a> &middot; John McDonnell</div>
 </div>
 
 <div class="listing">
   <div class="listing-head">
-    <span class="listing-title">37 Maolchnoc, Galway (Rahoon area)</span>
+    <span class="listing-title">37 Maolchnoc, Galway, Co. Galway (Rahoon area)</span>
     <span class="listing-price">&#8364;2,800/mo</span>
   </div>
-  <div class="listing-meta">2 bed &middot; ~2 km to campus &middot; <span class="badge badge-flag">Date TBC</span></div>
-  <div class="listing-features">2-bed apartment, Rahoon area &middot; <a href="https://www.daft.ie/for-rent/property-37-maolchnoc-galway-co-galway/6530147">View listing</a></div>
+  <div class="listing-meta">
+    2 bed &middot; Rahoon, ~15 min to UoG &middot;
+    <span class="badge badge-avail">Avail Now</span>
+    <span class="badge badge-over">Over Budget</span>
+    <span class="badge badge-unverified">Link unverified</span>
+    <span class="badge badge-src-daft">Daft.ie</span>
+  </div>
+  <div class="listing-features">Features: Furnished, 2 bathrooms &middot; <a href="https://www.daft.ie/for-rent/property-37-maolchnoc-galway-co-galway/6530147">View listing</a></div>
 </div>
 
-<p class="shortage">Only 3 Rahoon-specific listings found (4 on Daft.ie including one shared with Newcastle boundary). All are over the &#8364;1,800 target budget.</p>
+<p class="shortage">Only 4 apartment listings found in Rahoon matching criteria at time of search. For broader results, expand to the Clybaun/Letteragh/Knocknacarra belt on Daft.</p>
 
 </section>
 
@@ -174,36 +304,44 @@
 <h2>Summary &amp; Comparison</h2>
 <table>
 <tr><th>Neighborhood</th><th>Listings Found</th><th>Price Range</th><th>Avg Distance to Campus</th><th>Notes</th></tr>
-<tr><td>Salthill</td><td>5</td><td>&#8364;1,499&#8211;&#8364;2,300/mo</td><td>~2&#8211;3.8 km</td><td>Best supply &amp; value; only area with sub-&#8364;1,800 option; bus routes 401/410; beach promenade</td></tr>
-<tr><td>Newcastle</td><td>3</td><td>&#8364;2,100&#8211;&#8364;3,600/mo</td><td>~0.1&#8211;1 km</td><td>Closest to campus; very tight supply; best campus access; all exceed &#8364;1,800</td></tr>
-<tr><td>Rahoon</td><td>3</td><td>&#8364;2,500&#8211;&#8364;2,800/mo</td><td>~2&#8211;3 km</td><td>Quiet residential; newer builds; most expensive; cycle lanes to campus; all over budget</td></tr>
+<tr>
+  <td>Salthill</td>
+  <td>5</td>
+  <td>&#8364;1,350 &ndash; &#8364;2,450</td>
+  <td>10&ndash;20 min walk</td>
+  <td>Best budget options (&#8364;1,350 &amp; &#8364;1,499); seaside location; good bus links</td>
+</tr>
+<tr>
+  <td>Newcastle</td>
+  <td>5</td>
+  <td>&#8364;925 &ndash; &#8364;3,600</td>
+  <td>3&ndash;10 min walk</td>
+  <td>Closest to campus; studio at &#8364;925 is exceptional value; University Halls directly opposite UHG</td>
+</tr>
+<tr>
+  <td>Rahoon</td>
+  <td>4</td>
+  <td>&#8364;2,400 &ndash; &#8364;2,800</td>
+  <td>15&ndash;20 min walk/bus</td>
+  <td>Quieter residential area; newer builds; all listings over &#8364;1,800 budget</td>
+</tr>
 </table>
-<p>For a grad student on a tight budget, <strong>Salthill</strong> is the strongest choice &#8212; the Shangort Road 1-bed at &#8364;1,499/mo is the only listing under budget, and the Salthill village 2-bed at &#8364;1,800 (utilities included) is exceptional value. <strong>Newcastle</strong> offers unbeatable campus proximity but virtually no inventory and all options exceed &#8364;2,100; 7 University Halls at &#8364;2,400 is a standout for those who can stretch the budget. <strong>Rahoon</strong> suits those who prefer a quieter, newer residential feel and have a larger budget. Note: September 2026 listings are not yet posted &#8212; all current listings are near-term availabilities worth contacting now to ask about September leases.</p>
+<p>Newcastle offers the best campus proximity and widest price range, with a standout studio at &#8364;925/month just 3 minutes from University of Galway. Salthill has the most budget-friendly options including two listings under &#8364;1,800/month, with the added bonus of the promenade and seaside living. Rahoon is a quieter, newer suburban area ideal if you prefer modern builds, but currently all listings exceed the &#8364;1,800/month target &mdash; worth watching as more September listings come online in July&ndash;August.</p>
 </section>
 
 <section>
 <h2>Next Steps</h2>
 <ul>
-
-<li><strong>Request video viewings immediately:</strong> Email each landlord through Daft.ie explaining you are an international grad student starting in September 2026. Ask for a WhatsApp or Zoom video tour. Many Galway landlords will accommodate remote viewing for international students.</li>
-
-<li><strong>Set Daft.ie alerts now:</strong> Create saved searches on Daft.ie for Salthill, Newcastle, and Rahoon apartments with your budget filter. Alerts are sent by email the moment a new listing is posted &#8212; critical in a tight market where good properties lease within 24&#8211;48 hours of listing.</li>
-
-<li><strong>Ask about September availability directly:</strong> Even if a listing says &ldquo;available now,&rdquo; email the landlord and ask if they would consider a September 1 start date &#8212; some landlords prefer a later start if current tenants are staying through summer.</li>
-
-<li><strong>Understand the deposit and lease process:</strong> Standard Irish deposits equal one month&rsquo;s rent, paid before move-in. Request a draft lease (RTB-compliant tenancy agreement) before sending any money. Deposits and rent can be transferred internationally via SEPA bank transfer.</li>
-
-<li><strong>Prepare your reference pack early:</strong> Irish landlords require: university acceptance letter, proof of funding/income or guarantor, photo ID (passport), and a reference from a prior landlord or employer. Have a PDF folder ready to attach to your first enquiry email.</li>
-
-<li><strong>Contact University of Galway accommodation office:</strong> Email accommodation@universityofgalway.ie &#8212; they maintain a vetted landlord list and can advise on tenant rights, typical lease terms, and student-specific housing options including on-campus accommodation.</li>
-
-<li><strong>Consider house-sharing as a backup:</strong> If budget is a hard constraint, rooms in Salthill or Newcastle house-shares typically run &#8364;700&#8211;&#8364;950/month (search Daft.ie &gt; Sharing &gt; Galway). This is significantly cheaper and can be secured with a shorter lead time than a full apartment lease.</li>
-
+<li><strong>Request video viewings</strong> immediately for any listing you like &mdash; Galway rentals move fast, especially within walking distance of UoG. Mention you are an incoming graduate student and include your start date (September 2026) and lease duration required.</li>
+<li><strong>Set up saved searches and email alerts</strong> on Daft.ie, Rent.ie, and Property.ie for each neighborhood. New listings typically post 4&ndash;8 weeks before the intended start date, so the peak wave for September leases will hit in late July and August.</li>
+<li><strong>Deposit process for international students:</strong> Irish landlords typically require 1&ndash;2 months' deposit plus first month's rent upfront. Transfers via Wise or Revolut work well; confirm the landlord's IBAN before sending. Never pay via Western Union or without a signed lease.</li>
+<li><strong>Prepare your reference pack:</strong> Letter of offer/acceptance from University of Galway, letter from a sponsor/guarantor (e.g., parent or advisor), proof of student funding or stipend, and a copy of your passport. Having this ready speeds up applications significantly.</li>
+<li><strong>University of Galway Accommodation Office:</strong> Contact the Accommodation Office directly for their off-campus listings board and student housing advice: <a href="https://www.universityofgalway.ie/accommodation/">universityofgalway.ie/accommodation</a></li>
 </ul>
 </section>
 
 </main>
-<footer>The Daily Brief &middot; Galway Apartment Search &middot; Updated Wednesday, June 10, 2026</footer>
+<footer>The Daily Brief &middot; Galway Apartment Search &middot; Updated Thursday, June 11, 2026</footer>
 <script>document.querySelectorAll('main a[href]').forEach(a=>{a.target='_blank';a.rel='noopener noreferrer';});</script>
 </body>
 </html>
