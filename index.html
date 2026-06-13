@@ -21,7 +21,8 @@
   .card .desc { font-size:13.5px; color:var(--muted); line-height:1.5; flex-grow:1; }
   .card .meta { font-size:12px; color:var(--muted); margin-top:14px; padding-top:12px; border-top:1px solid var(--line); }
   .section-label { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:14px; }
-  .section-label.tools { margin-top:32px; }
+  .section { margin-top:36px; }
+  .section:first-child { margin-top:0; }
   footer { text-align:center; font-size:12px; color:var(--muted); padding:24px; border-top:1px solid var(--line); }
 </style>
 </head>
@@ -33,38 +34,63 @@
   </div>
 </header>
 <main class="wrap">
-  <div class="section-label">Reports</div>
-  <div class="grid">
-    <!-- Daily -->
-    <a class='card' href='/triangle-nc'><h2>Triangle NC News</h2><div class="desc">Last 48 hours of local news from Raleigh, Durham, Chapel Hill, and Cary.</div><div class="meta">Updated daily</div></a>
-    <a class='card' href='/curio'><h2>Morning Curio</h2><div class="desc">A daily digest of curious, evergreen facts.</div><div class="meta">Updated daily</div></a>
-    <a class='card' href='/art'><h2>Daily Art</h2><div class="desc">A new painting or photograph from a world-class museum, with context and an interesting fact.</div><div class="meta">Updated daily</div></a>
-    <a class='card' href='/world-news'><h2>World News Digest</h2><div class="desc">2 unique news stories per country, rotating by continent each weekday &mdash; Africa, Asia, Europe, Americas, and Oceania.</div><div class="meta">Updated daily</div></a>
-    <!-- Weekday -->
-    <a class='card' href='/finance'><h2>Daily Finance Brief</h2><div class="desc">Global indices (NASDAQ, S&amp;P 500, Dow, ISEQ, Nifty, MSCI World) plus S&amp;P 500 top movers.</div><div class="meta">Updated weekdays</div></a>
-    <!-- Monday -->
-    <a class='card' href='/baseball'><h2>College Baseball Weekly</h2><div class="desc">Weekly and season stats for your tracked college players.</div><div class="meta">Updated Mondays</div></a>
-    <!-- Tuesday -->
-    <a class='card' href='/nba'><h2>NBA Weekly Recap</h2><div class="desc">Weekly recaps for your tracked NBA and G-League players.</div><div class="meta">Updated Tuesdays</div></a>
-    <a class='card' href='/music'><h2>Music News</h2><div class="desc">Weekly news on upcoming releases, music videos, and tour dates for tracked artists. Alerts for NC, Philly, and Houston shows.</div><div class="meta">Updated Tuesdays</div></a>
-    <!-- Wednesday -->
-    <a class='card' href='/mlb'><h2>MLB Weekly Recap</h2><div class="desc">Weekly stats and news for your tracked MLB players.</div><div class="meta">Updated Wednesdays</div></a>
-    <a class='card' href='/people'><h2>People Update</h2><div class="desc">Latest news and articles on tracked writers, thinkers, athletes, and podcasters.</div><div class="meta">Updated Wednesdays</div></a>
-    <!-- Thursday -->
-    <a class='card' href='/book'><h2>Book of the Week</h2><div class="desc">A randomly selected book from a curated list &mdash; cover, synopsis, and why you should read it.</div><div class="meta">Updated Thursdays</div></a>
-    <a class='card' href='/sports'><h2>Sports News Digest</h2><div class="desc">Injuries, trades, strategies &amp; player profiles for your tracked teams. No game recaps.</div><div class="meta">Updated Mon &amp; Thu</div></a>
-    <a class='card' href='/training'><h2>Training Dashboard</h2><div class="desc">Exercise tracker — peak sets, 60-day progress, frequency, and status for all tracked lifts.</div><div class="meta">Updated Mon &amp; Fri</div></a>
-    <!-- Friday -->
-    <a class='card' href='/stocks'><h2>Weekly Stock Report</h2><div class="desc">Markets, US &amp; global economy, your tracked portfolio, and a watchlist idea.</div><div class="meta">Updated Fridays</div></a>
-    <!-- Saturday -->
-    <a class='card' href='/ireland'><h2>Ireland Weekly Digest</h2><div class="desc">A newspaper-style digest of the week's news from Ireland.</div><div class="meta">Updated Saturdays</div></a>
-    <a class='card' href='/track'><h2>Track and Field Weekly</h2><div class="desc">Weekly results and news for your tracked pro track and field athletes.</div><div class="meta">Updated Saturdays</div></a>
-    <a class='card' href='/enterprise'><h2>Enterprise Software Intel</h2><div class="desc">Weekly digest covering SAP, Salesforce, ServiceNow, Workday, and Microsoft 365 — platform news, AI updates, implementation wins &amp; losses, and cert finds.</div><div class="meta">Updated Saturdays</div></a>
-    <a class='card' href='/cities'><h2>US City News Digest</h2><div class="desc">2 unique local news stories for every tracked US metro area.</div><div class="meta">Updated Saturdays</div></a>
-    <!-- Sunday -->
-    <a class='card' href='/nfl'><h2>NFL Player News</h2><div class="desc">Bi-weekly news and updates for your tracked NFL players.</div><div class="meta">Updated bi-weekly (Sundays)</div></a>
+
+  <!-- Daily News -->
+  <div class="section">
+    <div class="section-label">Daily News</div>
+    <div class="grid">
+      <a class='card' href='/triangle-nc'><h2>Triangle NC News</h2><div class="desc">Last 48 hours of local news from Raleigh, Durham, Chapel Hill, and Cary.</div><div class="meta">Updated daily</div></a>
+      <a class='card' href='/curio'><h2>Morning Curio</h2><div class="desc">A daily digest of curious, evergreen facts.</div><div class="meta">Updated daily</div></a>
+      <a class='card' href='/art'><h2>Daily Art</h2><div class="desc">A new painting or photograph from a world-class museum, with context and an interesting fact.</div><div class="meta">Updated daily</div></a>
+      <a class='card' href='/world-news'><h2>World News Digest</h2><div class="desc">2 unique news stories per country, rotating by continent each weekday &mdash; Africa, Asia, Europe, Americas, and Oceania.</div><div class="meta">Updated daily</div></a>
+      <a class='card' href='/finance'><h2>Daily Finance Brief</h2><div class="desc">Global indices (NASDAQ, S&amp;P 500, Dow, ISEQ, Nifty, MSCI World) plus S&amp;P 500 top movers.</div><div class="meta">Updated weekdays</div></a>
+      <a class='card' href='/cities'><h2>US City News Digest</h2><div class="desc">2 unique local news stories for every tracked US metro area.</div><div class="meta">Updated daily</div></a>
+    </div>
   </div>
 
-  <div class="section-label tools">Tools &amp; Research</div>
-  <div class="grid">
-    <a class='card' href='/galway'><h2>Galway Apartment Search</h2><div class="desc">Available apartment list
+  <!-- Business -->
+  <div class="section">
+    <div class="section-label">Business</div>
+    <div class="grid">
+      <a class='card' href='/stocks'><h2>Weekly Stock Report</h2><div class="desc">Markets, US &amp; global economy, your tracked portfolio, and a watchlist idea.</div><div class="meta">Updated Fridays</div></a>
+      <a class='card' href='/enterprise'><h2>Enterprise Software Intel</h2><div class="desc">Weekly digest covering SAP, Salesforce, ServiceNow, Workday, and Microsoft 365 &mdash; platform news, AI updates, implementation wins &amp; losses, and cert finds.</div><div class="meta">Updated Saturdays</div></a>
+    </div>
+  </div>
+
+  <!-- Sports -->
+  <div class="section">
+    <div class="section-label">Sports</div>
+    <div class="grid">
+      <a class='card' href='/sports'><h2>Sports News Digest</h2><div class="desc">Injuries, trades, strategies &amp; player profiles for your tracked teams. No game recaps.</div><div class="meta">Updated Mon &amp; Thu</div></a>
+      <a class='card' href='/baseball'><h2>College Baseball Weekly</h2><div class="desc">Weekly and season stats for your tracked college players.</div><div class="meta">Updated Mondays</div></a>
+      <a class='card' href='/nba'><h2>NBA Weekly Recap</h2><div class="desc">Weekly recaps for your tracked NBA and G-League players.</div><div class="meta">Updated Tuesdays</div></a>
+      <a class='card' href='/mlb'><h2>MLB Weekly Recap</h2><div class="desc">Weekly stats and news for your tracked MLB players.</div><div class="meta">Updated Wednesdays</div></a>
+      <a class='card' href='/track'><h2>Track and Field Weekly</h2><div class="desc">Weekly results and news for your tracked pro track and field athletes.</div><div class="meta">Updated Saturdays</div></a>
+      <a class='card' href='/nfl'><h2>NFL Player News</h2><div class="desc">Bi-weekly news and updates for your tracked NFL players.</div><div class="meta">Updated bi-weekly (Sundays)</div></a>
+    </div>
+  </div>
+
+  <!-- Other -->
+  <div class="section">
+    <div class="section-label">Other</div>
+    <div class="grid">
+      <a class='card' href='/ireland'><h2>Ireland Weekly Digest</h2><div class="desc">A newspaper-style digest of the week's news from Ireland.</div><div class="meta">Updated Saturdays</div></a>
+      <a class='card' href='/music'><h2>Music News</h2><div class="desc">Weekly news on upcoming releases, music videos, and tour dates for tracked artists. Alerts for NC, Philly, and Houston shows.</div><div class="meta">Updated Tuesdays</div></a>
+      <a class='card' href='/people'><h2>People Update</h2><div class="desc">Latest news and articles on tracked writers, thinkers, athletes, and podcasters.</div><div class="meta">Updated Wednesdays</div></a>
+      <a class='card' href='/book'><h2>Book of the Week</h2><div class="desc">A randomly selected book from a curated list &mdash; cover, synopsis, and why you should read it.</div><div class="meta">Updated Thursdays</div></a>
+    </div>
+  </div>
+
+  <!-- Personal -->
+  <div class="section">
+    <div class="section-label">Personal</div>
+    <div class="grid">
+      <a class='card' href='/training'><h2>Training Dashboard</h2><div class="desc">Exercise tracker &mdash; peak sets, 60-day progress, frequency, and status for all tracked lifts.</div><div class="meta">Updated Mon &amp; Fri</div></a>
+      <a class='card' href='/galway'><h2>Galway Apartment Search</h2><div class="desc">Available apartment listings in Salthill, Newcastle, and Rahoon near University of Galway for September 2026.</div><div class="meta">Run on demand</div></a>
+    </div>
+  </div>
+
+</main>
+<footer>The Daily Brief</footer>
+</body>
+</html>
