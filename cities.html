@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>US City News Digest &mdash; The Daily Brief</title>
 <style>
-  :root { --navy:#1f3a5f; --ink:#1c2330; --muted:#6a7280; --line:#e3e6ec; --bg:#f4f6fa; }
+  :root { --navy:#1f3a5f; --ink:#1c2330; --muted:#6a7280; --line:#e3e6ec; --bg:#f4f6fa; --accent:#d97706; }
   * { box-sizing:border-box; margin:0; padding:0; }
   body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; }
   .wrap { max-width:900px; margin:0 auto; }
@@ -15,16 +15,29 @@
   header h1 { font-size:25px; font-weight:700; }
   header .sub { margin-top:6px; font-size:13.5px; color:#b9c6da; }
   main { padding:28px 24px 56px; }
-  article.edition { margin-bottom:32px; }
-  article.edition + article.edition { border-top:3px solid var(--navy); padding-top:20px; }
-  .ed-head { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:14px; }
-  section { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; margin-bottom:20px; }
-  h2 { font-size:17px; color:var(--navy); margin-bottom:12px; }
-  h3 { font-size:14px; font-weight:700; color:var(--ink); margin-top:14px; margin-bottom:5px; border-left:3px solid var(--navy); padding-left:8px; }
-  h3:first-of-type { margin-top:4px; }
-  p { font-size:14px; line-height:1.6; margin-bottom:8px; }
-  ul { padding-left:20px; } li { font-size:14px; line-height:1.6; margin-bottom:6px; }
-  a { color:#1f5fae; }
+  article.edition { margin-bottom:40px; }
+  article.edition + article.edition { border-top:3px solid var(--navy); padding-top:28px; }
+  .ed-head { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:18px; }
+  .city-card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; margin-bottom:20px; }
+  .city-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.8px; color:var(--accent); margin-bottom:6px; }
+  h2.city-name { font-size:20px; font-weight:700; color:var(--navy); margin-bottom:16px; }
+  .story { margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid var(--line); }
+  .story:last-of-type { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  h3.story-topic { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); border-left:3px solid var(--navy); padding-left:8px; margin-bottom:10px; }
+  p.story-body { font-size:14.5px; line-height:1.75; color:var(--ink); margin-bottom:10px; }
+  p.story-body a { color:#1f5fae; font-weight:600; text-decoration:none; border-bottom:1px solid #c5d8f5; }
+  p.story-body a:hover { border-bottom-color:#1f5fae; }
+  .read-more { font-size:12.5px; color:var(--muted); }
+  .read-more a { color:#1f5fae; text-decoration:none; margin-right:12px; }
+  .read-more a:hover { text-decoration:underline; }
+  .secondary-card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; margin-bottom:20px; }
+  h2.sec-city-name { font-size:20px; font-weight:700; color:var(--navy); margin-bottom:14px; }
+  ul.hot-links { list-style:none; padding:0; }
+  ul.hot-links li { padding:10px 0; border-bottom:1px solid var(--line); font-size:14px; line-height:1.5; }
+  ul.hot-links li:last-child { border-bottom:none; }
+  ul.hot-links a { font-weight:600; color:#1f5fae; text-decoration:none; }
+  ul.hot-links a:hover { text-decoration:underline; }
+  ul.hot-links .link-desc { display:block; font-size:13px; color:var(--muted); margin-top:2px; }
   footer { text-align:center; font-size:12px; color:var(--muted); padding:24px; }
 </style>
 </head>
@@ -32,9 +45,68 @@
 <header><div class="wrap">
 <a class="back" href="index.html">&larr; Back to dashboard</a>
 <h1>US City News Digest</h1>
-<div class="sub">2 stories per metro area &middot; Updated Saturdays &middot; showing the last 8 days</div>
+<div class="sub">Daily city spotlight &middot; Seattle, WA &amp; Fayetteville, AR &middot; Friday, June 12, 2026 &middot; showing the last 8 days</div>
 </div></header>
 <main class="wrap">
+
+<article class="edition" data-date="2026-06-12">
+<div class="ed-head">Friday, June 12, 2026</div>
+
+<!-- PRIMARY CITY CARD -->
+<div class="city-card">
+  <div class="city-label">&#x1F3D9; Primary</div>
+  <h2 class="city-name">Seattle, WA</h2>
+
+  <div class="story">
+    <h3 class="story-topic">Crime &amp; Public Safety</h3>
+    <p class="story-body">Seattle officials escalated their response to a prolonged public safety crisis along north Aurora Avenue on June 11, with <a href="https://council.seattle.gov/2026/06/11/seattle-and-regional-leaders-announce-new-actions-to-combat-aurora-avenue-violence-and-prostitution/">Council President Joy Hollingsworth and Councilmember Debora Juarez joining Mayor Katie B. Wilson</a> to announce a coordinated multi-agency crackdown. The joint effort — involving the Seattle Police Department, the City Attorney's office, and the King County Prosecutor — targets a surge in shootings and open prostitution that has frustrated residents for months. New measures include road closures near the corridor and stepped-up enforcement operations, with regional partners coordinating on prosecution strategy. Neighbors had previously raised alarms at council hearings, and the June 11 announcement signals the city is treating the situation as a regional emergency rather than a localized policing matter.</p>
+    <div class="read-more">Read more:
+      <a href="https://council.seattle.gov/2026/06/11/seattle-and-regional-leaders-announce-new-actions-to-combat-aurora-avenue-violence-and-prostitution/">Seattle City Council Blog</a>
+      <a href="https://komonews.com/news/local/seattle-regional-leaders-to-discuss-actions-addressing-aurora-avenue-violence-ave-north-residents-crime-shootings-prostitution-traffic-barriers-city-council-mayor">KOMO News</a>
+    </div>
+  </div>
+
+  <div class="story">
+    <h3 class="story-topic">Government &amp; Housing</h3>
+    <p class="story-body">A Seattle City Council committee advanced legislation this week giving the city's <a href="https://www.seattle.gov/">social housing developer greater financial flexibility</a> to structure deals for future affordable housing projects. The move comes as Seattle faces a persistent housing shortage, and the social housing developer — created by a 2023 ballot initiative — has been working to assemble its first projects under a novel public development model. The expanded financing options are intended to make it easier for the developer to leverage public funds alongside other capital sources without being constrained by earlier restrictions. Supporters see the measure as a key step toward building the pipeline of deed-restricted housing the city needs to keep lower-income residents from being priced out.</p>
+    <div class="read-more">Read more:
+      <a href="https://www.seattle.gov/">Seattle.gov</a>
+      <a href="https://mynorthwest.com/local">MyNorthwest</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- SECONDARY CITY CARD -->
+<div class="secondary-card">
+  <div class="city-label">&#x1F4CD; Secondary</div>
+  <h2 class="sec-city-name">Fayetteville, AR</h2>
+  <ul class="hot-links">
+    <li>
+      <a href="https://fayettevilleflyer.com/2026/06/05/crystal-bridges-debuts-expanded-footprint-this-weekend-alongside-transformation-of-existing-spaces/">Crystal Bridges Debuts 114,000-Sq-Ft Expansion</a>
+      <span class="link-desc">The $150 million Safdie Architects-designed expansion of Crystal Bridges Museum of American Art opened June 6, doubling the institution's size and adding new galleries, studios, and landscape spaces — all with free admission.</span>
+    </li>
+    <li>
+      <a href="https://www.nwahomepage.com/northwest-arkansas-news/crystal-bridges-previews-114000-square-foot-expansion-ahead-of-june-6-opening/">Crystal Bridges Previews Expansion Ahead of Opening Weekend</a>
+      <span class="link-desc">KNWA/FOX24 previews the new wings and public programming planned for the expansion's opening weekend in Bentonville, just south of Fayetteville.</span>
+    </li>
+    <li>
+      <a href="https://fayettevilleflyer.com/">Fayetteville Goes First Half of 2026 Without a Homicide</a>
+      <span class="link-desc">The Fayetteville Police Department reports zero homicides through the first six months of 2026, a milestone officials describe as encouraging but not yet a confirmed trend.</span>
+    </li>
+    <li>
+      <a href="https://www.nwaonline.com/">Fayetteville Again Tops SEC Cities in Best Places to Live Rankings</a>
+      <span class="link-desc">U.S. News &amp; World Report ranked Fayetteville No. 131 nationally and first among SEC conference cities in its latest Best Places to Live assessment, citing quality of life, value, and job market strength.</span>
+    </li>
+    <li>
+      <a href="https://fayettevilleflyer.com/category/news-views/">Gulley Park Summer Concert Series Marks 30th Anniversary</a>
+      <span class="link-desc">Fayetteville's beloved free outdoor concert series returns to Gulley Park Gazebo for six Thursday evening performances this summer, celebrating three decades of community music in the city.</span>
+    </li>
+  </ul>
+</div>
+
+</article>
+
 <article class="edition" data-date="2026-06-06">
 <div class="ed-head">Week of Sat 30 May to Sat 06 Jun, 2026</div>
 
@@ -321,296 +393,6 @@
 <ul>
 <li><a href="https://www.woosteroh.com/news">Wooster Police officers receive Lifesaving Awards</a> for their actions during a March 27 rescue of a person from a submerged vehicle, with officers Elizabeth Herbert, Kagan Schafer, and Ryan King recognized at a city ceremony.</li>
 <li><a href="https://www.newsbreak.com/wooster-oh">Firelands Toyota rebrands as Diehl Toyota of Wooster</a> after Pennsylvania-based Diehl Automotive Group acquires two Ohio dealerships, expanding the regional chain's footprint into the state.</li>
-</ul>
-</section>
-
-</article>
-<article class="edition" data-date="2026-05-31">
-<div class="ed-head">Week of Sat 23 May to Sat 31 May, 2026</div>
-
-<section>
-<h2>Northeast</h2>
-
-<h3>New York–Newark</h3>
-<ul>
-<li><a href="https://www.cbsnews.com/newyork/news/delaney-hall-protests-continue-newark-nj/">Protests intensify at Newark's Delaney Hall ICE detention facility</a> — Clashes erupted May 26 as ICE agents deployed pepper spray and rubber bullets against demonstrators blocking vehicle movements at the facility; Democratic Congress members including Rep. Rob Menendez Jr. and Sen. Andy Kim joined the protests amid reports of detainee hunger strikes and poor conditions.</li>
-<li><a href="https://airportindustry-news.com/panynj-to-expand-solar-infrastructure-at-newark-liberty-international-airport/">Port Authority approves $75M Terminal B upgrade at Newark Liberty Airport</a> — The Port Authority of NY &amp; NJ approved the first tranche of a $200M Terminal B modernization program and also announced a major solar expansion adding ~5 MW of capacity expected to generate nearly 5.9 million kWh of clean electricity annually.</li>
-</ul>
-
-<h3>Philadelphia–Camden</h3>
-<ul>
-<li><a href="https://6abc.com/post/large-junkyard-fire-emr-recycling-plant-camden-new-jersey/19191744/">Camden officials demand shutdown of EMR Recycling after repeated fires</a> — A large predawn fire at the scrap metal plant sent smoke across the Delaware River into Philadelphia; the state DEP has sued over at least a dozen fires at the same site over the years.</li>
-<li><a href="https://philadelphia.today/2026/05/rutgers-camden-cooper-street-gateway-project/">Rutgers-Camden celebrates topping-off of $60M Cooper Street Gateway project</a> — The final steel beam was placed on the development set to expand academic space and strengthen community ties, with completion targeted for 2027.</li>
-</ul>
-
-<h3>Boston–Cambridge</h3>
-<ul>
-<li><a href="https://www.cbsnews.com/boston/news/cambridge-massachusetts-state-police-shooting-memorial-drive/">Cambridge Memorial Drive shooting: gunman fired 50-60 rounds, 2 critically injured</a> — Tyler Brown, 46, opened fire with an assault-style rifle on May 11 before being shot by a state trooper and a civilian; Brown had been released from a psychiatric hospital three days earlier after a parole officer flagged him as a violence risk just before the attack.</li>
-<li><a href="https://www.wbur.org/news/2026/05/12/cambridge-memorial-drive-shooting-tyler-brown-history">Alleged gunman's troubled history revealed after Cambridge rampage</a> — Brown previously served prison time for shooting at Boston police officers in 2020 while on probation for a 2014 assault conviction, raising questions about supervision and mental health discharge protocols.</li>
-</ul>
-
-<h3>Baltimore–Columbia</h3>
-<ul>
-<li>Mayor Brandon Scott unveiled a Second Term Action Plan and a sweeping oversight and transparency proposal to strengthen resident trust in city government and reform Baltimore's Office of the Inspector General.</li>
-<li>Safe Streets Baltimore's Penn North site surpassed 365 consecutive days without a homicide in its catchment area, a milestone city officials are highlighting amid broader declines in violent crime since 2023.</li>
-</ul>
-
-<h3>Pittsburgh</h3>
-<ul>
-<li><a href="https://www.cbsnews.com/pittsburgh/news/pennsylvania-primary-election-results-2026/">Pennsylvania primary results: Rep. Summer Lee survives challenge in Pittsburgh-area 12th District</a> — Democratic Rep. Summer Lee beat back a primary challenge from Will Parker and will face Republican James Hayes in November in one of the region's most watched congressional races.</li>
-<li>Pittsburgh police arrested a suspect connected to a May 21 burglary and sexual assault in the Oakland neighborhood, following a multi-week investigation.</li>
-</ul>
-
-<h3>Washington–Arlington–Alexandria</h3>
-<ul>
-<li><a href="https://wtop.com/traffic/2026/05/road-closures-in-dc-arlington-for-cycling-race/">Armed Forces Cycling Classic closes streets across DC and Arlington</a> — Multiple Arlington roads including Crystal Drive and S. Clark Street were shut from ~4 a.m. to 11:30 a.m. Saturday for the two-day race spanning the District and Northern Virginia.</li>
-<li><a href="https://www.dcnewsnow.com/news/local-news/washington-dc/downed-tree-near-arlington-national-cemetery-causes-metro-delays-during-morning-rush/amp/">Downed tree near Arlington National Cemetery causes Metro delays, shuttle buses deployed</a> — A fallen tree blocked Blue Line tracks May 26, forcing shuttle service between Rosslyn and Pentagon City; later the same day a train struck a deer outside Van Dorn Street, causing additional delays.</li>
-</ul>
-</section>
-
-<section>
-<h2>Southeast</h2>
-
-<h3>Atlanta–Sandy Springs</h3>
-<ul>
-<li><a href="https://roughdraftatlanta.com/2026/05/21/new-subdivisions-sandy-springs/">Sandy Springs council unanimously approves three new subdivisions</a> — The May 19 vote clears the way for 26 new single-family homes across the city where just seven previously stood, a signal of support for new housing stock in one of metro Atlanta's wealthiest suburbs.</li>
-<li><a href="https://www.wsbtv.com/news/local/north-fulton-county/police-investigation-shuts-down-park-sandy-springs/TIBN4FWYUJHTZET24MICV67CWY/">FBI assists in Sandy Springs manhunt at Morgan Falls Overlook Park</a> — Two suspects were arrested and charged with possession of a firearm and alcohol in a city park after a large search operation that briefly shut down the park.</li>
-</ul>
-
-<h3>Miami–Fort Lauderdale</h3>
-<ul>
-<li>South Florida wildfires continued through May: the Max Road Fire in western Broward County burned more than 11,000 acres while the Mile Marker 44 Fire near I-75 consumed over 1,200 acres, with both partially contained as crews battled dry conditions.</li>
-<li><a href="https://refreshmiami.com/news/the-long-game-behind-miamis-tech-boom/">Miami's tech boom deepens as Palantir, Meta, and Citadel entrench South Florida operations</a> — 19 of Florida's 20 richest billionaires now reside in South Florida, and Fort Lauderdale ranked No. 8 Best Place to Get a Summer Job nationally, reflecting the region's continued economic surge.</li>
-</ul>
-
-<h3>Charlotte–Concord</h3>
-<ul>
-<li><a href="https://www.wbtv.com/2026/05/27/police-fbi-working-federally-authorized-situation-charlotte-hotel/">Hundreds of federal agents raid Charlotte hotel in federally authorized operation</a> — Officers with the FBI and Charlotte-Mecklenburg Police converged on the Garden Inn Suites on Regan Drive in the West Sugar Creek / I-85 corridor on May 27.</li>
-<li><a href="https://www.wcnc.com/article/news/local/2026/05/09/charlotte-mayor-vi-lyles-resignation/">Charlotte Mayor Vi Lyles to resign June 30</a> — The five-term Democrat announced she will step down less than halfway through her latest term leading the nation's 14th-largest city.</li>
-</ul>
-
-<h3>Jacksonville</h3>
-<ul>
-<li><a href="https://www.jacksonville.gov/welcome/featured-news/2026-jacksonville-jazz-festival-returns-to-downtown">2026 Jacksonville Jazz Festival draws national acts to revamped Downtown Riverfront Plaza</a> — The Memorial Day weekend festival (May 21–24) introduced a new Jazz in the Plaza stage at Riverfront Plaza, drawing music lovers from across the country.</li>
-<li>Jacksonville Fire and Rescue issued a burn ban covering all of Duval County as wildfires in surrounding counties sent smoke into the city, elevating particulate concentrations to levels unhealthy for sensitive groups.</li>
-</ul>
-
-<h3>Raleigh–Cary</h3>
-<ul>
-<li><a href="https://www.wral.com/news/education/nc-public-education-rally-raleigh-may-2026/">Thousands rally in Raleigh demanding 25% pay raise for NC school employees</a> — Educators organized by the NC Association of Educators filled Halifax Mall at a "Kids Over Corporations" rally, pressing for pay increases estimated to cost $2.6 billion.</li>
-<li><a href="https://www.wral.com/news/local/cary-train-crash-may-2026/">Amtrak train collides with stalled trailer on Cary tracks, snarling commute</a> — A Charlotte-bound Amtrak struck a trailer on the tracks near Maynard Road; the road was closed for more than seven hours and several people were treated for injuries.</li>
-</ul>
-
-<h3>Richmond</h3>
-<ul>
-<li><a href="https://www.wric.com/news/local-news/richmond/richmond-police-richmond-public-schools-to-host-joint-press-conference-after-incident/">Altercation at John Marshall High School graduation prompts joint police-school press conference</a> — A disturbance broke out during commencement at the Siegel Center, leading Richmond Police and Richmond Public Schools to hold a joint briefing.</li>
-<li>Developers advanced the next phase of Richmond's Diamond District, filing plans for nearly 280 apartments, a multi-tenant office building, and new retail near CarMax Park in what officials describe as a transformative urban redevelopment.</li>
-</ul>
-
-<h3>Memphis</h3>
-<ul>
-<li><a href="https://www.actionnews5.com/2026/05/07/lawmaker-calls-memphis-secede-tennessee-following-redistricting/">Tennessee lawmaker calls for Memphis to secede after legislature splits city into three congressional districts</a> — State Rep. Antonio Parkinson introduced the proposal after the Republican-controlled legislature passed redistricting maps that effectively eliminate Democratic representation from Memphis; the NAACP called for a boycott of college sports in eight states.</li>
-<li>The Memphis City Council appointed three finalists for the city's inaugural poet laureate position while a separate investigation found Council Chairwoman Jana Swearengen-Washington allegedly used her position to benefit a relative in the city's IT department.</li>
-</ul>
-
-<h3>New Orleans–Metairie</h3>
-<ul>
-<li><a href="https://www.neworleanssaints.com/news/morning-break-saints-otas-offer-early-signs-of-growth-across-roster-new-orleans-news-headlines-5-29-2026">Saints kick off OTAs in Metairie with promising early signs</a> — New Orleans Saints players reported to their Metairie facility May 27 for organized team activities, with coaches citing notable growth across the roster heading into the 2026 season.</li>
-<li>Jefferson Parish officials reviewed drainage capacity and emergency plans ahead of the June 1 hurricane season start, as parish leaders emphasize preparedness despite a relatively quiet 2026 forecast from national meteorologists.</li>
-</ul>
-</section>
-
-<section>
-<h2>Midwest</h2>
-
-<h3>Chicago–Naperville</h3>
-<ul>
-<li><a href="https://chicago.suntimes.com/crime/2026/05/24/17-people-shot-overnight-chicago">Memorial Day weekend shootings kill 2, wound 38 in Chicago — described as least deadly holiday in 16 years</a> — A 2-year-old fatally shot himself in a tragedy resulting in child endangerment charges against a caregiver, amid an overall year-to-date uptick in homicides (130 through April vs. 120 in 2025).</li>
-<li><a href="https://chicago.suntimes.com/transportation/2026/05/13/cta-violent-crime-nora-leerhsen">CTA touts 30% violent crime drop on trains after security surge, but aggravated batteries remain elevated</a> — Police data show significant declines in robberies and carjackings citywide, though aggravated batteries on transit are up 27% over 2024 levels.</li>
-</ul>
-
-<h3>Detroit–Warren</h3>
-<ul>
-<li><a href="https://www.clickondetroit.com/news/local/2026/05/30/warren-police-want-help-finding-an-endangered-missing-13-year-old-boy/">Warren endangered missing teen found safe after community alert</a> — A 13-year-old boy reported missing May 29 was located safely, according to Warren police.</li>
-<li>Michigan suspended the operations of a Detroit truck driving school following a Local 4 investigation, with state officials citing safety and licensing violations uncovered by the news inquiry.</li>
-</ul>
-
-<h3>Minneapolis–St. Paul</h3>
-<ul>
-<li><a href="https://www.fox9.com/">Shooting on Nicollet Mall wounds two; suspect in custody</a> — Minneapolis Police arrested a suspect after a Friday morning shooting in the heart of downtown Minneapolis, the latest public safety incident on the city's signature pedestrian corridor.</li>
-<li>More than half of charges against individuals cited for impeding federal immigration enforcement operations in Minnesota have been dismissed, according to court records reviewed by FOX 9 Investigators, reigniting debate over enforcement tactics.</li>
-</ul>
-
-<h3>St. Louis</h3>
-<ul>
-<li><a href="https://spectrumlocalnews.com/mo/st-louis/news/2026/05/26/evening-briefing-in-st--louis--may-26">St. Louis and Missouri begin FEMA-funded demolition of tornado-damaged properties</a> — A private property debris removal program will clear an estimated 65 structurally compromised homes; aldermen debated directing more of a $230M NFL settlement toward North St. Louis and tornado recovery.</li>
-<li>FIFA World Cup health and logistics preparations are underway ahead of the June 11 tournament opening, with Kansas City matches drawing visitors through Missouri; St. Louis officials are coordinating heat safety and emergency medical services guidance for fans.</li>
-</ul>
-
-<h3>Cleveland</h3>
-<ul>
-<li><a href="https://signalcleveland.org/">City of Cleveland solicits proposals to reuse 12 closed school buildings</a> — Officials issued a call for development projects that would repurpose the shuttered campuses scattered throughout the city, as part of a broader effort to revitalize neighborhoods.</li>
-<li>Cleveland's Cavaliers were swept by the Knicks in the Eastern Conference Finals, ending the season; the city also dealt with a massive Industrial Valley building fire that temporarily closed the I-490 bridge.</li>
-</ul>
-
-<h3>Columbus OH</h3>
-<ul>
-<li><a href="https://www.10tv.com/article/news/local/east-columbus-homicide-chatsworth-way-suspect-arrested/530-a732aee0-e8b2-46e8-8c1f-0d1ae7a5c301">Man charged with murder after woman and girl found shot and stabbed in east Columbus home</a> — Derrick Green, 35, was arrested by SWAT officers on May 28 and faces murder charges in the deaths of a woman and young girl inside a home on Chatsworth Way.</li>
-<li>Columbus City Schools launched a monthlong attendance challenge as Ohio schools pushed to reduce chronic absenteeism; separately, the Ohio Dept. of Job and Family Services expanded SNAP benefits acceptance to 112 farmers' markets statewide.</li>
-</ul>
-
-<h3>Cincinnati</h3>
-<ul>
-<li>The FotoFocus Center, a new 14,700-square-foot photography gallery in Over-the-Rhine, opened May 29 after more than five years of planning, adding a significant cultural anchor to Cincinnati's thriving arts district.</li>
-<li>The Cincinnati Reds experienced a turbulent May after leading the NL standings through April, while a fatal shooting in Walnut Hills on May 21 added to the city's public safety concerns.</li>
-</ul>
-
-<h3>Indianapolis–Carmel</h3>
-<ul>
-<li><a href="https://www.wthr.com/article/news/crime/carmel-indiana-man-accused-using-fake-sheriffs-badge-to-enter-indianapolis-motor-speedway-ims/531-e932dca0-5550-4c16-889e-9b19a1d07968">Carmel man arrested for using fake sheriff's badge to enter Indianapolis Motor Speedway</a> — The 69-year-old allegedly told an officer "I bought a fake badge online" after being stopped during Indy 500 qualifying; he faces impersonation charges.</li>
-<li><a href="https://fox59.com/news/this-is-a-central-indiana-issue-marion-county-prosecutor-responds-after-carmel-mayor-says-indy-exports-crime-repeat-offenders/">Carmel mayor-Indianapolis crime debate escalates</a> — Carmel's mayor publicly accused Indianapolis of "exporting" repeat offenders to the suburb; Marion County's prosecutor fired back that crime is a "central Indiana issue," sparking a regional debate over public safety responsibility.</li>
-</ul>
-
-<h3>Kansas City MO</h3>
-<ul>
-<li><a href="https://www.kcur.org/news/2026-05-01/kansas-city-students-may-day-protests">Kansas City bus fares return, leaving nonprofits scrambling</a> — Fare-free transit ends as the city reintroduces charges on its bus network; social service organizations that relied on free rides for clients are urgently seeking alternative funding.</li>
-<li>Argentina will launch its FIFA World Cup title defense in Kansas City in mid-June; MoDOT urged truckers to reroute around the metro and advised drivers statewide to plan for heavy traffic throughout the tournament.</li>
-</ul>
-</section>
-
-<section>
-<h2>South &amp; Texas</h2>
-
-<h3>Dallas–Fort Worth</h3>
-<ul>
-<li><a href="https://www.wfaa.com/article/news/politics/elections/election-day-texas-dallas-fort-worth-may-2-results/287-22e3b661-c797-458a-8cd5-6c5553436aaa">DFW voters weigh DART withdrawal, $6.2B Dallas ISD school bond on May 2 Election Day</a> — Three suburbs — Addison, Highland Park, and University Park — voted on leaving the Dallas Area Rapid Transit system; Dallas ISD asked voters to fund 26 new schools and campus-wide modernization.</li>
-<li><a href="https://www.traveltourister.com/news/dallas-fort-worth-airport-chaos-may-28-2026-680-disruptions-american-405-delays/">DFW Airport logs 680 disruptions in a single day</a> — American Airlines accounted for 405 of the delays on May 28, one of the airport's worst operational days of the year, stranding thousands of travelers ahead of the Memorial Day holiday.</li>
-</ul>
-
-<h3>Houston–Pasadena</h3>
-<ul>
-<li><a href="https://www.texastribune.org/2026/05/26/texas-18th-congressional-district-democratic-runoff-al-green-christian-menefee/">Menefee defeats longtime Rep. Al Green in Houston congressional primary runoff</a> — Christian Menefee won the Democratic runoff for a newly redrawn Houston-area district, effectively ending the congressional career of one of Texas's longest-serving members.</li>
-<li>Eight Houston students were stranded nearly 100 feet in the air for over four hours when a roller coaster broke down at Galveston's Pleasure Pier on May 28; Galveston firefighters executed a successful high-angle rescue.</li>
-</ul>
-
-<h3>San Antonio–New Braunfels</h3>
-<ul>
-<li><a href="https://www.ksat.com/news/local/2026/05/09/a-significant-mistake-new-braunfels-mayoral-race-heads-to-runoff-after-results-announcement-conflicted-with-state-law/">New Braunfels mayoral race heads to runoff after city prematurely declared a winner</a> — Officials issued an apology for announcing challenger Michael French as victor before confirming a majority, triggering a runoff; the city subsequently voted to terminate its city attorney over the error.</li>
-<li><a href="https://www.ksat.com/news/local/2026/05/23/authorities-searching-for-male-accused-of-assaulting-texas-state-trooper-in-new-braunfels/">Two arrested after assaulting state trooper in New Braunfels</a> — Guadalupe County Sheriff's Office took both suspects into custody following a search that involved multiple law enforcement agencies.</li>
-</ul>
-
-<h3>Austin–Round Rock</h3>
-<ul>
-<li><a href="https://communityimpact.com/austin/round-rock/government/2026/05/27/round-rock-seeks-60m-water-development-board-funding-for-wastewater-treatment-expansion/">Round Rock seeks $60M in state funding to expand wastewater treatment capacity</a> — City officials applied for Texas Water Development Board funds to add 10 million gallons per day of capacity; the city also removed minimum parking requirements for most nonresidential projects.</li>
-<li><a href="https://www.datacenterdynamics.com/en/news/skybox-secures-approval-for-data-center-in-round-rock-texas/">Skybox wins approval for data center campus in Round Rock</a> — Council unanimously approved rezoning nearly 30 acres for the facility, Round Rock's third townhouse and tech development in under a year, reflecting the area's continued growth as a tech corridor.</li>
-</ul>
-
-<h3>Nashville–Davidson</h3>
-<ul>
-<li><a href="https://www.newschannel5.com/news/tennessee-lawmakers-conclude-2026-session-with-major-bills-on-school-choice-immigration-and-nashville-control">Tennessee concludes 2026 legislative session with sweeping Nashville oversight bills</a> — Lawmakers passed measures restructuring Nashville Electric Service governance so surrounding counties outnumber Nashville's representatives, part of a broader pattern of state control over the city.</li>
-<li>Governor Bill Lee announced Nashville will host Super Bowl LXIV in 2030, marking the first Super Bowl awarded to Tennessee — a major win for the city's sports and hospitality economy.</li>
-</ul>
-</section>
-
-<section>
-<h2>Florida</h2>
-
-<h3>Tampa–St. Petersburg</h3>
-<ul>
-<li><a href="https://baynews9.com/fl/tampa/news/2026/05/02/2-alarm-fire-forces-building-evacuation-at-usf-s-st--pete-campus">Lightning-sparked fire destroys USF St. Petersburg marine science lab, decades of research lost</a> — University officials believe a lightning strike ignited the blaze; scientists are mourning the loss of irreplaceable specimens and data collected over decades of Gulf Coast research.</li>
-<li><a href="https://925maxima.com/2026/05/29/st-petersburg-launches-month-of-pride-events-while-tampa-cancels-2026-celebrations/">St. Petersburg launches month-long Pride events as Tampa cancels 2026 celebrations</a> — St. Pete's "Here Comes the Sun" Pride programming spans all of June; Tampa officials cited the "political and economic climate" in scrapping its Pride festivities, highlighting a stark contrast between the two neighboring cities.</li>
-</ul>
-
-<h3>Orlando–Kissimmee</h3>
-<ul>
-<li><a href="https://mynews13.com/fl/orlando/news/2026/05/30/kissimmee-annual-pridefest-event">Kissimmee hosts annual PrideFest just ahead of official Pride Month</a> — The city's celebration drew residents and visitors as Kissimmee continues to position itself as a welcoming community in Central Florida.</li>
-<li><a href="https://mynews13.com/fl/orlando/news/2026/05/22/city-of-kissimmee-sets-temporary-pause-on-ethics-complaints-filed-through-the-city">Kissimmee sets 6-month pause on ethics complaint process</a> — The city commission voted to temporarily suspend a section of its ethics code for up to six months, drawing scrutiny from government transparency advocates.</li>
-</ul>
-</section>
-
-<section>
-<h2>West</h2>
-
-<h3>Los Angeles–Long Beach</h3>
-<ul>
-<li>LA County Mayor resigned after being charged as a covert agent for China — a stunning development for the nation's most populous county; separately, a hospital safety report gave 2 LA County hospitals failing grades while 14 earned top marks.</li>
-<li><a href="https://www.nbclosangeles.com/video/news/local/long-beach-pride-parade-ready-to-celebrate-lgbtq-community/3891521/">Long Beach hosts its 43rd annual Pride Parade on May 17</a> — The event drew large crowds to celebrate the LGBTQ+ community, one of the largest Pride parades on the West Coast.</li>
-</ul>
-
-<h3>San Francisco–Oakland</h3>
-<ul>
-<li><a href="https://www.cbsnews.com/sanfrancisco/news/may-day-protests-at-san-francisco-and-oakland-airports-block-terminal-roadways/">SF Supervisor arrested at SFO May Day protest; Oakland demonstrators block airport roadway</a> — Supervisor Connie Chan was taken into custody for blocking the international terminal road at SFO on May 1; Oakland protesters simultaneously demonstrated against ICE and arms shipments at Oakland Airport.</li>
-<li>The Bureau of Prisons proposed permanently deactivating FCI Dublin; immigrant rights groups want the facility torn down and repurposed, while the 49ers kicked off voluntary OTAs with near-full attendance under coach Kyle Shanahan.</li>
-</ul>
-
-<h3>Seattle–Tacoma</h3>
-<ul>
-<li><a href="https://www.portseattle.org/news/port-seattle-master-plan-draft-environmental-impact-statement-sea-airport-be-released-may-22">Port of Seattle releases draft environmental impact statement for Sea-Tac airport expansion master plan</a> — The Sustainable Airport Master Plan includes 31 near-term projects such as a second terminal, elevated busway, and new cargo facilities; public comment opened May 22.</li>
-<li><a href="https://nomadlawyer.org/seattle-tacoma-travelers-alaska-icelandair-delays-may-2026">Alaska Airlines and Icelandair groundings cascade into major Sea-Tac delays</a> — Travelers endured widespread flight disruptions May 7–8 as aircraft groundings snarled connections across the Pacific Northwest hub.</li>
-</ul>
-
-<h3>Denver–Aurora</h3>
-<ul>
-<li><a href="https://www.denvergazette.com/2026/05/28/brawl-at-aurora-rtd-station-spills-onto-tracks-police-seek-publics-help/">Brawl at Aurora RTD station spills onto train tracks; teens arrested</a> — Surveillance footage from Florida Station captured the May 20 attack; Aurora police arrested two teenagers and are seeking additional suspects and the victim.</li>
-<li>The East Colfax Bus Rapid Transit project is moving forward through Aurora and Denver, promising faster and more reliable service along a corridor that connects some of the metro's most densely populated and transit-dependent neighborhoods.</li>
-</ul>
-
-<h3>Phoenix–Mesa</h3>
-<ul>
-<li><a href="https://www.azfamily.com/2026/05/06/concerns-grow-over-potential-overcrowding-mesa-gateway-ice-facility/">Overcrowding concerns mount at Mesa Gateway Airport ICE detention facility</a> — Arizona's Family tracked allegations that the facility holds hundreds more detainees than its intended capacity under conditions critics call inhumane, as DHS faces a potential landlord dispute with the airport authority.</li>
-<li><a href="https://www.datacenterdynamics.com/en/news/edged-launches-36mw-data-center-in-phoenix-arizona/">Edged launches zero-water 36MW data center in Mesa</a> — The sustainable facility opened May 27 and represents a growing wave of tech infrastructure investment in the Phoenix metro amid the region's ongoing economic expansion.</li>
-</ul>
-
-<h3>San Diego–Chula Vista</h3>
-<ul>
-<li><a href="https://www.cbs8.com/article/news/local/new-ferry-route-to-connect-downtown-san-diego-chula-vista-bayfront-starting-monday/509-fb87fd9d-95f2-4c3e-b185-00269ea7809d">New ferry route launches connecting downtown San Diego to Chula Vista bayfront</a> — The service departs Fifth Avenue Landing and reaches Safe Harbor South Bay in about 45 minutes for $15 each way, offering a waterfront transit alternative that officials hope will ease I-5 congestion.</li>
-<li><a href="https://timesofsandiego.com/crime/2026/05/22/chula-vista-police-gun-violence-restraining-order-mosque-shooter-court/">Court records detail how Chula Vista officials knew of mosque shooter's radicalization before attack</a> — Documents show school and police officials attempted but failed to obtain a gun violence restraining order against the 17-year-old before the hate-inspired rampage at the Islamic Center of San Diego.</li>
-</ul>
-
-<h3>Portland–Vancouver OR</h3>
-<ul>
-<li><a href="https://www.kptv.com/2026/05/24/1-dead-after-n-portland-house-fire-2nd-person-hurt-after-jumping-upper-window/">Deadly North Portland house fire kills one, injures another</a> — One person died and a second was injured after jumping from an upper-story window to escape the blaze on May 24, one of several fire-related incidents in the region this month.</li>
-<li>Six workers were confirmed dead after a catastrophic chemical vat implosion at the Nippon Dynawave paper mill in Longview; separately, Jefferson High School broke ground on a multimillion-dollar new campus in North Portland.</li>
-</ul>
-
-<h3>Sacramento–Roseville</h3>
-<ul>
-<li><a href="https://www.cbsnews.com/sacramento/news/fatal-crash-shut-down-roseville-intersection/">Fatal crash at Roseville intersection kills van driver on May 10</a> — George Habeeb, 47, died when a westbound BMW collided with his van turning onto Baseline Road at Canyon Creek Drive; police investigated the crash as a non-criminal traffic fatality.</li>
-<li>The Roseville City School District Foundation held its 5th Annual Golf Tournament at Sierra View Country Club while the city continues to grow as one of the Sacramento region's fastest-expanding suburbs, attracting new commercial and residential development.</li>
-</ul>
-
-<h3>Las Vegas–Henderson</h3>
-<ul>
-<li><a href="https://lasvegassun.com/news/2026/may/20/trump-signs-law-clearing-path-for-southern-nevada/">President Trump signs law enabling Southern Nevada water pipeline</a> — The Sloan Canyon Conservation and Lateral Pipeline Act clears the way for a 40-mile underground pipeline capable of carrying 375 million gallons per day to Henderson and southern Las Vegas Valley, projected to save residents $200M.</li>
-<li>Henderson unveiled plans for a new $70M indoor sports and entertainment complex while a hotel-casino completed its $200M property-wide renovation, reflecting the city's continued investment in tourism and recreation infrastructure.</li>
-</ul>
-
-<h3>Salt Lake City</h3>
-<ul>
-<li><a href="https://www.deseret.com/utah/2026/05/28/salt-lake-city-downtown-project-sales-tax-revenue-fund-sports-entertainment-district/">Salt Lake City's $1.2B sports and entertainment district takes shape ahead of 2034 Olympics</a> — A sales tax increase from 7.75% to 8.25% is projected to fund a transformative downtown makeover including a remodeled Delta Center; construction is expected to finish just before the city hosts the Winter Olympics.</li>
-<li>The Salt Lake City Community Reinvestment Agency approved nearly $6.4M for affordable homeownership projects including townhomes, single-family homes, and down payment assistance, as housing affordability pressures intensify across the Wasatch Front.</li>
-</ul>
-</section>
-
-<section>
-<h2>Local (PA/OH)</h2>
-
-<h3>Phoenixville PA</h3>
-<ul>
-<li><a href="https://patch.com/pennsylvania/phoenixville">Phoenixville man charged after child brings loaded handgun to elementary school</a> — The child's father admitted to accidentally placing the firearm in the wrong backpack; the incident at Harres Hill Elementary prompted a review of school safety protocols across the district.</li>
-<li>Aqua Pennsylvania expanded its Customer Assistance Program eligibility for 2026 under updated federal income guidelines, potentially helping more Phoenixville-area families afford water service as utility costs rise.</li>
-</ul>
-
-<h3>Malvern PA</h3>
-<ul>
-<li><a href="https://www.malvern.org/node/1/news">Malvern Borough holds Memorial Day Parade with parking restrictions on 5/31</a> — The annual parade draws community members to the borough's historic main streets, with the borough council also preparing amended zoning ordinances for a public hearing in June.</li>
-<li><a href="https://patch.com/pennsylvania/malvern">Malvern GreenFest Native Garden Tour showcases local environmental initiatives</a> — The Environmental Advisory Council invited residents to tour native gardens as part of the May 16 GreenFest, highlighting the borough's commitment to sustainability and local ecology.</li>
-</ul>
-
-<h3>Wooster OH</h3>
-<ul>
-<li><a href="https://patch.com/ohio/wooster-oh">Levitt AMP Wooster Music Series opens with Sons of Mystro performance</a> — The free outdoor concert series kicked off May 27 at a community venue, bringing the arts to Wooster residents as part of a national program supporting local music scenes.</li>
-<li>Wayne County Commissioners recognized National Military Appreciation Month with a proclamation ceremony at the Greystone Event Center, honoring veterans during a Coffee Crew Breakfast attended by community leaders.</li>
 </ul>
 </section>
 
