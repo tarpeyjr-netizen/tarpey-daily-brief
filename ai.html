@@ -34,9 +34,29 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: June 17, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: June 18, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-06-18">
+<div class="ed-head">AI Developments &mdash; Thursday, June 18, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Code</span>
+<h2>This Week in Anthropic Claude Code</h2>
+<p>Claude Code is Anthropic's command-line tool that lets developers hand off coding tasks directly to Claude — think of it as a tireless coding partner you chat with in your terminal. This week was anything but quiet, starting with the bombshell that Anthropic's newest model, Claude Fable 5 (also called Mythos-class), was released on June 9th and then pulled offline within three days. The culprit? A U.S. government export directive that forced the model back off the shelf just as developers were starting to get their hands on it. The model had been billed as Anthropic's most capable widely-released model yet, purpose-built for long, complex, autonomous tasks — and it launched simultaneously across the Claude API, AWS, Microsoft Foundry, and more. The abrupt suspension left many in the developer community scratching their heads and watching closely for its return.</p>
+<p>While Fable 5's saga played out, the Claude Code team kept shipping practical improvements at a steady clip. Auto mode — which lets Claude pick the best model automatically, handling permission checks quietly in the background — arrived on Bedrock, Vertex, and Foundry for Opus 4.7 and 4.8. That's a big deal for enterprise teams running Claude on those platforms, since it removes the friction of manually choosing model configurations. On the safety side, Claude Code now stops to ask before writing to files that could run code behind the scenes, like shell startup files (.zshenv, .bash_login) and build configs (.npmrc, .bazelrc). It's a small change but a meaningful one — a bit like your assistant double-checking before touching the engine under the hood.</p>
+<p>The reliability fixes rounded out a strong week. Mid-stream connection drops, scrolling and focus bugs, remote session task states, and background session reliability all got patches. And for teams running Claude inside their own infrastructure, Managed Agents can now operate in a sandboxed environment and connect to private MCP servers — meaning enterprises can keep their sensitive data and tools behind their own walls while still getting the full power of Claude's agentic capabilities. It all adds up to a week that showed the Claude Code team is pushing on every front simultaneously, from frontier models to the little bugs that quietly drive developers crazy.</p>
+</section>
+
+<section>
+<span class="tool-chip">xAI Grok</span>
+<h2>This Week in xAI Grok</h2>
+<p>Grok is xAI's AI assistant, built by Elon Musk's team and tightly woven into the X platform — but increasingly it's becoming a standalone product that can generate images, write code, produce documents, and now even make videos. This week, the headline was the wide release of Grok Imagine Video 1.5, an image-to-video model that takes a still photo and animates it into a 720p clip up to 15 seconds long, complete with native audio, in about 25 seconds. That's meaningfully faster than its predecessor (which needed 40+ seconds) and the results have been good enough to land the model at number one on the Image-to-Video Arena leaderboard — an independent benchmark where humans vote on which AI-generated videos look best. Think of it like turning any photo into a short movie scene, with the AI figuring out how things should move and sound.</p>
+<p>Beyond video, xAI has been quietly expanding Grok into a full productivity suite. Document generation arrived this week, meaning Grok can now produce production-ready Word docs, PowerPoint decks, Excel files, and PDFs — styled and formatted, not just raw text you have to copy elsewhere. The Speech to Text API also hit general availability, offering transcription in 25 languages with both batch and streaming modes. For developers, the Batch API expanded to support image generation, image editing, and video generation alongside existing chat completions. And on the coding side, the Agent Dashboard for Grok Build gives users a single screen to juggle multiple coding sessions, track blockers, and dispatch new tasks without losing their place — a real quality-of-life upgrade for anyone using Grok to write software at scale.</p>
+<p>Lurking in the background is something even bigger: Grok V9-Medium, a 1.5 trillion parameter model specifically trained for coding, reportedly finished training this week with a public release expected mid-June. If it lands as advertised, it could shake up the coding-AI leaderboard just as GitHub Copilot and Claude Code have been trading the top spot. xAI also announced a partnership with Gopuff to power a Grok-based shopping assistant called Go, embedded directly into the Gopuff app. It's an interesting glimpse at where Grok is headed — not just a chatbot, but an engine underneath other products that millions of people use every day.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-06-17">
 <div class="ed-head">AI Developments &mdash; Wednesday, June 17, 2026</div>
 
