@@ -34,9 +34,29 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: June 22, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: June 23, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-06-23">
+<div class="ed-head">AI Developments &mdash; Tuesday, June 23, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude</span>
+<h2>This Week in Anthropic Claude</h2>
+<p>Anthropic makes Claude, one of the most capable and safety-focused AI assistants in the world — the company was actually founded by former OpenAI researchers who wanted to build AI more carefully. This week, Anthropic had a lot going on, and most of it was genuinely exciting.</p>
+<p>The biggest headline is Fable 5, Anthropic's most powerful model ever released to the public. Think of it as the top-of-the-line sports car in the Claude garage. It's the first "Mythos-class" model made generally available, and the longer and more complex your task is, the more Fable 5 pulls ahead of its predecessors. There is one catch: because it's so powerful, Anthropic built in a safety system that quietly routes certain sensitive requests — things related to cybersecurity, biology, or chemistry — to the slightly less powerful Opus 4.8 model instead. This only triggers in under 5% of sessions, so most users will barely notice. Meanwhile, Claude Design got a meaningful upgrade this week too: it now remembers your design system across projects, lets you edit directly on the canvas, and syncs more tightly with Claude Code so there's less copy-pasting between tools. It's the kind of polish that turns a cool feature into something you actually use daily.</p>
+<p>On the developer side, Claude Code picked up a new "ultracode" mode (accessible through the effort menu) for when you need the AI to really dig in on a hard coding task. Anthropic also announced that Claude will be baked into Apple's Foundation Models framework, meaning it'll be available natively inside iOS 27, macOS 27, and even watchOS 27 later this year — a huge distribution win. And in a quieter but important move, Anthropic replaced static API keys with a short-lived credential system called WIF, which means there are no long-lived secrets to accidentally leak. Taken together, this week felt like Anthropic firing on all cylinders: new frontier model, design polish, developer tools, a massive platform partnership, and stronger security. It's a busy week to be a Claude fan.</p>
+</section>
+
+<section>
+<span class="tool-chip">Perplexity AI</span>
+<h2>This Week in Perplexity AI</h2>
+<p>Perplexity AI started as an AI-powered search engine — imagine Google, but instead of giving you ten blue links, it gives you a direct answer with sources cited. Over the past year, though, it's grown into something much bigger, and this week's news makes that evolution really clear.</p>
+<p>The most concrete release this week landed on June 19: Deep Research is now part of Perplexity Computer, the company's agentic assistant that can actually do things on your computer, not just answer questions. The update brings faster command access, the ability to fork a research session into a new branch (so you can explore a side question without losing your original thread), and analytics APIs for power users who want to build on top of Perplexity's research engine. Alongside that, Perplexity Computer expanded into Microsoft 365 — Word, Excel, PowerPoint, Outlook, and Teams — which is a big deal because it puts Perplexity directly inside the tools millions of office workers already have open all day. You can now ask it to help draft a document, summarize an email thread, or pull research into a spreadsheet without ever leaving the app you're in. Max subscribers also got access to Claude Opus 4.8 as a model option, giving Perplexity's most serious users a choice of frontier intelligence behind their queries.</p>
+<p>The thread connecting all of this is Perplexity's clear strategic ambition: it no longer wants to be a search engine you visit. It wants to be the research and reasoning layer woven into every tool you already use. For regular users that means more power in more places; for competitors like Google, it means Perplexity is getting harder to ignore.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-06-22">
 <div class="ed-head">AI Developments &mdash; Monday, June 22, 2026</div>
 
@@ -191,26 +211,6 @@
 <p>Perplexity AI is an AI-powered answer engine — think of it as a search engine that actually reads the articles and gives you the summary, with citations. It's been one of the fastest-growing AI products of the past two years, and this week it showed why: a string of announcements that stretched from your browser to your laptop chip to Snapchat.</p>
 <p>The biggest consumer move was the global launch of the Comet browser — Perplexity's own web browser, now free for everyone after a long waitlist. Early data is striking: Comet users ask 6 to 18 times more questions than regular browser users. That's not a small nudge; that's a full behavioral change in how people seek information. To make it sustainable for publishers, Perplexity also launched Comet Plus, a $5/month subscription where the money actually flows back to the sites and writers that AI uses to answer questions — a rare attempt to solve AI's awkward relationship with the content it depends on. On the infrastructure side, Perplexity unveiled a hybrid local-cloud inference orchestrator at Computex, which automatically decides whether to run an AI task on your own device or send it to a cloud server. Sensitive stuff like health records stays local; heavy computation goes to the cloud. No manual settings, no decisions — it just figures it out. The feature is expected on Perplexity Computer in July.</p>
 <p>Zooming out a bit, Perplexity also announced a $400 million deal with Snap to bring its AI answer engine into Snapchat for nearly a billion users, raised $200 million at a $20 billion valuation, and its CEO declared plans for a 2028 IPO. Perplexity is no longer just an interesting search alternative — it's building toward being a full-stack platform, from browsers to chips to social media integrations. That's a lot of ground to cover, and it's moving fast.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-06-15">
-<div class="ed-head">AI Developments &mdash; Monday, June 15, 2026</div>
-
-<section>
-<span class="tool-chip">Google Gemini</span>
-<h2>This Week in Google Gemini</h2>
-<p>Google Gemini is Google's flagship AI assistant and model family — the system powering everything from Google Search summaries to enterprise cloud tools to real-time voice conversations on your phone. This past week, Gemini's momentum coming out of Google I/O 2026 continued to ripple outward, with new models and features landing across different tiers of users.</p>
-<p>The biggest story is Gemini 3.5 Flash becoming the default model in Gemini Enterprise as of June 8th — and unlike previous rollouts, this one comes with no opt-out toggle, which will disappear entirely on June 16th. Think of it like a phone carrier quietly upgrading everyone's data plan: the new baseline is just better, and Google is confident enough to stop letting people stay on the old one. Meanwhile, Gemini 3 Deep Think has started reaching Google AI Ultra subscribers, and it's the kind of reasoning upgrade that matters for genuinely hard problems — multi-step math, scientific analysis, logic puzzles that require the model to actually sit and think rather than pattern-match. Alongside these rollouts, Google quietly beefed up File Search in the Gemini API to handle multimodal queries, meaning developers can now embed and search through images using the gemini-embedding-2 model, not just text. That's a quiet but significant step toward AI systems that can actually understand visual content at scale. Gemini Enterprise also added an Asana integration in public preview, letting users connect their project management workspace and ask Gemini natural-language questions about tasks, teams, and deadlines.</p>
-<p>The week wasn't entirely smooth — Gemini suffered an outage that left users hitting cryptic errors like "error 1076" and "error 1099" when trying to start new chats. It resolved within hours, but it's a reminder that even the most sophisticated AI platforms are still software running on servers, and that dependency matters. On balance though, this was another solid week of Gemini expanding its footprint — smarter defaults, deeper integrations, and more capable reasoning for the people who need it most.</p>
-</section>
-
-<section>
-<span class="tool-chip">Meta Llama</span>
-<h2>This Week in Meta Llama</h2>
-<p>Meta's Llama series is the open-source family of large language models that changed the AI landscape when it launched — instead of keeping its AI locked behind an API, Meta released the actual model weights for anyone to download, run, and tinker with. But over the past few months, something significant has shifted at Meta, and this week's news makes that shift feel very real.</p>
-<p>The biggest development is the continued rollout and reception of Muse Spark, Meta's new closed-source AI model that effectively replaces Llama as the company's flagship product. Launched back in April, Muse Spark is the first model from Meta Superintelligence Labs — and it's a fundamentally different beast from what Meta has built before. It's natively multimodal, meaning it can reason across text, images, and other inputs at once, and it comes in two modes: Instant for quick tasks and Thinking for heavy-lifting like document analysis or photo-based nutritional assessment. The really striking stat Meta is claiming is that it matches the performance of Llama 4 Maverick while using 10x less compute — which, if true, is the kind of efficiency leap that makes both businesses and researchers take notice. Muse Spark is now rolling out across Meta AI, Instagram, Facebook, WhatsApp, and even Ray-Ban Meta smart glasses, which means it's reaching a massive everyday audience that probably has no idea they're using a frontier AI model. On the developer side, Meta held its first-ever LlamaCon event, where it announced a limited preview of the Llama API — a developer-friendly way to access Llama 4 Scout and Llama 4 Maverick with one-click API keys and interactive playgrounds. Meta also introduced new Llama Protection Tools and a Llama Defenders Program, giving trusted partners security evaluation tools.</p>
-<p>The strategic picture here is fascinating and a little bittersweet for the open-source community that rallied around Llama. Meta is increasingly betting on closed, integrated AI products embedded in its app ecosystem, rather than releasing models for the world to run freely. Muse Spark is proprietary. The Avocado project that preceded it was designed closed-source from the start. The Llama brand still lives, but it increasingly describes a developer API and a legacy of open weights rather than Meta's actual cutting-edge work. For the millions of developers and researchers who built on Llama's openness, this week is a reminder to watch carefully where Meta's true attention now lies.</p>
 </section>
 
 </article>
