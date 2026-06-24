@@ -34,9 +34,36 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: June 23, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: June 24, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-06-24">
+<div class="ed-head">AI Developments &mdash; Wednesday, June 24, 2026</div>
+
+<section>
+<span class="tool-chip">Claude Cowork</span>
+<h2>This Week in Claude Cowork</h2>
+<p>Claude Cowork is Anthropic's AI-powered workspace — think of it as having an extremely capable AI colleague living inside your computer, helping you research, write, analyze, and build things, all from a single app. This week was a busy one, with a handful of meaningful upgrades that make Cowork feel more like a real workplace tool than ever before.</p>
+<p>The biggest quality-of-life addition is Effort Control, which lets you dial up or down how hard Claude works on any given task. Choose from Low, Medium, High, or Max — High is the default, which means most everyday requests are already handled thoughtfully, but you can push to Max when you need Claude to really dig in. On the connectivity front, Anthropic quietly expanded the list of apps Cowork can send work to, adding Adobe, Canva, Gamma, Lovable, Miro, Replit, Vercel, and Wix alongside the existing lineup. That means you can now take a brainstorming session in Cowork and push the results directly into a Canva design or a live Replit project without copy-pasting anything. For companies using Okta to manage employee access, there's also a new enterprise connector feature that lets IT admins provision Claude tools once, and every employee gets automatic access on first login — no more per-person setup tickets. The week wasn't entirely smooth though: on June 23rd Anthropic experienced an elevated error rate across Claude.ai, Cowork, and the API, though the incident was resolved the same day.</p>
+<p>Put it all together and you can see the direction Cowork is heading — less "AI chatbot you open separately" and more "AI that's woven into wherever your work already lives." The connector expansion in particular signals that Anthropic wants Cowork to be the starting point of workflows, not just a standalone tool.</p>
+</section>
+
+<section>
+<span class="tool-chip">ElevenLabs</span>
+<h2>This Week in ElevenLabs</h2>
+<p>ElevenLabs is the company behind some of the most realistic AI-generated voices on the internet — the kind that can clone a voice from a short audio clip and speak in dozens of languages with natural-sounding emotion. This week they shipped a wave of updates that push the platform further into enterprise territory while also making individual developers' lives easier.</p>
+<p>The headline technical release is Music v2, now available through the API. Where the original music generator worked a bit like a simple prompt box — you describe a vibe and it produces something — Music v2 introduces a more structured, chunk-based approach. You build a composition out of discrete segments, controlling structure, pacing, and arrangement much more precisely. It's the difference between asking someone to "write you a song" versus handing them sheet music and saying "build on this." On the speed side, ElevenLabs introduced Flash, its fastest-ever text-to-speech model, which can generate speech in just 75 milliseconds via the API. To put that in context, a normal human blink takes about 150ms — Flash is literally faster than a blink. That kind of latency opens the door for real-time voice applications that previously weren't possible. Meanwhile, companies with stricter data requirements got a meaningful gift: ElevenLabs now supports on-premise and on-device deployment, meaning your audio generation never has to leave your own servers. And pricing just got friendlier too, with cuts announced for both ElevenAPI and ElevenAgents for self-serve developers.</p>
+<p>ElevenLabs also made global news this week when Poland announced an $11 million investment to build an AI tech hub in partnership with the company — a sign of how seriously governments are starting to treat voice AI as critical infrastructure. For regular users, the clearest takeaway from this week's updates is that ElevenLabs is moving fast on speed, control, and reach all at once.</p>
+</section>
+
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>Apple Foundation Models — Free Tier for Developers</h2>
+<p>If you've ever built an app and gulped at the API bill from OpenAI or Anthropic, Apple just gave a lot of small developers something to cheer about. At WWDC 2026, Apple announced that its Foundation Models — the AI brains that power on-device features across iPhone, iPad, and Mac — are now free to use via Private Cloud Compute for any developer whose app has fewer than two million first-time App Store downloads. In practice, that covers the vast majority of indie developers and small studios. Instead of paying per token to run AI features, those developers can now call Apple's models through a clean Swift API at no cost, keeping user data private in the process since computation happens on Apple's infrastructure rather than a third-party cloud. What makes this even more interesting is the added flexibility: the same API now lets developers call third-party models like Claude or Gemini through the exact same interface, so you can swap between Apple's model and an external one without rewriting your code. Apple also unveiled a new Dynamic Profiles system for building multi-agent workflows, and confirmed the Foundation Models framework will go open source later this summer. For a curious teenager learning to code their first AI app, this is a genuinely big deal — the barrier just dropped significantly.</p>
+<p class="muted">Source: Apple WWDC 2026 / MacRumors, June 2026</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-06-23">
 <div class="ed-head">AI Developments &mdash; Tuesday, June 23, 2026</div>
 
@@ -191,26 +218,6 @@
 <p>For years, Microsoft's AI strategy basically meant "use OpenAI." That changed dramatically at Microsoft Build 2026 in early June, when the company unveiled seven brand-new AI models built entirely in-house under a family called MAI — short for Microsoft AI. The headline of the bunch is MAI-Thinking-1, a 35-billion-parameter reasoning model with a massive 256,000-token context window, which means it can hold an enormous amount of information in mind while working through a complex problem. Think of it like the difference between a student who can only keep one textbook open versus one who has an entire library memorized. Microsoft trained it from scratch on clean, commercially licensed data — no recycled outputs from other companies' models, which matters a lot for businesses worried about legal liability.</p>
 <p>The full family covers a lot of ground: there's a fast coding model called MAI-Code-1-Flash, image generation models under MAI-Image-2.5, and voice and transcription models too. All of them are available through Azure AI Foundry, and they also landed on third-party platforms like Fireworks AI and OpenRouter, meaning developers don't need a full Microsoft relationship to start experimenting. The real story here isn't any single model — it's that Microsoft is explicitly building toward what they called "long-term self-sufficiency," a polite way of saying they no longer want to be entirely dependent on OpenAI. For enterprises already deep in the Microsoft ecosystem, having homegrown models optimized for Azure is a genuinely big deal.</p>
 <p class="muted">Source: Microsoft AI / GeekWire / CNBC, June 2026</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-06-16">
-<div class="ed-head">AI Developments &mdash; Tuesday, June 16, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude</span>
-<h2>This Week in Anthropic Claude</h2>
-<p>Anthropic makes Claude, one of the most capable AI assistants in the world — a conversational AI that can write code, analyze documents, reason through complex problems, and hold a genuinely useful conversation. This week was, to put it mildly, eventful. Anthropic dropped Claude Fable 5 on June 9th, and the AI world promptly lost its mind.</p>
-<p>Fable 5 is the first publicly available model from Anthropic's new "Mythos" tier — think of it as the top shelf of a very well-stocked bar. It's their most powerful model ever released to the general public, excelling at software engineering, vision tasks, and knowledge work. But here's where things get wild: within three days of launch, a U.S. government export directive forced Anthropic to temporarily pull it offline. That's the kind of "wow, this is powerful stuff" moment that doesn't happen every week. Alongside Fable 5, Anthropic also quietly rolled out Claude Opus 4.8 with a larger default context window — meaning it can now hold more of a conversation in its head at once — and expanded it across AWS Bedrock, Google Vertex AI, and Claude Code. Meanwhile, Microsoft 365 add-ins for Excel, PowerPoint, and Word hit general availability, with Outlook joining in public beta, so office workers can now summon Claude directly inside the apps they live in all day.</p>
-<p>For developers, the week brought MCP tunnels (in research preview), self-hosted sandboxes for Claude Managed Agents, and a new connector observability dashboard so enterprise admins can actually see what's happening under the hood. Apple also announced Claude support is coming to iOS 27, iPadOS 27, and macOS 27 via Apple's Foundation Models framework — which means Claude is about to be baked into a billion devices. Between Fable 5's dramatic debut, the Apple integration, and the Office suite rollout, this feels like a week that significantly widened the gap between Anthropic and everyone chasing it.</p>
-</section>
-
-<section>
-<span class="tool-chip">Perplexity AI</span>
-<h2>This Week in Perplexity AI</h2>
-<p>Perplexity AI is an AI-powered answer engine — think of it as a search engine that actually reads the articles and gives you the summary, with citations. It's been one of the fastest-growing AI products of the past two years, and this week it showed why: a string of announcements that stretched from your browser to your laptop chip to Snapchat.</p>
-<p>The biggest consumer move was the global launch of the Comet browser — Perplexity's own web browser, now free for everyone after a long waitlist. Early data is striking: Comet users ask 6 to 18 times more questions than regular browser users. That's not a small nudge; that's a full behavioral change in how people seek information. To make it sustainable for publishers, Perplexity also launched Comet Plus, a $5/month subscription where the money actually flows back to the sites and writers that AI uses to answer questions — a rare attempt to solve AI's awkward relationship with the content it depends on. On the infrastructure side, Perplexity unveiled a hybrid local-cloud inference orchestrator at Computex, which automatically decides whether to run an AI task on your own device or send it to a cloud server. Sensitive stuff like health records stays local; heavy computation goes to the cloud. No manual settings, no decisions — it just figures it out. The feature is expected on Perplexity Computer in July.</p>
-<p>Zooming out a bit, Perplexity also announced a $400 million deal with Snap to bring its AI answer engine into Snapchat for nearly a billion users, raised $200 million at a $20 billion valuation, and its CEO declared plans for a 2028 IPO. Perplexity is no longer just an interesting search alternative — it's building toward being a full-stack platform, from browsers to chips to social media integrations. That's a lot of ground to cover, and it's moving fast.</p>
 </section>
 
 </article>
