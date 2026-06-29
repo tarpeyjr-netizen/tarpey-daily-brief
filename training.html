@@ -4,448 +4,108 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Training Dashboard &mdash; The Daily Brief</title>
-<style>
-  :root { --navy:#1f3a5f; --ink:#1c2330; --muted:#6a7280; --line:#e3e6ec; --bg:#f4f6fa; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; }
-  .wrap { max-width:1100px; margin:0 auto; }
-  header { background:var(--navy); color:#fff; padding:30px 24px 26px; }
-  .back { display:inline-block; font-size:13px; color:#b9c6da; text-decoration:none; margin-bottom:14px; }
-  header h1 { font-size:25px; font-weight:700; }
-  header .sub { margin-top:6px; font-size:13.5px; color:#b9c6da; }
-  main { padding:28px 24px 40px; }
-  .section-header { display:flex; align-items:center; gap:10px; margin:32px 0 14px; padding-bottom:10px; border-bottom:2px solid var(--navy); }
-  .section-header:first-of-type { margin-top:0; }
-  .section-title { font-size:16px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:.05em; }
-  .section-count { font-size:12px; font-weight:600; padding:2px 10px; border-radius:99px; }
-  .count-upper { background:#dbeafe; color:#1e40af; }
-  .count-lower { background:#dcfce7; color:#166534; }
-  .tbl-wrap { background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:8px; }
-  table { width:100%; border-collapse:collapse; font-size:13.5px; }
-  thead tr { background:#f0f4f9; }
-  thead th { padding:10px 13px; text-align:left; font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; white-space:nowrap; }
-  thead th.r { text-align:right; }
-  tbody tr { border-top:1px solid var(--line); }
-  tbody tr:hover { background:#f8fafc; }
-  tbody td { padding:10px 13px; vertical-align:middle; }
-  tbody td.r { text-align:right; }
-  .ex-name { font-weight:600; color:var(--ink); }
-  .ex-unit { display:block; font-size:11px; color:var(--muted); font-weight:400; margin-top:1px; }
-  .ex-note { display:block; font-size:11px; color:#92400e; background:#fef3c7; border-radius:4px; padding:2px 6px; margin-top:4px; width:fit-content; }
-  .days-ago { font-weight:600; color:var(--ink); }
-  .days-date { display:block; font-size:11px; color:var(--muted); margin-top:1px; }
-  .peak { font-weight:700; color:var(--navy); }
-  .peak-reps { font-size:11px; color:var(--muted); margin-left:2px; }
-  .sixty-w { font-weight:500; }
-  .sixty-d { display:block; font-size:11px; color:var(--muted); margin-top:1px; }
-  .chg-up { color:#16a34a; font-weight:700; }
-  .chg-down { color:#dc2626; font-weight:700; }
-  .chg-same { color:var(--muted); }
-  .chg-na { color:#d1d5db; }
-  .freq { font-variant-numeric:tabular-nums; }
-  .freq-d { display:block; font-size:10px; color:var(--muted); margin-top:1px; }
-  .chip { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:99px; white-space:nowrap; }
-  .chip-active { background:#dcfce7; color:#166534; }
-  .chip-stalled { background:#fef9c3; color:#854d0e; }
-  .chip-dormant { background:#fee2e2; color:#991b1b; }
-  .summary { background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-top:32px; display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
-  .summary-title { grid-column:1/-1; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-bottom:4px; padding-bottom:10px; border-bottom:1px solid var(--line); }
-  .stat-val { font-size:22px; font-weight:800; color:var(--navy); line-height:1.1; }
-  .stat-lbl { font-size:11px; color:var(--muted); margin-top:3px; }
-  .stat-sub { font-size:11px; color:var(--ink); margin-top:2px; font-weight:500; }
-  footer { text-align:center; font-size:12px; color:var(--muted); padding:24px; border-top:1px solid var(--line); }
-  @media(max-width:700px) { table { font-size:12px; } thead th, tbody td { padding:8px 8px; } }
-</style>
+<title>Training Dashboard — The Daily Brief</title>
+<style>  :root{--navy:#1f3a5f;--ink:#1c2330;--muted:#6a7280;--line:#e3e6ec;--bg:#f4f6fa}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto}
+  header{background:var(--navy);color:#fff;padding:30px 24px 26px}
+  .back{display:inline-block;font-size:13px;color:#b9c6da;text-decoration:none;margin-bottom:14px}
+  header h1{font-size:25px;font-weight:700}
+  header .sub{margin-top:6px;font-size:13.5px;color:#b9c6da}
+  main{padding:28px 24px 40px}
+  .section-header{display:flex;align-items:center;gap:10px;margin:32px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--navy)}
+  .section-header:first-of-type{margin-top:0}
+  .section-title{font-size:16px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.05em}
+  .section-count{font-size:12px;font-weight:600;padding:2px 10px;border-radius:99px}
+  .count-upper{background:#dbeafe;color:#1e40af}
+  .count-lower{background:#dcfce7;color:#166534}
+  .tbl-wrap{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  thead tr{background:#f0f4f9}
+  thead th{padding:10px 13px;text-align:left;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+  thead th.r{text-align:right}
+  tbody tr{border-top:1px solid var(--line)}
+  tbody tr:hover{background:#f8fafc}
+  tbody td{padding:10px 13px;vertical-align:middle}
+  tbody td.r{text-align:right}
+  .ex-name{font-weight:600;color:var(--ink);display:block}
+  .ex-unit{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:1px}
+  .days-ago{font-weight:600;color:var(--ink);display:block}
+  .days-date{display:block;font-size:11px;color:var(--muted);margin-top:1px}
+  .peak{font-weight:700;color:var(--navy)}
+  .peak-reps{font-size:11px;color:var(--muted);margin-left:2px}
+  .sixty-w{font-weight:500;display:block}
+  .sixty-d{display:block;font-size:11px;color:var(--muted);margin-top:1px}
+  .chg-up{color:#16a34a;font-weight:700}
+  .chg-down{color:#dc2626;font-weight:700}
+  .chg-same{color:var(--muted)}
+  .chg-na{color:#d1d5db}
+  .freq{font-variant-numeric:tabular-nums;display:block}
+  .freq-d{display:block;font-size:10px;color:var(--muted);margin-top:1px}
+  .chip{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap}
+  .chip-active{background:#dcfce7;color:#166534}
+  .chip-stalled{background:#fef9c3;color:#854d0e}
+  .chip-dormant{background:#fee2e2;color:#991b1b}
+  .summary{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+  .summary-title{grid-column:1/-1;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:4px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .stat-val{font-size:22px;font-weight:800;color:var(--navy);line-height:1.1}
+  .stat-lbl{font-size:11px;color:var(--muted);margin-top:3px}
+  .stat-sub{font-size:11px;color:var(--ink);margin-top:2px;font-weight:500}
+  footer{text-align:center;font-size:12px;color:var(--muted);padding:24px;border-top:1px solid var(--line)}
+  @media(max-width:700px){table{font-size:12px}thead th,tbody td{padding:8px 8px}}</style>
 </head>
 <body>
 <header><div class="wrap">
-  <a class="back" href="/">&larr; Back to dashboard</a>
+  <a class="back" href="/">← Back to dashboard</a>
   <h1>Training Dashboard</h1>
-  <div class="sub">Updated Friday, June 26 2026 &nbsp;&middot;&nbsp; Source: 2026 training log &nbsp;&middot;&nbsp; ~60 days ago = Apr 27</div>
+  <div class="sub">Updated Monday, June 29 2026 &nbsp;·&nbsp; Source: 2026 training log &nbsp;·&nbsp; ~60 days ago = April 30</div>
 </div></header>
 <main class="wrap">
-
-<div class="section-header">
-  <span class="section-title">Upper Body</span>
-  <span class="section-count count-upper">18 exercises</span>
-</div>
-<div class="tbl-wrap">
-<table>
-<thead><tr>
-  <th>Exercise</th><th class="r">Last Performed</th><th class="r">Recent Weight</th><th class="r">Peak Set</th><th class="r">~60 Days Ago</th><th class="r">Change</th><th class="r">Status</th><th class="r">Freq (30d/60d)</th>
-</tr></thead>
-<tbody>
-<tr>
-  <td><span class="ex-name">Bench Press</span><span class="ex-unit">barbell · total lbs</span></td>
-  <td class="r"><span class="days-ago">6 days ago</span><span class="days-date">Jun 20</span></td>
-  <td class="r"><span class="peak">175 lbs</span><span class="peak-reps">× 5</span></td>
-  <td class="r"><span class="peak">180 lbs</span><span class="peak-reps">× 5</span></td>
-  <td class="r"><span class="sixty-w">160 lbs × 5</span><span class="sixty-d">Apr 27</span></td>
-  <td class="r chg-up">↑ 12%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">3 / 5</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Seated Cable Rows</span><span class="ex-unit">cable · lbs</span></td>
-  <td class="r"><span class="days-ago">6 days ago</span><span class="days-date">Jun 20</span></td>
-  <td class="r"><span class="peak">160 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">160 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">2 / 2</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Seated Row</span><span class="ex-unit">machine · lbs</span></td>
-  <td class="r"><span class="days-ago">87 days ago</span><span class="days-date">Mar 31</span></td>
-  <td class="r"><span class="peak">115 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">150 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-dormant">Dormant</span></td>
-  <td class="r"><span class="freq">0 / 0</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Incline Press</span><span class="ex-unit">barbell · total lbs</span><span class="ex-note">ℹ️ Mixed barbell/DB history</span></td>
-  <td class="r"><span class="days-ago">62 days ago</span><span class="days-date">Apr 25</span></td>
-  <td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">145 lbs</span><span class="peak-reps">× 7</span></td>
-  <td class="r"><span class="sixty-w">35 lbs × 12</span><span class="sixty-d">Apr 25</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-dormant">Dormant</span></td>
-  <td class="r"><span class="freq">0 / 0</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Lat Pulldown</span><span class="ex-unit">cable · lbs</span></td>
-  <td class="r"><span class="days-ago">87 days ago</span><span class="days-date">Mar 31</span></td>
-  <td class="r"><span class="peak">115 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">130 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-dormant">Dormant</span></td>
-  <td class="r"><span class="freq">0 / 0</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Overhead Press</span><span class="ex-unit">barbell · total lbs</span><span class="ex-note">ℹ️ Barbell peak; recent was single-arm DB</span></td>
-  <td class="r"><span class="days-ago">3 days ago</span><span class="days-date">Jun 23</span></td>
-  <td class="r"><span class="peak">15 lbs</span><span class="peak-reps">× 6</span></td>
-  <td class="r"><span class="peak">95 lbs</span><span class="peak-reps">× 8</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">1 / 1</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">EZ Bar Curls</span><span class="ex-unit">barbell · total lbs</span></td>
-  <td class="r"><span class="days-ago">6 days ago</span><span class="days-date">Jun 20</span></td>
-  <td class="r"><span class="peak">55 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">55 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">5 / 5</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB Floor Press</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">3 days ago</span><span class="days-date">Jun 23</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 14</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 14</span></td>
-  <td class="r"><span class="sixty-w">45 lbs × 12</span><span class="sixty-d">Apr 25</span></td>
-  <td class="r chg-up">↑ 11%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">3 / 3</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB Incline Press</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">6 days ago</span><span class="days-date">Jun 20</span></td>
-  <td class="r"><span class="peak">30 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">3 / 4</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Single Arm DB Row</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">8 days ago</span><span class="days-date">Jun 18</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">50 lbs × 8</span><span class="sixty-d">Apr 27</span></td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">3 / 7</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB Pullover</span><span class="ex-unit">dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">14 days ago</span><span class="days-date">Jun 12</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="sixty-w">45 lbs × 12</span><span class="sixty-d">Apr 25</span></td>
-  <td class="r chg-up">↑ 11%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">2 / 4</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB Bench Press</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">24 days ago</span><span class="days-date">Jun 2</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 13</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 13</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">1 / 1</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Chest Supported Row</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">24 days ago</span><span class="days-date">Jun 2</span></td>
-  <td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="sixty-w">30 lbs × 12</span><span class="sixty-d">Apr 13</span></td>
-  <td class="r chg-up">↑ 33%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">1 / 1</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB Shoulder Press</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">95 days ago</span><span class="days-date">Mar 23</span></td>
-  <td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 8</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-dormant">Dormant</span></td>
-  <td class="r"><span class="freq">0 / 0</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Face Pulls</span><span class="ex-unit">cable · lbs</span></td>
-  <td class="r"><span class="days-ago">6 days ago</span><span class="days-date">Jun 20</span></td>
-  <td class="r"><span class="peak">30 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 15</span></td>
-  <td class="r"><span class="sixty-w">25 lbs × 12</span><span class="sixty-d">Apr 25</span></td>
-  <td class="r chg-up">↑ 40%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">6 / 9</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Tricep Pulldowns</span><span class="ex-unit">cable · lbs</span></td>
-  <td class="r"><span class="days-ago">54 days ago</span><span class="days-date">May 3</span></td>
-  <td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="sixty-w">30 lbs × 12</span><span class="sixty-d">Apr 25</span></td>
-  <td class="r chg-up">↑ 17%</td>
-  <td class="r"><span class="chip chip-dormant">Dormant</span></td>
-  <td class="r"><span class="freq">0 / 1</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Hammer Curls</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">3 days ago</span><span class="days-date">Jun 23</span></td>
-  <td class="r"><span class="peak">20 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">25 lbs</span><span class="peak-reps">× 8</span></td>
-  <td class="r"><span class="sixty-w">25 lbs × 8</span><span class="sixty-d">Apr 25</span></td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">3 / 5</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Lateral Raises</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">3 days ago</span><span class="days-date">Jun 23</span></td>
-  <td class="r"><span class="peak">20 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">22.5 lbs</span><span class="peak-reps">× 8</span></td>
-  <td class="r"><span class="sixty-w">20 lbs × 10</span><span class="sixty-d">Apr 27</span></td>
-  <td class="r chg-up">↑ 12%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">9 / 14</span><span class="freq-d">sessions</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="section-header">
-  <span class="section-title">Lower Body</span>
-  <span class="section-count count-lower">16 exercises</span>
-</div>
-<div class="tbl-wrap">
-<table>
-<thead><tr>
-  <th>Exercise</th><th class="r">Last Performed</th><th class="r">Recent Weight</th><th class="r">Peak Set</th><th class="r">~60 Days Ago</th><th class="r">Change</th><th class="r">Status</th><th class="r">Freq (30d/60d)</th>
-</tr></thead>
-<tbody>
-<tr>
-  <td><span class="ex-name">Lateral Leg Press</span><span class="ex-unit">machine · total lbs</span></td>
-  <td class="r"><span class="days-ago">5 days ago</span><span class="days-date">Jun 21</span></td>
-  <td class="r"><span class="peak">270 lbs</span><span class="peak-reps">× 5</span></td>
-  <td class="r"><span class="peak">270 lbs</span><span class="peak-reps">× 5</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">2 / 2</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Hip Thrust</span><span class="ex-unit">barbell · total lbs</span></td>
-  <td class="r"><span class="days-ago">5 days ago</span><span class="days-date">Jun 21</span></td>
-  <td class="r"><span class="peak">200 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">250 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">250 lbs × 10</span><span class="sixty-d">May 2</span></td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">4 / 5</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Hex Bar Deadlift</span><span class="ex-unit">hex bar · total lbs</span></td>
-  <td class="r"><span class="days-ago">5 days ago</span><span class="days-date">Jun 21</span></td>
-  <td class="r"><span class="peak">200 lbs</span><span class="peak-reps">× 6</span></td>
-  <td class="r"><span class="peak">245 lbs</span><span class="peak-reps">× 5</span></td>
-  <td class="r"><span class="sixty-w">245 lbs × 5</span><span class="sixty-d">May 2</span></td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">2 / 3</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Back Squat</span><span class="ex-unit">barbell · total lbs</span></td>
-  <td class="r"><span class="days-ago">5 days ago</span><span class="days-date">Jun 21</span></td>
-  <td class="r"><span class="peak">145 lbs</span><span class="peak-reps">× 8</span></td>
-  <td class="r"><span class="peak">240 lbs</span><span class="peak-reps">× 3</span></td>
-  <td class="r"><span class="sixty-w">235 lbs × 5</span><span class="sixty-d">May 2</span></td>
-  <td class="r chg-up">↑ 2%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">2 / 4</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Leg Press</span><span class="ex-unit">machine · total lbs</span></td>
-  <td class="r"><span class="days-ago">27 days ago</span><span class="days-date">May 30</span></td>
-  <td class="r"><span class="peak">215 lbs</span><span class="peak-reps">× 5</span></td>
-  <td class="r"><span class="peak">232 lbs</span><span class="peak-reps">× 5</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">1 / 1</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Leg Curl</span><span class="ex-unit">machine · lbs</span></td>
-  <td class="r"><span class="days-ago">5 days ago</span><span class="days-date">Jun 21</span></td>
-  <td class="r"><span class="peak">115 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">115 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">3 / 5</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Leg Extension</span><span class="ex-unit">machine · lbs</span></td>
-  <td class="r"><span class="days-ago">27 days ago</span><span class="days-date">May 30</span></td>
-  <td class="r"><span class="peak">85 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">115 lbs</span><span class="peak-reps">× 8</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">1 / 3</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Glute Bridges</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">1 day ago</span><span class="days-date">Jun 25</span></td>
-  <td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 15</span></td>
-  <td class="r"><span class="peak">70 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">5 / 5</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Bulgarian Split Squats</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">85 days ago</span><span class="days-date">Apr 2</span></td>
-  <td class="r"><span class="peak">30 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">70 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-dormant">Dormant</span></td>
-  <td class="r"><span class="freq">0 / 0</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB RDL</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">1 day ago</span><span class="days-date">Jun 25</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">60 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="sixty-w">50 lbs × 14</span><span class="sixty-d">Apr 15</span></td>
-  <td class="r chg-up">↑ 20%</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">5 / 5</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Suitcase Squats</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">17 days ago</span><span class="days-date">Jun 9</span></td>
-  <td class="r"><span class="peak">30 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">1 / 1</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">Goblet Squat</span><span class="ex-unit">dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">23 days ago</span><span class="days-date">Jun 3</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 15</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">2 / 3</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB Hip Thrust</span><span class="ex-unit">dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">32 days ago</span><span class="days-date">May 25</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 12</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-stalled">Stalled</span></td>
-  <td class="r"><span class="freq">0 / 1</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB Front Squats</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">1 day ago</span><span class="days-date">Jun 25</span></td>
-  <td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">2 / 2</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB Hinges</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">32 days ago</span><span class="days-date">May 25</span></td>
-  <td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 15</span></td>
-  <td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 15</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-stalled">Stalled</span></td>
-  <td class="r"><span class="freq">0 / 1</span><span class="freq-d">sessions</span></td>
-</tr>
-<tr>
-  <td><span class="ex-name">DB Step-Ups</span><span class="ex-unit">per dumbbell · lbs</span></td>
-  <td class="r"><span class="days-ago">27 days ago</span><span class="days-date">May 30</span></td>
-  <td class="r"><span class="peak">25 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="peak">25 lbs</span><span class="peak-reps">× 10</span></td>
-  <td class="r"><span class="sixty-w">—</span></td>
-  <td class="r chg-na">—</td>
-  <td class="r"><span class="chip chip-active">Active</span></td>
-  <td class="r"><span class="freq">1 / 2</span><span class="freq-d">sessions</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-
+<div class="section-header"><span class="section-title">Upper Body</span><span class="section-count count-upper">14 exercises</span></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Exercise</th><th class="r">Last Performed</th><th class="r">Recent Weight</th><th class="r">Peak Set</th><th class="r">~60 Days Ago</th><th class="r">Change</th><th class="r">Status</th><th class="r">Freq (30d / 60d)</th></tr></thead>
+<tbody><tr><td><span class="ex-name">Bench Press</span><span class="ex-unit">barbell · total lbs</span></td><td class="r"><span class="days-ago">2 days ago</span><span class="days-date">Jun 27</span></td><td class="r"><span class="peak">185 lbs</span><span class="peak-reps">× 5</span></td><td class="r"><span class="peak">185 lbs</span><span class="peak-reps">× 5</span></td><td class="r"><span class="sixty-w">170 lbs × 5</span><span class="sixty-d">May 3</span></td><td class="r chg-up">↑ 9%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">4 / 5</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Seated Cable Row</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">2 days ago</span><span class="days-date">Jun 27</span></td><td class="r"><span class="peak">160 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="peak">160 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="sixty-w">—</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">3 / 3</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Lat Pulldown</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">90 days ago</span><span class="days-date">Mar 31</span></td><td class="r"><span class="peak">115 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="peak">130 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="sixty-w">—</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-dormant">Dormant</span></td><td class="r"><span class="freq">0 / 0</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">EZ Bar Curls</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">2 days ago</span><span class="days-date">Jun 27</span></td><td class="r"><span class="peak">60 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="peak">60 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="sixty-w">—</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">6 / 6</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">DB Incline Press</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">9 days ago</span><span class="days-date">Jun 20</span></td><td class="r"><span class="peak">30 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="sixty-w">35 lbs × 12</span><span class="sixty-d">Apr 30</span></td><td class="r chg-up">↑ 43%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">3 / 4</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">DB Floor Press</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">6 days ago</span><span class="days-date">Jun 23</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 14</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 15</span></td><td class="r"><span class="sixty-w">50 lbs × 12</span><span class="sixty-d">May 3</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">3 / 5</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">DB Bench Press</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">19 days ago</span><span class="days-date">Jun 10</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 13</span></td><td class="r"><span class="sixty-w">—</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">2 / 2</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">DB Pullover</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">17 days ago</span><span class="days-date">Jun 12</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="sixty-w">50 lbs × 12</span><span class="sixty-d">Apr 30</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">1 / 4</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Single Arm Row</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">6 days ago</span><span class="days-date">Jun 23</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="sixty-w">45 lbs × 10</span><span class="sixty-d">May 3</span></td><td class="r chg-up">↑ 11%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">5 / 7</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">DB OH Press</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">98 days ago</span><span class="days-date">Mar 23</span></td><td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 8</span></td><td class="r"><span class="sixty-w">—</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-dormant">Dormant</span></td><td class="r"><span class="freq">0 / 0</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Face Pulls</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">2 days ago</span><span class="days-date">Jun 27</span></td><td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 15</span></td><td class="r"><span class="sixty-w">30 lbs × 12</span><span class="sixty-d">Apr 30</span></td><td class="r chg-up">↑ 17%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">6 / 10</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Tricep Pulldowns</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">57 days ago</span><span class="days-date">May 3</span></td><td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="sixty-w">—</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-stalled">Stalled</span></td><td class="r"><span class="freq">0 / 1</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Hammer Curls</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">6 days ago</span><span class="days-date">Jun 23</span></td><td class="r"><span class="peak">20 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">22 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="sixty-w">20 lbs × 12</span><span class="sixty-d">Apr 30</span></td><td class="r chg-up">↑ 12%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">3 / 7</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Lateral Raises</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">2 days ago</span><span class="days-date">Jun 27</span></td><td class="r"><span class="peak">20 lbs</span><span class="peak-reps">× 8</span></td><td class="r"><span class="peak">22 lbs</span><span class="peak-reps">× 8</span></td><td class="r"><span class="sixty-w">20 lbs × 10</span><span class="sixty-d">May 3</span></td><td class="r chg-up">↑ 12%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">9 / 11</span><span class="freq-d">sessions</span></td></tr></tbody></table></div>
+<div class="section-header"><span class="section-title">Lower Body</span><span class="section-count count-lower">12 exercises</span></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Exercise</th><th class="r">Last Performed</th><th class="r">Recent Weight</th><th class="r">Peak Set</th><th class="r">~60 Days Ago</th><th class="r">Change</th><th class="r">Status</th><th class="r">Freq (30d / 60d)</th></tr></thead>
+<tbody><tr><td><span class="ex-name">Lateral Leg Press</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">1 day ago</span><span class="days-date">Jun 28</span></td><td class="r"><span class="peak">270 lbs</span><span class="peak-reps">× 8</span></td><td class="r"><span class="peak">270 lbs</span><span class="peak-reps">× 8</span></td><td class="r"><span class="sixty-w">—</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">3 / 3</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Hip Thrust</span><span class="ex-unit">barbell · total lbs</span></td><td class="r"><span class="days-ago">1 day ago</span><span class="days-date">Jun 28</span></td><td class="r"><span class="peak">260 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="peak">260 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="sixty-w">250 lbs × 10</span><span class="sixty-d">May 2</span></td><td class="r chg-up">↑ 4%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">4 / 5</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Hex Bar Deadlift</span><span class="ex-unit">barbell · total lbs</span></td><td class="r"><span class="days-ago">1 day ago</span><span class="days-date">Jun 28</span></td><td class="r"><span class="peak">220 lbs</span><span class="peak-reps">× 8</span></td><td class="r"><span class="peak">245 lbs</span><span class="peak-reps">× 5</span></td><td class="r"><span class="sixty-w">245 lbs × 5</span><span class="sixty-d">May 2</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">3 / 4</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Back Squat</span><span class="ex-unit">barbell · total lbs</span></td><td class="r"><span class="days-ago">1 day ago</span><span class="days-date">Jun 28</span></td><td class="r"><span class="peak">155 lbs</span><span class="peak-reps">× 8</span></td><td class="r"><span class="peak">240 lbs</span><span class="peak-reps">× 3</span></td><td class="r"><span class="sixty-w">235 lbs × 5</span><span class="sixty-d">May 2</span></td><td class="r chg-up">↑ 2%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">3 / 5</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Leg Press</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">30 days ago</span><span class="days-date">May 30</span></td><td class="r"><span class="peak">215 lbs</span><span class="peak-reps">× 5</span></td><td class="r"><span class="peak">232 lbs</span><span class="peak-reps">× 5</span></td><td class="r"><span class="sixty-w">—</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">1 / 1</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Leg Curl</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">1 day ago</span><span class="days-date">Jun 28</span></td><td class="r"><span class="peak">120 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">120 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="sixty-w">75 lbs × 12</span><span class="sixty-d">May 18</span></td><td class="r chg-up">↑ 60%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">4 / 6</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Leg Extension</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">30 days ago</span><span class="days-date">May 30</span></td><td class="r"><span class="peak">85 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">115 lbs</span><span class="peak-reps">× 8</span></td><td class="r"><span class="sixty-w">75 lbs × 12</span><span class="sixty-d">May 18</span></td><td class="r chg-up">↑ 53%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">1 / 3</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Bulgarian Split Sq</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">68 days ago</span><span class="days-date">Apr 22</span></td><td class="r"><span class="peak">35 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="peak">70 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="sixty-w">35 lbs × 10</span><span class="sixty-d">Apr 22</span></td><td class="r chg-up">↑ 100%</td><td class="r"><span class="chip chip-dormant">Dormant</span></td><td class="r"><span class="freq">0 / 0</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Suitcase Squat</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">20 days ago</span><span class="days-date">Jun 9</span></td><td class="r"><span class="peak">30 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 13</span></td><td class="r"><span class="sixty-w">50 lbs × 12</span><span class="sixty-d">Apr 29</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">1 / 1</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">Goblet Squat</span><span class="ex-unit">lbs</span></td><td class="r"><span class="days-ago">26 days ago</span><span class="days-date">Jun 3</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 12</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 15</span></td><td class="r"><span class="sixty-w">40 lbs × 15</span><span class="sixty-d">May 22</span></td><td class="r chg-up">↑ 25%</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">2 / 4</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">DB RDL</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">4 days ago</span><span class="days-date">Jun 25</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="peak">50 lbs</span><span class="peak-reps">× 15</span></td><td class="r"><span class="sixty-w">50 lbs × 15</span><span class="sixty-d">Apr 29</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">5 / 6</span><span class="freq-d">sessions</span></td></tr>
+<tr><td><span class="ex-name">DB Front Squat</span><span class="ex-unit">per dumbbell · lbs</span></td><td class="r"><span class="days-ago">4 days ago</span><span class="days-date">Jun 25</span></td><td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="peak">40 lbs</span><span class="peak-reps">× 10</span></td><td class="r"><span class="sixty-w">—</span></td><td class="r chg-na">—</td><td class="r"><span class="chip chip-active">Active</span></td><td class="r"><span class="freq">2 / 2</span><span class="freq-d">sessions</span></td></tr></tbody></table></div>
 <div class="summary">
-  <div class="summary-title">Session Summary</div>
-  <div><div class="stat-val">26</div><div class="stat-lbl">Active exercises</div><div class="stat-sub">performed in last 30 days</div></div>
-  <div><div class="stat-val">2</div><div class="stat-lbl">Stalled exercises</div><div class="stat-sub">31–45 days since last session</div></div>
-  <div><div class="stat-val">6</div><div class="stat-lbl">Dormant exercises</div><div class="stat-sub">45+ days since last session</div></div>
-  <div><div class="stat-val">Press</div><div class="stat-lbl">Heaviest lift (peak)</div><div class="stat-sub">Lateral Leg Press · 270 lbs</div></div>
-  <div><div class="stat-val">40%</div><div class="stat-lbl">Biggest % gain (60d)</div><div class="stat-sub">Face Pulls</div></div>
-  <div><div class="stat-val">9x</div><div class="stat-lbl">Most frequent (30d)</div><div class="stat-sub">Lateral Raises</div></div>
+  <div class="summary-title">Summary</div>
+  <div><div class="stat-val">26</div><div class="stat-lbl">Exercises tracked</div><div class="stat-sub">14 upper · 12 lower</div></div>
+  <div><div class="stat-val" style="color:#166534">22</div><div class="stat-lbl">Active</div><div class="stat-sub">≤ 30 days ago</div></div>
+  <div><div class="stat-val" style="color:#854d0e">1</div><div class="stat-lbl">Stalled</div><div class="stat-sub">31–45 days ago</div></div>
+  <div><div class="stat-val" style="color:#991b1b">3</div><div class="stat-lbl">Dormant</div><div class="stat-sub">&gt; 45 days ago</div></div>
+  <div><div class="stat-val">270 lbs</div><div class="stat-lbl">Heaviest lift</div><div class="stat-sub">Lateral Leg Press</div></div>
+  <div><div class="stat-val">9</div><div class="stat-lbl">Sessions / 30d</div><div class="stat-sub">Lateral Raises</div></div>
+  <div style="grid-column:span 2"><div class="stat-lbl" style="margin-bottom:4px">Top % gains vs ~60d ago</div><div class="stat-sub">Bulgarian Split Sq +100% &nbsp;·&nbsp; Leg Curl +60% &nbsp;·&nbsp; Leg Extension +53%</div></div>
 </div>
-
 </main>
-<footer>The Daily Brief &middot; Training Dashboard</footer>
-<script>document.querySelectorAll('main a[href]').forEach(a=>{a.target='_blank';a.rel='noopener noreferrer';});</script>
+<footer>The Daily Brief · Training Dashboard</footer>
+<script>document.querySelectorAll('main a[href]').forEach(a=>{a.target='_blank';a.rel='noopener noreferrer'});</script>
 </body>
 </html>
