@@ -34,9 +34,29 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 8, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 9, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-09">
+<div class="ed-head">AI Developments &mdash; Thursday, July 9, 2026</div>
+
+<section>
+<span class="tool-chip">Claude Code</span>
+<h2>This Week in Claude Code</h2>
+<p>If you haven't met it yet, Claude Code is Anthropic's coding assistant that lives right in your terminal or editor, reading your files, writing code, and running commands like a very fast, very patient pair programmer. This week was less about flashy new powers and more about Anthropic quietly oiling the machine so it breaks less and tells you more about what it's doing.</p>
+<p>The biggest practical change is a new login-expiry warning: if you've got a long background session running and your login is about to time out, Claude Code now gives you a heads-up so you can re-authenticate before the session gets yanked out from under you. Alongside that, the footer now shows clearer status badges, including a little grey pause icon when you're in manual permission mode, so you always know whether the agent is waiting on you or working on its own. Anthropic also went after a pile of background-session bugs that had been annoying developers on macOS and Windows, things like sessions freezing when reopened, or going permanently unresponsive when the daemon's session token went stale. Those now recover automatically instead of forcing a restart. On top of that, streaming responses feel snappier, startup uses less memory, and there's a new setting for remote-controlling Claude Code from inside VS Code.</p>
+<p>The other notable move is availability: Claude Code and Claude Cowork are now in public beta for Claude for Government Desktop, meaning FedRAMP High authorized agencies can use these same tools with tighter admin controls, audit logs, and spending limits. Put together, this was a "make it sturdier" week rather than a "make it smarter" week, which matters if you're the kind of person who's been burned by a background session vanishing mid-task.</p>
+</section>
+
+<section>
+<span class="tool-chip">Xai Grok</span>
+<h2>This Week in Xai Grok</h2>
+<p>Grok is Elon Musk's AI model from xAI, built into X (formerly Twitter) and available as its own app, and it's had a genuinely stacked week. The headline: Grok 4.5 was announced Wednesday, built specifically to be sharper at coding, multi-step agentic tasks, and general knowledge work, and Musk says it starts rolling out to the public today. That's a meaningful upgrade if you use Grok for anything beyond chatting, since agentic tasks (think: "go do this multi-step thing for me") are exactly where models tend to stumble.</p>
+<p>Voice got a big glow-up too. xAI shipped 21 new multilingual voices for Grok Voice, on top of the original five, and made the existing ones sound more natural. You can now add speech tags like [pause] to control delivery, or clone your own voice from about a minute of audio. All of this is available immediately across the realtime Voice Agent API, the Text to Speech API, and a brand-new no-code Voice Agent Builder that lets anyone spin up a production-ready voice agent, complete with phone calling, knowledge lookup, and call review, in under two minutes without writing code. Layer on top of that a newly generally-available Speech to Text API covering 25 languages, and xAI is clearly making a serious push into voice as a whole category, not just a Grok feature.</p>
+<p>There was also a smaller but symbolic moment: Musk posted a cryptic two-word update suggesting Grok Imagine, the image and video generation tool, has reached a completion milestone, pushing Grok further into multimodal territory. Between a new flagship model, a voice platform launch, and multimodal progress, this was one of the busier weeks xAI has had in a while, and it signals the company is racing to compete on breadth as much as raw model quality.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-08">
 <div class="ed-head">AI Developments &mdash; Wednesday, July 8, 2026</div>
 
@@ -191,33 +211,6 @@
 <p>The biggest user-facing launch is Grok Imagine Video 1.5, a new image-to-video model now in wide release. The jump in quality is notable: 720p videos now render in about 25 seconds, roughly cutting the previous 40-plus second wait in half, and xAI says the realism and physics simulation are both meaningfully sharper. If you've ever wanted to turn a still image into a short video clip without a film degree or expensive software, this update makes that considerably less painful. Running alongside that, xAI officially opened up its Voice Agent Builder platform to all users on July 1, after a developer-focused beta period. At $0.05 per minute, it's a no-code way for businesses, podcasters, or curious tinkerers to build voice-powered AI agents without touching a single API. The whole thing runs on Grok Voice under the hood and collapses what used to be a three-API juggling act into a single visual interface.</p>
 <p>On the developer and enterprise side, Grok models are now natively available on Databricks — announced as part of the 2026 Data + AI Summit in partnership with what's being called SpaceXAI. That means data teams can run Grok alongside other frontier models in a single governed platform, which is a big deal for companies already living inside the Databricks ecosystem. xAI also made its Speech-to-Text and Text-to-Speech APIs generally available this week, supporting 25 languages with both batch and streaming modes. And Grok 4.1 rolled out to all users on grok.com, X, and the iOS and Android apps, though xAI has been quieter about exactly what changed under the hood versus the previous version.</p>
 <p>The pattern is clear: xAI is racing to turn Grok from a chatbot into a full platform — voice in, voice out, video generation, developer APIs, enterprise data partnerships. Whether it can keep pace with Claude and GPT on the underlying model quality remains the key question, but on feature velocity this week, they were very much in the game.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-01">
-<div class="ed-head">AI Developments &mdash; Wednesday, July 1, 2026</div>
-
-<section>
-<span class="tool-chip">Claude CoWork</span>
-<h2>This Week in Claude CoWork</h2>
-<p>Claude CoWork is Anthropic's desktop app that lets regular office workers hand off long, multi-step tasks to an AI — things like drafting reports, organizing files, or researching topics — without needing to know a single line of code. It runs on both Mac and Windows, and this week it's been unusually busy with news.</p>
-<p>The biggest thing to land is a temporary usage boost that Anthropic quietly rolled out at the start of June and that runs through July 5: they've doubled CoWork's five-hour session limits at no extra charge for Pro, Max, and Team plan subscribers. That means you get roughly twice the runway on long autonomous tasks before hitting a cap. It's framed as a promotional window, but it's also a pretty transparent nudge for people to actually try the heavier workflows CoWork was designed for. Alongside that, Anthropic has been on a connector roll — they just released a bundle of 20-plus legal MCP connectors and 12 practice-area plugins, which essentially turns CoWork into a reasonably capable research assistant for lawyers. Contracts, case law lookups, document drafting — the legal vertical is getting real attention.</p>
-<p>On the enterprise side, Anthropic launched a beta for centralized MCP connector access, starting with Okta integration. What that means in plain English: a company's IT admin can now set up a connector once, and every employee gets it automatically the first time they log in — no individual setup required. That's a meaningful quality-of-life improvement for large teams. There's also a mobile companion feature called Dispatch in beta, which lets Pro and Max users control long-running CoWork tasks from their phone. So if you've got CoWork grinding away on your laptop at home, you can check in and approve steps from wherever you are. Taken together, these updates suggest Anthropic is pushing CoWork hard into the enterprise mainstream.</p>
-</section>
-
-<section>
-<span class="tool-chip">ElevenLabs</span>
-<h2>This Week in ElevenLabs</h2>
-<p>ElevenLabs is the company behind some of the most eerily realistic AI-generated voices on the internet — it's the tool podcasters, game developers, and app builders reach for when they want audio that doesn't sound like a robot from 2003. This week brought a mix of exciting new features and some housekeeping that developers will want to pay attention to.</p>
-<p>The headline creative release is Music v2, now available through the ElevenLabs API. The original music generation was prompt-based — you'd describe what you wanted and hope for the best. Music v2 takes a more structured approach, letting you build a composition from chunks, mixing AI-generated sections with audio reference clips you supply yourself. Think of it like having a rough cut of a song and asking the AI to compose around the parts you already like. That kind of fine-grained control over arrangement and pacing is a big step up. Meanwhile, their transcription engine got smarter too: the Scribe realtime WebSocket now accepts a "keyterms" parameter that nudges the model toward domain-specific vocabulary — useful if you're transcribing medical conversations or legal depositions where jargon matters — and a no_verbatim mode that strips out filler words and false starts for cleaner output. Their conversational AI agents also gained first-class tagging for organizing conversation history, and the turn model can now be set to v2 or v3 depending on how much latency you're willing to trade for quality.</p>
-<p>The housekeeping: the older eleven_monolingual_v1, eleven_multilingual_v1, and scribe_v1 models are all being retired on July 9. If you're building anything that calls those endpoints, now is the time to migrate — you have about a week. On the business side, the government of Poland has taken a stake in ElevenLabs, which is an unusual move for a startup and signals just how seriously some governments are treating AI voice technology as strategic infrastructure.</p>
-</section>
-
-<section class="spotlight">
-<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
-<h2>GPT-5.6 (Sol, Terra &amp; Luna)</h2>
-<p>OpenAI kicked off July with something genuinely interesting: a limited preview of GPT-5.6, but instead of just calling it "GPT-5.6," they've given the three models in the family their own names — Sol, Terra, and Luna. Sol is the flagship, built for the hardest problems in reasoning, coding, and scientific domains. Terra is the middle child, designed for everyday professional work, and benchmarks as competitive with the previous GPT-5.5 while costing half as much to run. Luna is the fast and cheap option, meant for the kinds of high-volume applications where you need quick, decent answers at scale. The naming is a real departure from OpenAI's usual numbering scheme — it feels more like a product family than a version bump. For now, the preview is limited to select API partners and Codex users, but broad rollout to ChatGPT and the general API is coming soon. The Sol model also ships with a new "ultra mode" and what OpenAI describes as tougher safety protections. If Terra lives up to its price-performance promise, it could be the default workhorse for a lot of developers currently paying for GPT-5.5.</p>
-<p class="muted">Source: OpenAI Release Notes, July 2026</p>
 </section>
 
 </article>
