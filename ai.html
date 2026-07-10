@@ -34,9 +34,29 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 9, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 10, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-10">
+<div class="ed-head">AI Developments &mdash; Friday, July 10, 2026</div>
+
+<section>
+<span class="tool-chip">ChatGPT</span>
+<h2>This Week in ChatGPT</h2>
+<p>ChatGPT is the chatbot that basically kicked off this whole AI moment, and OpenAI just had one of its biggest weeks in a while. If you've mostly used it to answer questions or write essays, that's about to feel like the tip of the iceberg, because the company just pushed it hard toward actually doing things for you instead of just talking about them.</p>
+<p>The headline move is something called ChatGPT Work, which launched on July 9th. Instead of chatting back and forth until you've pieced together an answer yourself, you give it a goal, it makes a step-by-step plan you get to approve first, and then it goes off and builds the actual finished thing: a spreadsheet, a slide deck, a document, even a working web app. Think of it like handing a task to a capable intern who shows you their plan before starting, then comes back with the finished folder instead of a pile of notes. It runs on the new GPT-5.6 model family (three flavors this time, nicknamed Sol, Terra, and Luna, priced differently depending on how much power you need) and has OpenAI's coding tool Codex baked in. Right alongside that, ChatGPT's voice mode got a real upgrade called GPT-Live, which can listen and talk at the same time instead of waiting politely for its turn, so conversations feel less like a walkie-talkie and more like actually talking to someone. OpenAI also merged its separate Codex app into the main ChatGPT desktop app and started winding down its Atlas browser, tidying up what had become a slightly cluttered family of products.</p>
+<p>Put together, this week is OpenAI betting that people don't just want smarter answers, they want finished work. If that sticks, "asking ChatGPT for help" starts to mean less typing and more approving plans while it does the typing for you.</p>
+</section>
+
+<section>
+<span class="tool-chip">Mistral AI</span>
+<h2>This Week in Mistral AI</h2>
+<p>Mistral AI is the French challenger in the AI race, known for building strong, often open-source models while everyone else keeps their code locked up. This week showed off just how many directions the company is pulling in at once, from math-proving software to actual robots.</p>
+<p>The most eye-catching release was Leanstral 1.5, a model built specifically to write formal mathematical proofs, the kind of rigorous, no-room-for-error logic used in advanced math and safety-critical software. It solved 587 out of 672 problems from a notoriously hard math benchmark and is free to use, which is a big deal for researchers who'd otherwise pay serious money for that kind of specialized reasoning power. Mistral also shipped Robostral Navigate, a model that helps robots find their way around real-world spaces using nothing but a regular camera and plain-language instructions, no special sensors required, and it's designed to work on basically any robot. On the document side, a new version of Mistral's OCR tool (the software that turns scanned pages into usable text) got smarter about reading document structure, not just words. And behind the scenes, CEO Arthur Mensch confirmed a new open-weight model is coming this summer, described as "fat but sparse," meaning it's big in total size but efficient in how much of itself it actually uses per task, with early access opening this month.</p>
+<p>The throughline here is Mistral spreading its bets: not just chasing a bigger chatbot, but building specialized tools for math, robotics, and documents while it works on a bigger model in the background. It's a reminder that the AI race isn't just about who has the flashiest assistant, it's also about who quietly wins the boring-but-critical use cases.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-09">
 <div class="ed-head">AI Developments &mdash; Thursday, July 9, 2026</div>
 
@@ -189,28 +209,6 @@
 <p>Mistral AI is the Paris-based startup that has made a name for itself by building some of the most capable open-source AI models in the world — a genuine European counterweight to the American AI giants. This week, Mistral came out swinging with a packed agenda that touched document intelligence, enterprise infrastructure, and a bold glimpse at what's coming this summer.</p>
 <p>The biggest product news is the full rollout of Vibe, Mistral's unified AI agent. Le Chat — their consumer chatbot — has officially become Vibe, and it's no longer just a chat interface. Vibe is designed for long-running, multi-step work: it can catch up on your inbox and calendar, run deep research, draft documents, orchestrate recurring workflows, and take a coding task all the way from request to a merged GitHub pull request. It's a direct play in the same space as Anthropic's Claude and OpenAI's Operator, trying to be the one agent that handles your whole workday. Complementing the Vibe launch, Mistral also expanded its Connectors system with scoped API keys, multi-account support, and a new Connectors Debugger — essentially giving businesses a much cleaner way to plug Mistral into their own tools and data without security headaches. And OCR 4, released just before this week's cutoff on June 23, continues to generate buzz: it's a document-extraction model that covers 170 languages, runs entirely on your own infrastructure (important for regulated industries like banking or healthcare), and returns paragraph-level bounding boxes so you know exactly where on the page each piece of text came from.</p>
 <p>Looking ahead, Mistral teased a brand-new model family arriving this summer — described as "large yet sparse," which strongly suggests a mixture-of-experts architecture where only part of the model activates for any given task, making it faster and cheaper to run. It'll ship as open weights with early partner access in July. Mistral also opened a new 10 MW data center in Les Ulis, France, scheduled for Q3 2026, giving the company direct control over its own compute — a smart hedge against supply chain risks in a world where GPU access is still fiercely competitive.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-02">
-<div class="ed-head">AI Developments &mdash; Thursday, July 2, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude Code</span>
-<h2>This Week in Anthropic Claude Code</h2>
-<p>Claude Code is Anthropic's AI coding assistant that lives right in your terminal — you describe what you want to build or fix, and it writes and edits code on your behalf. It's become one of the most popular tools for developers who want a true coding partner rather than just an autocomplete. This week was a genuinely big one for the product, with a wave of improvements hitting across model quality, enterprise controls, and the way you share your work.</p>
-<p>The headline change is that Claude Sonnet 5 is now the default model powering Claude Code, bringing a native one-million-token context window — imagine being able to hand the entire codebase of a medium-sized company to the AI in a single conversation. Anthropic is sweetening the deal with promotional pricing of $2 per million input tokens and $10 per million output tokens through August 31, making this a good moment to experiment heavily before regular rates kick in. Meanwhile, a significant policy shift landed on July 1: the U.S. government lifted export controls on Claude Fable 5 and Mythos 5, the two most powerful Claude models, meaning developers and businesses outside the U.S. can now access them through Claude Code and the broader Claude platform. That restriction had only been in place since mid-June, so the reversal was fast.</p>
-<p>On the enterprise side, Anthropic rolled out a self-hosted Claude apps gateway for Amazon Bedrock and Google Cloud. Think of it like a front-door security desk for your company's Claude Code usage — corporate single sign-on, role-based access, per-user cost tracking, and spend caps all in one place. They also added Trusted Devices verification for Remote Control Admins on Team and Enterprise plans. And for the more individual developer, perhaps the most delightful update: Artifacts have come to Claude Code. You can now turn any work you do in a session — a PR walkthrough, an incident report, a checklist — into a live, shareable web page that updates in place. It's a bit like getting a personal mini-website out of every coding session. The /code-review workflow also got a 25% token efficiency boost, which means faster and cheaper code reviews for everyone.</p>
-<p>Taken together, this week's updates push Claude Code further in two directions at once: more powerful for solo developers who want bleeding-edge models and smarter workflows, and more manageable for large organizations that need audit trails and cost controls. That dual focus is becoming Anthropic's signature move.</p>
-</section>
-
-<section>
-<span class="tool-chip">xAI Grok</span>
-<h2>This Week in xAI Grok</h2>
-<p>Grok is xAI's AI assistant, built by Elon Musk's AI company and deeply integrated with X (formerly Twitter). It's known for real-time web access, a conversational personality, and increasingly, a growing suite of voice, image, and video tools. This week xAI kept that momentum going with a burst of releases spanning video generation, voice technology, and developer infrastructure.</p>
-<p>The biggest user-facing launch is Grok Imagine Video 1.5, a new image-to-video model now in wide release. The jump in quality is notable: 720p videos now render in about 25 seconds, roughly cutting the previous 40-plus second wait in half, and xAI says the realism and physics simulation are both meaningfully sharper. If you've ever wanted to turn a still image into a short video clip without a film degree or expensive software, this update makes that considerably less painful. Running alongside that, xAI officially opened up its Voice Agent Builder platform to all users on July 1, after a developer-focused beta period. At $0.05 per minute, it's a no-code way for businesses, podcasters, or curious tinkerers to build voice-powered AI agents without touching a single API. The whole thing runs on Grok Voice under the hood and collapses what used to be a three-API juggling act into a single visual interface.</p>
-<p>On the developer and enterprise side, Grok models are now natively available on Databricks — announced as part of the 2026 Data + AI Summit in partnership with what's being called SpaceXAI. That means data teams can run Grok alongside other frontier models in a single governed platform, which is a big deal for companies already living inside the Databricks ecosystem. xAI also made its Speech-to-Text and Text-to-Speech APIs generally available this week, supporting 25 languages with both batch and streaming modes. And Grok 4.1 rolled out to all users on grok.com, X, and the iOS and Android apps, though xAI has been quieter about exactly what changed under the hood versus the previous version.</p>
-<p>The pattern is clear: xAI is racing to turn Grok from a chatbot into a full platform — voice in, voice out, video generation, developer APIs, enterprise data partnerships. Whether it can keep pace with Claude and GPT on the underlying model quality remains the key question, but on feature velocity this week, they were very much in the game.</p>
 </section>
 
 </article>
