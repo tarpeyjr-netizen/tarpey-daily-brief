@@ -15,14 +15,19 @@
   header h1 { font-size:25px; font-weight:700; }
   header .sub { margin-top:6px; font-size:13.5px; color:#b9c6da; }
   main { padding:28px 24px 40px; }
-  .section-header { display:flex; align-items:center; gap:10px; margin:32px 0 14px; padding-bottom:10px; border-bottom:2px solid var(--navy); }
+  .section-header { display:flex; align-items:center; gap:10px; margin:36px 0 16px; padding-bottom:10px; border-bottom:2px solid var(--navy); }
   .section-header:first-of-type { margin-top:0; }
   .section-title { font-size:16px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:.05em; }
   .section-count { font-size:12px; font-weight:600; padding:2px 10px; border-radius:99px; }
+  .count-upper { background:#dbeafe; color:#1e40af; }
+  .count-lower { background:#dcfce7; color:#166534; }
+  .subsection-header { display:flex; align-items:center; gap:10px; margin:20px 0 10px; }
+  .subsection-title { font-size:12.5px; font-weight:700; color:var(--ink); text-transform:uppercase; letter-spacing:.04em; }
+  .subsection-count { font-size:11px; font-weight:600; padding:1px 9px; border-radius:99px; }
   .count-active { background:#dcfce7; color:#166534; }
   .count-stalled { background:#fef9c3; color:#854d0e; }
   .count-dormant { background:#fee2e2; color:#991b1b; }
-  .tbl-wrap { background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:8px; }
+  .tbl-wrap { background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:20px; }
   table { width:100%; border-collapse:collapse; font-size:13.5px; }
   thead tr { background:#f0f4f9; }
   thead th { padding:10px 13px; text-align:left; font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; white-space:nowrap; }
@@ -46,9 +51,6 @@
   .chg-na { color:#d1d5db; }
   .freq { font-variant-numeric:tabular-nums; }
   .freq-d { display:block; font-size:10px; color:var(--muted); margin-top:1px; }
-  .chip { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:99px; white-space:nowrap; }
-  .chip-upper { background:#dbeafe; color:#1e40af; }
-  .chip-lower { background:#dcfce7; color:#166534; }
   .summary { background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-top:32px; display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
   .summary-title { grid-column:1/-1; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-bottom:4px; padding-bottom:10px; border-bottom:1px solid var(--line); }
   .stat-val { font-size:22px; font-weight:800; color:var(--navy); line-height:1.1; }
@@ -67,15 +69,18 @@
 <main class="wrap">
 
 <div class="section-header">
-  <span class="section-title">Active</span>
-  <span class="section-count count-active">26 exercises</span>
+  <span class="section-title">Upper Body</span>
+  <span class="section-count count-upper">24 exercises</span>
+</div>
+<div class="subsection-header">
+  <span class="subsection-title">Active</span>
+  <span class="subsection-count count-active">16</span>
 </div>
 <div class="tbl-wrap">
 <table>
 <thead>
 <tr>
   <th>Exercise</th>
-  <th class="r">Body Part</th>
   <th class="r">Last Performed</th>
   <th class="r">Recent Weight</th>
   <th class="r">Peak Set</th>
@@ -87,89 +92,10 @@
 <tbody>
 <tr>
   <td>
-    <span class="ex-name">Lateral Leg Press</span>
-    <span class="ex-unit">machine · total lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">5 days ago</span>
-    <span class="days-date">Jul 5</span>
-  </td>
-  <td class="r">
-    <span class="peak">295 lbs</span><span class="peak-reps">× 8</span>
-  </td>
-  <td class="r">
-    <span class="peak">295 lbs</span><span class="peak-reps">× 8</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">—</span><span class="sixty-d">no data near 60d mark</span>
-  </td>
-  <td class="r chg-na">—</td>
-  <td class="r">
-    <span class="freq">4 / 4</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
-    <span class="ex-name">Hip Thrust</span>
-    <span class="ex-unit">barbell/DB · total lbs</span>
-    <span class="ex-note">ℹ️ Logged weight includes an acknowledged math error (target load ~220 lbs)</span>
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">5 days ago</span>
-    <span class="days-date">Jul 5</span>
-  </td>
-  <td class="r">
-    <span class="peak">240 lbs</span><span class="peak-reps">× 10</span>
-  </td>
-  <td class="r">
-    <span class="peak">260 lbs</span><span class="peak-reps">× 10</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">250 lbs × 10</span><span class="sixty-d">May 2</span>
-  </td>
-  <td class="r chg-up">↑ 4%</td>
-  <td class="r">
-    <span class="freq">4 / 7</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
-    <span class="ex-name">Hex Bar Deadlift</span>
-    <span class="ex-unit">hex bar · total lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">5 days ago</span>
-    <span class="days-date">Jul 5</span>
-  </td>
-  <td class="r">
-    <span class="peak">230 lbs</span><span class="peak-reps">× 8</span>
-  </td>
-  <td class="r">
-    <span class="peak">245 lbs</span><span class="peak-reps">× 5</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">245 lbs × 5</span><span class="sixty-d">May 2</span>
-  </td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r">
-    <span class="freq">4 / 4</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
     <span class="ex-name">Bench Press</span>
     <span class="ex-unit">barbell · total lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">6 days ago</span>
     <span class="days-date">Jul 4</span>
@@ -191,37 +117,10 @@
 </tr>
 <tr>
   <td>
-    <span class="ex-name">Back Squat</span>
-    <span class="ex-unit">barbell · total lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">5 days ago</span>
-    <span class="days-date">Jul 5</span>
-  </td>
-  <td class="r">
-    <span class="peak">165 lbs</span><span class="peak-reps">× 7</span>
-  </td>
-  <td class="r">
-    <span class="peak">240 lbs</span><span class="peak-reps">× 3</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">240 lbs × 3</span><span class="sixty-d">May 9</span>
-  </td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r">
-    <span class="freq">4 / 4</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
     <span class="ex-name">Seated Cable Rows</span>
     <span class="ex-unit">cable stack · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">6 days ago</span>
     <span class="days-date">Jul 4</span>
@@ -247,7 +146,6 @@
     <span class="ex-unit">barbell · total lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">10 days ago</span>
     <span class="days-date">Jun 30</span>
@@ -269,63 +167,10 @@
 </tr>
 <tr>
   <td>
-    <span class="ex-name">Leg Curl</span>
-    <span class="ex-unit">machine · total lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">5 days ago</span>
-    <span class="days-date">Jul 5</span>
-  </td>
-  <td class="r">
-    <span class="peak">125 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="peak">125 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">75 lbs × 12</span><span class="sixty-d">May 18</span>
-  </td>
-  <td class="r chg-up">↑ 67%</td>
-  <td class="r">
-    <span class="freq">4 / 7</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
-    <span class="ex-name">Glute Bridge</span>
-    <span class="ex-unit">barbell/DB · lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">8 days ago</span>
-    <span class="days-date">Jul 2</span>
-  </td>
-  <td class="r">
-    <span class="peak">110 lbs</span><span class="peak-reps">× 15</span>
-  </td>
-  <td class="r">
-    <span class="peak">110 lbs</span><span class="peak-reps">× 15</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">35 lbs × 12</span><span class="sixty-d">May 22</span>
-  </td>
-  <td class="r chg-up">↑ 214%</td>
-  <td class="r">
-    <span class="freq">3 / 7</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
     <span class="ex-name">Straight-Arm Pulldown</span>
     <span class="ex-unit">cable stack · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">3 days ago</span>
     <span class="days-date">Jul 7</span>
@@ -351,7 +196,6 @@
     <span class="ex-unit">barbell · total lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">6 days ago</span>
     <span class="days-date">Jul 4</span>
@@ -373,63 +217,10 @@
 </tr>
 <tr>
   <td>
-    <span class="ex-name">DB Front Squat</span>
-    <span class="ex-unit">per dumbbell · lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">1 day ago</span>
-    <span class="days-date">Jul 9</span>
-  </td>
-  <td class="r">
-    <span class="peak">50 lbs</span><span class="peak-reps">× 10</span>
-  </td>
-  <td class="r">
-    <span class="peak">50 lbs</span><span class="peak-reps">× 10</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">—</span><span class="sixty-d">no data near 60d mark</span>
-  </td>
-  <td class="r chg-na">—</td>
-  <td class="r">
-    <span class="freq">4 / 4</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
-    <span class="ex-name">DB Romanian Deadlift</span>
-    <span class="ex-unit">per dumbbell · lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">1 day ago</span>
-    <span class="days-date">Jul 9</span>
-  </td>
-  <td class="r">
-    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">50 lbs × 15</span><span class="sixty-d">Apr 29</span>
-  </td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r">
-    <span class="freq">4 / 7</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
     <span class="ex-name">Overhead Goblet Press</span>
     <span class="ex-unit">single DB · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">3 days ago</span>
     <span class="days-date">Jul 7</span>
@@ -451,37 +242,10 @@
 </tr>
 <tr>
   <td>
-    <span class="ex-name">Farmer's Carry</span>
-    <span class="ex-unit">per dumbbell · lbs, timed</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">5 days ago</span>
-    <span class="days-date">Jul 5</span>
-  </td>
-  <td class="r">
-    <span class="peak">50 lbs</span><span class="peak-reps">× :45</span>
-  </td>
-  <td class="r">
-    <span class="peak">50 lbs</span><span class="peak-reps">× :45</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">50 lbs × :40</span><span class="sixty-d">Apr 30</span>
-  </td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r">
-    <span class="freq">7 / 10</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
     <span class="ex-name">Single-Arm DB Row</span>
     <span class="ex-unit">per arm · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">10 days ago</span>
     <span class="days-date">Jun 30</span>
@@ -507,7 +271,6 @@
     <span class="ex-unit">per dumbbell · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">17 days ago</span>
     <span class="days-date">Jun 23</span>
@@ -533,7 +296,6 @@
     <span class="ex-unit">single DB · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">28 days ago</span>
     <span class="days-date">Jun 12</span>
@@ -559,7 +321,6 @@
     <span class="ex-unit">per dumbbell · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">30 days ago</span>
     <span class="days-date">Jun 10</span>
@@ -585,7 +346,6 @@
     <span class="ex-unit">cable stack · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">3 days ago</span>
     <span class="days-date">Jul 7</span>
@@ -611,7 +371,6 @@
     <span class="ex-unit">per dumbbell · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">20 days ago</span>
     <span class="days-date">Jun 20</span>
@@ -637,7 +396,6 @@
     <span class="ex-unit">per arm · lbs (DB/cable)</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">3 days ago</span>
     <span class="days-date">Jul 7</span>
@@ -663,7 +421,6 @@
     <span class="ex-unit">per dumbbell · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">17 days ago</span>
     <span class="days-date">Jun 23</span>
@@ -689,7 +446,6 @@
     <span class="ex-unit">per dumbbell, 1 arm at a time · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">17 days ago</span>
     <span class="days-date">Jun 23</span>
@@ -711,37 +467,10 @@
 </tr>
 <tr>
   <td>
-    <span class="ex-name">Bulgarian Split Squat</span>
-    <span class="ex-unit">KB/DB · lbs per leg</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">1 day ago</span>
-    <span class="days-date">Jul 9</span>
-  </td>
-  <td class="r">
-    <span class="peak">12 lbs</span><span class="peak-reps">× 10</span>
-  </td>
-  <td class="r">
-    <span class="peak">35 lbs</span><span class="peak-reps">× 10</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">35 lbs × 10</span><span class="sixty-d">Apr 22</span>
-  </td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r">
-    <span class="freq">2 / 2</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
     <span class="ex-name">Incline Y Raise</span>
     <span class="ex-unit">per dumbbell · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">6 days ago</span>
     <span class="days-date">Jul 4</span>
@@ -763,17 +492,15 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section-header">
-  <span class="section-title">Stalled</span>
-  <span class="section-count count-stalled">6 exercises</span>
+</div><div class="subsection-header">
+  <span class="subsection-title">Stalled</span>
+  <span class="subsection-count count-stalled">1</span>
 </div>
 <div class="tbl-wrap">
 <table>
 <thead>
 <tr>
   <th>Exercise</th>
-  <th class="r">Body Part</th>
   <th class="r">Last Performed</th>
   <th class="r">Recent Weight</th>
   <th class="r">Peak Set</th>
@@ -785,89 +512,10 @@
 <tbody>
 <tr>
   <td>
-    <span class="ex-name">Leg Press</span>
-    <span class="ex-unit">machine · total lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">41 days ago</span>
-    <span class="days-date">May 30</span>
-  </td>
-  <td class="r">
-    <span class="peak">215 lbs</span><span class="peak-reps">× 5</span>
-  </td>
-  <td class="r">
-    <span class="peak">215 lbs</span><span class="peak-reps">× 5</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">215 lbs × 5</span><span class="sixty-d">May 30</span>
-  </td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r">
-    <span class="freq">0 / 1</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
-    <span class="ex-name">Leg Extension</span>
-    <span class="ex-unit">machine · total lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">41 days ago</span>
-    <span class="days-date">May 30</span>
-  </td>
-  <td class="r">
-    <span class="peak">85 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="peak">85 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">75 lbs × 12</span><span class="sixty-d">May 18</span>
-  </td>
-  <td class="r chg-up">↑ 13%</td>
-  <td class="r">
-    <span class="freq">0 / 3</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
-    <span class="ex-name">Goblet Squat</span>
-    <span class="ex-unit">single DB · lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">37 days ago</span>
-    <span class="days-date">Jun 3</span>
-  </td>
-  <td class="r">
-    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">40 lbs × 15</span><span class="sixty-d">May 22</span>
-  </td>
-  <td class="r chg-up">↑ 25%</td>
-  <td class="r">
-    <span class="freq">0 / 4</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
     <span class="ex-name">Chest-Supported Rows</span>
     <span class="ex-unit">per dumbbell · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">38 days ago</span>
     <span class="days-date">Jun 2</span>
@@ -887,71 +535,17 @@
     <span class="freq-d">sessions</span>
   </td>
 </tr>
-<tr>
-  <td>
-    <span class="ex-name">DB Suitcase Squat</span>
-    <span class="ex-unit">per dumbbell · lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">31 days ago</span>
-    <span class="days-date">Jun 9</span>
-  </td>
-  <td class="r">
-    <span class="peak">30 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">50 lbs × 12</span><span class="sixty-d">Apr 29</span>
-  </td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r">
-    <span class="freq">0 / 1</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
-    <span class="ex-name">DB Step-Up</span>
-    <span class="ex-unit">per dumbbell · lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">41 days ago</span>
-    <span class="days-date">May 30</span>
-  </td>
-  <td class="r">
-    <span class="peak">25 lbs</span><span class="peak-reps">× 10</span>
-  </td>
-  <td class="r">
-    <span class="peak">40 lbs</span><span class="peak-reps">× 12</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">40 lbs × 12</span><span class="sixty-d">May 22</span>
-  </td>
-  <td class="r chg-same">→ 0%</td>
-  <td class="r">
-    <span class="freq">0 / 3</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
 </tbody>
 </table>
-</div>
-<div class="section-header">
-  <span class="section-title">Dormant</span>
-  <span class="section-count count-dormant">8 exercises</span>
+</div><div class="subsection-header">
+  <span class="subsection-title">Dormant</span>
+  <span class="subsection-count count-dormant">7</span>
 </div>
 <div class="tbl-wrap">
 <table>
 <thead>
 <tr>
   <th>Exercise</th>
-  <th class="r">Body Part</th>
   <th class="r">Last Performed</th>
   <th class="r">Recent Weight</th>
   <th class="r">Peak Set</th>
@@ -967,7 +561,6 @@
     <span class="ex-unit">cable stack · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">101 days ago</span>
     <span class="days-date">Mar 31</span>
@@ -993,7 +586,6 @@
     <span class="ex-unit">cable stack · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">101 days ago</span>
     <span class="days-date">Mar 31</span>
@@ -1015,37 +607,10 @@
 </tr>
 <tr>
   <td>
-    <span class="ex-name">DB Hinge</span>
-    <span class="ex-unit">per dumbbell · lbs</span>
-    
-  </td>
-  <td class="r"><span class="chip chip-lower">Lower</span></td>
-  <td class="r">
-    <span class="days-ago">46 days ago</span>
-    <span class="days-date">May 25</span>
-  </td>
-  <td class="r">
-    <span class="peak">40 lbs</span><span class="peak-reps">× 15</span>
-  </td>
-  <td class="r">
-    <span class="peak">40 lbs</span><span class="peak-reps">× 15</span>
-  </td>
-  <td class="r">
-    <span class="sixty-w">30 lbs × 12</span><span class="sixty-d">May 22</span>
-  </td>
-  <td class="r chg-up">↑ 33%</td>
-  <td class="r">
-    <span class="freq">0 / 2</span>
-    <span class="freq-d">sessions</span>
-  </td>
-</tr>
-<tr>
-  <td>
     <span class="ex-name">Tricep Rope Pulldown</span>
     <span class="ex-unit">cable stack · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">68 days ago</span>
     <span class="days-date">May 3</span>
@@ -1071,7 +636,6 @@
     <span class="ex-unit">per dumbbell · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">90 days ago</span>
     <span class="days-date">Apr 11</span>
@@ -1097,7 +661,6 @@
     <span class="ex-unit">per dumbbell · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">103 days ago</span>
     <span class="days-date">Mar 29</span>
@@ -1123,7 +686,6 @@
     <span class="ex-unit">per dumbbell · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">81 days ago</span>
     <span class="days-date">Apr 20</span>
@@ -1149,7 +711,6 @@
     <span class="ex-unit">per arm · lbs</span>
     
   </td>
-  <td class="r"><span class="chip chip-upper">Upper</span></td>
   <td class="r">
     <span class="days-ago">88 days ago</span>
     <span class="days-date">Apr 13</span>
@@ -1166,6 +727,471 @@
   <td class="r chg-up">↑ 20%</td>
   <td class="r">
     <span class="freq">0 / 0</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section-header">
+  <span class="section-title">Lower Body</span>
+  <span class="section-count count-lower">16 exercises</span>
+</div>
+<div class="subsection-header">
+  <span class="subsection-title">Active</span>
+  <span class="subsection-count count-active">10</span>
+</div>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+  <th>Exercise</th>
+  <th class="r">Last Performed</th>
+  <th class="r">Recent Weight</th>
+  <th class="r">Peak Set</th>
+  <th class="r">~60 Days Ago</th>
+  <th class="r">Change</th>
+  <th class="r">Freq (30d / 60d)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>
+    <span class="ex-name">Lateral Leg Press</span>
+    <span class="ex-unit">machine · total lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">5 days ago</span>
+    <span class="days-date">Jul 5</span>
+  </td>
+  <td class="r">
+    <span class="peak">295 lbs</span><span class="peak-reps">× 8</span>
+  </td>
+  <td class="r">
+    <span class="peak">295 lbs</span><span class="peak-reps">× 8</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">—</span><span class="sixty-d">no data near 60d mark</span>
+  </td>
+  <td class="r chg-na">—</td>
+  <td class="r">
+    <span class="freq">4 / 4</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">Hip Thrust</span>
+    <span class="ex-unit">barbell/DB · total lbs</span>
+    <span class="ex-note">ℹ️ Logged weight includes an acknowledged math error (target load ~220 lbs)</span>
+  </td>
+  <td class="r">
+    <span class="days-ago">5 days ago</span>
+    <span class="days-date">Jul 5</span>
+  </td>
+  <td class="r">
+    <span class="peak">240 lbs</span><span class="peak-reps">× 10</span>
+  </td>
+  <td class="r">
+    <span class="peak">260 lbs</span><span class="peak-reps">× 10</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">250 lbs × 10</span><span class="sixty-d">May 2</span>
+  </td>
+  <td class="r chg-up">↑ 4%</td>
+  <td class="r">
+    <span class="freq">4 / 7</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">Hex Bar Deadlift</span>
+    <span class="ex-unit">hex bar · total lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">5 days ago</span>
+    <span class="days-date">Jul 5</span>
+  </td>
+  <td class="r">
+    <span class="peak">230 lbs</span><span class="peak-reps">× 8</span>
+  </td>
+  <td class="r">
+    <span class="peak">245 lbs</span><span class="peak-reps">× 5</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">245 lbs × 5</span><span class="sixty-d">May 2</span>
+  </td>
+  <td class="r chg-same">→ 0%</td>
+  <td class="r">
+    <span class="freq">4 / 4</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">Back Squat</span>
+    <span class="ex-unit">barbell · total lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">5 days ago</span>
+    <span class="days-date">Jul 5</span>
+  </td>
+  <td class="r">
+    <span class="peak">165 lbs</span><span class="peak-reps">× 7</span>
+  </td>
+  <td class="r">
+    <span class="peak">240 lbs</span><span class="peak-reps">× 3</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">240 lbs × 3</span><span class="sixty-d">May 9</span>
+  </td>
+  <td class="r chg-same">→ 0%</td>
+  <td class="r">
+    <span class="freq">4 / 4</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">Leg Curl</span>
+    <span class="ex-unit">machine · total lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">5 days ago</span>
+    <span class="days-date">Jul 5</span>
+  </td>
+  <td class="r">
+    <span class="peak">125 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="peak">125 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">75 lbs × 12</span><span class="sixty-d">May 18</span>
+  </td>
+  <td class="r chg-up">↑ 67%</td>
+  <td class="r">
+    <span class="freq">4 / 7</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">Glute Bridge</span>
+    <span class="ex-unit">barbell/DB · lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">8 days ago</span>
+    <span class="days-date">Jul 2</span>
+  </td>
+  <td class="r">
+    <span class="peak">110 lbs</span><span class="peak-reps">× 15</span>
+  </td>
+  <td class="r">
+    <span class="peak">110 lbs</span><span class="peak-reps">× 15</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">35 lbs × 12</span><span class="sixty-d">May 22</span>
+  </td>
+  <td class="r chg-up">↑ 214%</td>
+  <td class="r">
+    <span class="freq">3 / 7</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">DB Front Squat</span>
+    <span class="ex-unit">per dumbbell · lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">1 day ago</span>
+    <span class="days-date">Jul 9</span>
+  </td>
+  <td class="r">
+    <span class="peak">50 lbs</span><span class="peak-reps">× 10</span>
+  </td>
+  <td class="r">
+    <span class="peak">50 lbs</span><span class="peak-reps">× 10</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">—</span><span class="sixty-d">no data near 60d mark</span>
+  </td>
+  <td class="r chg-na">—</td>
+  <td class="r">
+    <span class="freq">4 / 4</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">DB Romanian Deadlift</span>
+    <span class="ex-unit">per dumbbell · lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">1 day ago</span>
+    <span class="days-date">Jul 9</span>
+  </td>
+  <td class="r">
+    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">50 lbs × 15</span><span class="sixty-d">Apr 29</span>
+  </td>
+  <td class="r chg-same">→ 0%</td>
+  <td class="r">
+    <span class="freq">4 / 7</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">Farmer's Carry</span>
+    <span class="ex-unit">per dumbbell · lbs, timed</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">5 days ago</span>
+    <span class="days-date">Jul 5</span>
+  </td>
+  <td class="r">
+    <span class="peak">50 lbs</span><span class="peak-reps">× :45</span>
+  </td>
+  <td class="r">
+    <span class="peak">50 lbs</span><span class="peak-reps">× :45</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">50 lbs × :40</span><span class="sixty-d">Apr 30</span>
+  </td>
+  <td class="r chg-same">→ 0%</td>
+  <td class="r">
+    <span class="freq">7 / 10</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">Bulgarian Split Squat</span>
+    <span class="ex-unit">KB/DB · lbs per leg</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">1 day ago</span>
+    <span class="days-date">Jul 9</span>
+  </td>
+  <td class="r">
+    <span class="peak">12 lbs</span><span class="peak-reps">× 10</span>
+  </td>
+  <td class="r">
+    <span class="peak">35 lbs</span><span class="peak-reps">× 10</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">35 lbs × 10</span><span class="sixty-d">Apr 22</span>
+  </td>
+  <td class="r chg-same">→ 0%</td>
+  <td class="r">
+    <span class="freq">2 / 2</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+</tbody>
+</table>
+</div><div class="subsection-header">
+  <span class="subsection-title">Stalled</span>
+  <span class="subsection-count count-stalled">5</span>
+</div>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+  <th>Exercise</th>
+  <th class="r">Last Performed</th>
+  <th class="r">Recent Weight</th>
+  <th class="r">Peak Set</th>
+  <th class="r">~60 Days Ago</th>
+  <th class="r">Change</th>
+  <th class="r">Freq (30d / 60d)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>
+    <span class="ex-name">Leg Press</span>
+    <span class="ex-unit">machine · total lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">41 days ago</span>
+    <span class="days-date">May 30</span>
+  </td>
+  <td class="r">
+    <span class="peak">215 lbs</span><span class="peak-reps">× 5</span>
+  </td>
+  <td class="r">
+    <span class="peak">215 lbs</span><span class="peak-reps">× 5</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">215 lbs × 5</span><span class="sixty-d">May 30</span>
+  </td>
+  <td class="r chg-same">→ 0%</td>
+  <td class="r">
+    <span class="freq">0 / 1</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">Leg Extension</span>
+    <span class="ex-unit">machine · total lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">41 days ago</span>
+    <span class="days-date">May 30</span>
+  </td>
+  <td class="r">
+    <span class="peak">85 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="peak">85 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">75 lbs × 12</span><span class="sixty-d">May 18</span>
+  </td>
+  <td class="r chg-up">↑ 13%</td>
+  <td class="r">
+    <span class="freq">0 / 3</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">Goblet Squat</span>
+    <span class="ex-unit">single DB · lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">37 days ago</span>
+    <span class="days-date">Jun 3</span>
+  </td>
+  <td class="r">
+    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">40 lbs × 15</span><span class="sixty-d">May 22</span>
+  </td>
+  <td class="r chg-up">↑ 25%</td>
+  <td class="r">
+    <span class="freq">0 / 4</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">DB Suitcase Squat</span>
+    <span class="ex-unit">per dumbbell · lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">31 days ago</span>
+    <span class="days-date">Jun 9</span>
+  </td>
+  <td class="r">
+    <span class="peak">30 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="peak">50 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">50 lbs × 12</span><span class="sixty-d">Apr 29</span>
+  </td>
+  <td class="r chg-same">→ 0%</td>
+  <td class="r">
+    <span class="freq">0 / 1</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <span class="ex-name">DB Step-Up</span>
+    <span class="ex-unit">per dumbbell · lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">41 days ago</span>
+    <span class="days-date">May 30</span>
+  </td>
+  <td class="r">
+    <span class="peak">25 lbs</span><span class="peak-reps">× 10</span>
+  </td>
+  <td class="r">
+    <span class="peak">40 lbs</span><span class="peak-reps">× 12</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">40 lbs × 12</span><span class="sixty-d">May 22</span>
+  </td>
+  <td class="r chg-same">→ 0%</td>
+  <td class="r">
+    <span class="freq">0 / 3</span>
+    <span class="freq-d">sessions</span>
+  </td>
+</tr>
+</tbody>
+</table>
+</div><div class="subsection-header">
+  <span class="subsection-title">Dormant</span>
+  <span class="subsection-count count-dormant">1</span>
+</div>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+  <th>Exercise</th>
+  <th class="r">Last Performed</th>
+  <th class="r">Recent Weight</th>
+  <th class="r">Peak Set</th>
+  <th class="r">~60 Days Ago</th>
+  <th class="r">Change</th>
+  <th class="r">Freq (30d / 60d)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>
+    <span class="ex-name">DB Hinge</span>
+    <span class="ex-unit">per dumbbell · lbs</span>
+    
+  </td>
+  <td class="r">
+    <span class="days-ago">46 days ago</span>
+    <span class="days-date">May 25</span>
+  </td>
+  <td class="r">
+    <span class="peak">40 lbs</span><span class="peak-reps">× 15</span>
+  </td>
+  <td class="r">
+    <span class="peak">40 lbs</span><span class="peak-reps">× 15</span>
+  </td>
+  <td class="r">
+    <span class="sixty-w">30 lbs × 12</span><span class="sixty-d">May 22</span>
+  </td>
+  <td class="r chg-up">↑ 33%</td>
+  <td class="r">
+    <span class="freq">0 / 2</span>
     <span class="freq-d">sessions</span>
   </td>
 </tr>
