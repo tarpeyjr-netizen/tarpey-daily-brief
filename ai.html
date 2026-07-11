@@ -34,9 +34,40 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 10, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 11, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-11">
+<div class="ed-head">AI Developments &mdash; Saturday, July 11, 2026</div>
+
+<section>
+<span class="tool-chip">SAP Joule</span>
+<h2>This Week in SAP Joule</h2>
+<p>If you've never heard of SAP Joule, that's fine &mdash; you're not supposed to have. It's the AI assistant baked into SAP, the software giant that runs the back-office plumbing (expenses, HR, supply chains, finance) for a huge chunk of the world's biggest companies. Joule's whole job is to sit inside that unglamorous machinery and let people talk to it in plain English instead of clicking through twelve menus.</p>
+<p>This week Joule quietly took on a pile of very human chores. It can now handle business travel bookings inside Concur Travel, meaning someone can just type "book me a flight to Chicago Tuesday and a hotel near downtown" and Joule handles the search, comparison, and checkout. Right alongside that, it picked up full conversational control of expense reports too &mdash; creating, editing, submitting, and even fixing a receipt that doesn't match the amount on the card statement, which is the kind of fiddly task nobody enjoys. On the more technical side, developers got a version of Joule that lives inside SAP's Kyma cloud dashboard, able to pull pod logs, inspect clusters, and explain what's going wrong without someone digging through documentation. SAP also cleaned up the interface itself, tidying the response buttons and letting the "what's new" panel show a full history of updates instead of just the latest one, plus added access controls so companies can lock down exactly which documents Joule is allowed to read from.</p>
+<p>None of this is flashy, and that's sort of the point. Joule isn't trying to write poetry or generate images &mdash; it's trying to become the assistant that quietly does the paperwork nobody wants to do, at the exact companies where millions of office workers spend their day. That's a much bigger bet on how AI actually changes daily work than a flashy chatbot demo.</p>
+</section>
+
+<section>
+<span class="tool-chip">Einstein AI</span>
+<h2>This Week in Einstein AI (Salesforce)</h2>
+<p>Einstein is Salesforce's AI brain, built into the world's most widely used customer-relationship software. It started years ago as a feature that predicted things like which deals might close. Lately it's evolved into Agentforce, a set of AI agents that don't just predict or chat &mdash; they actually go do the work themselves inside a company's sales, service, and shopping systems.</p>
+<p>The big news this week is that Agentforce Commerce moved from "coming soon" to fully available, and it ships with three distinct agents: one that helps shoppers find and buy things, one that helps business buyers place orders, and one that helps merchants manage their store. What makes this a real step up rather than just another chatbot is that these agents can act, not just answer. A shopper agent can check whether an item is actually in stock, confirm it'll arrive before a shipping cutoff, and complete the purchase, all in one conversational flow, instead of just suggesting the shopper go look for themselves. Salesforce is also opening the door for these agents to show up natively inside ChatGPT and Google's Gemini apps, meaning the agent could eventually meet you where you already are instead of requiring you to visit a Salesforce-powered site. With over 12,000 customers already live on the platform, this isn't a pilot program anymore.
+
+</p>
+<p>The throughline for Einstein this year is the shift from "AI that tells you something" to "AI that finishes the task for you." For regular people, that increasingly means the retailer's chat window you're typing into might not just answer your question about a return policy &mdash; it might actually process the return while you're still typing.</p>
+</section>
+
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>Cursor</h2>
+<p>Cursor is a code editor built around AI, essentially a supercharged version of the familiar VS Code that programmers have used for years, except now you can describe what you want in plain English and an AI agent will actually write, edit, and run the code across your project's real files. It's become one of the most popular tools among professional developers precisely because it treats AI not as an autocomplete gimmick but as a coworker that can take on entire chunks of a task.</p>
+<p>This week's version, 3.11, released July 10, adds something called side chats: little parallel conversations you can spin off from your main AI session using a quick "/side" command, without derailing whatever the main agent is busy building. You might ask a side chat to research an alternative approach or sanity-check a decision, then pull that answer back into the main thread later, or just leave it running like a separate open tab. The update also makes it easier to search back through old agent conversations and simplifies picking which project or repository you're working in.</p>
+<p>What's genuinely interesting here is what it says about where AI coding tools are headed: instead of one AI doing one thing at a time, Cursor is now managing multiple simultaneous AI conversations the way a person juggles browser tabs. It's a small feature, but it hints at coding agents evolving from single-threaded assistants into something closer to a small team you're directing at once. Anyone who writes code for a living, from students to professional engineers, is a plausible user here.</p>
+<p class="muted">Source: Cursor changelog, July 2026</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-10">
 <div class="ed-head">AI Developments &mdash; Friday, July 10, 2026</div>
 
@@ -189,26 +220,6 @@
 <p>MolmoMotion is a new open-source AI model from the Allen Institute for AI (Ai2) and the University of Washington that does something wonderfully specific: you show it a few seconds of video plus a plain-English instruction, and it predicts exactly where objects will move next in 3D space. Think of it like a physics-savvy fortune teller for pixels — tell it "the cup will slide left" and it plots out the actual trajectory, point by point, in real-world coordinates. Built on Ai2's Molmo 2 vision-language model, it comes in two flavors: one that predicts motion step-by-step like writing out coordinates, and one that handles uncertainty better by blending possible futures together.</p>
 <p>Why it matters: this is exactly the kind of skill robots need to grab objects reliably, and it already boosted robot manipulation success rates by over 20 percentage points in testing, plus made AI-generated video look more physically believable. Researchers, robotics teams, and video-generation startups are the obvious audience, but the surprising part is that Ai2 released the whole thing openly — model weights, training code, and training data — at a time when most labs keep their best tricks locked up.</p>
 <p class="muted">Source: Ai2 Blog, July 2026</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-03">
-<div class="ed-head">AI Developments &mdash; Friday, July 3, 2026</div>
-
-<section>
-<span class="tool-chip">ChatGPT</span>
-<h2>This Week in ChatGPT</h2>
-<p>ChatGPT is OpenAI's flagship AI assistant — the one that kicked off the modern AI boom back in late 2022 and now has hundreds of millions of users worldwide. This week was a big one, with a new model dropping, memory getting smarter, and a long-awaited coding tool landing for everyone.</p>
-<p>The headline story is GPT-5.6, which OpenAI quietly launched on June 26 in a restricted preview. Here's the twist: access was initially limited to a group vetted and approved by the Trump administration, which raised plenty of eyebrows across the tech world. It's an unusual arrangement — typically OpenAI rolls out new models to paying subscribers first — but the company says broader availability across ChatGPT, the API, and Codex is coming soon. On the memory front, OpenAI rebuilt the whole system from scratch. The old approach basically hoarded every note about you indefinitely; the new one periodically re-synthesizes what it knows, so outdated information doesn't linger forever. Think of it like a friend who actually updates their mental notes about you rather than remembering forever that you "love sushi" from a conversation three years ago. Plus and Pro users also get double the memory capacity, and — for the first time — the full memory system is coming to free users too, made possible by a roughly 5x cut in compute costs. Meanwhile, Codex Remote went generally available on all plans, meaning you can now kick off coding tasks from your phone and have ChatGPT work on your actual Mac or Windows machine in the background, checking in with you when it needs approval.</p>
-<p>Rounding things out, OpenAI rolled out a much-improved dictation model with better accuracy across languages and accents — particularly strong gains for Japanese, Korean, Vietnamese, and multilingual speakers who mix languages mid-sentence. And GPT-4.5 officially retired this week, with conversations seamlessly continuing on GPT-5.5. With GPT-5.6 on the horizon and free users finally getting memory, the platform is pushing hard to make the free tier feel genuinely powerful, not just a teaser for paid plans.</p>
-</section>
-
-<section>
-<span class="tool-chip">Mistral AI</span>
-<h2>This Week in Mistral AI</h2>
-<p>Mistral AI is the Paris-based startup that has made a name for itself by building some of the most capable open-source AI models in the world — a genuine European counterweight to the American AI giants. This week, Mistral came out swinging with a packed agenda that touched document intelligence, enterprise infrastructure, and a bold glimpse at what's coming this summer.</p>
-<p>The biggest product news is the full rollout of Vibe, Mistral's unified AI agent. Le Chat — their consumer chatbot — has officially become Vibe, and it's no longer just a chat interface. Vibe is designed for long-running, multi-step work: it can catch up on your inbox and calendar, run deep research, draft documents, orchestrate recurring workflows, and take a coding task all the way from request to a merged GitHub pull request. It's a direct play in the same space as Anthropic's Claude and OpenAI's Operator, trying to be the one agent that handles your whole workday. Complementing the Vibe launch, Mistral also expanded its Connectors system with scoped API keys, multi-account support, and a new Connectors Debugger — essentially giving businesses a much cleaner way to plug Mistral into their own tools and data without security headaches. And OCR 4, released just before this week's cutoff on June 23, continues to generate buzz: it's a document-extraction model that covers 170 languages, runs entirely on your own infrastructure (important for regulated industries like banking or healthcare), and returns paragraph-level bounding boxes so you know exactly where on the page each piece of text came from.</p>
-<p>Looking ahead, Mistral teased a brand-new model family arriving this summer — described as "large yet sparse," which strongly suggests a mixture-of-experts architecture where only part of the model activates for any given task, making it faster and cheaper to run. It'll ship as open weights with early partner access in July. Mistral also opened a new 10 MW data center in Les Ulis, France, scheduled for Q3 2026, giving the company direct control over its own compute — a smart hedge against supply chain risks in a world where GPU access is still fiercely competitive.</p>
 </section>
 
 </article>
