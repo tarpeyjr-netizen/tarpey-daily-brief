@@ -34,9 +34,29 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 13, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 14, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-14">
+<div class="ed-head">AI Developments &mdash; Tuesday, July 14, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude</span>
+<h2>This Week in Claude</h2>
+<p>Claude is Anthropic's AI assistant, the one built with a heavy emphasis on being careful and genuinely useful rather than flashy. This week it got a lot more capable, and a lot more woven into how people actually get things done.</p>
+<p>The headline is Claude Sonnet 5, which just became the default model across Claude Code, the Claude Platform, and Free and Pro plans, replacing Sonnet 4.6. Think of it like a phone getting a new processor: same shape, noticeably snappier at everything, especially multi-step reasoning, coding, and tool use. It also ships with a native 1-million-token context window, meaning it can hold an entire codebase or a stack of documents in its head at once, and Anthropic is offering it at promotional pricing through the end of August to get developers to try it. Right alongside that, Cowork mode is expanding beyond desktop to web and mobile, so a task you start on your laptop can follow you to your phone with the same files and history intact. And background coding agents got a quiet but meaningful upgrade: when Claude finishes a coding task in the background now, it commits the work, pushes it, and opens a draft pull request automatically instead of just stopping and waiting for you to ask.</p>
+<p>On the "understanding yourself" side, Anthropic rolled out a beta Reflection dashboard that gives Free, Pro, and Max users a monthly recap of how they actually use Claude: busiest days, peak hours, and even a way to set quiet hours. Pair that with new admin analytics for Enterprise customers that break down cost and usage by team and by person, and the picture is clear: Anthropic isn't just making Claude smarter, it's making it easier to see how you're actually using it. For everyday users, this is a good week to know that whatever plan you're on, you're now running on faster, more context-aware tech than you were seven days ago.</p>
+</section>
+
+<section>
+<span class="tool-chip">Perplexity AI</span>
+<h2>This Week in Perplexity</h2>
+<p>Perplexity built its name as the "AI search engine that actually cites its sources," and lately its agentic browser-assistant, Comet/Computer, has been where all the action is. This week that trend kept rolling, with Perplexity pushing Computer to do more on its own and quietly picking a new hardware partner to power it.</p>
+<p>The biggest news dropped just yesterday: Computer now remembers past work across sessions, responds noticeably faster, can switch AI models mid-task without you starting over, can publish entire websites, and can dig up research on private companies that don't have public filings to pull from. That last one is a genuinely useful trick for anyone doing competitive research or due diligence on a startup, since most tools choke when there's no public data to scrape. Just before that, Perplexity confirmed it's adopting Nvidia's new CPU line for its infrastructure, with an internal VP saying the chips run AI coding agents about 1.5 times faster than traditional processors, a behind-the-scenes bet that should make Computer feel snappier without users ever knowing why. That builds on Deep Research already having landed in Computer a few weeks back, bringing faster commands, the ability to fork a research thread, and custom credit limits for teams.</p>
+<p>Put together, Perplexity is racing to turn Computer from a smart search bar into something closer to a persistent digital coworker, one that remembers context, works across apps like Word and Excel, and now even researches companies most tools can't touch. If you've tried Perplexity before and bounced off it, this is the version worth a second look.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-13">
 <div class="ed-head">AI Developments &mdash; Monday, July 13, 2026</div>
 
@@ -195,25 +215,6 @@
 <p>Perplexity started out as a search engine that answers your questions in plain sentences instead of just handing you ten blue links, but lately it's been turning into something closer to a full-blown digital assistant. This week's news makes that shift even clearer, with several updates aimed at making Perplexity work for you even when you're not actively typing into it.</p>
 <p>The biggest idea is something called Personal Computer, an always-on AI that lives on a dedicated Mac mini and blends your local files and apps with Perplexity's cloud brain, acting almost like a digital assistant that never clocks out. It watches for triggers and quietly carries tasks forward around the clock, which is a pretty different pitch than "ask a question, get an answer." That fits with Perplexity's push to make Comet, its AI-powered web browser, available to entire companies now, complete with an assistant that can summarize pages, do research inline, and handle multi-step chores like booking flights or managing email on its own. Meanwhile, Perplexity's Deep Research feature, the mode built for digging deep into a topic and producing a thorough writeup, now runs on the more powerful Opus 4.6 model, which Anthropic makes, and that upgrade is rolling out from Max subscribers down to Pro users. Perplexity also announced a clever trick for its Personal Computer hardware: a system that automatically decides whether to run a task on your own device or send it to the cloud, keeping sensitive stuff like financial or health data local while shipping heavier computing jobs out to more powerful servers.</p>
 <p>Zoom out and the pattern is clear: Perplexity wants to stop being just a smarter search bar and become the thing quietly working in the background of your digital life. Whether that lands well with users will depend on how comfortable people get with an AI that's always half-listening and acting on its own, but it's a notable bet on where assistants are headed next.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-06">
-<div class="ed-head">AI Developments &mdash; Monday, July 6, 2026</div>
-
-<section>
-<span class="tool-chip">Google Gemini</span>
-<h2>This Week in Google Gemini</h2>
-<p>Gemini is Google's flagship AI assistant, the thing that lives inside your Google apps and can chat, write, research, and now increasingly just do stuff for you. This week it felt less like an update and more like Google clearing house for a bunch of long-teased upgrades all at once.</p>
-<p>The headline is that Gemini 3 Pro is now rolling out to everyone in the Gemini app, not just testers, and it's noticeably better at chewing through messy, multi-step problems that mix text, images, audio, and video together. Think of it like the difference between a student who can answer one question at a time versus one who can juggle a whole project with moving parts. For anyone paying for the top-tier plan, there's also Gemini 3 Deep Think, a mode that basically lets the model take multiple passes at a hard problem before answering, which matters most for gnarly math, science, or logic puzzles where a first guess often isn't the right one. On the developer side, Gemini 3.5 Flash graduated from preview to fully available and is now the default "fast" model, while a new Managed Agents feature lets developers spin up AI agents that run inside their own secure, sandboxed mini-computer in the cloud rather than just answering questions in a chat window. Deep Research also got a nice practical upgrade: you can now feed it your own files and photos as source material, and it'll turn its findings into interactive visuals or quizzes instead of just a wall of text, and that feature dropped down to the free Gemini 2.5 Flash tier too.</p>
-<p>There's a quieter but telling change buried in Settings: Gemini now lets you import your chat history and preferences straight from other AI apps, and "past chats" is being renamed to "memories." That's Google signaling it wants Gemini to feel less like a search box and more like an assistant that actually remembers who you are. Combined with the broader Gemini 3 rollout, it's a good week to notice that these tools are quietly shifting from "answer my question" to "know my context and act on it."</p>
-</section>
-
-<section>
-<span class="tool-chip">Meta Llama</span>
-<h2>This Week in Meta Llama</h2>
-<p>Llama is Meta's family of open-weight AI models, the ones anyone can download and run on their own hardware instead of only through a paid API. It's been Meta's calling card in the AI world for a couple of years now: build powerful models and just give them away.</p>
-<p class="quiet">Quiet week for Llama — no major announcements in the past seven days. The last notable move was Meta's reported strategic pivot earlier this year toward Muse Spark, a new closed-source model line developed under its Meta Superintelligence Labs division, alongside earlier LlamaCon news about a limited-preview Llama API, new safety tooling through the Llama Defenders Program, and roughly $1.5 million in Llama Impact Grants for developers building on the open models.</p>
 </section>
 
 </article>
