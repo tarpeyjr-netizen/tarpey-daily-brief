@@ -34,9 +34,37 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 14, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 15, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-15">
+<div class="ed-head">AI Developments &mdash; Wednesday, July 15, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Cowork</span>
+<h2>This Week in Claude Cowork</h2>
+<p>Cowork is Anthropic's mode for Claude that goes beyond chatting and actually does file and task work for you &mdash; think of it less like texting a smart friend and more like handing a capable assistant the keys to your desktop. This week Cowork officially broke out of its cage. It started life as a desktop-only feature, but Anthropic just announced it's spreading to the web and to phones, with the rollout beginning July 7 for Claude Max subscribers before it trickles down to other plans.</p>
+<p>The headline change is that Cowork tasks no longer need your laptop to stay open and awake. You can kick off a task on your desktop, close the lid, and Claude keeps working in the background &mdash; even scheduled tasks can run with zero personal devices online. Then you can check progress or redirect the work from your phone later, like leaving a contractor working on your house and just checking in through a doorbell camera instead of standing over their shoulder all day. Anthropic also merged Chat and Cowork into a single home tab, so there's now one sidebar, one search bar, and one shared home for Projects and Artifacts instead of two separate worlds. On top of that, Claude picked up write access to Microsoft 365 tools, meaning it can now draft and send emails, manage calendar events, and create or update OneDrive and SharePoint files directly.</p>
+<p>To celebrate the expansion, Anthropic is keeping its doubled Cowork usage limits in place through August 5. The bigger picture here is that Anthropic is betting Cowork becomes less like a chat window and more like an always-on coworker who never needs you to babysit it &mdash; a meaningful shift for anyone using Claude to manage real work instead of just answering questions.</p>
+</section>
+
+<section>
+<span class="tool-chip">Eleven Labs</span>
+<h2>This Week in Eleven Labs</h2>
+<p>Eleven Labs is the company famous for making AI voices that sound eerily human &mdash; the tech behind a lot of the audiobooks, dubbed videos, and voice assistants you've probably heard without realizing it was AI. Under the hood, the company now splits itself into three lanes: ElevenAgents for business voice and chat bots, ElevenCreative for speech, music, image, and video generation, and ElevenAPI for developers building on top of it all, and this week's news touched all three.</p>
+<p>On the product side, Eleven Labs rolled out detailed music-streaming support, new scoring and reasoning fields so developers can see why a conversation went the way it did, richer billing details, and unredacted webhook events so nothing gets hidden from the apps plugged into it. Conversation tags also became a first-class feature, letting builders label, filter, and organize conversations the way you'd tag emails instead of scrolling through an endless list. On the brains side of things, Eleven Labs added support for newer language models &mdash; including Claude Opus 4.7 and the newest GPT-5 variants &mdash; so its voice agents can plug into smarter reasoning engines under the hood, alongside an updated turn-detection model that helps its voice agents figure out when a person has actually finished talking.</p>
+<p>The bigger story swirling around the company is financial: ElevenLabs has been in early talks with investors about a tender offer that would value the company at roughly $22 billion, basically doubling its valuation since February. That kind of number is a strong signal that AI voice and audio tools are being treated as serious infrastructure now, not a novelty &mdash; good news if you're building on the platform, since it suggests the company isn't going anywhere.</p>
+</section>
+
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>ZML / LLMD</h2>
+<p>ZML is a Paris-based AI infrastructure startup, and this week it launched LLMD, a free server that lets AI models run efficiently across almost any chip &mdash; Nvidia, AMD, Google's TPUs, Apple's Metal chips, and Intel Arc included. Normally, getting an AI model to run fast means being locked into whichever chip it was built for, kind of like a video game that only works on one console. LLMD acts as a universal adapter, letting popular open-source models like Llama, Mistral, Gemma, and Qwen run at full speed no matter what hardware is underneath, with an interface that's compatible with the same API standard OpenAI uses.</p>
+<p>Why it matters: AI companies are currently fighting over scarce, expensive GPU capacity, and LLMD gives developers more freedom to shop around for cheaper or more available chips instead of being stuck. It's aimed at developers and companies running their own AI models rather than everyday users, but its ripple effects &mdash; cheaper, faster AI services &mdash; could reach everyone. What's surprising is the backing: ZML counts Turing Award winner Yann LeCun, and the founders of Hugging Face and Docker among its investors, a serious vote of confidence for a 20-person startup barely a year old.</p>
+<p class="muted">Source: TechCrunch, July 2026</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-14">
 <div class="ed-head">AI Developments &mdash; Tuesday, July 14, 2026</div>
 
@@ -195,26 +223,6 @@
 <p>Muse Image is Meta's brand-new AI image generator, launched July 7 as the first visual model out of its Superintelligence Labs team. You can find it inside the Meta AI app, on meta.ai, in Instagram Stories, and soon on Facebook and WhatsApp. What makes it different from typical "type a prompt, get a picture" tools is that it acts more like a little research assistant: instead of guessing at what you want in one shot, it can search the web for reference images and even write and run code to get details right, like making a chart's numbers actually accurate or a QR code that actually scans. It's especially built for editing your own photos &mdash; restoring an old family picture, turning a selfie into a Renaissance painting, or combining a few images into one &mdash; using plain language, sketches, or handwritten notes instead of fiddly editing tools.</p>
 <p>It matters because Meta is now a real third contender in AI image generation alongside OpenAI and Google, and it's aiming Muse squarely at casual, everyday users on apps people already have open, not just professional designers. Early internal tests show it beating Google's newest image model on multi-image editing, though it still trails OpenAI's top model overall. Anyone who wants to fix up old photos or make quick edits without learning Photoshop is the obvious audience.</p>
 <p class="muted">Source: Meta AI Blog / CNBC, July 2026</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-07">
-<div class="ed-head">AI Developments &mdash; Tuesday, July 7, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude</span>
-<h2>This Week in Anthropic Claude</h2>
-<p>Claude is the AI chatbot and coding assistant made by Anthropic, and it just had one of its biggest weeks in a while. If you've used Claude for anything from homework help to writing code, the version running under the hood changed this week, and a couple of restrictions that had been in place got lifted too.</p>
-<p>The headline news is Claude Sonnet 5, which is now the default model for anyone on Claude's free and paid plans. Think of Sonnet as the "everyday driver" model, the one most people actually talk to, and this new version is built to be far more independent. Anthropic says it can plan out multi-step tasks, use tools like a web browser or a computer terminal on its own, and even double-check its own work without being told to. That's a big deal because it means Claude can now handle longer, messier jobs, like researching a topic and building something with the results, in one continuous stretch instead of needing constant hand-holding. Right alongside that, Anthropic restored two other models, Claude Fable 5 and Mythos 5, after the U.S. government lifted export restrictions that had paused them a few weeks earlier; Anthropic also said it built a new safety filter that catches the exact issue that triggered the pause over 99% of the time now. And in a move that shows Claude isn't just for writing emails and code, Anthropic launched Claude Science, a version aimed at biology and chemistry research that can do things like predict protein structures and taps into more than 60 scientific databases.</p>
-<p>On top of all that, Anthropic rolled out beefed-up admin tools for business customers, giving IT teams better visibility into who's using Claude, how much it costs, and tighter controls to avoid surprise bills. Put together, this week was Anthropic saying "Claude can do more, for more people, in more fields," from a smarter everyday assistant to a lab research partner. For regular users, the practical upshot is that the assistant you talk to every day just got noticeably more capable of running with a task and finishing it.</p>
-</section>
-
-<section>
-<span class="tool-chip">Perplexity AI</span>
-<h2>This Week in Perplexity AI</h2>
-<p>Perplexity started out as a search engine that answers your questions in plain sentences instead of just handing you ten blue links, but lately it's been turning into something closer to a full-blown digital assistant. This week's news makes that shift even clearer, with several updates aimed at making Perplexity work for you even when you're not actively typing into it.</p>
-<p>The biggest idea is something called Personal Computer, an always-on AI that lives on a dedicated Mac mini and blends your local files and apps with Perplexity's cloud brain, acting almost like a digital assistant that never clocks out. It watches for triggers and quietly carries tasks forward around the clock, which is a pretty different pitch than "ask a question, get an answer." That fits with Perplexity's push to make Comet, its AI-powered web browser, available to entire companies now, complete with an assistant that can summarize pages, do research inline, and handle multi-step chores like booking flights or managing email on its own. Meanwhile, Perplexity's Deep Research feature, the mode built for digging deep into a topic and producing a thorough writeup, now runs on the more powerful Opus 4.6 model, which Anthropic makes, and that upgrade is rolling out from Max subscribers down to Pro users. Perplexity also announced a clever trick for its Personal Computer hardware: a system that automatically decides whether to run a task on your own device or send it to the cloud, keeping sensitive stuff like financial or health data local while shipping heavier computing jobs out to more powerful servers.</p>
-<p>Zoom out and the pattern is clear: Perplexity wants to stop being just a smarter search bar and become the thing quietly working in the background of your digital life. Whether that lands well with users will depend on how comfortable people get with an AI that's always half-listening and acting on its own, but it's a notable bet on where assistants are headed next.</p>
 </section>
 
 </article>
