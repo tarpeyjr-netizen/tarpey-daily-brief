@@ -34,9 +34,29 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 15, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 16, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-16">
+<div class="ed-head">AI Developments &mdash; Thursday, July 16, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Code</span>
+<h2>This Week in Claude Code</h2>
+<p>Claude Code is Anthropic's command-line coding assistant &mdash; it lives right in a developer's terminal instead of a separate app, so you can hand off programming tasks without ever switching windows. This week's updates made it feel less like an experimental beta and more like a tool teams can lean on every single day.</p>
+<p>The most useful news for anyone actually using it: Anthropic extended a promotion giving Pro, Max, Team, and eligible Enterprise users 50% higher weekly usage limits, and that bonus now runs through July 19, so heavy users get extra breathing room before hitting a cap. Under the hood, the update leaned hard into trust and safety &mdash; a new auto mode rule now blocks any attempt to tamper with session transcript files, which matters once you're letting an AI agent work somewhat independently in the background. Auto mode itself also got easier to turn on, since Bedrock, Vertex AI, and Foundry users no longer need a special opt-in flag to use it. On top of that, Claude Code picked up a real screen reader mode for plain-text rendering, small vim shortcuts like mapping "jj" to Escape, and mouse clicks that finally work inside fullscreen menus.</p>
+<p>None of this is flashy by itself, but stacked together it shows a tool maturing past the "cool demo" phase into something built for people who need it to just work, without surprises, day after day.</p>
+</section>
+
+<section>
+<span class="tool-chip">Xai Grok</span>
+<h2>This Week in Grok</h2>
+<p>Grok is xAI's chatbot and model family &mdash; Elon Musk's answer to Claude and ChatGPT, built by the company now operating as SpaceXAI &mdash; and it's known for shipping big upgrades fast, often with little warning. This week delivered exactly that.</p>
+<p>On July 8, xAI released Grok 4.5, a new flagship model the company says was built specifically to excel at coding, agentic tasks, and knowledge work, and it went live to the public the very next day. It's already wired into Grok Build, available inside Cursor on every plan tier, and accessible through the xAI API at $2 per million input tokens and $6 per million output tokens &mdash; though it isn't available in the EU yet. Musk also declared Grok's Imagine feature, the image and video generator, essentially "done" on July 5, with another update preview following just two days later. Meanwhile, xAI quietly made its Speech to Text API generally available, handling 25 languages in both batch and real-time streaming modes, and added voice cloning so developers can turn a short audio clip into a reusable synthetic voice.</p>
+<p>With Grok 4.5 now out the door, attention shifts to Grok 5 &mdash; there's still no confirmed release date, and most signs point to a slip into Q3 2026 or later, so 4.5 will likely be doing the heavy lifting for a while yet.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-15">
 <div class="ed-head">AI Developments &mdash; Wednesday, July 15, 2026</div>
 
@@ -195,34 +215,6 @@
 <p>Grok is Elon Musk's AI model from xAI, built into X (formerly Twitter) and available as its own app, and it's had a genuinely stacked week. The headline: Grok 4.5 was announced Wednesday, built specifically to be sharper at coding, multi-step agentic tasks, and general knowledge work, and Musk says it starts rolling out to the public today. That's a meaningful upgrade if you use Grok for anything beyond chatting, since agentic tasks (think: "go do this multi-step thing for me") are exactly where models tend to stumble.</p>
 <p>Voice got a big glow-up too. xAI shipped 21 new multilingual voices for Grok Voice, on top of the original five, and made the existing ones sound more natural. You can now add speech tags like [pause] to control delivery, or clone your own voice from about a minute of audio. All of this is available immediately across the realtime Voice Agent API, the Text to Speech API, and a brand-new no-code Voice Agent Builder that lets anyone spin up a production-ready voice agent, complete with phone calling, knowledge lookup, and call review, in under two minutes without writing code. Layer on top of that a newly generally-available Speech to Text API covering 25 languages, and xAI is clearly making a serious push into voice as a whole category, not just a Grok feature.</p>
 <p>There was also a smaller but symbolic moment: Musk posted a cryptic two-word update suggesting Grok Imagine, the image and video generation tool, has reached a completion milestone, pushing Grok further into multimodal territory. Between a new flagship model, a voice platform launch, and multimodal progress, this was one of the busier weeks xAI has had in a while, and it signals the company is racing to compete on breadth as much as raw model quality.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-08">
-<div class="ed-head">AI Developments &mdash; Wednesday, July 8, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude Cowork</span>
-<h2>This Week in Claude Cowork</h2>
-<p>Claude Cowork is the part of Anthropic's Claude that acts less like a chatbot and more like a coworker you can hand actual office tasks to &mdash; things like building a report, reconciling a spreadsheet, or putting together a slide deck while you go do something else. This week it got a lot less tied to your laptop.</p>
-<p>On July 7, Anthropic announced that Cowork is leaving the desktop and heading to the web, iPhone, and Android, starting with a beta for Max subscribers that will widen to more plans over the coming weeks. The big idea is that a Cowork session now lives in the cloud instead of on your machine, so you can kick off a task at your desk, close your laptop, and check its progress from your phone later &mdash; it just keeps working and pings you if it needs a decision only a human can make. Anthropic also merged Chat and Cowork into a single home screen, so there's one sidebar and one search bar instead of two separate tools competing for your attention. On top of that, Pro and Max users can now hand Cowork actual computer control, letting it click around, open files, and run dev tools on its own, and it picked up write access to Microsoft 365 so it can draft emails, manage your calendar, and drop files into OneDrive or SharePoint. Anthropic even shared usage data showing the single biggest thing people use Cowork for &mdash; about a third of sessions &mdash; is exactly the boring-but-essential stuff: pulling scattered updates into one report, building onboarding checklists, and fixing up spreadsheets.</p>
-<p>The takeaway is that Anthropic is betting Cowork becomes something you check in on throughout the day rather than something you sit in front of, more like a project manager than a program. Anthropic also extended its doubled usage limits through August 5 to cushion the rollout, so if you're on a paid plan, now's a good window to actually try it.</p>
-</section>
-
-<section>
-<span class="tool-chip">Eleven Labs</span>
-<h2>This Week in Eleven Labs</h2>
-<p>ElevenLabs makes some of the most realistic AI voices around &mdash; the tech behind a lot of AI narrators, dubbed videos, and phone-answering voice agents you've probably heard without realizing it. This week's changes were smaller than Claude's, but they show where the company is putting its energy: making its voice agents smarter about real conversations, not just realistic sounding ones.</p>
-<p>ElevenLabs added conversation tags, so businesses running voice agents can now label, sort, and filter through mountains of past conversations instead of scrolling through them blind. It also rolled out new filters for conversation history and, on the developer side, plugged in fresh large language model options &mdash; including Claude Opus 4.7 and newer GPT-5 variants &mdash; so builders can swap in whichever "brain" powers their voice agent. Its real-time transcription tool, Scribe, picked up two handy tricks: a way to feed it specific words or names it should listen for closely, and a toggle that strips out ums, false starts, and stumbles so transcripts read cleanly. Meanwhile, some of ElevenLabs' oldest voice and transcription models are officially being retired on July 9, a reminder that even in fast-moving AI, some things do get old.</p>
-<p>None of this is flashy on its own, but together it points to ElevenLabs doubling down on being the plumbing behind other companies' voice products &mdash; call centers, apps, customer service bots &mdash; rather than a flashy consumer app itself. If you use any tool with a voice assistant, there's a decent chance ElevenLabs is quietly running under the hood.</p>
-</section>
-
-<section class="spotlight">
-<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
-<h2>Meta Muse Image</h2>
-<p>Muse Image is Meta's brand-new AI image generator, launched July 7 as the first visual model out of its Superintelligence Labs team. You can find it inside the Meta AI app, on meta.ai, in Instagram Stories, and soon on Facebook and WhatsApp. What makes it different from typical "type a prompt, get a picture" tools is that it acts more like a little research assistant: instead of guessing at what you want in one shot, it can search the web for reference images and even write and run code to get details right, like making a chart's numbers actually accurate or a QR code that actually scans. It's especially built for editing your own photos &mdash; restoring an old family picture, turning a selfie into a Renaissance painting, or combining a few images into one &mdash; using plain language, sketches, or handwritten notes instead of fiddly editing tools.</p>
-<p>It matters because Meta is now a real third contender in AI image generation alongside OpenAI and Google, and it's aiming Muse squarely at casual, everyday users on apps people already have open, not just professional designers. Early internal tests show it beating Google's newest image model on multi-image editing, though it still trails OpenAI's top model overall. Anyone who wants to fix up old photos or make quick edits without learning Photoshop is the obvious audience.</p>
-<p class="muted">Source: Meta AI Blog / CNBC, July 2026</p>
 </section>
 
 </article>
