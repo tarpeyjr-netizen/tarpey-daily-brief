@@ -47,6 +47,21 @@
   .breed-row label { font-size:13px; font-weight:700; color:var(--text-warm); }
   .breed-row select { font-size:13px; padding:8px 12px; border-radius:8px; border:1px solid var(--line); background:#fff; color:var(--text-warm); font-family:inherit; }
 
+  .customize { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 18px 6px; margin-bottom:34px; }
+  .customize-row { margin-bottom:16px; }
+  .customize-label { font-size:12.5px; font-weight:700; color:var(--text-warm); margin-bottom:9px; }
+  .swatch-group { display:flex; gap:12px; flex-wrap:wrap; }
+  .swatch { display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; }
+  .swatch-circle { width:34px; height:34px; border-radius:50%; border:2px solid var(--line); box-shadow:inset 0 0 0 2px #fff; transition:border-color .15s, transform .15s; }
+  .swatch.selected .swatch-circle { border-color:var(--amber); transform:scale(1.08); }
+  .swatch-name { font-size:10.5px; color:var(--muted-warm); font-weight:600; }
+  .swatch.selected .swatch-name { color:var(--text-warm); }
+  .pill-group { display:flex; gap:8px; flex-wrap:wrap; }
+  .pill { font-size:12px; font-weight:600; padding:8px 16px; border-radius:99px; border:1.5px solid var(--line); background:#fff; color:var(--muted-warm); cursor:pointer; transition:all .15s; }
+  .pill.selected { border-color:var(--amber); background:var(--amber); color:#fff; }
+  .eye-dot { width:18px; height:18px; border-radius:50%; box-shadow:0 0 0 2px #fff, 0 0 6px currentColor; }
+  .customize-note { font-size:11px; color:var(--muted-warm); font-style:italic; padding-bottom:12px; }
+
   .addons { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:6px; }
   .addon-row { display:flex; align-items:center; gap:14px; padding:14px 16px; border-bottom:1px solid var(--line); cursor:pointer; }
   .addon-row:last-child { border-bottom:none; }
@@ -158,7 +173,46 @@
       </select>
     </div>
 
-    <h2 class="section-title">2. Add-ons</h2>
+    <h2 class="section-title">2. Customize Your REX</h2>
+    <div class="customize">
+      <div class="customize-row">
+        <div class="customize-label">Coat Color</div>
+        <div class="swatch-group" id="coatColorGroup">
+          <div class="swatch selected" data-value="Brown"><div class="swatch-circle" style="background:#8B5A2B"></div><div class="swatch-name">Brown</div></div>
+          <div class="swatch" data-value="Black"><div class="swatch-circle" style="background:#2B2B2B"></div><div class="swatch-name">Black</div></div>
+          <div class="swatch" data-value="White"><div class="swatch-circle" style="background:#F5F3EE; border-color:#D8D0C4;"></div><div class="swatch-name">White</div></div>
+          <div class="swatch" data-value="Tan"><div class="swatch-circle" style="background:#D2B48C"></div><div class="swatch-name">Tan</div></div>
+        </div>
+      </div>
+      <div class="customize-row">
+        <div class="customize-label">Coat Length</div>
+        <div class="pill-group" id="coatLengthGroup">
+          <div class="pill" data-value="Short">Short</div>
+          <div class="pill selected" data-value="Medium">Medium</div>
+          <div class="pill" data-value="Long">Long</div>
+        </div>
+      </div>
+      <div class="customize-row">
+        <div class="customize-label">Coat Pattern</div>
+        <div class="pill-group" id="coatPatternGroup">
+          <div class="pill selected" data-value="Solid">Solid</div>
+          <div class="pill" data-value="Brindle">Brindle</div>
+          <div class="pill" data-value="Spotted">Spotted</div>
+        </div>
+      </div>
+      <div class="customize-row">
+        <div class="customize-label">Eye / Sensor Color</div>
+        <div class="swatch-group" id="eyeColorGroup">
+          <div class="swatch selected" data-value="Blue"><div class="eye-dot" style="background:#3B82C4; color:#3B82C4;"></div><div class="swatch-name">Blue</div></div>
+          <div class="swatch" data-value="Amber"><div class="eye-dot" style="background:#D97B3F; color:#D97B3F;"></div><div class="swatch-name">Amber</div></div>
+          <div class="swatch" data-value="Teal"><div class="eye-dot" style="background:#2DD4BF; color:#2DD4BF;"></div><div class="swatch-name">Teal</div></div>
+          <div class="swatch" data-value="Red"><div class="eye-dot" style="background:#E15554; color:#E15554;"></div><div class="swatch-name">Red</div></div>
+        </div>
+      </div>
+      <div class="customize-note">Coat and sensor customization included at no extra cost. Photos shown are representative — your build ships to spec.</div>
+    </div>
+
+    <h2 class="section-title">3. Add-ons</h2>
     <div class="addons" id="addons">
       <label class="addon-row">
         <input type="checkbox" data-addon="cloud" data-name="Cloud AI Subscription" data-price="0" data-monthly="9">
@@ -208,6 +262,7 @@
       <div class="summary-title">Order Summary</div>
       <div class="summary-line"><span id="sumTierLabel">REX Companion</span><span class="val" id="sumTierPrice">$2,499</span></div>
       <div class="summary-line" id="sumBreedLine" style="display:none;"><span>Breed sculpt</span><span class="val" id="sumBreedVal">Golden Retriever</span></div>
+      <div class="summary-line"><span>Build spec</span><span class="val" id="sumBuildVal">Brown &middot; Medium &middot; Solid &middot; Blue eyes</span></div>
       <div id="sumAddons"></div>
       <div class="summary-divider"></div>
       <div class="summary-total"><span>One-time total</span><span class="val" id="sumTotal">$2,499</span></div>
@@ -224,6 +279,7 @@
       <div class="confirm-box">
         <div><span>Reservation ID</span><span class="confirm-id" id="confirmId">WT-000000</span></div>
         <div><span>Model</span><span id="confirmModel">REX Companion</span></div>
+        <div><span>Build spec</span><span id="confirmBuild">Brown &middot; Medium &middot; Solid &middot; Blue eyes</span></div>
         <div><span>One-time total</span><span id="confirmTotal">$2,499</span></div>
         <div><span>Deposit charged</span><span>$99 (demo)</span></div>
         <div><span>Est. ship date</span><span>Q3 2027</span></div>
@@ -246,6 +302,24 @@
   var breedSelect = document.getElementById('breedSelect');
   var addonInputs = document.querySelectorAll('#addons input[type=checkbox]');
   var selectedTier = tiers[0];
+  var coatColor = 'Brown', coatLength = 'Medium', coatPattern = 'Solid', eyeColor = 'Blue';
+
+  function wireSwatchGroup(groupId, onSelect){
+    var group = document.getElementById(groupId);
+    var items = group.querySelectorAll('.swatch, .pill');
+    items.forEach(function(item){
+      item.addEventListener('click', function(){
+        items.forEach(function(i){ i.classList.remove('selected'); });
+        item.classList.add('selected');
+        onSelect(item.getAttribute('data-value'));
+        render();
+      });
+    });
+  }
+  wireSwatchGroup('coatColorGroup', function(v){ coatColor = v; });
+  wireSwatchGroup('coatLengthGroup', function(v){ coatLength = v; });
+  wireSwatchGroup('coatPatternGroup', function(v){ coatPattern = v; });
+  wireSwatchGroup('eyeColorGroup', function(v){ eyeColor = v; });
 
   function fmt(n){ return '$' + n.toLocaleString('en-US'); }
 
@@ -260,6 +334,7 @@
     var breedLine = document.getElementById('sumBreedLine');
     breedLine.style.display = isHeritage ? 'flex' : 'none';
     if (isHeritage) document.getElementById('sumBreedVal').textContent = breedSelect.value;
+    document.getElementById('sumBuildVal').textContent = coatColor + ' \u00b7 ' + coatLength + ' \u00b7 ' + coatPattern + ' \u00b7 ' + eyeColor + ' eyes';
 
     var total = tierPrice;
     var monthly = 0;
@@ -298,6 +373,7 @@
     var id = 'WT-' + Math.floor(100000 + Math.random() * 900000);
     document.getElementById('confirmId').textContent = id;
     document.getElementById('confirmModel').textContent = tierName + (selectedTier.getAttribute('data-tier') === 'heritage' ? ' (' + breedSelect.value + ')' : '');
+    document.getElementById('confirmBuild').textContent = coatColor + ' \u00b7 ' + coatLength + ' \u00b7 ' + coatPattern + ' \u00b7 ' + eyeColor + ' eyes';
     document.getElementById('confirmTotal').textContent = totalText;
     document.getElementById('orderView').style.display = 'none';
     document.getElementById('confirmPanel').classList.add('show');
