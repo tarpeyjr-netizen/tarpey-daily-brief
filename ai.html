@@ -34,9 +34,37 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 17, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 18, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-18">
+<div class="ed-head">AI Developments &mdash; Saturday, July 18, 2026</div>
+
+<section>
+<span class="tool-chip">SAP Joule</span>
+<h2>This Week in SAP Joule</h2>
+<p>If you've never heard of SAP Joule, think of it as the AI assistant baked directly into the giant business software that runs payroll, expenses, and supply chains for huge chunks of the corporate world. It doesn't do viral chatbot tricks &mdash; it does spreadsheets, approvals, and IT dashboards, which sounds boring until you realize millions of office workers touch it every day.</p>
+<p>This week Joule quietly stretched into a few more corners of that world. It picked up AI help inside SAP's Kyma Runtime dashboard, so engineers can now ask it to check cluster health or pull pod logs instead of digging through raw Kubernetes data themselves. Over in Concur Expense, Joule can now create, edit, submit, or even recall an expense report through plain conversation, and it'll flag a missing receipt or a mismatched total before you hit submit. Concur Travel got the same treatment, letting people search and book flights, hotels, and rental cars just by chatting instead of clicking through forms. SAP also tidied up the assistant's interface itself, expanding the "What's New" log so past updates don't vanish, and cleaning up the response panel so actions like retry, copy, and feedback all sit on one tidy row.</p>
+<p>None of this is flashy, but that's kind of the point. Joule isn't trying to win a headline war &mdash; it's trying to become the default way employees talk to enterprise software, one expense report and one travel booking at a time. For regular office workers, it means fewer tedious forms and more "just ask" moments creeping into daily routines.</p>
+</section>
+
+<section>
+<span class="tool-chip">Einstein AI</span>
+<h2>This Week in Einstein AI</h2>
+<p>Einstein is Salesforce's original AI brain &mdash; the part that scores leads, predicts which deals will close, and suggests what a sales rep should say next. Lately Salesforce has been drawing a sharper line between Einstein, which predicts things, and its newer sibling Agentforce, which actually goes and does things autonomously inside your CRM.</p>
+<p>This week's real story is less about a shiny new feature and more about a reality check. Adoption numbers for Agentforce are still modest, with only around 5% of eligible customers using it and roughly seven in ten early deployments running into data-quality headaches serious enough to stall them out. Salesforce is responding by shoring up the plumbing rather than adding flash: Setup Powered by Agentforce, still in beta, lets admins configure the system using natural language instead of digging through settings menus, and Agentforce 3 added a proper observability dashboard so IT teams can actually see whether their AI agents are healthy, stuck, or quietly failing. Pricing has also settled into a clearer $2-per-conversation model, which at least gives companies a number to budget against.</p>
+<p>The takeaway is that autonomous AI agents inside business software are still in the "measure twice, cut once" phase. Salesforce is spending this stretch building the dashboards and guardrails that make trusting an AI agent with real customer data feel less like a leap of faith.</p>
+</section>
+
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>Kimi K3 (Moonshot AI)</h2>
+<p>Kimi K3 is a new open-source AI model from the Chinese startup Moonshot AI, and it just became the biggest openly released AI model on the planet at 2.8 trillion parameters. That number sounds abstract, but the practical version is this: it's a free-to-download model that reportedly goes toe-to-toe with top systems from OpenAI and Anthropic on hard reasoning and coding tests, while only "waking up" a fraction of its brain for any single question, which keeps it cheaper to run than its size implies. It can also read a full 1-million-token document in one go and reason with images natively, not just text.</p>
+<p>Why it matters: this is the kind of release that rattles markets, the same way DeepSeek's debut did back in 2025, because it shows frontier-level AI is no longer locked behind a handful of expensive American labs. Researchers, startups, and hobbyists who want a top-tier model they can actually inspect, modify, or self-host now have a genuinely serious option, with full weights due out by July 27. It's a big deal for anyone tracking who controls the cutting edge of AI.</p>
+<p class="muted">Source: VentureBeat, Fortune, MLQ News &mdash; July 2026</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-17">
 <div class="ed-head">AI Developments &mdash; Friday, July 17, 2026</div>
 
@@ -197,26 +225,6 @@
 <p>This week's version, 3.11, released July 10, adds something called side chats: little parallel conversations you can spin off from your main AI session using a quick "/side" command, without derailing whatever the main agent is busy building. You might ask a side chat to research an alternative approach or sanity-check a decision, then pull that answer back into the main thread later, or just leave it running like a separate open tab. The update also makes it easier to search back through old agent conversations and simplifies picking which project or repository you're working in.</p>
 <p>What's genuinely interesting here is what it says about where AI coding tools are headed: instead of one AI doing one thing at a time, Cursor is now managing multiple simultaneous AI conversations the way a person juggles browser tabs. It's a small feature, but it hints at coding agents evolving from single-threaded assistants into something closer to a small team you're directing at once. Anyone who writes code for a living, from students to professional engineers, is a plausible user here.</p>
 <p class="muted">Source: Cursor changelog, July 2026</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-10">
-<div class="ed-head">AI Developments &mdash; Friday, July 10, 2026</div>
-
-<section>
-<span class="tool-chip">ChatGPT</span>
-<h2>This Week in ChatGPT</h2>
-<p>ChatGPT is the chatbot that basically kicked off this whole AI moment, and OpenAI just had one of its biggest weeks in a while. If you've mostly used it to answer questions or write essays, that's about to feel like the tip of the iceberg, because the company just pushed it hard toward actually doing things for you instead of just talking about them.</p>
-<p>The headline move is something called ChatGPT Work, which launched on July 9th. Instead of chatting back and forth until you've pieced together an answer yourself, you give it a goal, it makes a step-by-step plan you get to approve first, and then it goes off and builds the actual finished thing: a spreadsheet, a slide deck, a document, even a working web app. Think of it like handing a task to a capable intern who shows you their plan before starting, then comes back with the finished folder instead of a pile of notes. It runs on the new GPT-5.6 model family (three flavors this time, nicknamed Sol, Terra, and Luna, priced differently depending on how much power you need) and has OpenAI's coding tool Codex baked in. Right alongside that, ChatGPT's voice mode got a real upgrade called GPT-Live, which can listen and talk at the same time instead of waiting politely for its turn, so conversations feel less like a walkie-talkie and more like actually talking to someone. OpenAI also merged its separate Codex app into the main ChatGPT desktop app and started winding down its Atlas browser, tidying up what had become a slightly cluttered family of products.</p>
-<p>Put together, this week is OpenAI betting that people don't just want smarter answers, they want finished work. If that sticks, "asking ChatGPT for help" starts to mean less typing and more approving plans while it does the typing for you.</p>
-</section>
-
-<section>
-<span class="tool-chip">Mistral AI</span>
-<h2>This Week in Mistral AI</h2>
-<p>Mistral AI is the French challenger in the AI race, known for building strong, often open-source models while everyone else keeps their code locked up. This week showed off just how many directions the company is pulling in at once, from math-proving software to actual robots.</p>
-<p>The most eye-catching release was Leanstral 1.5, a model built specifically to write formal mathematical proofs, the kind of rigorous, no-room-for-error logic used in advanced math and safety-critical software. It solved 587 out of 672 problems from a notoriously hard math benchmark and is free to use, which is a big deal for researchers who'd otherwise pay serious money for that kind of specialized reasoning power. Mistral also shipped Robostral Navigate, a model that helps robots find their way around real-world spaces using nothing but a regular camera and plain-language instructions, no special sensors required, and it's designed to work on basically any robot. On the document side, a new version of Mistral's OCR tool (the software that turns scanned pages into usable text) got smarter about reading document structure, not just words. And behind the scenes, CEO Arthur Mensch confirmed a new open-weight model is coming this summer, described as "fat but sparse," meaning it's big in total size but efficient in how much of itself it actually uses per task, with early access opening this month.</p>
-<p>The throughline here is Mistral spreading its bets: not just chasing a bigger chatbot, but building specialized tools for math, robotics, and documents while it works on a bigger model in the background. It's a reminder that the AI race isn't just about who has the flashiest assistant, it's also about who quietly wins the boring-but-critical use cases.</p>
 </section>
 
 </article>
