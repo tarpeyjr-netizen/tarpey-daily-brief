@@ -287,6 +287,19 @@
       <div class="demo-flag">This ordering flow is a mockup built for demonstration purposes. No real order was placed, no payment was collected, and no email was sent.</div>
       <button class="reset-btn" id="resetBtn">Start Over</button>
     </div>
+
+    <div class="confirm-panel" id="rejectPanel">
+      <div class="confirm-icon" style="background:var(--coral);">&times;</div>
+      <div class="confirm-title">Order Not Confirmed</div>
+      <div class="confirm-sub">Customer is missing TCR A.6.</div>
+      <div class="confirm-box">
+        <div><span>Status</span><span style="color:var(--coral); font-weight:700;">Blocked</span></div>
+        <div><span>Reason</span><span>TCR A.6 not on file</span></div>
+        <div><span>Model requested</span><span id="rejectModel">REX Companion</span></div>
+      </div>
+      <div class="demo-flag">This ordering flow is a mockup built for demonstration purposes. No real order was placed, no payment was collected, and no email was sent.</div>
+      <button class="reset-btn" id="rejectBackBtn">Back</button>
+    </div>
   </aside>
 </main>
 
@@ -369,14 +382,14 @@
 
   document.getElementById('reserveBtn').addEventListener('click', function(){
     var tierName = selectedTier.getAttribute('data-name');
-    var totalText = document.getElementById('sumTotal').textContent;
-    var id = 'WT-' + Math.floor(100000 + Math.random() * 900000);
-    document.getElementById('confirmId').textContent = id;
-    document.getElementById('confirmModel').textContent = tierName + (selectedTier.getAttribute('data-tier') === 'heritage' ? ' (' + breedSelect.value + ')' : '');
-    document.getElementById('confirmBuild').textContent = coatColor + ' \u00b7 ' + coatLength + ' \u00b7 ' + coatPattern + ' \u00b7 ' + eyeColor + ' eyes';
-    document.getElementById('confirmTotal').textContent = totalText;
+    document.getElementById('rejectModel').textContent = tierName + (selectedTier.getAttribute('data-tier') === 'heritage' ? ' (' + breedSelect.value + ')' : '');
     document.getElementById('orderView').style.display = 'none';
-    document.getElementById('confirmPanel').classList.add('show');
+    document.getElementById('rejectPanel').classList.add('show');
+  });
+
+  document.getElementById('rejectBackBtn').addEventListener('click', function(){
+    document.getElementById('rejectPanel').classList.remove('show');
+    document.getElementById('orderView').style.display = 'block';
   });
 
   document.getElementById('resetBtn').addEventListener('click', function(){
