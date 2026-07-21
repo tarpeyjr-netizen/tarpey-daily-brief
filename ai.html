@@ -34,9 +34,29 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 20, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 21, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-21">
+<div class="ed-head">AI Developments &mdash; Tuesday, July 21, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude</span>
+<h2>This Week in Anthropic Claude</h2>
+<p>Claude is Anthropic's AI assistant &mdash; the one that writes, codes, researches, and increasingly runs whole workflows on your behalf. This week it leaned hard into two very different audiences: teachers and IT admins.</p>
+<p>Claude for Teachers launched, giving verified K-12 educators in the US free access to premium Claude tools, ready-made teaching skills, and curriculum connections tied to standards in all 50 states, plus training to help teachers actually get comfortable using AI in the classroom. Think of it as Anthropic handing teachers a customized toolkit instead of just a generic chatbot. On the other end of the spectrum, Claude Code &mdash; the coding-focused version of Claude &mdash; picked up a big stability and safety update: tighter permission checks, safer handling of terminal commands, cleaner cleanup of background sessions, and a new "EndConversation" tool with progress heartbeats so long-running coding tasks don't just vanish into a black box. Meanwhile, Anthropic beefed up the business side too, adding user-management tools to the Enterprise Admin API (so IT teams can manage roles and groups without digging through settings by hand) alongside richer analytics, spend alerts, and model-level permissions for companies running Claude at scale. There's also a new personal touch: a "Reflect" dashboard and monthly recap showing you your most active day, peak hour, and what you've actually been using Claude for.</p>
+<p>Put together, it's Anthropic building out both ends of the ladder &mdash; making Claude more approachable for a teacher who just wants help grading essays, while making it more controllable and auditable for a company running hundreds of automated coding agents. That's usually a sign a tool is maturing: less "cool demo," more "everyday infrastructure."</p>
+</section>
+
+<section>
+<span class="tool-chip">Perplexity AI</span>
+<h2>This Week in Perplexity AI</h2>
+<p>Perplexity started as an AI search engine that actually shows its sources, but it's been racing to become something bigger: a full-on AI agent that does tasks for you, not just answers questions. This week's news doubles down on that shift, and one announcement in particular sounds like something out of a sci-fi movie.</p>
+<p>Perplexity unveiled "Personal Computer" &mdash; an always-on AI that lives on a dedicated Mac mini in your home or office and works around the clock as a kind of digital proxy, watching for triggers and quietly handling tasks even while you're asleep. Powering it is a new memory system called "Brain," which builds a private map of everything it's learned across your files, apps, and past decisions, then refreshes itself overnight so each new task starts already knowing what worked before and what didn't; in testing, that memory boosted answer accuracy by 25% and recall by 16% while actually cutting costs. On the business side, Perplexity's Comet browser &mdash; the one with a built-in AI assistant that can research, summarize, and even fill out forms for you &mdash; is now available for enterprise customers, and the developer-facing Agent API added support for more outside models, including GPT-5.4 and Gemini 3.1 Pro, plus a new finance-focused search tool.</p>
+<p>The throughline here is Perplexity betting that people don't just want faster answers &mdash; they want an assistant that remembers context and keeps working when they're not looking. That's a meaningfully different pitch than "search engine with citations," and worth watching as more of these always-on agents show up on regular people's desks.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-20">
 <div class="ed-head">AI Developments &mdash; Monday, July 20, 2026</div>
 
@@ -193,26 +213,6 @@
 <p>Perplexity built its name as the "AI search engine that actually cites its sources," and lately its agentic browser-assistant, Comet/Computer, has been where all the action is. This week that trend kept rolling, with Perplexity pushing Computer to do more on its own and quietly picking a new hardware partner to power it.</p>
 <p>The biggest news dropped just yesterday: Computer now remembers past work across sessions, responds noticeably faster, can switch AI models mid-task without you starting over, can publish entire websites, and can dig up research on private companies that don't have public filings to pull from. That last one is a genuinely useful trick for anyone doing competitive research or due diligence on a startup, since most tools choke when there's no public data to scrape. Just before that, Perplexity confirmed it's adopting Nvidia's new CPU line for its infrastructure, with an internal VP saying the chips run AI coding agents about 1.5 times faster than traditional processors, a behind-the-scenes bet that should make Computer feel snappier without users ever knowing why. That builds on Deep Research already having landed in Computer a few weeks back, bringing faster commands, the ability to fork a research thread, and custom credit limits for teams.</p>
 <p>Put together, Perplexity is racing to turn Computer from a smart search bar into something closer to a persistent digital coworker, one that remembers context, works across apps like Word and Excel, and now even researches companies most tools can't touch. If you've tried Perplexity before and bounced off it, this is the version worth a second look.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-13">
-<div class="ed-head">AI Developments &mdash; Monday, July 13, 2026</div>
-
-<section>
-<span class="tool-chip">Google Gemini</span>
-<h2>This Week in Google Gemini</h2>
-<p>Gemini is Google's family of AI models, the brain behind everything from the Gemini app on your phone to the "Fill" button quietly working inside Google Sheets. It's Google's answer to the question "what if AI was baked into every product we make," and this week it got a little more baked in.</p>
-<p>The biggest news is that Gemini 3.5 Flash, the fast and cheap version of the model that developers lean on for everyday tasks, officially graduated from preview to general availability. Think of it like a restaurant taking a dish off the "limited time trial" menu and making it permanent, because enough people liked it. Alongside that, Google opened up public preview access to Managed Agents in the Gemini API, including a general-purpose one called the Antigravity Agent that can plan, reason, write and run code, manage files, and browse the web, all inside its own secure sandbox. That's a meaningful shift: instead of just answering questions, Gemini can now be handed a task and left to actually go do it, safely boxed away from your real computer. On the more everyday side, "Fill with Gemini" in Google Sheets, the feature that auto-completes spreadsheet data using AI, expanded into eleven more languages including Mandarin, Dutch, Hebrew, and Swedish, so a lot more people around the world just got a genuinely useful shortcut.</p>
-<p>Google also nudged Gemini deeper into classrooms and offices this week. Students and teachers can now attach interactive Gemini Canvas creations, like quizzes and infographics, directly to Google Classroom assignments, and Gemini Enterprise added a public preview connector for Asana, letting business users search and manage projects without leaving the Gemini interface. Put together, the pattern is clear: Google isn't chasing headline-grabbing model announcements this week so much as it's stitching Gemini into the tools people already use every day, from spreadsheets to school assignments to project boards.</p>
-</section>
-
-<section>
-<span class="tool-chip">Meta Llama</span>
-<h2>This Week in Meta Llama</h2>
-<p>Llama is Meta's line of AI models, famous for being "open" in a way most big AI companies' models aren't, meaning developers and researchers can download and tinker with them directly instead of only accessing them through an API. That openness built Llama a huge following, but this week's news says more about where Meta's attention has drifted than about Llama itself.</p>
-<p>The standout release was Muse Image, a new image-generation tool that launched inside the Meta AI app on July 7 and is now showing up across Instagram, WhatsApp, and Meta's ad tools. Here's the catch: Muse Image isn't a Llama product. It's part of a newer family of models, including one called Muse Spark, that Meta has been quietly building as proprietary, closed alternatives to Llama. That's a real change in direction for a company that spent years positioning itself as the champion of open-source AI. Meanwhile, on the Llama side specifically, Meta has been focused less on flashy new models and more on infrastructure and goodwill: rolling out a developer-facing Llama API in limited preview, launching Llama Protection Tools and a "Llama Defenders Program" to help partners test their systems for security holes, and handing out over $1.5 million across ten international Llama Impact Grant winners.</p>
-<p>So it was a fairly quiet week for Llama the model itself, but a telling one for Llama the strategy. If Meta keeps leaning on proprietary models like Muse Spark for its flashiest features while Llama becomes more of a developer-and-partner ecosystem play, that's worth watching for anyone who picked Llama specifically because it was free and open.</p>
 </section>
 
 </article>
