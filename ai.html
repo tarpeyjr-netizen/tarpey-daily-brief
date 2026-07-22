@@ -34,9 +34,37 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 21, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 22, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-22">
+<div class="ed-head">AI Developments &mdash; Wednesday, July 22, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Cowork</span>
+<h2>This Week in Claude Cowork</h2>
+<p>Cowork is the part of Claude that acts less like a chatbot and more like a coworker &mdash; it can open files, manage tasks, and work through multi-step jobs on your computer instead of just answering questions in a text box. Up until now, it lived only inside the Claude desktop app, which meant you had to be sitting at that one machine to use it.</p>
+<p>That changed this week. Anthropic announced Cowork is breaking out of the desktop app and heading to the web at claude.ai and to mobile on iOS and Android, starting in beta with Max plan subscribers. The bigger deal isn't just "now on your phone" &mdash; it's how it works under the hood. Sessions now run remotely on Anthropic's own servers instead of your laptop, so your files and progress are tied to your account, not your device. Close your laptop mid-task, and Cowork just keeps working. Scheduled jobs, like this very digest, can now fire off even if every one of your devices is powered down. On top of that, chat and Cowork got merged into one shared home screen, so you're not toggling between separate apps for separate modes anymore, and new Microsoft 365 write tools let Claude draft and send emails, manage your calendar, and edit OneDrive or SharePoint files directly.</p>
+<p>Think of it like the difference between a work laptop that only runs your projects when it's open, versus a project that keeps humming along on a server somewhere no matter where you are. For anyone juggling tasks across a phone and a desktop, that's the actual unlock here: less "let me get back to my computer," more "it's already done by the time I check."</p>
+</section>
+
+<section>
+<span class="tool-chip">Eleven Labs</span>
+<h2>This Week in Eleven Labs</h2>
+<p>ElevenLabs is the company known for eerily realistic AI voices &mdash; the kind that power audiobooks, voice assistants, and dubbed videos that don't sound robotic. Lately it's been stretching beyond just voice generation into full conversational AI agents that businesses can deploy for calls and chats, and this week's updates lean hard into making those agents easier to actually manage at scale.</p>
+<p>The headline change is conversation tags: a proper system for labeling, filtering, and organizing the (potentially huge) pile of conversations an AI agent has with customers, so a business can sort through what happened without manually scrolling through transcripts. Alongside that, ElevenLabs added filters to hide conversations by status, so teams can quickly zero in on the ones still "in progress" or the ones that failed and need a human look. The platform also plugged in fresh underlying language models, including newer Claude and GPT options, giving developers more choice in what "brain" powers their voice agent. Smaller but useful additions rounded things out too, like better real-time transcription, auto-translated transcripts, sentiment analysis on conversations, and longer timeouts for tools connecting through MCP, the increasingly common standard for linking AI to outside data and services.</p>
+<p>None of this is flashy on its own, but together it reads as a company shifting from "cool voice demo" to "enterprise-ready tool." If you're a business running voice or chat agents at any real volume, this is the unglamorous plumbing work that makes that actually manageable day to day.</p>
+</section>
+
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>Microsoft Project Perception</h2>
+<p>Project Perception is Microsoft's new AI-powered security tool, built to hunt down and help fix vulnerabilities hiding in software code before attackers find them first. What makes it different from a typical AI coding assistant is its "model router" &mdash; instead of relying on one AI brain for everything, it automatically picks between Microsoft's own models, OpenAI's models, and Anthropic's models depending on the task, using cheaper models for routine scans and saving the expensive, powerful ones for tricky edge cases. That mix-and-match approach is reportedly letting Microsoft offer the tool at roughly half the cost of Anthropic's rival product, Mythos, which has dominated this corner of enterprise security so far.</p>
+<p>Why it matters: security teams at big companies drown in code, and manually reviewing all of it for weaknesses is basically impossible. A tool that can watch constantly and flag real threats cheaply is a big deal for IT and security departments, not everyday consumers. What's surprising is the strategy itself &mdash; Microsoft building a product that leans on a competitor's AI models (Anthropic's) to undercut that same competitor's own security tool is a pretty bold, slightly cheeky move.</p>
+<p class="muted">Source: TechRepublic, UC Today, July 2026</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-21">
 <div class="ed-head">AI Developments &mdash; Tuesday, July 21, 2026</div>
 
@@ -193,26 +221,6 @@
 <p>ZML is a Paris-based AI infrastructure startup, and this week it launched LLMD, a free server that lets AI models run efficiently across almost any chip &mdash; Nvidia, AMD, Google's TPUs, Apple's Metal chips, and Intel Arc included. Normally, getting an AI model to run fast means being locked into whichever chip it was built for, kind of like a video game that only works on one console. LLMD acts as a universal adapter, letting popular open-source models like Llama, Mistral, Gemma, and Qwen run at full speed no matter what hardware is underneath, with an interface that's compatible with the same API standard OpenAI uses.</p>
 <p>Why it matters: AI companies are currently fighting over scarce, expensive GPU capacity, and LLMD gives developers more freedom to shop around for cheaper or more available chips instead of being stuck. It's aimed at developers and companies running their own AI models rather than everyday users, but its ripple effects &mdash; cheaper, faster AI services &mdash; could reach everyone. What's surprising is the backing: ZML counts Turing Award winner Yann LeCun, and the founders of Hugging Face and Docker among its investors, a serious vote of confidence for a 20-person startup barely a year old.</p>
 <p class="muted">Source: TechCrunch, July 2026</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-14">
-<div class="ed-head">AI Developments &mdash; Tuesday, July 14, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude</span>
-<h2>This Week in Claude</h2>
-<p>Claude is Anthropic's AI assistant, the one built with a heavy emphasis on being careful and genuinely useful rather than flashy. This week it got a lot more capable, and a lot more woven into how people actually get things done.</p>
-<p>The headline is Claude Sonnet 5, which just became the default model across Claude Code, the Claude Platform, and Free and Pro plans, replacing Sonnet 4.6. Think of it like a phone getting a new processor: same shape, noticeably snappier at everything, especially multi-step reasoning, coding, and tool use. It also ships with a native 1-million-token context window, meaning it can hold an entire codebase or a stack of documents in its head at once, and Anthropic is offering it at promotional pricing through the end of August to get developers to try it. Right alongside that, Cowork mode is expanding beyond desktop to web and mobile, so a task you start on your laptop can follow you to your phone with the same files and history intact. And background coding agents got a quiet but meaningful upgrade: when Claude finishes a coding task in the background now, it commits the work, pushes it, and opens a draft pull request automatically instead of just stopping and waiting for you to ask.</p>
-<p>On the "understanding yourself" side, Anthropic rolled out a beta Reflection dashboard that gives Free, Pro, and Max users a monthly recap of how they actually use Claude: busiest days, peak hours, and even a way to set quiet hours. Pair that with new admin analytics for Enterprise customers that break down cost and usage by team and by person, and the picture is clear: Anthropic isn't just making Claude smarter, it's making it easier to see how you're actually using it. For everyday users, this is a good week to know that whatever plan you're on, you're now running on faster, more context-aware tech than you were seven days ago.</p>
-</section>
-
-<section>
-<span class="tool-chip">Perplexity AI</span>
-<h2>This Week in Perplexity</h2>
-<p>Perplexity built its name as the "AI search engine that actually cites its sources," and lately its agentic browser-assistant, Comet/Computer, has been where all the action is. This week that trend kept rolling, with Perplexity pushing Computer to do more on its own and quietly picking a new hardware partner to power it.</p>
-<p>The biggest news dropped just yesterday: Computer now remembers past work across sessions, responds noticeably faster, can switch AI models mid-task without you starting over, can publish entire websites, and can dig up research on private companies that don't have public filings to pull from. That last one is a genuinely useful trick for anyone doing competitive research or due diligence on a startup, since most tools choke when there's no public data to scrape. Just before that, Perplexity confirmed it's adopting Nvidia's new CPU line for its infrastructure, with an internal VP saying the chips run AI coding agents about 1.5 times faster than traditional processors, a behind-the-scenes bet that should make Computer feel snappier without users ever knowing why. That builds on Deep Research already having landed in Computer a few weeks back, bringing faster commands, the ability to fork a research thread, and custom credit limits for teams.</p>
-<p>Put together, Perplexity is racing to turn Computer from a smart search bar into something closer to a persistent digital coworker, one that remembers context, works across apps like Word and Excel, and now even researches companies most tools can't touch. If you've tried Perplexity before and bounced off it, this is the version worth a second look.</p>
 </section>
 
 </article>
