@@ -34,6 +34,8 @@
   .note { font-size:12px; color:var(--muted); margin-top:10px; }
   .empty { font-size:14px; color:var(--muted); padding:10px 0; }
   .disc { font-size:13px; color:var(--muted); font-style:italic; }
+  .tag-bmo { display:inline-block; padding:1px 6px; border-radius:8px; font-size:11px; font-weight:bold; background:#e0e7ef; color:var(--navy); }
+  .tag-amc { display:inline-block; padding:1px 6px; border-radius:8px; font-size:11px; font-weight:bold; background:#1f3a5f; color:#fff; }
 </style>
 </head>
 <body>
@@ -41,7 +43,7 @@
   <div class="wrap">
     <a class="back" href="index.html">&larr; Back to dashboard</a>
     <h1>Stock Analysis</h1>
-    <div class="sub">Beat-and-trim tracker: large-cap earnings beats paired with a guidance cut &middot; trailing 6 months</div>
+    <div class="sub">Beat-and-trim tracker plus the week ahead's large-cap earnings calendar</div>
   </div>
 </header>
 <main class="wrap">
@@ -92,6 +94,37 @@
     </table>
     </div>
     <p class="note">Prices are news-search-derived approximations (52-week high, price shortly after the guidance-cut report, and latest available quote as of July 21, 2026), not live market data &mdash; treat as directional. "What Beat" / "What Got Trimmed" summarize reported figures; see source headlines for exact numbers. &asymp; indicates an approximate or estimated figure.</p>
+  </section>
+  <section>
+    <h2>Upcoming Earnings — Next 5 Business Days</h2>
+    <div class="tablescroll">
+    <table>
+      <thead>
+        <tr>
+          <th class="l">Ticker</th><th class="l">Company</th><th>Report Date</th><th>Timing</th><th>Consensus EPS Est.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="tk">GOOGL</td><td>Alphabet</td><td class="ctr">2026-07-22</td><td class="ctr"><span class="tag-amc">AMC</span></td><td class="num">&asymp;$2.90</td></tr>
+        <tr><td class="tk">TSLA</td><td>Tesla</td><td class="ctr">2026-07-22</td><td class="ctr"><span class="tag-amc">AMC</span></td><td class="num">n/a</td></tr>
+        <tr><td class="tk">INTC</td><td>Intel</td><td class="ctr">2026-07-23</td><td class="ctr"><span class="tag-amc">AMC</span></td><td class="num">&asymp;$0.22</td></tr>
+        <tr><td class="tk">TMUS</td><td>T-Mobile US</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">UNP</td><td>Union Pacific</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">HON</td><td>Honeywell</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">LMT</td><td>Lockheed Martin</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">RTX</td><td>RTX Corp</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">CMCSA</td><td>Comcast</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">TMO</td><td>Thermo Fisher Scientific</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">NSC</td><td>Norfolk Southern</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">LUV</td><td>Southwest Airlines</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">BX</td><td>Blackstone</td><td class="ctr">2026-07-23</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+        <tr><td class="tk">PYPL</td><td>PayPal</td><td class="ctr">2026-07-28</td><td class="ctr"><span class="tag-bmo">BMO</span></td><td class="num">n/a</td></tr>
+        <tr><td class="tk">KO</td><td>Coca-Cola</td><td class="ctr">2026-07-28</td><td class="ctr"><span class="tag-bmo">BMO</span></td><td class="num">n/a</td></tr>
+        <tr><td class="tk">PHG</td><td>Philips</td><td class="ctr">2026-07-28</td><td class="ctr">n/a</td><td class="num">n/a</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">Dates cover the next 5 U.S. trading days (Wed Jul 22 &ndash; Tue Jul 28, 2026). BMO = before market open, AMC = after market close. Several names reporting Thursday, Jul 23 have unconfirmed exact timing (marked n/a). This is a very heavy earnings week (400+ companies) &mdash; this list favors well-known large caps and is not exhaustive. Earnings dates are subject to change; confirm with the company's investor relations page before acting on them.</p>
   </section>
   <section>
     <p class="disc">This is not financial advice. Do your own research.</p>
