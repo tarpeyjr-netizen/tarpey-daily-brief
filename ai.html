@@ -34,9 +34,31 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 22, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 23, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-23">
+<div class="ed-head">AI Developments &mdash; Thursday, July 23, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Code</span>
+<h2>This Week in Claude Code</h2>
+<p>Claude Code is Anthropic's command-line tool that lets developers hand off actual coding work to Claude instead of typing every line themselves &mdash; think of it as a very capable junior engineer who lives in your terminal. This past week, Anthropic spent most of its energy making that junior engineer faster, calmer, and easier to trust.</p>
+<p>The headline fix tackles something that was quietly annoying power users: on long coding sessions, the tool used to get slower and slower the more you talked to it, because behind the scenes it was reprocessing the entire conversation history every single turn &mdash; a bit like re-reading an entire group chat from the beginning every time someone sends a new message. Anthropic squashed that slowdown, so marathon sessions now stay snappy instead of grinding to a crawl. Alongside that, Claude Code picked up new sandbox controls that let teams skip full filesystem isolation while still keeping a lid on network access, giving companies more control over exactly how much freedom to give their AI coding assistant.</p>
+<p>On the workflow side, Claude Code now runs code reviews in the background automatically, and screen-reader users got a much richer, more detailed narration of what the tool is doing &mdash; a real accessibility upgrade rather than an afterthought. Anthropic also beefed up "auto mode" and trust handling so the assistant is more careful about what it's allowed to touch on its own, and cleaned up a long list of smaller bugs around sessions, permissions, worktrees, and even how text renders inside VS Code. For teams managing lots of developers, the admin console also got two new tabs that track usage and value, so a manager can now see things like active developers, session counts, and which commands get used most, updated daily.</p>
+<p>None of this is flashy, but it's the kind of unglamorous polish that decides whether a tool becomes part of someone's daily habit or gets abandoned after a rough first week &mdash; and this week Anthropic clearly bet on habit.</p>
+</section>
+
+<section>
+<span class="tool-chip">Xai Grok</span>
+<h2>This Week in Grok</h2>
+<p>Grok is xAI's chatbot and AI model family, built by Elon Musk's company and baked directly into X &mdash; it's known for a slightly edgier, more "say what it thinks" personality than some of its rivals. This week Grok pushed forward on two very different fronts at once: making itself more useful for everyday automation, and opening up its coding tools to anyone who wants to peek under the hood.</p>
+<p>The biggest practical addition is Automations &mdash; you can now tell Grok to run a task on a schedule, or automatically whenever a matching email shows up, and it'll report back through email or a phone notification. It's basically giving Grok the ability to work while you're not even looking at it, and it's available right now on grok.com and the mobile apps, with the email-trigger option reserved for SuperGrok subscribers. On the developer side, xAI open-sourced Grok Build, its coding agent and terminal interface, meaning programmers can now inspect, modify, and run the whole thing themselves instead of trusting it as a black box &mdash; a notably generous move for a company that's usually pretty guarded about its tech. That release also came with smaller but welcome polish, like clearer session details and better handling of rate limits and queued messages.</p>
+<p>Meanwhile, on the model front, xAI shipped Grok 4.5, a massive 1.5-trillion-parameter model tuned especially for coding, and Musk declared that Grok Imagine, the image and video generation half of Grok, has officially reached completion, showing off some of its artistic output on X. The much-hyped Grok 5, though, still doesn't have a confirmed release date, with most signs now pointing to sometime in the third quarter of 2026 or later.</p>
+<p>Put together, it's a week where Grok looked less like a single chatbot and more like a growing toolkit &mdash; one piece for automating your inbox, one for coding, one for generating art &mdash; with the biggest model upgrade still sitting just out of reach.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-22">
 <div class="ed-head">AI Developments &mdash; Wednesday, July 22, 2026</div>
 
@@ -193,34 +215,6 @@
 <p>Grok is xAI's chatbot and model family &mdash; Elon Musk's answer to Claude and ChatGPT, built by the company now operating as SpaceXAI &mdash; and it's known for shipping big upgrades fast, often with little warning. This week delivered exactly that.</p>
 <p>On July 8, xAI released Grok 4.5, a new flagship model the company says was built specifically to excel at coding, agentic tasks, and knowledge work, and it went live to the public the very next day. It's already wired into Grok Build, available inside Cursor on every plan tier, and accessible through the xAI API at $2 per million input tokens and $6 per million output tokens &mdash; though it isn't available in the EU yet. Musk also declared Grok's Imagine feature, the image and video generator, essentially "done" on July 5, with another update preview following just two days later. Meanwhile, xAI quietly made its Speech to Text API generally available, handling 25 languages in both batch and real-time streaming modes, and added voice cloning so developers can turn a short audio clip into a reusable synthetic voice.</p>
 <p>With Grok 4.5 now out the door, attention shifts to Grok 5 &mdash; there's still no confirmed release date, and most signs point to a slip into Q3 2026 or later, so 4.5 will likely be doing the heavy lifting for a while yet.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-15">
-<div class="ed-head">AI Developments &mdash; Wednesday, July 15, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude Cowork</span>
-<h2>This Week in Claude Cowork</h2>
-<p>Cowork is Anthropic's mode for Claude that goes beyond chatting and actually does file and task work for you &mdash; think of it less like texting a smart friend and more like handing a capable assistant the keys to your desktop. This week Cowork officially broke out of its cage. It started life as a desktop-only feature, but Anthropic just announced it's spreading to the web and to phones, with the rollout beginning July 7 for Claude Max subscribers before it trickles down to other plans.</p>
-<p>The headline change is that Cowork tasks no longer need your laptop to stay open and awake. You can kick off a task on your desktop, close the lid, and Claude keeps working in the background &mdash; even scheduled tasks can run with zero personal devices online. Then you can check progress or redirect the work from your phone later, like leaving a contractor working on your house and just checking in through a doorbell camera instead of standing over their shoulder all day. Anthropic also merged Chat and Cowork into a single home tab, so there's now one sidebar, one search bar, and one shared home for Projects and Artifacts instead of two separate worlds. On top of that, Claude picked up write access to Microsoft 365 tools, meaning it can now draft and send emails, manage calendar events, and create or update OneDrive and SharePoint files directly.</p>
-<p>To celebrate the expansion, Anthropic is keeping its doubled Cowork usage limits in place through August 5. The bigger picture here is that Anthropic is betting Cowork becomes less like a chat window and more like an always-on coworker who never needs you to babysit it &mdash; a meaningful shift for anyone using Claude to manage real work instead of just answering questions.</p>
-</section>
-
-<section>
-<span class="tool-chip">Eleven Labs</span>
-<h2>This Week in Eleven Labs</h2>
-<p>Eleven Labs is the company famous for making AI voices that sound eerily human &mdash; the tech behind a lot of the audiobooks, dubbed videos, and voice assistants you've probably heard without realizing it was AI. Under the hood, the company now splits itself into three lanes: ElevenAgents for business voice and chat bots, ElevenCreative for speech, music, image, and video generation, and ElevenAPI for developers building on top of it all, and this week's news touched all three.</p>
-<p>On the product side, Eleven Labs rolled out detailed music-streaming support, new scoring and reasoning fields so developers can see why a conversation went the way it did, richer billing details, and unredacted webhook events so nothing gets hidden from the apps plugged into it. Conversation tags also became a first-class feature, letting builders label, filter, and organize conversations the way you'd tag emails instead of scrolling through an endless list. On the brains side of things, Eleven Labs added support for newer language models &mdash; including Claude Opus 4.7 and the newest GPT-5 variants &mdash; so its voice agents can plug into smarter reasoning engines under the hood, alongside an updated turn-detection model that helps its voice agents figure out when a person has actually finished talking.</p>
-<p>The bigger story swirling around the company is financial: ElevenLabs has been in early talks with investors about a tender offer that would value the company at roughly $22 billion, basically doubling its valuation since February. That kind of number is a strong signal that AI voice and audio tools are being treated as serious infrastructure now, not a novelty &mdash; good news if you're building on the platform, since it suggests the company isn't going anywhere.</p>
-</section>
-
-<section class="spotlight">
-<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
-<h2>ZML / LLMD</h2>
-<p>ZML is a Paris-based AI infrastructure startup, and this week it launched LLMD, a free server that lets AI models run efficiently across almost any chip &mdash; Nvidia, AMD, Google's TPUs, Apple's Metal chips, and Intel Arc included. Normally, getting an AI model to run fast means being locked into whichever chip it was built for, kind of like a video game that only works on one console. LLMD acts as a universal adapter, letting popular open-source models like Llama, Mistral, Gemma, and Qwen run at full speed no matter what hardware is underneath, with an interface that's compatible with the same API standard OpenAI uses.</p>
-<p>Why it matters: AI companies are currently fighting over scarce, expensive GPU capacity, and LLMD gives developers more freedom to shop around for cheaper or more available chips instead of being stuck. It's aimed at developers and companies running their own AI models rather than everyday users, but its ripple effects &mdash; cheaper, faster AI services &mdash; could reach everyone. What's surprising is the backing: ZML counts Turing Award winner Yann LeCun, and the founders of Hugging Face and Docker among its investors, a serious vote of confidence for a 20-person startup barely a year old.</p>
-<p class="muted">Source: TechCrunch, July 2026</p>
 </section>
 
 </article>
