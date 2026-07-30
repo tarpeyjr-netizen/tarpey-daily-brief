@@ -34,9 +34,31 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 29, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 30, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-30">
+<div class="ed-head">AI Developments &mdash; Thursday, July 30, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Code</span>
+<h2>This Week in Claude Code</h2>
+<p>Claude Code is Anthropic's command-line coding assistant — instead of chatting in a browser, you point it at your actual codebase and it reads, writes, and fixes files right there in your terminal, like having a fast, patient junior engineer sitting next to you.</p>
+<p>The biggest headline this week: Claude Opus 5 is now the default model behind Claude Code's Opus mode, bringing faster responses and a much bigger memory for large codebases — like upgrading from a backpack to a suitcase for how much context it can carry while it works. Right alongside that, the "/code-review" command now runs quietly in the background as its own subagent, so asking Claude to review your pull request no longer clogs up your main conversation — it's like sending a coworker off to proofread while you keep typing. There's also a batch of smaller but meaningful fixes: permission-check bypasses got patched, PowerShell and Bash commands got safer, and a nasty bug where pressing the left arrow key could accidentally wipe out an entire conversation with no undo has been fixed — now it just asks you to confirm first.</p>
+<p>On the accessibility side, Claude Code added richer screen-reader announcements for deleted text, and fixed a strange Windows bug where file paths with certain special characters were getting scrambled into Chinese characters, making those files impossible to open. Under the hood, Anthropic is also rolling out support for a newer, more secure version of the Model Context Protocol — the system that lets Claude Code plug into other tools — with stronger login security and new features aimed at enterprise teams.</p>
+<p>None of this is flashy on its own, but it adds up to a tool that's steadily getting faster, safer, and less likely to eat your work by accident — exactly what you want from something that's editing your real code.</p>
+</section>
+
+<section>
+<span class="tool-chip">Xai Grok</span>
+<h2>This Week in Grok</h2>
+<p>Grok is xAI's chatbot, built by Elon Musk's AI company and baked into X (formerly Twitter) as well as its own app — it's known for being a bit edgier and more opinionated than other chatbots, and for moving fast.</p>
+<p>xAI had one of its busiest stretches in a while. On July 28th, Musk confirmed the roadmap for Grok's next generation: a new model called Grok 4.6 is coming, a massive 1.5-trillion-parameter model with beefed-up training, expected to land around August 7th — think of it as the next engine size up, built to reason and write better than the current version. While everyone waits for that, xAI kept shipping upgrades to what's already out. Grok Build, its coding tool (in the same category as Claude Code), picked up a smarter command-line interface, an opt-in tutorial for new users, quicker bug-fixing through an improved "/doctor" checkup command, and better handling of voice, images, and its plugin marketplace.</p>
+<p>Grok's voice features got a real upgrade too — a new speech-to-speech model called grok-voice-think-fast-2.0 launched, and it's set to become the default voice model in early August. Users can now also clone a voice from just a short audio clip and reuse it across both text-to-speech and speech-to-speech, building their own little library of voices in the xAI console. And if you're a Tesla owner, this is the week Grok started taking over your car: a software update is rolling out that lets drivers make calls, play music, adjust the climate, and even pop open the glovebox, all just by talking — no touching the screen required.</p>
+<p>Between the model roadmap, the coding tool updates, and cars you can now boss around with your voice, xAI is clearly betting that Grok's future is less about typing and more about just talking to it directly in whatever you're already doing.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-29">
 <div class="ed-head">AI Developments &mdash; Wednesday, July 29, 2026</div>
 
@@ -194,34 +216,6 @@
 <p>The biggest practical addition is Automations &mdash; you can now tell Grok to run a task on a schedule, or automatically whenever a matching email shows up, and it'll report back through email or a phone notification. It's basically giving Grok the ability to work while you're not even looking at it, and it's available right now on grok.com and the mobile apps, with the email-trigger option reserved for SuperGrok subscribers. On the developer side, xAI open-sourced Grok Build, its coding agent and terminal interface, meaning programmers can now inspect, modify, and run the whole thing themselves instead of trusting it as a black box &mdash; a notably generous move for a company that's usually pretty guarded about its tech. That release also came with smaller but welcome polish, like clearer session details and better handling of rate limits and queued messages.</p>
 <p>Meanwhile, on the model front, xAI shipped Grok 4.5, a massive 1.5-trillion-parameter model tuned especially for coding, and Musk declared that Grok Imagine, the image and video generation half of Grok, has officially reached completion, showing off some of its artistic output on X. The much-hyped Grok 5, though, still doesn't have a confirmed release date, with most signs now pointing to sometime in the third quarter of 2026 or later.</p>
 <p>Put together, it's a week where Grok looked less like a single chatbot and more like a growing toolkit &mdash; one piece for automating your inbox, one for coding, one for generating art &mdash; with the biggest model upgrade still sitting just out of reach.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-22">
-<div class="ed-head">AI Developments &mdash; Wednesday, July 22, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude Cowork</span>
-<h2>This Week in Claude Cowork</h2>
-<p>Cowork is the part of Claude that acts less like a chatbot and more like a coworker &mdash; it can open files, manage tasks, and work through multi-step jobs on your computer instead of just answering questions in a text box. Up until now, it lived only inside the Claude desktop app, which meant you had to be sitting at that one machine to use it.</p>
-<p>That changed this week. Anthropic announced Cowork is breaking out of the desktop app and heading to the web at claude.ai and to mobile on iOS and Android, starting in beta with Max plan subscribers. The bigger deal isn't just "now on your phone" &mdash; it's how it works under the hood. Sessions now run remotely on Anthropic's own servers instead of your laptop, so your files and progress are tied to your account, not your device. Close your laptop mid-task, and Cowork just keeps working. Scheduled jobs, like this very digest, can now fire off even if every one of your devices is powered down. On top of that, chat and Cowork got merged into one shared home screen, so you're not toggling between separate apps for separate modes anymore, and new Microsoft 365 write tools let Claude draft and send emails, manage your calendar, and edit OneDrive or SharePoint files directly.</p>
-<p>Think of it like the difference between a work laptop that only runs your projects when it's open, versus a project that keeps humming along on a server somewhere no matter where you are. For anyone juggling tasks across a phone and a desktop, that's the actual unlock here: less "let me get back to my computer," more "it's already done by the time I check."</p>
-</section>
-
-<section>
-<span class="tool-chip">Eleven Labs</span>
-<h2>This Week in Eleven Labs</h2>
-<p>ElevenLabs is the company known for eerily realistic AI voices &mdash; the kind that power audiobooks, voice assistants, and dubbed videos that don't sound robotic. Lately it's been stretching beyond just voice generation into full conversational AI agents that businesses can deploy for calls and chats, and this week's updates lean hard into making those agents easier to actually manage at scale.</p>
-<p>The headline change is conversation tags: a proper system for labeling, filtering, and organizing the (potentially huge) pile of conversations an AI agent has with customers, so a business can sort through what happened without manually scrolling through transcripts. Alongside that, ElevenLabs added filters to hide conversations by status, so teams can quickly zero in on the ones still "in progress" or the ones that failed and need a human look. The platform also plugged in fresh underlying language models, including newer Claude and GPT options, giving developers more choice in what "brain" powers their voice agent. Smaller but useful additions rounded things out too, like better real-time transcription, auto-translated transcripts, sentiment analysis on conversations, and longer timeouts for tools connecting through MCP, the increasingly common standard for linking AI to outside data and services.</p>
-<p>None of this is flashy on its own, but together it reads as a company shifting from "cool voice demo" to "enterprise-ready tool." If you're a business running voice or chat agents at any real volume, this is the unglamorous plumbing work that makes that actually manageable day to day.</p>
-</section>
-
-<section class="spotlight">
-<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
-<h2>Microsoft Project Perception</h2>
-<p>Project Perception is Microsoft's new AI-powered security tool, built to hunt down and help fix vulnerabilities hiding in software code before attackers find them first. What makes it different from a typical AI coding assistant is its "model router" &mdash; instead of relying on one AI brain for everything, it automatically picks between Microsoft's own models, OpenAI's models, and Anthropic's models depending on the task, using cheaper models for routine scans and saving the expensive, powerful ones for tricky edge cases. That mix-and-match approach is reportedly letting Microsoft offer the tool at roughly half the cost of Anthropic's rival product, Mythos, which has dominated this corner of enterprise security so far.</p>
-<p>Why it matters: security teams at big companies drown in code, and manually reviewing all of it for weaknesses is basically impossible. A tool that can watch constantly and flag real threats cheaply is a big deal for IT and security departments, not everyday consumers. What's surprising is the strategy itself &mdash; Microsoft building a product that leans on a competitor's AI models (Anthropic's) to undercut that same competitor's own security tool is a pretty bold, slightly cheeky move.</p>
-<p class="muted">Source: TechRepublic, UC Today, July 2026</p>
 </section>
 
 </article>
