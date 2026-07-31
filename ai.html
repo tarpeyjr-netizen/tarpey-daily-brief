@@ -34,9 +34,29 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: July 30, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: July 31, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-07-31">
+<div class="ed-head">AI Developments &mdash; Friday, July 31, 2026</div>
+
+<section>
+<span class="tool-chip">ChatGPT</span>
+<h2>This Week in ChatGPT</h2>
+<p>If you've ever asked ChatGPT a question, you already know the basics: it's OpenAI's chatbot that can write, code, research, and now increasingly act on your behalf like a digital assistant. This week OpenAI kept pushing that "assistant" side hard, rolling out changes that make ChatGPT feel less like a search box and more like a coworker who actually finishes tasks.</p>
+<p>The biggest shift is that Codex Remote, OpenAI's tool for handing off coding work, is now available to everyone on every ChatGPT plan. Think of it like leaving a note for a very fast intern: you kick off a coding task from your laptop, walk away, and check its progress later from your phone. Around the same time, OpenAI opened up a "ChatGPT for small businesses" program, complete with training sessions and in-person AI academies, basically OpenAI going door to door trying to get mom-and-pop shops comfortable using GPT-5.6 and the newer Work agent instead of just Google-ing everything. On the research side, verified professors and postdocs are getting a full year of free team access, with OpenAI aiming to onboard 10,000 researchers now and grow that toward 100,000 by 2027, a clear bet that goodwill in academia pays off later. There's also a quieter but practical change: personal finance tools inside ChatGPT are spreading to more Plus and Pro users across web, iOS, and now Android in the US, and a "Sign in with ChatGPT" option is starting to show up on partner sites so you don't need a new password for every AI-powered app you try.</p>
+<p>Put together, this week reads like OpenAI trying to widen its front door in every direction at once, students, small business owners, developers, and everyday budget-trackers all got something new. None of it is flashy on its own, but it adds up to ChatGPT quietly becoming the default layer a lot of other apps and workflows sit on top of.</p>
+</section>
+
+<section>
+<span class="tool-chip">Mistral AI</span>
+<h2>This Week in Mistral AI</h2>
+<p>Mistral is the French AI company that's built a name for itself by being fast, efficient, and refreshingly open with its models compared to some of the bigger US labs. This week showed Mistral leaning into two identities at once: the enterprise-friendly partner big companies trust, and the scrappy lab still shipping genuinely new kinds of models.</p>
+<p>On the partnership front, Microsoft and Mistral expanded their strategic alliance, adding fresh European AI infrastructure so regulated industries, think banks, hospitals, government agencies, can run frontier AI while keeping tighter control over their data. That's a big deal in Europe specifically, where data rules are strict and companies have been hesitant to hand everything over to US-only cloud providers. Meanwhile on the product side, Mistral quietly shipped an updated OCR model, OCR 4, that's now noticeably better at reading scanned documents and can hand back paragraph-level bounding boxes, basically it doesn't just read the text, it tells you exactly where on the page each chunk of text lives, which matters a lot for anyone building document-processing tools. Its Vibe assistant (the rebranded, souped-up version of Le Chat) also picked up new muscle, catching users up on their inbox and calendar, running research, and taking coding requests all the way to a finished, mergeable pull request. And in a genuinely unusual move, Mistral entered early access with a model built specifically for robot navigation, one that learns to guide a robot using just a single camera and plain-language instructions, trained almost entirely in simulation rather than on real robot footage.</p>
+<p>The robotics move especially stands out, most AI news this year has been about chatbots getting smarter, so a model aimed squarely at helping physical robots navigate the real world is a reminder that the AI race isn't only happening on your screen. Combined with the Microsoft deal, it looks like Mistral is trying to prove it can be trusted with serious infrastructure while still being the lab willing to try something weird.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-07-30">
 <div class="ed-head">AI Developments &mdash; Thursday, July 30, 2026</div>
 
@@ -194,28 +214,6 @@
 <p>Mistral AI is the French AI lab that's built a reputation as Europe's answer to OpenAI and Google &mdash; known for efficient, often open-weight models and a chat app called Le Chat. This week's biggest story wasn't really about a model at all, though: it was about money and muscle.</p>
 <p>On July 21, Microsoft and Mistral announced a major expansion of their partnership, a deal reported to be worth billions, giving Microsoft access to Mistral's European computing infrastructure while helping regulated industries adopt AI they can actually control and keep on European soil. That plugs into a bigger buildout story for Mistral, which is also standing up a new 10-megawatt data center facility near Paris, due to open in the third quarter, and has been working with heavyweight industrial partners like Airbus, BMW, and ASML on AI tools for engineering and manufacturing. On the product side, Mistral's agentic assistant, Vibe, keeps getting more capable &mdash; it's now positioned as a single agent that can comb through your inbox and calendar, do deep research, draft documents, and even take a coding task all the way from request to a shipped, reviewed pull request. There was also a quieter but useful update: a bugfix release for Mistral's underlying tokenizer tooling that cleans up some technical rough edges around audio processing and text decoding.</p>
 <p>The throughline here is Mistral positioning itself as the "trustworthy, sovereign" AI option for European businesses and governments, backed by real infrastructure investment rather than just marketing. For everyday users, the more interesting thread to watch is Vibe, which is quietly becoming a genuine competitor to the do-everything agents coming out of the US labs.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-07-23">
-<div class="ed-head">AI Developments &mdash; Thursday, July 23, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude Code</span>
-<h2>This Week in Claude Code</h2>
-<p>Claude Code is Anthropic's command-line tool that lets developers hand off actual coding work to Claude instead of typing every line themselves &mdash; think of it as a very capable junior engineer who lives in your terminal. This past week, Anthropic spent most of its energy making that junior engineer faster, calmer, and easier to trust.</p>
-<p>The headline fix tackles something that was quietly annoying power users: on long coding sessions, the tool used to get slower and slower the more you talked to it, because behind the scenes it was reprocessing the entire conversation history every single turn &mdash; a bit like re-reading an entire group chat from the beginning every time someone sends a new message. Anthropic squashed that slowdown, so marathon sessions now stay snappy instead of grinding to a crawl. Alongside that, Claude Code picked up new sandbox controls that let teams skip full filesystem isolation while still keeping a lid on network access, giving companies more control over exactly how much freedom to give their AI coding assistant.</p>
-<p>On the workflow side, Claude Code now runs code reviews in the background automatically, and screen-reader users got a much richer, more detailed narration of what the tool is doing &mdash; a real accessibility upgrade rather than an afterthought. Anthropic also beefed up "auto mode" and trust handling so the assistant is more careful about what it's allowed to touch on its own, and cleaned up a long list of smaller bugs around sessions, permissions, worktrees, and even how text renders inside VS Code. For teams managing lots of developers, the admin console also got two new tabs that track usage and value, so a manager can now see things like active developers, session counts, and which commands get used most, updated daily.</p>
-<p>None of this is flashy, but it's the kind of unglamorous polish that decides whether a tool becomes part of someone's daily habit or gets abandoned after a rough first week &mdash; and this week Anthropic clearly bet on habit.</p>
-</section>
-
-<section>
-<span class="tool-chip">Xai Grok</span>
-<h2>This Week in Grok</h2>
-<p>Grok is xAI's chatbot and AI model family, built by Elon Musk's company and baked directly into X &mdash; it's known for a slightly edgier, more "say what it thinks" personality than some of its rivals. This week Grok pushed forward on two very different fronts at once: making itself more useful for everyday automation, and opening up its coding tools to anyone who wants to peek under the hood.</p>
-<p>The biggest practical addition is Automations &mdash; you can now tell Grok to run a task on a schedule, or automatically whenever a matching email shows up, and it'll report back through email or a phone notification. It's basically giving Grok the ability to work while you're not even looking at it, and it's available right now on grok.com and the mobile apps, with the email-trigger option reserved for SuperGrok subscribers. On the developer side, xAI open-sourced Grok Build, its coding agent and terminal interface, meaning programmers can now inspect, modify, and run the whole thing themselves instead of trusting it as a black box &mdash; a notably generous move for a company that's usually pretty guarded about its tech. That release also came with smaller but welcome polish, like clearer session details and better handling of rate limits and queued messages.</p>
-<p>Meanwhile, on the model front, xAI shipped Grok 4.5, a massive 1.5-trillion-parameter model tuned especially for coding, and Musk declared that Grok Imagine, the image and video generation half of Grok, has officially reached completion, showing off some of its artistic output on X. The much-hyped Grok 5, though, still doesn't have a confirmed release date, with most signs now pointing to sometime in the third quarter of 2026 or later.</p>
-<p>Put together, it's a week where Grok looked less like a single chatbot and more like a growing toolkit &mdash; one piece for automating your inbox, one for coding, one for generating art &mdash; with the biggest model upgrade still sitting just out of reach.</p>
 </section>
 
 </article>
