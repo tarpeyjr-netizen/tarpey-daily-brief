@@ -34,9 +34,38 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: August 11, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: August 12, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-08-12">
+<div class="ed-head">AI Developments &mdash; Wednesday, August 12, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude CoWork</span>
+<h2>This Week in Claude CoWork</h2>
+<p>If you haven't met Cowork yet, think of it as Claude's version of a personal assistant that can actually touch your files and run tasks in the background, not just chat with you. It's the mode that lets Claude organize folders, build documents, and keep working on things even after you've closed the laptop.</p>
+<p>This week the story is mostly about Cowork growing up for the workplace. Anthropic quietly rolled out richer admin dashboards for Claude Enterprise, so IT teams can now see exactly who's using what, how much it costs, and get alerts before spending gets out of hand — basically a fuel gauge for AI usage. Right alongside that, Claude Code (Cowork's coding-focused cousin) picked up a public beta for self-hosted environments, meaning bigger companies can now run their AI coding sessions on their own servers instead of Anthropic's, which matters a lot if you work somewhere with strict security rules. Anthropic also added security scanning for skills and plugins, automatically checking any third-party add-on for shady code before it gets installed, plus new "inference hooks" that let compliance teams inspect what Claude is doing in real time across chat, Cowork, and Claude Code. None of this is flashy, but it's the plumbing that lets bigger, more cautious organizations actually trust an AI agent with real work.</p>
+<p>The bigger picture: this all builds on July's news that Cowork is expanding beyond your desktop to the web and mobile apps, running as remote sessions that keep working even when your device is off. Put together, Anthropic is clearly building toward a world where Cowork isn't just a neat trick on your computer — it's infrastructure a whole company can lean on.</p>
+</section>
+
+<section>
+<span class="tool-chip">Eleven Labs</span>
+<h2>This Week in Eleven Labs</h2>
+<p>Eleven Labs is the company behind some of the most realistic AI voices around — the tech that can read text aloud, dub a video into another language, or transcribe a meeting, all sounding shockingly human. Lately they've been pitching themselves less as a fun voice-cloning toy and more as a serious tool businesses actually run on.</p>
+<p>The most useful update this week is under the hood of their live transcription tool, called Scribe. It now supports "keyterms," which lets you tell the AI ahead of time about specific names, jargon, or brand words so it stops mishearing them — handy if your industry has words spellcheck has never heard of. There's also a new "no verbatim" mode that automatically strips out the "ums," false starts, and stumbles from a transcript, so what you get reads like a clean script instead of a messy recording of how people actually talk. On the developer side, Eleven Labs stretched the timeout for their MCP tool connections from 120 seconds to a full 5 minutes, which sounds technical but basically means the tools that plug Eleven Labs into other AI agents are now far less likely to time out and fail on longer tasks.</p>
+<p>None of this is a headline-grabbing new voice or model, but it's the kind of quiet reliability work that matters most once a tool moves from "cool demo" to "thing my business depends on every day."</p>
+</section>
+
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>OpenAI Astra</h2>
+<p>Astra is OpenAI's next big model, and instead of launching it with a flashy demo, they introduced it by having it solve ten math problems that had stumped human mathematicians for years — one of them, a puzzle about "non-sofic groups," had been open since 1999. That's a big deal, because math proofs are usually the last place people expect AI to shine; you can't fake your way through one, it either holds up or it doesn't.</p>
+<p>What makes this genuinely impressive is that OpenAI didn't just say "trust us." They published the entire proofs as machine-checkable files in a system called Lean, plus a 249-page manuscript, all free on GitHub. That means any mathematician, or honestly anyone with the right free software installed, can independently verify every single proof line by line without taking OpenAI's word for it. And it reportedly cost around $2,000 in computing power to find all ten answers — pocket change for this kind of result. Fields Medal-winning mathematicians have already started reacting positively, while noting the work still needs careful digestion.</p>
+<p>Astra itself isn't public yet, so you can't use it. But it's a preview of AI tackling genuinely novel, unsolved problems in serious fields, not just remixing what's already known — worth watching for anyone curious where AI reasoning is actually headed next.</p>
+<p class="muted">Source: TechTimes, Pondero, TheNextWeb — August 2026</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-08-11">
 <div class="ed-head">AI Developments &mdash; Tuesday, August 11, 2026</div>
 
@@ -107,26 +136,6 @@
 <h2>DeepSeek V4 Flash</h2>
 <p>DeepSeek is the Chinese AI lab famous for building models that punch way above their price tag, and on July 31 it officially released DeepSeek V4 Flash after months in preview. Flash is the "small but scrappy" member of the V4 family: a mixture-of-experts model with a massive 1-million-token context window, meaning it can hold roughly an entire book series in its head at once. The official release didn't change the architecture &mdash; instead, DeepSeek gave it extra training that sharply boosted its coding, tool-calling, and agent skills, the abilities that let an AI actually operate software rather than just chat about it. The wild part is the price: about 14 cents per million input tokens and 28 cents per million output tokens, roughly a third the cost of its bigger sibling V4 Pro &mdash; and pennies compared to Western frontier models. Benchmark scores like 82.7 on Terminal-Bench put it in genuinely serious company. For students, indie developers, and startups watching every dollar, Flash makes "build your own AI agent" suddenly feel affordable. That pricing pressure is exactly why the big labs are paying attention.</p>
 <p class="muted">Source: DeepSeek blog / Cosmic JS, July 2026</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-08-04">
-<div class="ed-head">AI Developments &mdash; Tuesday, August 4, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude</span>
-<h2>This Week in Anthropic Claude</h2>
-<p>Claude is the AI assistant made by Anthropic, the company known for building models that are careful, good at writing and coding, and increasingly good at plugging into the other apps on your computer. This past week wasn't about one flashy headline &mdash; it was about Claude getting bigger, cheaper at the high end, and a lot easier to wire into everything else you use.</p>
-<p>The biggest release was Claude Opus 5, a new flagship model that Anthropic is calling "near-frontier" &mdash; meaning it's right up near the smartest models out there &mdash; but at half the price of Claude Fable 5. Right alongside it, Claude Sonnet 5 on the developer platform got a huge memory boost: a 1 million token context window and 128,000 tokens of output room. Think of it like upgrading from a notebook to an entire desk covered in reference books Claude can flip through at once, without losing track of what it read on page one. Under the hood, Claude also picked up support for a new version of MCP, the connector standard that lets it talk to outside apps and services. That plumbing update makes it easier for developers to build tools Claude can use, and it's clearly working: MCP has crossed 400 million monthly downloads, four times where it stood at the start of the year. Claude Code, the coding-focused version, also got a batch of smaller quality-of-life fixes, from emoji autocomplete to tighter guardrails around background tasks and budgets.</p>
-<p>The one thing to flag for anyone building on Claude: promotional pricing on Sonnet 5 ($2/$10 per million tokens) ends August 31, with standard pricing ($3/$15) kicking in September 1. For everyday users, though, the takeaway is simpler &mdash; Claude just got noticeably more capable at handling long documents and complex, multi-app workflows, and a cheaper top-tier model means more power without necessarily paying frontier prices.</p>
-</section>
-
-<section>
-<span class="tool-chip">Perplexity AI</span>
-<h2>This Week in Perplexity AI</h2>
-<p>Perplexity started life as an AI search engine that answers your questions with real cited sources instead of a pile of blue links. Lately, though, it's been pushing hard to become something bigger: less a search box, more a digital assistant that can actually do things for you.</p>
-<p>The clearest sign of that shift is Personal Computer, Perplexity's AI agent that can open apps, edit files, and run multi-step tasks on your machine, which just expanded from Mac-only to Windows &mdash; instantly putting it in front of over a billion more devices. Perplexity also rolled out Computer support directly inside Microsoft 365, so it can now work inside Word, Excel, PowerPoint, Outlook, and Teams, complete with a live task-tracking panel and inline citations so you can double-check its work. On the research side, there's a new feature called Model Council, which takes a single tough question and hands it to a whole panel of different AI models at once, then writes up a summary of where they agree and where they diverge &mdash; a bit like getting several doctors' opinions and having someone helpfully highlight the disagreements for you. Under the hood, Perplexity also started using Claude Opus 5 across its Search and Computer products.</p>
-<p>Add in new enterprise controls like custom roles, permissions, and identity-provider syncing, and the picture is clear: Perplexity is betting its future on being the assistant that does the work, not just the one that finds the answer. For regular users, that means more of your day-to-day busywork &mdash; drafting a spreadsheet, organizing files, digging through sources &mdash; might soon happen with barely any typing on your part.</p>
 </section>
 
 </article>
