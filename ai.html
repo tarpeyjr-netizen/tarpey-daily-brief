@@ -34,9 +34,31 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: August 17, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: August 18, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-08-18">
+<div class="ed-head">AI Developments &mdash; Tuesday, August 18, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude</span>
+<h2>This Week in Anthropic Claude</h2>
+<p>Claude is the AI assistant built by Anthropic, and it's the one people tend to reach for when they want careful writing, long documents, or actual work done rather than just a chat. This week was less about flashy new abilities and more about the plumbing &mdash; the stuff that decides whether big companies and governments are allowed to use it at all. And one very public hiccup.</p>
+<p>The headline change is that Anthropic started watermarking Claude's text. Think of it like an invisible signature woven into the words &mdash; you can't see it, it doesn't make the writing worse or slower, and it costs nothing extra, but a detector can spot it later and say "yes, a Claude model wrote this." That's Anthropic getting ahead of Europe's AI Act, which is pushing every AI company to label machine-made content. A public detection tool is on the way, and older Claude models will get the same treatment over the next few months. In the same compliance spirit, Anthropic stretched its Compliance API to cover Cowork and Claude Code across desktop, web, mobile and the command line, so a company's security team can pull one clean record of everything an employee did with Claude &mdash; useful for audits, and frankly the kind of boring feature that unlocks giant contracts. Claude for Government also opened in beta, and the interesting wrinkle is that Anthropic bills agencies directly, so a government office doesn't have to sign a separate cloud deal just to get started.</p>
+<p>Not everything went smoothly. On Saturday evening Claude went down hard &mdash; Claude.ai, Claude Code and Cowork all fell over around 21:58 UTC, and service didn't come back until roughly 22:40. Forty-odd minutes isn't catastrophic, but it was a reminder that a lot of people now treat Claude the way they treat electricity, and notice loudly when it flickers. Meanwhile the connector directory quietly crossed 950 MCP servers, which is the count of outside apps Claude can plug into.</p>
+<p>Put it together and you get a picture of a product growing up. Watermarks, audit logs and government contracts aren't the fun part of AI, but they're what turns a clever tool into infrastructure &mdash; and the outage was a small preview of what it means when that infrastructure blinks.</p>
+</section>
+
+<section>
+<span class="tool-chip">Perplexity AI</span>
+<h2>This Week in Perplexity AI</h2>
+<p>Perplexity started life as a search engine that answers your question in a paragraph instead of handing you ten blue links, and it has spent the last year turning into something much stranger and more ambitious: an AI that actually does things on your computer. This week pushed further down that road.</p>
+<p>The biggest move was in the Agent API, where Perplexity added support for a fresh batch of outside models &mdash; Claude Opus 4.7, GPT-5.5 and Grok 4.20 Reasoning. That's worth pausing on, because it says something about Perplexity's whole strategy: rather than betting everything on one homegrown brain, it acts as a switchboard, routing your question to whichever model is best at it. Alongside that, the Perplexity MCP server got one-click installation for Cursor, VS Code, Claude Desktop and Claude Code, bundling four tools &mdash; search, ask, research and reason. In plain terms, if you're working inside another AI app, you can now bolt Perplexity's research ability onto it in about ten seconds instead of fiddling with config files. Personal Computer also landed properly on Mac, with simpler controls and better memory of your own context, including a prebuilt "Personal CFO" that pokes through your financial life and reports back.</p>
+<p>Hovering over all of this is the legal news from a couple of weeks back that still shapes everything: the Ninth Circuit threw out Amazon's injunction against Perplexity's Comet shopping agent, reasoning that when Comet browses Amazon on your behalf, it's really <em>you</em> visiting Amazon. It's the first appeals-court ruling on whether an AI agent counts as "accessing" a website, and for now it's a green light for the whole agentic browsing idea.</p>
+<p>So Perplexity is quietly building the thing a lot of people assumed would take years: an assistant that reads the web, opens your files, works inside your apps, and now legally gets to shop on your behalf. Whether you find that thrilling or slightly unnerving probably depends on how much you enjoy delegating.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-08-17">
 <div class="ed-head">AI Developments &mdash; Monday, August 17, 2026</div>
 
@@ -129,28 +151,6 @@
 
 </p>
 <p>The throughline is that Perplexity is betting its future less on "answer my question" and more on "handle this for me," stacking in shared projects, memory-like features, and cross-app installs at a fast clip. For everyday users, that means the assistant is getting noticeably more capable at multi-step tasks, though it also means the product is changing shape quickly enough that it might be worth checking in on what's new every so often.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-08-10">
-<div class="ed-head">AI Developments &mdash; Monday, August 10, 2026</div>
-
-<section>
-<span class="tool-chip">Google Gemini</span>
-<h2>This Week in Google Gemini</h2>
-<p>Gemini is Google's flagship AI, the brain baked into everything from Search to Android to Google Docs. If you've talked to an AI inside a Google product recently, odds are Gemini answered you. And this week, Gemini leaned hard into one thing: making video feel less like a rendering job and more like a conversation.</p>
-<p>The headline move is Gemini Omni Flash, a new video model that lets you build and edit clips just by describing what you want, whether you're starting from text, a photo, an old video clip, or even a snippet of audio. Think of it like editing a movie by chatting with a very fast, very literal film crew instead of dragging clips around a timeline. It's already showing up across the Gemini app, Google's Flow video tool, AI Studio, the developer API, and the Enterprise Agent Platform, so it's not a one-off demo, it's being wired into everything at once. Alongside that, Gemini is quietly getting smarter about the physical world too: Google opened up its WeatherNext forecasting models, including a new one built specifically for tracking cyclones, giving Gemini-powered tools sharper storm predictions built from thousands of simulated scenarios rather than a single best guess. And back in the classroom, Gemini is rolling out tools that let teachers generate grading rubrics instantly from an assignment, plus new study aids for students like flashcards and practice quizzes tied directly to their class materials.</p>
-<p>The common thread here is Gemini pushing outward from "chatbot you type into" toward "assistant baked into whatever you're already doing," whether that's editing a video, checking the weather, or grading homework. For regular users, that mostly means less friction: fewer separate apps, more of the AI just showing up where you need it.</p>
-</section>
-
-<section>
-<span class="tool-chip">Meta Llama</span>
-<h2>This Week in Meta Llama</h2>
-<p>Llama has been Meta's answer to "what if the best AI models were free for anyone to download and tinker with?" For a few years, that open approach made Llama the go-to foundation for developers who didn't want to be locked into a paid API. But this week brought a real plot twist in that story.</p>
-<p>Meta just launched Muse Spark, a brand-new AI model, and unlike Llama, it's proprietary, meaning you can't just download the weights and run it yourself. That's a notable shift for a company that built its AI reputation on being the open alternative to the likes of OpenAI and Anthropic. The backdrop makes it easier to understand why: open-weight competitors from Chinese labs like Alibaba and DeepSeek have been eating into Llama's dominance, reportedly accounting for a huge share of open-model downloads by late last year, with newer releases like Alibaba's Qwen and Zhipu's GLM even out-benchmarking Llama 4 on some tests. Meta says it still plans to open-source future versions down the line, so this isn't necessarily Llama's funeral, more like a hedge while the company regroups. On a smaller note, Meta also wrapped up its Llama Impact Grants, handing over $1.5 million to ten international teams using Llama for things like nonprofit and public-good projects.
-
-</p>
-<p>The bigger picture: the "open vs. closed" AI race is getting messier, and Meta blinking toward a closed model, even partially, is a sign of just how competitive that open-source lane has become. Worth watching whether Muse Spark stays a one-off experiment or becomes the new default.</p>
 </section>
 
 </article>
