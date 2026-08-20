@@ -34,9 +34,31 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: August 19, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: August 20, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-08-20">
+<div class="ed-head">AI Developments &mdash; Thursday, August 20, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Code</span>
+<h2>This Week in Anthropic Claude Code</h2>
+<p>Claude Code is the version of Claude that lives inside a programmer's terminal &mdash; the plain black window where developers type commands instead of clicking buttons. You describe what you want built or fixed, and it goes off and edits the actual files on your computer. This week was less about one big splashy feature and more about a steady drumbeat of small releases that quietly make the thing tougher and easier to live with.</p>
+<p>The headline change landed on August 13, when subagent forking became the default. Subagents are helper versions of Claude that get sent off to handle a side task, and until now each one started cold, with no idea what the main conversation had been about. A "fork" inherits the whole conversation and the cached memory of it &mdash; imagine handing a new colleague the full meeting notes instead of a sticky note. It makes helpers faster and cheaper, because nothing has to be re-explained from scratch. Version 2.1.233 followed the next day with GitLab merge-request support in the worktree view and, more usefully for anyone who has ever watched their laptop fans scream, memory limits that stop a runaway build command from freezing the whole machine. Version 2.1.234 arrived on August 17. Alongside those, the tool picked up an ANTHROPIC_DEFAULT_MODEL setting so you can pin which model new sessions start on, cross-session idle notifications that ping you when a long job finishes, and tighter macOS sandbox protections that keep Claude fenced into the folders it is supposed to touch.</p>
+<p>Round that out with the polish: optional spellcheck in the prompt box, more readable terminal text and list rendering, faster startup, better screen-reader support in VS Code, quicker background cloud sessions, and a long list of squashed bugs around sessions, permissions, dialogs, and slash commands. On the business side, Anthropic's Compliance API coverage was extended to both Claude Code and Cowork on August 11, which is the sort of unglamorous plumbing that lets big companies actually approve the tool for their staff.</p>
+<p>The pattern here is a product growing up. Nobody writes headlines about memory limits and sandbox rules, but those are exactly the features that decide whether a tool stays a weekend toy or becomes something you trust with real work every day. Claude Code is clearly aiming for the second one.</p>
+</section>
+
+<section>
+<span class="tool-chip">xAI Grok</span>
+<h2>This Week in xAI Grok</h2>
+<p>Grok is Elon Musk's AI assistant, built by his company xAI and wired directly into X, the site formerly called Twitter. It has always leaned on being fast, cheap, and a bit less buttoned-up than its rivals. This week it leaned hard into all three.</p>
+<p>The big one was Grok 4.6 landing on Amazon Bedrock on August 19. Bedrock is Amazon's cloud menu of AI models, so this puts xAI's flagship in front of every business already building on AWS without them having to sign a separate deal. Grok 4.6 itself only launched on August 12, and it is a genuinely serious model: a 500,000-token context window, which means you can hand it something the length of a couple of novels and it keeps the whole thing in mind, plus dial-able "reasoning effort" from low all the way up to xhigh, so you choose between quick-and-cheap and slow-and-careful depending on the job. Pricing is the sharp end of the pitch &mdash; roughly $2 per million words in and $6 per million out, which undercuts rival frontier models by around half and puts real pressure on everyone else's API bills.</p>
+<p>On the creative side, Grok Imagine's Image 2.0 is now the default Quality Mode on grok.com/imagine and in the iOS and Android apps. It follows instructions more precisely, renders text inside images far more legibly &mdash; long an embarrassing weak spot for image generators &mdash; and handles dense multi-part layouts, smart resizing, and multiple reference images. Musk also confirmed on August 9 that it now does native meme generation, which is either the most or least serious feature shipped this month depending on your outlook. Grok Build, the coding side of the house, picked up searchable sessions, better handling of queued messages, sturdier subagents, cleaner permissions, and smoother copy-paste and shortcut behaviour on Linux and Windows.</p>
+<p>What is coming next is arguably bigger than what shipped. Grok 4.7, a 2.1-trillion-parameter model, has finished initial training, and Musk says xAI is now feeding it a "massive amount" of SpaceX engineering data &mdash; a genuinely unusual training ingredient nobody else has. It was billed as three to four weeks out and is already slipping a little. Grok 5 is still targeted before the end of 2026. For anyone watching costs, the takeaway is simple: xAI has decided the way to win is to be very good and very cheap at the same time, and the rest of the field now has to answer that.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-08-19">
 <div class="ed-head">AI Developments &mdash; Wednesday, August 19, 2026</div>
 
@@ -128,35 +150,6 @@
 <p>This week itself was on the quiet side. The one concrete release was Leanstral 1.5, an updated model that specializes in formal mathematical proofs written in a language called Lean 4 &mdash; niche, admittedly, but the kind of thing that matters if you care about AI that can actually prove it's right rather than just sounding right, and the update improves how much context it can hold while reasoning through long arguments.</p>
 <p>The more interesting story is the shape of the last few weeks, which is where Mistral's real ambition shows. Le Chat was rebranded to Mistral Vibe and turned into a proper agent that can catch up on your inbox and calendar, run deep research, draft documents, and take a coding task all the way from request to a merged pull request. There's Voxtral TTS, an open-weights text-to-speech model; Shieldstral for safety filtering; Forge, which lets a company train a frontier-grade model on its own private knowledge; and Robostral Navigate, which lets a robot find its way around a building using one camera and plain-English instructions. Microsoft expanded its partnership with Mistral in July aimed squarely at regulated industries, and Mistral is building a 10-megawatt data center near Paris while reportedly poking at designing its own chips.</p>
 <p>That's a company deliberately trying to own every layer &mdash; the chips, the data center, the models, the agent on top &mdash; rather than renting any of it. For anyone outside the US watching a handful of American labs consolidate power, Mistral is the bet that a credible alternative can exist. This week was a breather; the trajectory is anything but.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-08-12">
-<div class="ed-head">AI Developments &mdash; Wednesday, August 12, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude CoWork</span>
-<h2>This Week in Claude CoWork</h2>
-<p>If you haven't met Cowork yet, think of it as Claude's version of a personal assistant that can actually touch your files and run tasks in the background, not just chat with you. It's the mode that lets Claude organize folders, build documents, and keep working on things even after you've closed the laptop.</p>
-<p>This week the story is mostly about Cowork growing up for the workplace. Anthropic quietly rolled out richer admin dashboards for Claude Enterprise, so IT teams can now see exactly who's using what, how much it costs, and get alerts before spending gets out of hand — basically a fuel gauge for AI usage. Right alongside that, Claude Code (Cowork's coding-focused cousin) picked up a public beta for self-hosted environments, meaning bigger companies can now run their AI coding sessions on their own servers instead of Anthropic's, which matters a lot if you work somewhere with strict security rules. Anthropic also added security scanning for skills and plugins, automatically checking any third-party add-on for shady code before it gets installed, plus new "inference hooks" that let compliance teams inspect what Claude is doing in real time across chat, Cowork, and Claude Code. None of this is flashy, but it's the plumbing that lets bigger, more cautious organizations actually trust an AI agent with real work.</p>
-<p>The bigger picture: this all builds on July's news that Cowork is expanding beyond your desktop to the web and mobile apps, running as remote sessions that keep working even when your device is off. Put together, Anthropic is clearly building toward a world where Cowork isn't just a neat trick on your computer — it's infrastructure a whole company can lean on.</p>
-</section>
-
-<section>
-<span class="tool-chip">Eleven Labs</span>
-<h2>This Week in Eleven Labs</h2>
-<p>Eleven Labs is the company behind some of the most realistic AI voices around — the tech that can read text aloud, dub a video into another language, or transcribe a meeting, all sounding shockingly human. Lately they've been pitching themselves less as a fun voice-cloning toy and more as a serious tool businesses actually run on.</p>
-<p>The most useful update this week is under the hood of their live transcription tool, called Scribe. It now supports "keyterms," which lets you tell the AI ahead of time about specific names, jargon, or brand words so it stops mishearing them — handy if your industry has words spellcheck has never heard of. There's also a new "no verbatim" mode that automatically strips out the "ums," false starts, and stumbles from a transcript, so what you get reads like a clean script instead of a messy recording of how people actually talk. On the developer side, Eleven Labs stretched the timeout for their MCP tool connections from 120 seconds to a full 5 minutes, which sounds technical but basically means the tools that plug Eleven Labs into other AI agents are now far less likely to time out and fail on longer tasks.</p>
-<p>None of this is a headline-grabbing new voice or model, but it's the kind of quiet reliability work that matters most once a tool moves from "cool demo" to "thing my business depends on every day."</p>
-</section>
-
-<section class="spotlight">
-<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
-<h2>OpenAI Astra</h2>
-<p>Astra is OpenAI's next big model, and instead of launching it with a flashy demo, they introduced it by having it solve ten math problems that had stumped human mathematicians for years — one of them, a puzzle about "non-sofic groups," had been open since 1999. That's a big deal, because math proofs are usually the last place people expect AI to shine; you can't fake your way through one, it either holds up or it doesn't.</p>
-<p>What makes this genuinely impressive is that OpenAI didn't just say "trust us." They published the entire proofs as machine-checkable files in a system called Lean, plus a 249-page manuscript, all free on GitHub. That means any mathematician, or honestly anyone with the right free software installed, can independently verify every single proof line by line without taking OpenAI's word for it. And it reportedly cost around $2,000 in computing power to find all ten answers — pocket change for this kind of result. Fields Medal-winning mathematicians have already started reacting positively, while noting the work still needs careful digestion.</p>
-<p>Astra itself isn't public yet, so you can't use it. But it's a preview of AI tackling genuinely novel, unsolved problems in serious fields, not just remixing what's already known — worth watching for anyone curious where AI reasoning is actually headed next.</p>
-<p class="muted">Source: TechTimes, Pondero, TheNextWeb — August 2026</p>
 </section>
 
 </article>
