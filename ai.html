@@ -34,9 +34,31 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: August 21, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: August 23, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-08-23">
+<div class="ed-head">AI Developments &mdash; Sunday, August 23, 2026</div>
+
+<section>
+<span class="tool-chip">Microsoft Copilot</span>
+<h2>This Week in Microsoft Copilot</h2>
+<p>Copilot is Microsoft's AI assistant, and it lives basically everywhere Microsoft does &mdash; inside Word, Excel, Outlook, Teams, and Windows itself. Think of it as a helper sitting in the corner of every app you already use for school or work. This week the big story wasn't a flashy new trick. It was Microsoft finally cleaning up a mess it made itself.</p>
+<p>For the past couple of years there have been two different Copilots: a free consumer one, and a paid work one called Microsoft 365 Copilot. Same name, same logo, totally different apps. Confusing? Extremely. Microsoft has now started rolling out a single unified Copilot app that merges the two, with clearer indicators showing which account you're signed into and a simplified name and icon. The web address is moving from the clunky m365.cloud.microsoft over to copilot.cloud.microsoft. It's the software equivalent of finally merging two junk drawers into one organized one. Alongside that tidying, Microsoft quietly killed a couple of features on August 18: the Podcasts tool, which turned your documents into an AI-narrated audio show, and Group Chats, where several people could talk to Copilot together. Anything made in either one doesn't carry forward, which is a good reminder that AI features can vanish as fast as they appear.</p>
+<p>The less glamorous updates are arguably the more useful ones. Copilot's connectors &mdash; the pipes that let it read your company's files &mdash; now run their content scan and their permissions scan at the same time instead of one after the other, so newly added documents show up in answers noticeably faster. SharePoint gained "authoritative sites," which is a way for an organization to tell Copilot "trust this page over that random old draft." Outlook picked up coaching and meeting prep, so it'll nudge you before you send something snippy and brief you before a call. Copilot in Excel also stopped caring whether autosave is on, which sounds tiny until you're the person it kept refusing to help.</p>
+<p>Not everything landed smoothly. Microsoft rolled back a domain exclusion feature it had already announced, and there's an open bug where Copilot buttons simply disappear from Classic Outlook on Windows after a recent update &mdash; still unresolved as of August 21. The pattern here is worth noticing: the AI assistant race has shifted from "look what it can do" to "make it actually work reliably in the places people already are." Less magic, more plumbing. That's usually the sign a technology is growing up.</p>
+</section>
+
+<section>
+<span class="tool-chip">Artlist</span>
+<h2>This Week in Artlist</h2>
+<p>Artlist is a subscription library where video creators grab music, sound effects, stock footage, and editing plugins without worrying about copyright strikes. Over the last two years it's been aggressively reinventing itself as an AI video company rather than just a stock catalog. This week, though, things were quiet.</p>
+<p class="quiet">Quiet week for Artlist &mdash; no major announcements in the past seven days, and nothing significant in the two weeks before that either. The last notable moves were the launch of Artlist Studio in April, an AI production platform built around shot-by-shot directorial control, letting creators build a scene in layers and swap out a character, a background, or a camera angle independently rather than re-rolling one giant prompt and hoping for the best. That launch came alongside the Artlist Original 1.0 image model, trained on Artlist's own premium catalog, and news that the company had crossed $300 million in annual recurring revenue on 600% new-user growth.</p>
+<p>The other half of that story is harder. In June, despite those revenue numbers, Artlist cut roughly 200 jobs &mdash; about 40% of its workforce &mdash; a year after hiring 120 people. It's a stark example of what's happening across the creative software industry right now: AI tools can generate enormous revenue growth and enormous internal disruption at the same time, and a company can be winning on the scoreboard while shrinking dramatically.</p>
+<p>For anyone making videos, the practical takeaway is that Artlist's bet is on control rather than novelty. The pitch is no longer "type a sentence, get a clip" but "direct a scene the way a real production would." Whether that's enough to hold off the giant general-purpose video models is the question worth watching over the next few months.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-08-21">
 <div class="ed-head">AI Developments &mdash; Friday, August 21, 2026</div>
 
@@ -150,28 +172,6 @@
 <p>Last week gave a partial answer, and it was a genuinely interesting one. On August 10, Meta Superintelligence Labs released Muse Glimmer under the Apache 2.0 license &mdash; about as permissive as licenses get &mdash; with the weights sitting ungated on Hugging Face, meaning no forms, no waiting list, just download. It's a 30-billion-parameter multimodal model, so it reads both text and images, handles a 128,000-token context window (roughly a long novel's worth of material in one go), and works across 100-plus languages. The trick is that Glimmer was distilled from the much larger, closed Muse Spark: think of an expert teacher training a smaller student to imitate their answers, so you get most of the skill in a fraction of the size.</p>
 <p>That size choice is the real story. Glimmer runs on a consumer graphics card with 24&ndash;32 GB of memory, or on a Mac if you squeeze it down to 4-bit precision &mdash; and it landed in Ollama almost immediately for local agent work on Apple Silicon. In other words, a coding assistant or personal agent that lives entirely on your laptop, with nothing leaving the machine and no per-token bill. Meta explicitly aimed it at agent workloads, the kind of AI that takes multiple steps on your behalf rather than just replying to a prompt. Zuckerberg also said Muse Spark 1.2's weights will be open-sourced, though as of August 13 nothing had actually appeared.</p>
 <p>So Meta seems to be settling into a split strategy: keep the biggest model behind the curtain, give away the capable-but-compact version that anyone can actually run. For most people building things, that second category is the useful one &mdash; and it's worth noticing that the Llama brand itself is quietly fading into the Muse name.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-08-14">
-<div class="ed-head">AI Developments &mdash; Friday, August 14, 2026</div>
-
-<section>
-<span class="tool-chip">ChatGPT</span>
-<h2>This Week in ChatGPT</h2>
-<p>ChatGPT is the chatbot that started the whole craze &mdash; you type a question, it types back an answer, and these days it can also read your files, talk out loud, and go do errands on the internet for you. It just crossed a billion people using it every week, and this past week OpenAI spent that momentum on one theme: give everybody more, and take the fences down.</p>
-<p>The biggest change is that the free version got a brain transplant. A new model called GPT-5.6 Luna is now the default for everyone, including people who pay nothing, and OpenAI says it makes factual mistakes about 62% less often than the model it replaces. That number is worth sitting with &mdash; the single most annoying thing about chatbots has always been how confidently they get things wrong, and this is the free tier getting the fix. Alongside it there's a new "Think" button, which is basically a gear shift: tap it and the model slows down and reasons harder on a tricky question instead of blurting out the first thing it has. Paid Plus and Pro users get a faster sibling model called GPT-5.6 Sol for everyday research and writing, plus a slider to dial reasoning depth up or down themselves.</p>
-<p>Then OpenAI did something it has resisted for years: it removed message limits on text chats entirely, for everyone. No more hitting a wall mid-conversation and being told to come back in three hours. The rest of the week's news was smaller but points the same direction &mdash; ChatGPT can now search OpenTable, Resy, and Yelp and actually book you a dinner table without leaving the chat; Voice mode learned to accept file uploads; and "Sign in with ChatGPT" went into beta on sites like Notion, HubSpot, GitLab, and Vercel, the way "Sign in with Google" works today. A little housekeeping too: the old DALL&middot;E GPT retires on August 30 (use ChatGPT Images instead) and the o3 model gets switched off August 26.</p>
-<p>Put it all together and you can see the strategy. OpenAI isn't just selling a smarter answer machine anymore &mdash; it's trying to become the place you start, the button you log in with, and the thing that books the table. Removing limits and upgrading the free tier is how you get a billion weekly users to stop thinking of it as a tool they visit and start treating it as somewhere they simply are.</p>
-</section>
-
-<section>
-<span class="tool-chip">Mistral AI</span>
-<h2>This Week in Mistral AI</h2>
-<p>Mistral is the French AI company that plays the role of the scrappy European alternative to the American giants. Its trademark move is releasing "open-weight" models &mdash; meaning it hands out the actual guts of the model so companies can run it on their own computers instead of renting it from someone else's. For businesses that can't legally ship their data overseas, that's the whole ballgame.</p>
-<p>This week itself was on the quiet side. The one concrete release was Leanstral 1.5, an updated model that specializes in formal mathematical proofs written in a language called Lean 4 &mdash; niche, admittedly, but the kind of thing that matters if you care about AI that can actually prove it's right rather than just sounding right, and the update improves how much context it can hold while reasoning through long arguments.</p>
-<p>The more interesting story is the shape of the last few weeks, which is where Mistral's real ambition shows. Le Chat was rebranded to Mistral Vibe and turned into a proper agent that can catch up on your inbox and calendar, run deep research, draft documents, and take a coding task all the way from request to a merged pull request. There's Voxtral TTS, an open-weights text-to-speech model; Shieldstral for safety filtering; Forge, which lets a company train a frontier-grade model on its own private knowledge; and Robostral Navigate, which lets a robot find its way around a building using one camera and plain-English instructions. Microsoft expanded its partnership with Mistral in July aimed squarely at regulated industries, and Mistral is building a 10-megawatt data center near Paris while reportedly poking at designing its own chips.</p>
-<p>That's a company deliberately trying to own every layer &mdash; the chips, the data center, the models, the agent on top &mdash; rather than renting any of it. For anyone outside the US watching a handful of American labs consolidate power, Mistral is the bet that a credible alternative can exist. This week was a breather; the trajectory is anything but.</p>
 </section>
 
 </article>
