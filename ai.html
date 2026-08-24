@@ -34,9 +34,31 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: August 23, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: August 24, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-08-24">
+<div class="ed-head">AI Developments &mdash; Monday, August 24, 2026</div>
+
+<section>
+<span class="tool-chip">Google Gemini</span>
+<h2>This Week in Google Gemini</h2>
+<p>Gemini is Google's all-purpose AI assistant &mdash; the thing that lives in the search bar, in Gmail, on your phone, and increasingly inside every Google app you already use. Google ships updates to it at a pace that borders on relentless, and this past week was no exception. The headline is a new model called Gemini 3.7 Flash, which is the fast, cheap version of Gemini that most people actually end up talking to.</p>
+<p>What makes 3.7 Flash interesting isn't raw speed &mdash; the "Flash" models were always quick. It's that Google trained this one to be noticeably better at dense, jargon-heavy material: finance documents, legal contracts, biology papers. In benchmark testing it pulled clearly ahead of the 3.6 version on long PDF comprehension and on business-workflow tasks. Google also says it handles roadblocks better, meaning when it hits something confusing it asks a clarifying question instead of barrelling ahead and producing garbage. Anyone who has watched an AI confidently do the wrong thing for ten minutes will understand why that matters. It's launching at a discounted introductory price through the end of the year, which is Google's usual way of saying "please come try this." Alongside it, the older 3.6 Flash and 3.5 Flash-Lite models graduated out of preview into stable, production-ready status &mdash; boring news, but the kind that lets companies actually build on them.</p>
+<p>On the everyday-user side, two smaller changes are arguably more noticeable. Gemini is now baked directly into Google Chat, replacing the old side panel with an "Ask Gemini" experience that can catch you up on a conversation you missed, draft replies, or pull together tasks and calendar events without you leaving the chat window. That rolled out fully on the web earlier this month and hit mobile on August 17. And on Mac, there's a new dictation trick: hold down the Fn key, talk into whatever window you're in, and Gemini transcribes it into clean, punctuated text &mdash; optionally with reasoning switched on so it can tidy up rambling speech into something coherent.</p>
+<p>The through-line is that Google is quietly moving Gemini from "app you open" to "layer that's always there." The dictation feature in particular is a small thing that changes habits &mdash; once talking into any text box works well, typing starts to feel optional. One housekeeping note for developers: the gemini-robotics-er-1.6-preview model gets switched off on August 31, so if you're building anything on it, now is the time to migrate.</p>
+</section>
+
+<section>
+<span class="tool-chip">Meta Llama</span>
+<h2>This Week in Meta Llama</h2>
+<p>Meta's Llama family was, for years, the reason ordinary developers could run a serious AI model on their own machine instead of renting one from a big company. Meta has since folded that effort into a new model line called Muse, and this stretch has been the most consequential for Meta's open-source story in a long while &mdash; the aftershocks of the August 10 announcement were still landing all through the past week.</p>
+<p>Here's what happened. Meta released Muse Glimmer, a 30-billion-parameter model, under the Apache 2.0 license &mdash; which in plain terms is about as permissive as licenses get. You can download it, modify it, build a business on it, and Meta doesn't get a say. Glimmer is deliberately small enough to run on hardware people actually own: compressed down to under 20 gigabytes, it fits on a single consumer graphics card or a reasonably specced Mac. It reads text and images, speaks over 100 languages, handles a 128,000-token context window, and was built specifically for agent work &mdash; coding, digging through documents, calling tools. Think of it less as a chatbot and more as a small, tireless assistant you can keep entirely on your own laptop, with nothing leaving the building.</p>
+<p>The bigger surprise came attached to it. Mark Zuckerberg published a 6,500-word essay arguing that America needs to lead on open AI models, and announced that Meta will also release the weights for Muse Spark 1.2 &mdash; its most capable model, the proprietary flagship launched back in April. That's a genuine reversal. In May, Meta's chief AI officer Alexandr Wang had said flatly that Muse Spark was "not suitable for open sourcing." The stated motivation is competitive: Chinese open-weight models have been picking up serious momentum, and Meta would rather the world's free, downloadable AI infrastructure came from an American lab.</p>
+<p>For most people this won't change anything tomorrow. But it's the kind of move that shapes the next few years &mdash; when a frontier-grade model becomes something anyone can download, the floor rises for every startup, researcher, and hobbyist who couldn't afford API bills. Whether the rest of the industry follows Meta back toward openness, or treats this as a one-off strategic play, is the thing worth watching.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-08-23">
 <div class="ed-head">AI Developments &mdash; Sunday, August 23, 2026</div>
 
