@@ -34,9 +34,40 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: August 25, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: August 26, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-08-26">
+<div class="ed-head">AI Developments &mdash; Wednesday, August 26, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude CoWork</span>
+<h2>This Week in Anthropic Claude CoWork</h2>
+<p>Cowork is Anthropic's attempt to let Claude do actual work on your computer instead of just talking about it &mdash; opening your files, building your spreadsheets, running your errands across the apps you already use. Think of it less as a chatbot and more as an assistant who gets handed the keyboard. And this week it picked up the one thing that had been quietly holding it back: a memory.</p>
+<p>Until now, Cowork and regular Claude chat were like two coworkers who never talked to each other. You could spend twenty minutes in chat explaining how your company names its files, then hop into Cowork and have to explain the whole thing again from scratch. On August 25, Anthropic merged the two memory systems, so anything Claude learns in one place now shows up in the other. Better still, they made that memory visible &mdash; you can open a settings panel, read exactly what Claude has filed away about you, and edit or delete any of it. Sensitive categories like health and personal beliefs are switched off by default, but if those are the very things you're sick of re-explaining, you can flip them on yourself. That's a notably grown-up approach: most products that remember things about you don't hand you the notebook.</p>
+<p>The memory news lands on top of a big week for reach. Anthropic confirmed on August 18 that Cowork is now fully rolled out on mobile and desktop for every paid plan, and the web version runs sessions remotely in beta &mdash; meaning your work and files live in your Claude account rather than on one particular laptop, and you can pick up a job on your phone that you started at your desk. Enterprise customers got their own quiet win too, with Anthropic's Compliance API now covering Cowork across desktop, web, and mobile, which is the unglamorous plumbing that makes IT departments willing to say yes.</p>
+<p>Put those together and the shape of the thing changes. A tool that only worked on one machine and forgot you between sessions is a toy; a tool that follows you across devices and remembers your preferences is something you can actually build a routine around. The interesting question now is how much a person is willing to delegate once the friction of re-explaining themselves finally disappears.</p>
+</section>
+
+<section>
+<span class="tool-chip">Eleven Labs</span>
+<h2>This Week in Eleven Labs</h2>
+<p>ElevenLabs makes computers talk &mdash; and lately, listen, dub, transcribe, and sing. It started as the company whose text-to-speech was so convincing people had to double-check whether they were hearing a human, and it has spent the last two years turning that into a whole audio toolbox: voice agents that hold phone conversations, dubbing that carries your voice into another language, transcription, even music generation. This week was less about flashy new voices and more about rewiring the pipes underneath.</p>
+<p>The headline change is that ElevenLabs retired its local MCP server. MCP is the standard that lets AI assistants like Claude plug into outside services, and until now, hooking ElevenLabs into your assistant meant installing software on your own machine and juggling an API key. That version is now archived and frozen. In its place is a hosted server at api.elevenlabs.io/v1/mcp that you simply sign into with your ElevenLabs account &mdash; no installation, no key to lose. It's the difference between having to run your own mail server and just opening Gmail, and it means far more people can wire ElevenLabs into their AI setup without touching a terminal.</p>
+<p>Underneath that, the developer-facing updates piled up fast. New asynchronous "Flows" APIs let you kick off image, video, and speech generation jobs and collect the results later rather than sitting and waiting &mdash; a small change that matters enormously when you're generating hundreds of audio clips at once. Media assets became reusable, conversation summaries got lighter, and the voice agent platform gained finer controls over turn-taking and soft timeouts, which is the difference between an agent that talks over you and one that waits its turn. The default speech recognition engine also switched to scribe_realtime, and there's now zero-retention text-to-dialogue for anyone who needs audio generated without a copy being kept.</p>
+<p>None of this is the kind of news that makes a demo video, but it's the kind that decides whether a technology becomes infrastructure. ElevenLabs is clearly betting that the future of AI audio isn't people typing sentences into a website &mdash; it's software quietly generating speech in the background of a thousand other apps.</p>
+</section>
+
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">&#128269; Tool Spotlight</span>
+<h2>Muse Glimmer</h2>
+<p>Most powerful AI models live in someone else's data center. Muse Glimmer, released in early August by Meta Superintelligence Labs, is a deliberate push in the opposite direction: a 30-billion-parameter agentic model with open weights under the Apache 2.0 license, built specifically to run on hardware you own. Squeeze it down to 4-bit and it fits under 20 GB, which means a MacBook with an M4 Max chip or a desktop with an RTX 4090 can host it &mdash; no subscription, no cloud, no data leaving the room.</p>
+<p>"Agentic" is the key word. Glimmer isn't tuned to write you a nice essay; it's tuned to take actions &mdash; calling tools, running multi-step tasks, working through long jobs with a 120,000-token context window so it doesn't lose the thread halfway through. A separate 1.8-billion-parameter encoder lets it see images and text together, so it can look at a screenshot and act on what's in it. Meta got the quality by distilling from its bigger Muse Spark model, essentially having the large model tutor the small one.</p>
+<p>The surprising part is how easy it is to actually run: it works out of the box with llama.cpp, Ollama, LM Studio, Apple MLX, ExecuTorch, and vLLM. If you've ever wanted an AI assistant that runs entirely offline and never phones home, this is the most capable one yet.</p>
+<p class="muted">Source: Meta AI Research / InfoQ, August 2026</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-08-25">
 <div class="ed-head">AI Developments &mdash; Tuesday, August 25, 2026</div>
 
@@ -172,28 +203,6 @@
 <h2>OpenAI Astra</h2>
 <p>Astra is OpenAI's next major model family, and it announced itself in an unusual way: instead of a demo video, OpenAI posted ten mathematical proofs to GitHub, each solving a problem that had gone unsolved for at least a decade. The problems span group theory, coding theory, quantum complexity, and high-dimensional geometry, and one of them settles a question the mathematician Mikhail Gromov posed back in 1999. What makes Astra different is its shape. Rather than one model thinking very hard, Astra is a team &mdash; a root agent splits a problem into pieces, spins up subagents to work on each piece, waits for them to report back, and stitches the results together. That design is built for problems that take hours or days rather than seconds. The proofs weren't just accepted on faith either: they were written in Lean, a formal proof language that mechanically checks every logical step, so a computer verified the reasoning rather than a human hoping it looked right. The token cost for all ten solutions came to roughly $2,000. OpenAI hasn't said when Astra ships, what it will cost, or whether it becomes GPT-6. But the message landed: AI is starting to produce new mathematics, not just recite old mathematics.</p>
 <p class="muted">Source: The Decoder / TechTimes, August 2026</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-08-18">
-<div class="ed-head">AI Developments &mdash; Tuesday, August 18, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude</span>
-<h2>This Week in Anthropic Claude</h2>
-<p>Claude is the AI assistant built by Anthropic, and it's the one people tend to reach for when they want careful writing, long documents, or actual work done rather than just a chat. This week was less about flashy new abilities and more about the plumbing &mdash; the stuff that decides whether big companies and governments are allowed to use it at all. And one very public hiccup.</p>
-<p>The headline change is that Anthropic started watermarking Claude's text. Think of it like an invisible signature woven into the words &mdash; you can't see it, it doesn't make the writing worse or slower, and it costs nothing extra, but a detector can spot it later and say "yes, a Claude model wrote this." That's Anthropic getting ahead of Europe's AI Act, which is pushing every AI company to label machine-made content. A public detection tool is on the way, and older Claude models will get the same treatment over the next few months. In the same compliance spirit, Anthropic stretched its Compliance API to cover Cowork and Claude Code across desktop, web, mobile and the command line, so a company's security team can pull one clean record of everything an employee did with Claude &mdash; useful for audits, and frankly the kind of boring feature that unlocks giant contracts. Claude for Government also opened in beta, and the interesting wrinkle is that Anthropic bills agencies directly, so a government office doesn't have to sign a separate cloud deal just to get started.</p>
-<p>Not everything went smoothly. On Saturday evening Claude went down hard &mdash; Claude.ai, Claude Code and Cowork all fell over around 21:58 UTC, and service didn't come back until roughly 22:40. Forty-odd minutes isn't catastrophic, but it was a reminder that a lot of people now treat Claude the way they treat electricity, and notice loudly when it flickers. Meanwhile the connector directory quietly crossed 950 MCP servers, which is the count of outside apps Claude can plug into.</p>
-<p>Put it together and you get a picture of a product growing up. Watermarks, audit logs and government contracts aren't the fun part of AI, but they're what turns a clever tool into infrastructure &mdash; and the outage was a small preview of what it means when that infrastructure blinks.</p>
-</section>
-
-<section>
-<span class="tool-chip">Perplexity AI</span>
-<h2>This Week in Perplexity AI</h2>
-<p>Perplexity started life as a search engine that answers your question in a paragraph instead of handing you ten blue links, and it has spent the last year turning into something much stranger and more ambitious: an AI that actually does things on your computer. This week pushed further down that road.</p>
-<p>The biggest move was in the Agent API, where Perplexity added support for a fresh batch of outside models &mdash; Claude Opus 4.7, GPT-5.5 and Grok 4.20 Reasoning. That's worth pausing on, because it says something about Perplexity's whole strategy: rather than betting everything on one homegrown brain, it acts as a switchboard, routing your question to whichever model is best at it. Alongside that, the Perplexity MCP server got one-click installation for Cursor, VS Code, Claude Desktop and Claude Code, bundling four tools &mdash; search, ask, research and reason. In plain terms, if you're working inside another AI app, you can now bolt Perplexity's research ability onto it in about ten seconds instead of fiddling with config files. Personal Computer also landed properly on Mac, with simpler controls and better memory of your own context, including a prebuilt "Personal CFO" that pokes through your financial life and reports back.</p>
-<p>Hovering over all of this is the legal news from a couple of weeks back that still shapes everything: the Ninth Circuit threw out Amazon's injunction against Perplexity's Comet shopping agent, reasoning that when Comet browses Amazon on your behalf, it's really <em>you</em> visiting Amazon. It's the first appeals-court ruling on whether an AI agent counts as "accessing" a website, and for now it's a green light for the whole agentic browsing idea.</p>
-<p>So Perplexity is quietly building the thing a lot of people assumed would take years: an assistant that reads the web, opens your files, works inside your apps, and now legally gets to shop on your behalf. Whether you find that thrilling or slightly unnerving probably depends on how much you enjoy delegating.</p>
 </section>
 
 </article>
