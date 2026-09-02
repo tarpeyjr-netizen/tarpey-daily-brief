@@ -34,9 +34,40 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: September 1, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: September 2, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-09-02">
+<div class="ed-head">AI Developments &mdash; Wednesday, September 2, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude CoWork</span>
+<h2>This Week in Anthropic Claude CoWork</h2>
+<p>Cowork is the part of Claude that stops chatting and starts doing. Instead of handing you an answer to copy and paste, it opens your files, runs the steps, and gives you back a finished thing &mdash; a spreadsheet, a report, a cleaned-up folder. Think of the difference between asking a friend how to change a tire and having them actually change it. This week the big news is that Cowork got a pair of eyes for the open web.</p>
+<p>Anthropic started rolling out a browser built directly into the Cowork desktop app. When a job needs a website, a real browser opens in a side panel and Claude drives it &mdash; reading pages, clicking buttons, filling in forms, pulling numbers off a dashboard. The reason this matters is unglamorous but huge: most business software has no tidy connector you can plug into. It's a portal with a login and a bunch of menus. Until now, that was a wall. Now Claude can just walk through the front door like a person would, and you watch it happen in the panel. It's going out to Pro, Max, and Team plans, and if you already use the Claude Chrome extension, that stays your default &mdash; there's a setting under Cowork to switch between them.</p>
+<p>The desktop release that landed on August 27 was mostly the unsexy follow-up work that makes a new feature actually usable: fixes for the browser stalling or timing out on Windows and Linux when the pane was hidden, a fix for Cowork running out of memory after a long run of scheduled tasks, and a fix for the app choking when a settings file got corrupted by a bad shutdown. There was also a real bug where scheduled tasks were being quietly marked "skipped" without ever running; those now get retried a few minutes later. If you rely on Cowork to do something every morning, that one was worth fixing.</p>
+<p>Zoom out and the shape of the last two weeks is clear. Cowork went fully mobile and web on August 18, its memory got merged with regular Claude chat on August 25 so it stops forgetting what you told it in the other room, and on August 26 Salesforce and Anthropic announced "Claudeforce," which drops 37 prebuilt sales skills straight into Claude. Add the built-in browser and the pattern is obvious: Anthropic is trying to make Cowork something that reaches into wherever your work actually lives, rather than a clever box you have to carry things into.</p>
+</section>
+
+<section>
+<span class="tool-chip">Eleven Labs</span>
+<h2>This Week in Eleven Labs</h2>
+<p>ElevenLabs is the company that made synthetic voices stop sounding like a GPS unit. Its models read text aloud with pauses, emphasis, and breath, clone a voice from a short sample, transcribe speech, dub video into other languages, and increasingly run full voice agents that hold a phone conversation with a customer. Lately the interesting work has moved away from "listen to how real this sounds" and toward "here is how you run a hundred of these in production without losing your mind."</p>
+<p>The August 24 release was the clearest sign of that shift. ElevenLabs shipped version 1.0 of its command-line tool, which means every single thing the service can do is now available as a typed command in a terminal, with proper output formats and pagination. More importantly, you can store an agent's whole configuration &mdash; its instructions, its tools, its tests &mdash; as plain files, push and pull them, and manage branches. That's the same workflow programmers use for code, applied to a talking robot. It sounds dry. What it actually means is that a voice agent stops being a thing you hand-tune in a web form and becomes something a team can review, version, and roll back when it goes wrong.</p>
+<p>Alongside that, "Procedures" went generally available in ElevenAgents. The idea is neat: instead of cramming every possible instruction into one enormous system prompt, you write separate little playbooks &mdash; one for refunds, one for booking, one for angry customers &mdash; each with a trigger that decides when it applies. Mid-conversation, the agent loads just the relevant one. It's the difference between memorizing an entire employee handbook and knowing which tab to flip to. You can write them loosely when the agent should improvise, or as strict numbered steps when the order genuinely matters. The same update added triage tickets, so a human can flag a bad conversation and assign it to a teammate for review, and a live event that tells you how much of the model's context each turn is eating.</p>
+<p>None of this will show up in a demo video. But it's what turns a party trick into infrastructure, and it's a reasonable bet that the voice on the other end of your next customer service call will have been built and reviewed exactly this way.</p>
+</section>
+
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">&#128269; Tool Spotlight</span>
+<h2>Runway Solaris</h2>
+<p>On August 31, Runway &mdash; best known for AI video generation &mdash; announced something genuinely strange called Solaris, the first of what it calls an "Interface World Model." Here's the idea. Normally, when you use an app, a designer drew it, a programmer wrote code to make it work, and your device runs that code. Solaris throws out the middle step entirely. It generates the screen frame by frame, like a video, reacting in real time to wherever you click. There is no app underneath. There's a language model deciding what should happen next, and a world model painting the result, sixty times a second.</p>
+<p>It's built on top of Runway's Gen-4.5 video model, and in the company's own preference testing people picked Solaris over conventionally coded interfaces 61% of the time on how well it followed instructions. That number deserves a raised eyebrow &mdash; it's Runway grading its own homework &mdash; but the concept is worth paying attention to. If software can be dreamed into existence as you use it, "installing an app" starts to look like a very twentieth-century idea.</p>
+<p>The catch: Solaris is an early-access research project, not a product. There's no API, no download, no open weights &mdash; just a request form. Treat it as a glimpse of a possible future rather than something to use on Monday. But it's the most interesting glimpse anyone has offered in a while.</p>
+<p class="muted">Source: Runway Research, August 2026</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-09-01">
 <div class="ed-head">AI Developments &mdash; Tuesday, September 1, 2026</div>
 
@@ -131,28 +162,6 @@
 <p>"Agentic" is the key word. Glimmer isn't tuned to write you a nice essay; it's tuned to take actions &mdash; calling tools, running multi-step tasks, working through long jobs with a 120,000-token context window so it doesn't lose the thread halfway through. A separate 1.8-billion-parameter encoder lets it see images and text together, so it can look at a screenshot and act on what's in it. Meta got the quality by distilling from its bigger Muse Spark model, essentially having the large model tutor the small one.</p>
 <p>The surprising part is how easy it is to actually run: it works out of the box with llama.cpp, Ollama, LM Studio, Apple MLX, ExecuTorch, and vLLM. If you've ever wanted an AI assistant that runs entirely offline and never phones home, this is the most capable one yet.</p>
 <p class="muted">Source: Meta AI Research / InfoQ, August 2026</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-08-25">
-<div class="ed-head">AI Developments &mdash; Tuesday, August 25, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude</span>
-<h2>This Week in Anthropic Claude</h2>
-<p>Claude is the AI assistant built by Anthropic, best known for being unusually good at long documents, careful reasoning, and writing code without going off the rails. This week was less about a flashy new model and more about Claude quietly growing hands and feet &mdash; the tools that let it actually <em>do</em> things instead of just talking about them.</p>
-<p>The headline is that the computer use tool and the browser use tool both went live on the Claude Platform, alongside the new Skills API and Files API. In plain terms: developers can now build apps where Claude clicks around a screen, drives a web browser, and works with uploaded files, all through official channels rather than duct-taped workarounds. Skills are the interesting one &mdash; think of them as little instruction manuals you hand Claude so it knows your team's specific way of doing a task, and now they can be stored on GitHub and pulled in automatically. Microsoft Foundry picked up the Skills and Files APIs too, and Google Cloud's Vertex AI is getting the computer and browser tools soon, which means Claude's new abilities aren't locked behind one door. Meanwhile the Developer Platform added grown-up controls for teams running Claude agents unsupervised: session budgets so an agent can't burn unlimited money, geographic pinning so data stays in the right country, and the ability to restrict exactly which websites an agent is allowed to visit. That last one matters more than it sounds &mdash; an AI browsing the open internet on your behalf is a lot safer when you get to draw the fence.</p>
-<p>There was also a small piece of genuinely good news for anyone paying the bills. The introductory price on Claude Sonnet 5 &mdash; $2 per million input tokens, $10 per million output &mdash; was supposed to jump to $3 and $15 on September 1. Anthropic scrapped that increase and made the intro price permanent. Price hikes getting cancelled is rare enough in this industry to be worth noticing. On the consumer side, Anthropic launched Claude Academy, a free learning hub with courses, tutorials and badges aimed at people who want to actually get good at using AI rather than just poking at it. Claude Code, the terminal version, got a steady stream of unglamorous fixes: better cost estimates, smoother cloud sessions and remote control, Alpine and Bedrock support, and improvements to the <code>/resume</code> and <code>/goal</code> commands.</p>
-<p>Put it together and the pattern is clear: Anthropic is spending less energy on making Claude sound smarter and more on making it trustworthy enough to leave alone with real work. Budgets, geo-fencing, site allowlists and audit-friendly admin tools are the boring plumbing that has to exist before a company will let an AI touch anything that matters. If you use Claude casually, the price freeze and Claude Academy are the parts you'll feel. If you build with it, this was a big week.</p>
-</section>
-
-<section>
-<span class="tool-chip">Perplexity AI</span>
-<h2>This Week in Perplexity AI</h2>
-<p>Perplexity started life as a search engine that answers your question with a written explanation and footnotes instead of a wall of blue links. Lately it's been morphing into something stranger and more ambitious &mdash; less a search box, more a digital assistant that works while you're asleep.</p>
-<p>The most eye-catching move is Personal Computer, which just shipped on Mac. The idea: you dedicate a Mac mini to Perplexity, and it runs an always-on agent that has access to your local files, your apps, and your ongoing sessions. It watches for triggers, kicks off tasks on its own, and picks work back up the next day &mdash; a digital proxy that keeps going around the clock rather than waiting for you to type something. Perplexity even ships a prebuilt "Personal CFO" that keeps an eye on your money. It's an unusual bet in a world where everyone else is racing to put AI in the cloud; Perplexity is putting a physical box on your desk. Alongside it, the Agent API opened up to more outside brains &mdash; Claude Opus 4.7, GPT-5.5, and Grok 4.20 Reasoning can all now drive Perplexity's agents, which is a reminder that Perplexity has always been happy to rent other companies' models rather than obsess over building its own. And the Perplexity MCP Server now installs with one click into Cursor, VS Code, Claude Desktop, and Claude Code, so developers can pull Perplexity's search into whatever tool they already live in.</p>
-<p>There's a courtroom subplot too. Earlier this month the Ninth Circuit vacated Amazon's injunction against Comet, Perplexity's AI browser, in a fight over Comet's shopping agent buying things on Amazon. The appeals court's reasoning was elegant: when Comet acts on your instruction, it's <em>you</em> accessing Amazon, not Perplexity &mdash; so the computer-crime law Amazon leaned on probably doesn't apply. That's a meaningful early marker for the whole agent industry, because the question of "who is actually visiting this website" underpins every AI that browses on your behalf. Comet itself also went enterprise, with silent MDM deployment across Mac and Windows and admin policy controls.</p>
-<p>The through-line is that Perplexity no longer wants to be the thing you open when you have a question. It wants to be running in the background, holding your context, doing errands, and pushing back in court when someone tries to lock it out. Whether people are ready to hand a laptop-sized box the keys to their files and finances is the open question &mdash; but Perplexity is clearly betting the answer is yes.</p>
 </section>
 
 </article>
