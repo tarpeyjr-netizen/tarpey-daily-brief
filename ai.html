@@ -34,9 +34,31 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: September 2, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: September 3, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-09-03">
+<div class="ed-head">AI Developments &mdash; Thursday, September 3, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Code</span>
+<h2>This Week in Anthropic Claude Code</h2>
+<p>Claude Code is Anthropic's coding assistant that lives in your terminal &mdash; the black text window programmers type commands into. Instead of copying code back and forth into a chat window, you just tell it what you want and it edits your files directly. This week the big story wasn't a shiny new feature at all. It was math, and a lot of developers were unhappy about it.</p>
+<p>Back in May, Anthropic handed out a temporary 50% boost to weekly usage limits, then extended it four separate times over the summer. People stopped thinking of it as a bonus and started treating it as normal. On August 29 the company announced that baseline limits would permanently rise 25% starting September 14 &mdash; which sounds generous until you do the subtraction. Compared to what people actually had all summer, it's a 17% cut. The original announcement led with the 25% number and buried the rest, and developers noticed fast enough that Anthropic deleted the post and reposted it with the reduction spelled out. The company's explanation is straightforward: the summer numbers were never sustainable, and keeping the servers stable costs real compute.</p>
+<p>Underneath the pricing drama, the actual product kept moving. A new Restricted Mode, added August 27, lets you clamp the assistant down hard &mdash; no running commands, no fetching things off the web, and file edits confined to the folder you're working in. Think of it as handing someone your car keys but disabling reverse. There's also a new cost-optimize command that audits how much you're spending on API calls and walks you through fixes one at a time, a feedback tool that drafts a bug report for you when something goes sideways, and tip overrides so companies can pipe their own house rules into the little hints that appear while you wait. Version 2.1.252 landed August 31 with a pile of reliability fixes across sessions, terminals, and the VS Code integration.</p>
+<p>The pattern here is a product growing up. Free-flowing capacity and loose defaults are what you offer when you're chasing adoption; usage caps, spending audits, and a lockdown mode are what you ship when serious companies are running you in production. Cheaper it is not &mdash; but it's a lot harder to accidentally break something with.</p>
+</section>
+
+<section>
+<span class="tool-chip">xAI Grok</span>
+<h2>This Week in xAI Grok</h2>
+<p>Grok is xAI's chatbot family &mdash; the one wired directly into X, with a reputation for a looser, snarkier personality than its rivals. Lately it's been trying to be taken seriously as a work tool, and this week's updates lean hard in that direction.</p>
+<p>The headline is Grok 4.6, xAI's frontier model, which is now available to developers both on the xAI API and in Model Garden. It carries a 500,000-token context window, which in plain terms means you can hand it something the length of a long novel and it keeps the whole thing in mind at once. It takes text and images in, gives text back, and there's no cap on how long its answers can run. xAI is pitching it at roughly half the price of comparable frontier models, which is the kind of claim that gets a developer's attention faster than any benchmark score.</p>
+<p>Alongside that, Grok Bot graduated out of beta. It's now bundled into SuperGrok Plus, SuperGrok Heavy, and several Cursor plans &mdash; an always-on assistant meant to work like a colleague who lives inside your apps and inbox rather than a chat window you visit. The X integration got noticeably tighter too: you can link your account, and paid users get free X API credits plus tools for posting, reading timelines, and handling mentions. On the coding side, Grok Build 1.0.13 shipped on August 30 with a genuinely useful quality-of-life fix &mdash; it now resumes interrupted responses and retries failed attempts on its own, so a long job doesn't die halfway through and force a restart. New confirmation prompts also let you approve actions before they run. Grok Imagine, the image tool, picked up automatic quality settings, support for up to five reference images, and cinematic aspect ratios.</p>
+<p>Taken together it's less about raw intelligence and more about trust and plumbing: cheaper access, longer memory, agents that don't fall over mid-task, and a confirm button before anything irreversible happens. That combination &mdash; aggressive pricing plus grown-up controls &mdash; is xAI's clearest pitch yet to people who write code for a living.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-09-02">
 <div class="ed-head">AI Developments &mdash; Wednesday, September 2, 2026</div>
 
@@ -131,37 +153,6 @@
 <p>The centerpiece is Grok 4.6, xAI's new frontier model for coding, agent work, and general knowledge tasks, now live on the company's API. Its standout number is a 500,000-token context window, which in practical terms means you can hand it something the length of a few novels and it keeps track of all of it at once. Pricing sits at $2 per million input tokens and $6 per million output tokens below the 200k mark, doubling above it &mdash; aggressive enough to undercut several competitors. Google promptly added Grok 4.6 to its Enterprise Agent Platform's Model Garden, complete with adjustable reasoning levels, which is a meaningful vote of confidence: big companies shopping for AI on Google's platform can now pick Grok off the shelf next to everything else.</p>
 <p>On the consumer side, Grok Build rolled out to every plan on web and mobile. You describe an app, game, website, or dashboard, and you watch it get built in real time &mdash; then publish it, hook up a custom domain, export it to GitHub, or share it straight to X. Grok Bot arrived too: persistent AI teammates that live on a cloud computer and keep working between conversations, with messaging, approval steps, and scheduled routines. Developers got agentic tools like web search, X search, and code execution that can be mixed with their own tools in a single conversation. Grok's video generator picked up native 1080p and reference-to-video, and Grok Voice gained new multilingual voices.</p>
 <p>The oddest item of the week: Interactive Brokers now integrates Grok directly into its trading platform for portfolio analysis, scenario modeling, and even placing order instructions. Whatever you make of an AI chatbot sitting next to your brokerage account, it's a clear signal of where xAI is aiming &mdash; not just a clever answer machine, but something embedded in the places where consequential decisions get made.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-08-26">
-<div class="ed-head">AI Developments &mdash; Wednesday, August 26, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude CoWork</span>
-<h2>This Week in Anthropic Claude CoWork</h2>
-<p>Cowork is Anthropic's attempt to let Claude do actual work on your computer instead of just talking about it &mdash; opening your files, building your spreadsheets, running your errands across the apps you already use. Think of it less as a chatbot and more as an assistant who gets handed the keyboard. And this week it picked up the one thing that had been quietly holding it back: a memory.</p>
-<p>Until now, Cowork and regular Claude chat were like two coworkers who never talked to each other. You could spend twenty minutes in chat explaining how your company names its files, then hop into Cowork and have to explain the whole thing again from scratch. On August 25, Anthropic merged the two memory systems, so anything Claude learns in one place now shows up in the other. Better still, they made that memory visible &mdash; you can open a settings panel, read exactly what Claude has filed away about you, and edit or delete any of it. Sensitive categories like health and personal beliefs are switched off by default, but if those are the very things you're sick of re-explaining, you can flip them on yourself. That's a notably grown-up approach: most products that remember things about you don't hand you the notebook.</p>
-<p>The memory news lands on top of a big week for reach. Anthropic confirmed on August 18 that Cowork is now fully rolled out on mobile and desktop for every paid plan, and the web version runs sessions remotely in beta &mdash; meaning your work and files live in your Claude account rather than on one particular laptop, and you can pick up a job on your phone that you started at your desk. Enterprise customers got their own quiet win too, with Anthropic's Compliance API now covering Cowork across desktop, web, and mobile, which is the unglamorous plumbing that makes IT departments willing to say yes.</p>
-<p>Put those together and the shape of the thing changes. A tool that only worked on one machine and forgot you between sessions is a toy; a tool that follows you across devices and remembers your preferences is something you can actually build a routine around. The interesting question now is how much a person is willing to delegate once the friction of re-explaining themselves finally disappears.</p>
-</section>
-
-<section>
-<span class="tool-chip">Eleven Labs</span>
-<h2>This Week in Eleven Labs</h2>
-<p>ElevenLabs makes computers talk &mdash; and lately, listen, dub, transcribe, and sing. It started as the company whose text-to-speech was so convincing people had to double-check whether they were hearing a human, and it has spent the last two years turning that into a whole audio toolbox: voice agents that hold phone conversations, dubbing that carries your voice into another language, transcription, even music generation. This week was less about flashy new voices and more about rewiring the pipes underneath.</p>
-<p>The headline change is that ElevenLabs retired its local MCP server. MCP is the standard that lets AI assistants like Claude plug into outside services, and until now, hooking ElevenLabs into your assistant meant installing software on your own machine and juggling an API key. That version is now archived and frozen. In its place is a hosted server at api.elevenlabs.io/v1/mcp that you simply sign into with your ElevenLabs account &mdash; no installation, no key to lose. It's the difference between having to run your own mail server and just opening Gmail, and it means far more people can wire ElevenLabs into their AI setup without touching a terminal.</p>
-<p>Underneath that, the developer-facing updates piled up fast. New asynchronous "Flows" APIs let you kick off image, video, and speech generation jobs and collect the results later rather than sitting and waiting &mdash; a small change that matters enormously when you're generating hundreds of audio clips at once. Media assets became reusable, conversation summaries got lighter, and the voice agent platform gained finer controls over turn-taking and soft timeouts, which is the difference between an agent that talks over you and one that waits its turn. The default speech recognition engine also switched to scribe_realtime, and there's now zero-retention text-to-dialogue for anyone who needs audio generated without a copy being kept.</p>
-<p>None of this is the kind of news that makes a demo video, but it's the kind that decides whether a technology becomes infrastructure. ElevenLabs is clearly betting that the future of AI audio isn't people typing sentences into a website &mdash; it's software quietly generating speech in the background of a thousand other apps.</p>
-</section>
-
-<section class="spotlight">
-<span class="tool-chip spotlight-chip">&#128269; Tool Spotlight</span>
-<h2>Muse Glimmer</h2>
-<p>Most powerful AI models live in someone else's data center. Muse Glimmer, released in early August by Meta Superintelligence Labs, is a deliberate push in the opposite direction: a 30-billion-parameter agentic model with open weights under the Apache 2.0 license, built specifically to run on hardware you own. Squeeze it down to 4-bit and it fits under 20 GB, which means a MacBook with an M4 Max chip or a desktop with an RTX 4090 can host it &mdash; no subscription, no cloud, no data leaving the room.</p>
-<p>"Agentic" is the key word. Glimmer isn't tuned to write you a nice essay; it's tuned to take actions &mdash; calling tools, running multi-step tasks, working through long jobs with a 120,000-token context window so it doesn't lose the thread halfway through. A separate 1.8-billion-parameter encoder lets it see images and text together, so it can look at a screenshot and act on what's in it. Meta got the quality by distilling from its bigger Muse Spark model, essentially having the large model tutor the small one.</p>
-<p>The surprising part is how easy it is to actually run: it works out of the box with llama.cpp, Ollama, LM Studio, Apple MLX, ExecuTorch, and vLLM. If you've ever wanted an AI assistant that runs entirely offline and never phones home, this is the most capable one yet.</p>
-<p class="muted">Source: Meta AI Research / InfoQ, August 2026</p>
 </section>
 
 </article>
