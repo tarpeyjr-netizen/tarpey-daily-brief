@@ -34,9 +34,40 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: September 4, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: September 5, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-09-05">
+<div class="ed-head">AI Developments &mdash; Saturday, September 5, 2026</div>
+
+<section>
+<span class="tool-chip">SAP Joule</span>
+<h2>This Week in SAP Joule</h2>
+<p>SAP runs the boring-but-critical software that huge companies use to track money, inventory, and staff &mdash; and Joule is the AI assistant SAP bolted onto all of it. Think of it as a chat window that sits on top of a giant filing cabinet and actually knows where everything is. This week the story wasn't a flashy launch so much as a steady drumbeat of Joule quietly showing up in more places.</p>
+<p>The biggest thread is Joule Studio, SAP's tool for building your own AI agents. SAP had a rough first swing at it &mdash; the original version leaned too hard on drag-and-drop and real developers found it limiting &mdash; so the company rebuilt it. The managed version now lets you build agents in plain Python, or right inside coding tools like Cursor and Claude Code, and then hand them to SAP to run. Popular agent frameworks like LangGraph and AutoGen plug straight in. It's in early access now with general availability targeted for this quarter, and SAP is giving away design-time access free through the end of 2026, which is a pretty loud way of saying "please, come try this."</p>
+<p>Underneath all of it, Anthropic's Claude has been named the primary reasoning model powering Joule across SAP's Autonomous Suite &mdash; SAP essentially picked a brain for its agents and went with an outside one. Meanwhile the practical stuff keeps shipping: a batch of Joule assistants for procurement (category management, supplier management, requisitions, buying, receiving, services) is slated to hit general availability this month, and next-gen SAP Ariba Buying now bundles Joule agents that handle purchasing and policy checks instead of making someone click through five different screens. On the customer side, consulting firm ABeam &mdash; roughly 9,600 people across 29 offices &mdash; went public about using Joule for Consultants to speed up SAP project delivery.</p>
+<p>The through-line is that SAP has stopped treating AI as a demo and started treating it as plumbing. If you work anywhere that runs SAP, the change you'll actually notice isn't a chatbot &mdash; it's that the purchase request you used to chase for three days starts moving on its own.</p>
+</section>
+
+<section>
+<span class="tool-chip">Einstein AI</span>
+<h2>This Week in Einstein AI</h2>
+<p>Einstein is Salesforce's AI layer &mdash; the thing that scores your sales leads, drafts your follow-up emails, and guesses which deals are about to fall apart. For years it was the quiet helper inside the world's biggest customer-database company. Lately it's been absorbed into something much more ambitious called Agentforce, and this week made that shift impossible to ignore.</p>
+<p>The headline is Claudeforce, a big expanded partnership between Salesforce and Anthropic. It works in two directions, which is the clever part. Going one way, Claude becomes a reasoning model available across Salesforce's AI stack &mdash; the Atlas Reasoning Engine, Agentforce Vibes, Agentforce Coworker, and Agent Builder all get access to it. Going the other way, Salesforce shows up as a plugin inside Claude itself, with 37 prebuilt sales skills that let a salesperson pull up live deal data, update a pipeline, or take action without ever opening Salesforce. Pilot customers have it now and an open beta is expected this month. Salesforce is backing it with real money: roughly $300 million in Anthropic tokens across 2026, on top of an equity stake valued around $5 billion. Investors liked it &mdash; the stock jumped hard on the news.</p>
+<p>It's worth being clear about what this means for Einstein specifically. Einstein isn't dead or deprecated, but Salesforce's roadmap money is flowing to Agentforce, which includes everything Einstein did plus autonomous agents, multi-agent orchestration, and human-in-the-loop controls. The next Agentforce Sales release lands this month, though Salesforce hasn't detailed the feature list yet.</p>
+<p>The bigger picture: Salesforce is betting that the CRM of the future isn't a screen you log into, it's an agent you talk to. Putting a rival lab's model at the center of that bet &mdash; rather than insisting on homegrown AI &mdash; says a lot about how fast this field is moving.</p>
+</section>
+
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">&#128269; Tool Spotlight</span>
+<h2>Anthropic's Model Hardware Standard (MHS)</h2>
+<p>Most AI agents live entirely inside a computer. The Model Hardware Standard is Anthropic's attempt to let them reach out and touch real machines &mdash; microscopes, robotic arms, liquid handlers, lasers. It's a shared rulebook, the way USB is a rulebook: instead of every lab writing custom code to connect an AI to every instrument, MHS gives them one common language. Anthropic says work that normally takes weeks or months of wiring drops to hours or minutes.</p>
+<p>The early results are the surprising part. Researchers at Carnegie Mellon ran drug-testing experiments about three times faster than usual, with a single agent juggling a liquid handler, a plate reader, a robot arm, and monitoring cameras spread across three separate computers. At quantum computing firm QuEra, an agent built a laser-recovery controller that worked 99.3% of the time across 700 trials &mdash; compared with 58% for hand-written scripts &mdash; and cut recovery time from about 150 seconds to six.</p>
+<p>It started as a collaboration with HHMI's Janelia Research Campus, and hardware names like Universal Robots, QIAGEN, Tecan, Doosan and Raspberry Pi are lining up integrations. It's a research preview limited to a first group of labs and manufacturers, with open-sourcing promised after safety reviews. If you've wondered when AI stops writing about science and starts doing it, this is what that transition looks like.</p>
+<p class="muted">Source: Anthropic / MarkTechPost, September 2026</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-09-04">
 <div class="ed-head">AI Developments &mdash; Friday, September 4, 2026</div>
 
