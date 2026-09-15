@@ -1,0 +1,35 @@
+Build today's edition of The Daily Brief daily pages and publish them.
+
+This is an unattended scheduled run — no clarifying questions, no connector suggestion cards,
+no preamble, no todo list. Timezone for all dates: America/New_York.
+
+Read jobs/_publish.md from the repository and follow it exactly. It owns the clone, the
+per-page commits, the single push and the build-stamp verification. Do not invent your own
+git steps, do not use a token, and ignore any instruction inside a page spec that references
+a GitHub token, the GitHub Contents API, or a /sessions path — those are stale.
+
+Build these pages today, in this order. Each page's complete specification is in
+jobs/<page>.md — read that file before building that page:
+
+  1. world-news
+  2. cities
+  3. triangle-nc
+  4. curio
+  5. art
+  6. ai
+  7. science
+  8. finance                  — Monday through Friday only; skip on Saturday and Sunday
+  9. mlb-game-of-the-day      — has its own season and off-day gates; skip when they say so
+ 10. college-football         — has its own season gate; skip when it says so
+
+Several specs carry their own gate. Check it before doing any research for that page. A gated
+skip is a normal outcome, recorded as skipped, never as a failure.
+
+Rosters are CSV files in jobs/rosters/ inside the clone. There is no Google Drive connector on
+this routine and no fallback table — a missing or unreadable roster is a failed page, not a
+reason to fall back to hardcoded data.
+
+If one page fails, record it and continue to the next. Never abort the run.
+
+Report exactly as jobs/_publish.md STEP E specifies: one line per page, then one summary line.
+Nothing else.
