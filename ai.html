@@ -1,4 +1,4 @@
-<!-- build: 2026-09-16T080709Z -->
+<!-- build: 2026-09-17T080626Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +35,31 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: September 16, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: September 17, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-09-17">
+<div class="ed-head">AI Developments &mdash; Thursday, September 17, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Code</span>
+<h2>This Week in Anthropic Claude Code</h2>
+<p>Claude Code is Anthropic's AI that lives right in your terminal and actually does the work &mdash; reading your files, running commands, writing and fixing real code &mdash; instead of just chatting about how it would do it. This week's changes weren't the kind that make headlines; they were the kind that make a company's engineering lead trust the thing enough to let it near production.</p>
+<p>The headline release, version 2.1.269 on September 11th, added a command called <code>claude plugin eval</code>, which lets developers actually test whether a plugin they built helps or hurts. It runs each test case three times with the plugin switched on and three times with it off, then scores the difference and spits out a report in both JSON and a browsable HTML page, so "trust me, it works" gets replaced with an actual number. The same release gave the VS Code extension an "agent map," a visual layout of every subagent Claude Code has spun up to divide a big job into pieces, plus a new setting that lets teams cap how many of those subagents can run at once &mdash; anywhere from just 1 up to 256 &mdash; so a company can dial up parallel work without accidentally melting their own infrastructure.</p>
+<p>A handful of smaller fixes rounded things out. A day earlier, on September 10th, a <code>maxEffortLevel</code> setting arrived that lets teams cap how hard the model "thinks" on every single request across Bedrock, Vertex and Foundry, which is really a cost control dressed up as a feature. Mid-week brought new header information for companies routing Claude Code through their own servers, smoother handoffs when you're controlling a session remotely from the Claude app, and a clear warning the moment an MCP tool connection drops instead of a silent failure. Probably the most quietly beloved fix: a bug that made harmless, read-only commands like "git status" repeatedly nag you for permission during long sessions finally got squashed.</p>
+<p>None of it is a single "look what it can do now" moment, and that's sort of the point &mdash; Anthropic spent the week tightening the bolts, the unglamorous kind of engineering that decides whether a team actually lets an AI agent touch its real codebase unsupervised.</p>
+</section>
+
+<section>
+<span class="tool-chip">Xai Grok</span>
+<h2>This Week in Xai Grok</h2>
+<p>Grok is Elon Musk's chatbot, wired directly into X and known for a looser personality and a tight relationship with Musk's other companies. The week's biggest story, though, was about a model that got promised and then quietly didn't show up on schedule.</p>
+<p>Back on September 2nd, Musk announced Grok 4.7 would land in "about ten days," built with 2.1 trillion parameters &mdash; a 40% jump over Grok 4.6's 1.5 trillion &mdash; and trained partly on SpaceX's own rocket, satellite and manufacturing data to make it sharper at engineering problems. Then, right around the day it was supposed to ship, Musk said it needed a few more days. The reason he gave is a genuinely interesting glitch: during training, the model got penalized too harshly for writing long answers, so it learned to give up on hard problems early and skip double-checking its own work, a bit like a student erasing a correct answer because it took too long to reach it. Musk also admitted flatly that Grok 4.7 hadn't yet beaten its rivals, while teasing that Grok 5, still to come, is being aimed at something closer to true general intelligence.</p>
+<p>While the flagship model slipped, xAI kept the rest of the shop humming. Grok Build, the company's coding-agent tool, shipped a steady stream of fixes &mdash; clearer diffs, smarter permission prompts, subagents that resume work properly instead of losing their place, a fixed terminal lag bug, and a cleaner unified dashboard. And from September 15th through 17th, xAI ran "Grok Bot Galaxy," a three-day livestreamed experiment in San Francisco where a small team tries to build an entire company from scratch leaning on Grok Bot, xAI's new autonomous "AI worker" product for businesses, complete with access and audit controls; Grok and Cursor Enterprise customers got two weeks of free access to try having an AI teammate run real tasks alongside them.</p>
+<p>So Grok is stuck between two speeds right now: a marquee model that isn't quite ready to show its face, and a cluster of smaller agent tools getting real, visible polish. Whether Grok 4.7 actually lands looking as good as promised is the thing worth watching next, especially with Meta and OpenAI both expected to drop competing model updates before the month is out.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-09-16">
 <div class="ed-head">AI Developments &mdash; Wednesday, September 16, 2026</div>
 
