@@ -7,6 +7,23 @@ Roster: jobs/rosters/art-museums.csv (museum,city,country)
 ## Gate
 None. Runs every day.
 
+## NETWORK — read this before fetching anything
+This routine's environment uses a CUSTOM network allowlist containing only
+tarpey-daily-brief.pages.dev and the standard package managers.
+
+- WebFetch and WebSearch route through Anthropic's servers, NOT the session network. They
+  reach any host and are the ONLY way this page may retrieve remote data.
+- Bash curl/wget go through the session network. Any host except tarpey-daily-brief.pages.dev
+  returns 403 host_not_allowed.
+
+Therefore: every "GET" below means **WebFetch**. Never curl the Met API, the Art Institute
+API, Wikipedia, or upload.wikimedia.org — those calls cannot succeed here. The only permitted
+curl in this spec is against tarpey-daily-brief.pages.dev.
+
+Image URLs are validated by INSPECTION, not by fetching: confirm the URL is on
+upload.wikimedia.org (or the museum's own CDN) and ends in .jpg, .png or .webp. The page
+template already carries an onerror handler for the rare dead link.
+
 ## 1 — Pick today's museum
 Read jobs/rosters/art-museums.csv from the clone. Pick deterministically for today:
 
@@ -18,12 +35,12 @@ No fallback list, no warning banner. A missing or unreadable CSV is a FAILED pag
 One painting or photograph with a publicly accessible image.
 
 Metropolitan Museum of Art:
-1. GET https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&isPublicDomain=true&medium=Paintings&q=painting — take a random objectID from the first 300
-2. GET https://collectionapi.metmuseum.org/public/collection/v1/objects/{id} — use primaryImage.
+1. WebFetch https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&isPublicDomain=true&medium=Paintings&q=painting — take a random objectID from the first 300
+2. WebFetch https://collectionapi.metmuseum.org/public/collection/v1/objects/{id} — use primaryImage.
    Collect title, artistDisplayName, classification, objectDate, department, medium, accessionYear, creditLine.
 
 Art Institute of Chicago:
-1. GET https://api.artic.edu/api/v1/artworks?page={random 1-60}&limit=20&fields=id,title,artist_display,date_display,image_id,classification_title,style_title,short_description&query[bool][must][0][term][is_public_domain]=true&query[bool][must][1][term][artwork_type_title]=Painting
+1. WebFetch https://api.artic.edu/api/v1/artworks?page={random 1-60}&limit=20&fields=id,title,artist_display,date_display,image_id,classification_title,style_title,short_description&query[bool][must][0][term][is_public_domain]=true&query[bool][must][1][term][artwork_type_title]=Painting
 2. Any result with an image_id. Image URL: https://www.artic.edu/iiif/2/{image_id}/full/843,/0/default.jpg
 
 All other museums:
@@ -37,6 +54,23 @@ All other museums:
    The Founding Ceremony of the Nation for the National Museum of China). Variety is the goal.
 4. The work must have a Wikimedia Commons image (https://upload.wikimedia.org/...). Verify the
    URL ends in .jpg or .png. If none, try a different style from the list.
+
+## 2B — Fallback chain, in order
+Do not abandon the page on the first failure. Work down this list:
+
+1. The museum-specific path in section 2 (Met API, Art Institute API, or the Wikipedia search
+   for every other museum).
+2. If a museum's API returns nothing usable after two attempts, switch to the generic
+   Wikipedia route for that same museum: WebSearch "{museum name}" {style} painting, then take
+   any work with a Commons image.
+3. If that museum yields nothing, re-roll the museum with a seed offset (+1, +2, …) and try
+   again — up to three museums total.
+4. Only if all three produce no usable artwork, FAIL the page with the marker
+   FAIL_NO_ARTWORK and the last error seen. Do NOT publish a page with a broken or missing
+   image, and do NOT leave the previous day's artwork in place while claiming success.
+
+Echo a one-line progress note at each step (museum picked, route used, image URL chosen) so a
+failure names the step it died at.
 
 ## 3 — Fields to collect
 Title (full) · Artist (name and dates if known) · Style (movement or classification) ·
