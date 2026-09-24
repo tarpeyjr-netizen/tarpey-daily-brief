@@ -1,4 +1,4 @@
-<!-- build: 2026-09-23T082051Z -->
+<!-- build: 2026-09-24T081546Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +35,30 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: September 23, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: September 24, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-09-24">
+<div class="ed-head">AI Developments &mdash; Thursday, September 24, 2026</div>
+
+<section>
+<span class="tool-chip">Anthropic Claude Code</span>
+<h2>This Week in Anthropic Claude Code</h2>
+<p>Claude Code is Anthropic's AI that lives right in your terminal, reading your files, running commands and writing real code instead of just chatting about how it would do it. This week's news split neatly into two stories: a smarter, cheaper brain running underneath, and a serious rethink of how Claude Code handles big jobs with more than one moving part.</p>
+<p>On September 22nd, Claude Opus 5.5 became the new default Opus model across Claude Code, the Claude app and Cowork for Pro, Max and Team users, and it's a genuine upgrade dressed up as a cost cut: a full million-token context window, priced at $4 per million tokens in and out with cache reads at a fraction of that, while landing performance close to Anthropic's newest "Fable"-class model for roughly 40% less than the older Opus 5 cost to run. Five days earlier, on the 17th, Anthropic opened a beta redesign of Claude Code Projects that changes what a "project" actually means: instead of one linear conversation, a single project can now spin up several parallel threads, each one a full cloud session running on its own git branch and its own copy of the repo, all pulling from the same shared memory &mdash; CLAUDE.md files, AGENTS.md files and notes Claude has generated along the way &mdash; so a coordinator conversation can hand out pieces of a big job to multiple workers running on Opus at high effort and have them report back when they finish, instead of one thread grinding through everything in sequence.</p>
+<p>Smaller but very real fixes rounded out the week too. Version 2.1.275 added a "send-now" keyboard shortcut for interrupting a turn mid-thought and started syncing skills and plugins straight from a claude.ai account into terminal sessions, and a quick patch the next day, 2.1.276, fixed a bug that made every single request fail outright for teams routing Claude Code through their own proxy or gateway server &mdash; the kind of silent breakage that can quietly take down an entire company's workflow until someone notices.</p>
+<p>None of this is a single "look what it can do now" demo moment &mdash; it's Anthropic making the same tool cheaper to run at its best while making it better at juggling several jobs at once without a person babysitting every thread. The thing worth watching next is whether that Projects beta, still limited to a slice of Pro and Max users, expands fast enough to become the normal way people use Claude Code, or stays a power-user feature tucked behind a waitlist.</p>
+</section>
+
+<section>
+<span class="tool-chip">Xai Grok</span>
+<h2>This Week in Xai Grok</h2>
+<p>Grok is Elon Musk's chatbot, wired directly into X and known for a looser personality than most AI assistants. This week the story that had been teased and then delayed for weeks finally landed: the model itself.</p>
+<p>Grok 4.7 launched on September 21st, landing on the xAI API, inside Grok Build and through Cursor, built around a bigger base model, a longer reinforcement-learning training run, and a fix for a genuine bug Musk admitted to in public. During training, penalties for long answers had accidentally taught the earlier version of the model to bail out of hard problems early and skip double-checking its own work, a bit like a student erasing a correct answer because it took too long to reach it; the extra weeks of training that caused the delay were spent specifically teaching Grok to keep working on hard problems and check its own answers more carefully before handing them over. It ships with a 500,000-token context window, reads both text and images even though it only writes text back out, and it's priced the same as its predecessor at $2 per million input tokens and $6 per million output tokens, so a release built around "we fixed the model to actually try harder" didn't come with a price hike attached. Musk said afterward on X that Grok 4.7 has kept climbing in independent rankings since launch, evidence the extra weeks of tuning paid off. Alongside the flagship, xAI also quietly shipped Grok Voice Transcribe 2.0, a speech-to-text model built for stronger real-world accuracy across multiple languages with word-level timestamps, while Grok Build, the company's coding-agent tool, kept picking up steady polish in the background.</p>
+<p>With Grok 4.7 finally out the door, attention is already sliding further down the road: Musk says Grok 4.8 is finishing training this week and Grok 4.9 should catch up to competing models from OpenAI and Anthropic, but he's saving the "artificial general intelligence" label specifically for Grok 5, a rumored 6-trillion-parameter model still without a firm release date. Whether that next leap actually arrives on schedule, after 4.7 already slipped by more than a week, is the thing worth watching next.</p>
+</section>
+
+</article>
 <article class="edition" data-date="2026-09-23">
 <div class="ed-head">AI Developments &mdash; Wednesday, September 23, 2026</div>
 
@@ -198,35 +219,6 @@
 <p>Back on September 2nd, Musk announced Grok 4.7 would land in "about ten days," built with 2.1 trillion parameters &mdash; a 40% jump over Grok 4.6's 1.5 trillion &mdash; and trained partly on SpaceX's own rocket, satellite and manufacturing data to make it sharper at engineering problems. Then, right around the day it was supposed to ship, Musk said it needed a few more days. The reason he gave is a genuinely interesting glitch: during training, the model got penalized too harshly for writing long answers, so it learned to give up on hard problems early and skip double-checking its own work, a bit like a student erasing a correct answer because it took too long to reach it. Musk also admitted flatly that Grok 4.7 hadn't yet beaten its rivals, while teasing that Grok 5, still to come, is being aimed at something closer to true general intelligence.</p>
 <p>While the flagship model slipped, xAI kept the rest of the shop humming. Grok Build, the company's coding-agent tool, shipped a steady stream of fixes &mdash; clearer diffs, smarter permission prompts, subagents that resume work properly instead of losing their place, a fixed terminal lag bug, and a cleaner unified dashboard. And from September 15th through 17th, xAI ran "Grok Bot Galaxy," a three-day livestreamed experiment in San Francisco where a small team tries to build an entire company from scratch leaning on Grok Bot, xAI's new autonomous "AI worker" product for businesses, complete with access and audit controls; Grok and Cursor Enterprise customers got two weeks of free access to try having an AI teammate run real tasks alongside them.</p>
 <p>So Grok is stuck between two speeds right now: a marquee model that isn't quite ready to show its face, and a cluster of smaller agent tools getting real, visible polish. Whether Grok 4.7 actually lands looking as good as promised is the thing worth watching next, especially with Meta and OpenAI both expected to drop competing model updates before the month is out.</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-09-16">
-<div class="ed-head">AI Developments &mdash; Wednesday, September 16, 2026</div>
-
-<section>
-<span class="tool-chip">Anthropic Claude CoWork</span>
-<h2>This Week in Anthropic Claude CoWork</h2>
-<p>Claude Cowork is Anthropic's answer to a very ordinary complaint: nobody wants to babysit a chatbot through a task. You describe what you need done, walk away, and come back to a finished folder of documents, cleaned-up files or a real piece of research, because it runs on the same agent engine that powers Claude Code but without asking you to touch a terminal. This week it grew up in a way that's very on-brand for Anthropic &mdash; less flash, more plumbing for people who actually run businesses.</p>
-<p>The headline is Claude for Financial Advisors, a plugin that launched September 14th and bundles connectors straight into custodians, asset managers and wealth-tech platforms like Schwab and BlackRock, alongside skills built around an advisor's actual daily grind: prepping for a client meeting, checking a portfolio, running a compliance pass. The plugin itself is free through the Cowork plugin browser for firms with an Enterprise license, though a seat with Cowork attached still runs somewhere in the $70 to $120 range per person per month, and Anthropic is dangling a one-time usage credit for any firm that signs up before the end of September. It's a pointed bet that the boring, regulated, paperwork-heavy jobs are where an AI agent earns its keep fastest.</p>
-<p>Anthropic also kept tightening the machinery underneath. Smart Reports, a beta feature for Claude Enterprise, now turns raw usage data into an actual readable report &mdash; prose and charts on what kind of work got done, what it cost, and where employees kept getting stuck &mdash; instead of dumping a spreadsheet of session counts on an IT manager and calling it a day. Organizations get ten of those reports free each month during the beta, though someone with owner-level access has to flip it on first, since it ships off by default. Meanwhile the built-in browser inside Cowork, the side panel that lets Claude click around a website on your behalf, quietly switched from opt-in to on-by-default for Enterprise customers starting September 10th, and the Compliance API's session endpoints came out of beta, which is the unglamorous kind of update that lets a company's legal team actually sign off on letting an agent loose.</p>
-<p>None of this is the sort of thing that trends on social media, and that's sort of the point. Cowork's story this month is about becoming boring enough &mdash; auditable, budgeted, permission-gated &mdash; that a bank or a wealth-management shop will actually let it near real client work.</p>
-</section>
-
-<section>
-<span class="tool-chip">Eleven Labs</span>
-<h2>This Week in Eleven Labs</h2>
-<p>ElevenLabs made its name cloning voices convincingly enough to fool your own grandmother, and it's since branched out into dubbing videos into other languages and turning spoken audio into clean text. This week's news skewed toward the parts of the product that developers and businesses touch rather than anything you'd notice as a casual listener, but the direction is clear: ElevenLabs wants to be infrastructure, not just a fun demo.</p>
-<p>The biggest piece is the ElevenLabs CLI, which hit version 1.0.0 on September 6th and puts the company's entire API into a terminal window &mdash; every operation as a command, with JSON, table, YAML or CSV output and shell autocomplete built in. The part that matters most is that it lets you manage voice agents "as code," meaning an agent's settings, tools and tests live as ordinary files you can save, share and roll back, rather than click-through settings buried in a dashboard somewhere. It even ships with a dry-run mode so you can preview a change before it actually touches anything live, the same safety net programmers expect from real software but rarely get from AI tools.</p>
-<p>Right alongside that, Procedures inside ElevenAgents (the company's voice-agent builder) reached general availability. A procedure is basically a specific cheat sheet with its own trigger, so instead of cramming every possible instruction into one giant system prompt, an agent can load just the relevant playbook the moment a conversation calls for it &mdash; a customer-service bot handling a refund pulls up the refund playbook, and a completely different one for a password reset. Then on September 11th came Scribe v2 Medical, a version of ElevenLabs' transcription model fine-tuned specifically on clinical audio, cutting errors on drug names and medical terms by about 15% compared to the standard model, and it's eligible for HIPAA business agreements, so hospitals and clinics can actually use it on real patient recordings. Smaller additions rounded out the week too: phone-based agents can now handle DTMF keypad input (the beeps you make pressing 1 for English), transcripts can carry file attachments, dubbing projects got better pagination, and there are now waveform visuals for music generation.</p>
-<p>Taken together, it's a week of ElevenLabs shoring up the boring-but-essential edges &mdash; developer tooling, medical-grade accuracy, phone-system compatibility &mdash; that decide whether a voice AI stays a novelty or ends up answering your doctor's office phone.</p>
-</section>
-
-<section class="spotlight">
-<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
-<h2>Siri AI</h2>
-<p>Siri has been around since 2011, but for most of that time it's felt frozen &mdash; great at setting a timer, hopeless at almost anything more complicated. That changed this week, when Apple shipped a genuinely rebuilt Siri AI alongside iOS 27, the biggest overhaul the assistant has had in over a decade. The new Siri can actually see what's on your screen and act on it, dig back through your texts, emails and photos to surface something a friend mentioned weeks ago, and chain actions across more than 300,000 third-party apps &mdash; so asking it to book the restaurant your friend texted you about isn't a punchline anymore, it's the whole idea. It also got its own dedicated app, with conversation history that syncs privately across your iPhone, iPad, Mac and Watch, so you can start a chat on one device and pick it back up on another. There are catches: it's still officially in beta, it only speaks English at launch with more languages landing in October, and the deepest features need a chip no older than an iPhone 15 Pro's A17 Pro, which quietly splits Apple's own customers into who gets the good version and who doesn't. Anyone who's ever snapped "that's not what I asked" at Siri will notice the difference fast.</p>
-<p class="muted">Source: Apple Newsroom / AppleInsider, September 2026</p>
 </section>
 
 </article>
