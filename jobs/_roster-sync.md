@@ -47,7 +47,9 @@ For each CHANGED row:
      ("bruce springsteen" → "Bruce Springsteen"). Leave any other casing alone.
    - sports-teams.csv season: three-letter month names joined by a hyphen, no spaces
      ("Sept - June" → "Sep-Jun", "Oct - March" → "Oct-Mar").
-   - Do not fix spelling. The Sheet is the source of truth.
+   - A `group` column may only hold Primary, Secondary or Tertiary. Correct an obvious
+     misspelling ("Seondary" → "Secondary"); report any other value as HELD.
+   - Otherwise do not fix spelling. The Sheet is the source of truth.
 4. Keep the Sheet's row order. Some specs treat file order as meaningful.
 5. Safety check. Compare data-row counts with the CSV already in the clone. If the new file
    would have zero rows, or fewer than half the old rows, do NOT write it. Mark the row

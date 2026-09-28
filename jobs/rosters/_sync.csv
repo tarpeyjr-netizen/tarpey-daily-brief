@@ -7,3 +7,7 @@ people.csv,people,1SXO8AbuUGAezNxfhIpplcaoZVdFGplVbiVYHc_CCP_4,Tarpey Roster —
 sports-teams.csv,sports,1PyjCw9wPl7AN1kmLvBLLsiztuswN6lu6KP779UpwT38,Tarpey Roster — Sports,Team=team; # of Articles=max_articles; Group=group; season=season,2026-09-20T00:52:38.783Z
 stocks.csv,stocks,1-Joyv1WEVqBgTrnUFpqmQFvOlx3-0s9xta641FDpmBE,Tarpey Roster — Stocks,Ticker=ticker; Company/Asset=company; Notes=notes,2026-09-20T00:45:50.642Z
 ai-tools.csv,ai,1FrLsLYbpuO06d5qtC5xIJP4urfaM2KQrKhuyksmtNfo,Tarpey Roster — AI Tools,Tool=tool; Day of Week=day_of_week,2026-09-20T01:12:21.150Z
+nba.csv,nba,1iwXp7nOuBUdJ0xIw8XirKq3jGmQ8HZBXwBYZs5weJds,Tarpey Roster — NBA,Player=player; Team=team,2026-07-13T12:19:57.927Z
+college-baseball.csv,baseball,12Cp6D8FjvrjRJuLBATHq9H2JeigKYGdXIj6kW2aV7X8,Tarpey Roster — College Baseball Weekly,Player=player; College=college; Position=position; Sport=sport,2026-07-13T12:19:51.145Z
+college-football.csv,college-football,1DWm0AnRHZx0p2izU9ThTJJmp_eUq5RNic88h9FVF9jg,Tarpey Roster - NCAA Football,Level=group; School=school,2026-08-26T12:06:31.548Z
+sap-vendors.csv,sap-migration,1j_TmfMZtjOAhj53PHzFUiVdq1ZWxKrzK-actRX4tLCQ,Tarpey Roster - Migration Tools,Type of Tool=tool_type; Name=vendor,2026-07-23T22:32:38.244Z

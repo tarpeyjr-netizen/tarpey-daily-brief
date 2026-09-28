@@ -26,6 +26,9 @@ ROSTER ACCURACY RULES — these exist because past editions regressed:
 1. The team in the CSV is the LAST KNOWN team, not a fact. Confirm each player's current club
    before writing his heading. If a player has moved, update the <h3>, say so in the paragraph,
    and update jobs/rosters/nba.csv in the same commit so the next run starts from the truth.
+   The NBA roster is also kept in Jim's Google Sheet and a later Sheet edit replaces the CSV.
+   So whenever this run changes a team, append to the nba line of the STEP E report:
+   "— roster change: <player> → <team>; update the NBA Sheet".
 2. Jermaine Samuels specifically: the July 25, 2026 edition reported his move to San Pablo
    Burgos and the August 7, 2026 edition then reverted him to Houston. That was a regression.
    Establish a player's current club from a dated source, and never describe a departed player

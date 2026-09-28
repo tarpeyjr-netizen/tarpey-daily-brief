@@ -23,13 +23,17 @@ read and edit them.
 Each spec reads its CSV out of the clone. There are no fallback tables and no "roster
 warning" banners — a missing or unreadable CSV is a failed page.
 
-Eight rosters are edited in Google Sheets ("Tarpey Roster — …" in Drive) and copied into
+Twelve rosters are edited in Google Sheets ("Tarpey Roster — …" in Drive) and copied into
 their CSVs by `_roster-sync.md`. Each routine checks only the Sheets its pages use, right
 before building, and reads a Sheet only if it changed since the last sync. The Sheet →
 CSV mapping and last-sync times live in `rosters/_sync.csv`.
 
     Sheet-managed (edit the Sheet, not the CSV — a CSV edit is overwritten on the next
-    Sheet change): music, mlb, nfl, track, people, sports-teams, stocks, ai-tools
+    Sheet change): music, mlb, nfl, track, people, sports-teams, stocks, ai-tools, nba,
+    college-baseball, college-football, sap-vendors
+
+The NBA job still corrects a player's team in nba.csv when he moves, and flags it in its
+report so the NBA Sheet can be updated to match.
 
 All other rosters are edited here in GitHub (pencil icon, commit) or by asking Claude in a
 session with this repo selected. Their old Google Sheets from July are stale and not read.

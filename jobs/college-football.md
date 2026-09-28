@@ -1,7 +1,7 @@
 # college-football.html — College Football Tracker
 
 Cadence: every day in season, Mondays only in the off-season. History: today + up to 6 prior
-editions (7 total). Roster: none — tracked teams are below.
+editions (7 total). Roster: jobs/rosters/college-football.csv (group,school).
 
 ## Gate
 IN-SEASON = today is between Aug 20 and the CFP National Championship (mid-January), inclusive.
@@ -15,6 +15,14 @@ Teams becomes a short "portal & recruiting notes" list instead of a schedule tab
 becomes national off-season news. Label the edition header "Off-season weekly".
 
 ## 1 — Tracked teams
+Read jobs/rosters/college-football.csv from the clone. It decides WHICH schools are tracked and
+whether each is Primary or Secondary. No fallback list; a missing or unreadable CSV is a FAILED
+page. The descriptions and ESPN IDs below are reference detail for schools already known. A
+school in the CSV that is not listed here is still tracked: identify it, find its ESPN team ID
+(ESPN teams API or a web search), and cover it the same way. A school listed here but absent
+from the CSV is not covered.
+
+Reference detail —
 PRIMARY — news every single day:
 - Texas A&M Aggies (FBS, SEC)
 - Penn State Nittany Lions (FBS, Big Ten)
@@ -34,7 +42,7 @@ Endpoints (WebFetch handles these ESPN JSON APIs well; the www.espn.com HTML pag
 - Team schedule: https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{id}/schedule?season={YYYY}&seasontype=2
 - Team news: https://site.api.espn.com/apis/site/v2/sports/football/college-football/news?team={id}&limit=15
 
-ESPN team IDs: Texas A&M 245 · Penn State 213 · Villanova 222 · Texas Tech 2641 · Minnesota 135 ·
+ESPN team IDs (reference; CSV names map to these — "UNC" = North Carolina, "Wooster" = College of Wooster, "Miami" = Miami (FL)): Texas A&M 245 · Penn State 213 · Villanova 222 · Texas Tech 2641 · Minnesota 135 ·
 Georgia Tech 59 · Miami 2390 · Duke 150 · North Carolina 153 · Florida 57 · Wooster 2748.
 
 DATE HANDLING: the ESPN JSON date field is UTC (2026-09-04T00:00Z is Thursday Sep 3, 8:00 p.m.
