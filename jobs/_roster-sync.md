@@ -4,16 +4,17 @@ Jim edits rosters in Google Sheets ("Tarpey Roster — …" in Drive). The page 
 from the clone. This step copies a Sheet into its CSV only when the Sheet has changed since
 the last sync, so an unchanged roster costs one metadata search and nothing else.
 
-Run it after _publish.md STEP A (clone) and before STEP B (build pages), only for the CSVs
-the routine prompt lists under ROSTER SYNC. It uses the Google Drive connector and nothing
-else. It never fails a page: whatever happens here, the pages build from whatever CSV is in
+Run it after _publish.md STEP A (clone) and before STEP B (build pages). It uses the Google
+Drive connector and nothing else. It never fails a page: whatever happens here, the pages build from whatever CSV is in
 the clone afterwards.
 
 ## 1 — Load sync state
-Read jobs/rosters/_sync.csv. Keep only the rows whose `csv` value is in today's ROSTER SYNC
-list. Columns:
+Read jobs/rosters/_sync.csv. Keep only the rows whose `pages` value names a page the routine
+prompt lists for today (gated pages count — check the roster even if the page later skips).
+If no row matches, stop here: report "roster-sync: none due" and go to STEP B. Columns:
 
     csv                    the file in jobs/rosters/ this Sheet feeds
+    pages                  the page(s) that read this CSV, separated by "; "
     sheet_id               Drive file ID — use it, never search by title to pick a file
     sheet_title            for log lines only
     column_map             Sheet header = CSV header, separated by "; "
