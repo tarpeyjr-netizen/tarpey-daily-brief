@@ -1,7 +1,7 @@
 # ai.html — AI Developments
 
 Cadence: every day. History: rolling 8-day window (today + prior editions 1–7 days old).
-Roster: jobs/rosters/ai-tools.csv (tool,day_of_week) — two tools per day.
+Roster: jobs/rosters/ai-tools.csv (tool,day_of_week) — usually two or three tools per day.
 
 ## Gate
 None. Runs every day.

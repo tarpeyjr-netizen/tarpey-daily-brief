@@ -13,7 +13,9 @@ batches. Headlines are one line, 140 characters max. No long quotes, no article 
 
 ## 1 — Tickers
 Read jobs/rosters/stocks.csv from the clone and cover every ticker. The notes column carries
-special handling: BTC is spot USD; SPCX also gets its own News section. No fallback list and no
+special handling: BTC is spot USD; SPCX also gets its own News section. A ticker of "---"
+means the company is not publicly traded (e.g. United Launch Alliance): leave it out of the
+price table and ratings, and cover it only in its own News section as the notes say. No fallback list and no
 warning banner. A missing or unreadable CSV is a FAILED page.
 
 ## 2 — Data to gather, in parallel batches

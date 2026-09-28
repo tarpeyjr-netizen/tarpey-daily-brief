@@ -14,7 +14,7 @@ Note: this page previously ran on Sundays and its week ended on a Saturday. It n
 Mondays and the week ends Sunday. Do not reintroduce the Saturday wording.
 
 ## 2 — Roster
-Read jobs/rosters/track.csv from the clone — 32 athletes, one per line, in file order.
+Read jobs/rosters/track.csv from the clone — one athlete per line, in file order. Cover every one.
 No fallback roster. A missing or unreadable CSV is a FAILED page.
 
 IMPORTANT — the old version of this job built and PUBLISHED a full-page red error banner when

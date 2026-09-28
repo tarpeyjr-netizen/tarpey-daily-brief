@@ -31,6 +31,13 @@ pass identity per command:
   git -c user.email="jamestarpeyjr@gmail.com" -c user.name="Daily Brief Bot" commit -q -m "..."
 
 ===============================================================
+A2 — ROSTER SYNC
+===============================================================
+If the routine prompt has a ROSTER SYNC line, follow jobs/_roster-sync.md now, for exactly
+the CSVs it lists. It commits any updated rosters before the first page and adds one
+roster-sync line to the STEP E report. It never fails a page or aborts the run.
+
+===============================================================
 B — BUILD EACH PAGE
 ===============================================================
 The routine prompt lists the pages due today. For each one, in the order listed:
@@ -112,7 +119,8 @@ failed. Report it as FAIL_VERIFY with the error text so the distinction stays vi
 ===============================================================
 E — FINAL RESPONSE
 ===============================================================
-One line per page, then one summary line. Nothing else. No preamble, no commentary.
+One roster-sync line (only if A2 ran), one line per page, then one summary line. Nothing
+else. No preamble, no commentary.
 
   <page>: published — <commit>
   <page>: skipped — <reason from the spec>

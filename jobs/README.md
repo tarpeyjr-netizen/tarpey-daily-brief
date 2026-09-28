@@ -20,13 +20,19 @@ read and edit them.
 
 ## Rosters
 
-`rosters/` replaced four Google Sheets read through the Drive connector. Each spec now reads
-its CSV out of the clone. There are no fallback tables and no "roster warning" banners — the
-CSV is the single source of truth, and a missing or unreadable one is a failed page rather
-than a silent fall back to stale data.
+Each spec reads its CSV out of the clone. There are no fallback tables and no "roster
+warning" banners — a missing or unreadable CSV is a failed page.
 
-Edit a roster in the GitHub web UI (navigate to the file, pencil icon, commit), or ask Claude
-in a session with this repo selected.
+Eight rosters are edited in Google Sheets ("Tarpey Roster — …" in Drive) and copied into
+their CSVs by `_roster-sync.md`. Each routine checks only the Sheets its pages use, right
+before building, and reads a Sheet only if it changed since the last sync. The Sheet →
+CSV mapping and last-sync times live in `rosters/_sync.csv`.
+
+    Sheet-managed (edit the Sheet, not the CSV — a CSV edit is overwritten on the next
+    Sheet change): music, mlb, nfl, track, people, sports-teams, stocks, ai-tools
+
+All other rosters are edited here in GitHub (pencil icon, commit) or by asking Claude in a
+session with this repo selected. Their old Google Sheets from July are stale and not read.
 
     rosters/countries.csv     day,country,population,continent      — world-news
     rosters/cities.csv        day,primary_city,secondary_city       — cities

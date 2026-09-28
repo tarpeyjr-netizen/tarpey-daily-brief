@@ -1,15 +1,21 @@
 tool,day_of_week
 Google Gemini,Monday
-Meta Llama,Monday
 Anthropic Claude,Tuesday
-Perplexity AI,Tuesday
-Anthropic Claude CoWork,Wednesday
-Eleven Labs,Wednesday
+DeepSeek,Wednesday
 Anthropic Claude Code,Thursday
-Xai Grok,Thursday
 ChatGPT,Friday
-Mistral AI,Friday
-SAPJoule,Saturday
-Einstein AI,Saturday
+SAP Joule,Saturday
 Microsoft Copilot,Sunday
-Artlist,Sunday
+Meta AI — Llama models,Monday
+Perplexity AI,Tuesday
+Eleven Labs,Wednesday
+Xai Grok,Thursday
+Le Chat / Mistral,Friday
+Salesforce Agentforce / Einstein,Saturday
+Canva AI / Magic Studio,Sunday
+Cursor,Monday
+NotebookLM,Tuesday
+Adobe Firefly,Wednesday
+Artlist AI,Thursday
+OpenAI Codex,Friday
+GitHub Copilot,Saturday
