@@ -3,7 +3,7 @@ music.csv,music,1RUdbhW1fzKam_3o_acnHA3sMZZwdVL-DEKFxHnEhMZ4,Tarpey Roster — M
 mlb.csv,mlb,1pz-lLL8kAcsnMIXJGfNP7b3MliZElSFFoQ7WsyXQb7c,Tarpey Roster — MLB,Player=player; Team=team; Position=position,2026-09-20T00:48:28.038Z
 nfl.csv,nfl,164sWnvwZ1ZhSOpGUbvpUr4Yo_Dx8u4P0UZKatYh4t50,Tarpey Roster — NFL,Player=player,2026-09-20T01:03:28.342Z
 track.csv,track,1IajxIbG-BVyJZEPv6pWwwRmZnP9Cb_1M5NyRxKhGFSo,Tarpey Roster — Track,Athlete=athlete,2026-09-20T00:58:32.279Z
-people.csv,people,1SXO8AbuUGAezNxfhIpplcaoZVdFGplVbiVYHc_CCP_4,Tarpey Roster — People,Person=person; Profession=profession,2026-09-20T00:53:36.137Z
+people.csv,people,1SXO8AbuUGAezNxfhIpplcaoZVdFGplVbiVYHc_CCP_4,Tarpey Roster — People,Person=person; Profession=profession,2026-10-01T19:07:05.201Z
 sports-teams.csv,sports,1PyjCw9wPl7AN1kmLvBLLsiztuswN6lu6KP779UpwT38,Tarpey Roster — Sports,Team=team; # of Articles=max_articles; Group=group; season=season,2026-09-20T00:52:38.783Z
 stocks.csv,stocks,1-Joyv1WEVqBgTrnUFpqmQFvOlx3-0s9xta641FDpmBE,Tarpey Roster — Stocks,Ticker=ticker; Company/Asset=company; Notes=notes,2026-09-20T00:45:50.642Z
 ai-tools.csv,ai,1FrLsLYbpuO06d5qtC5xIJP4urfaM2KQrKhuyksmtNfo,Tarpey Roster — AI Tools,Tool=tool; Day of Week=day_of_week,2026-09-20T01:12:21.150Z
