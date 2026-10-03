@@ -1,4 +1,4 @@
-<!-- build: 2026-10-02T081918Z -->
+<!-- build: 2026-10-03T081956Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +35,40 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: October 2, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: October 3, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-10-03">
+<div class="ed-head">AI Developments &mdash; Saturday, October 3, 2026</div>
+<section>
+<span class="tool-chip">SAP Joule</span>
+<h2>This Week in SAP Joule</h2>
+<p>Joule is SAP's AI helper, a bit like a very well-trained intern who lives inside the business software that big companies use to run payroll, shipping and accounting. This week was less about shiny new tricks and more about rules, guardrails and who pays for what.</p>
+<p>The big theme was safety. In a <a href="https://gurufocus.com/news/9103677/sap-stocks-fall-as-openshell-moves-agent-governance-into-erp">September 28 update</a>, SAP explained how Joule Studio, the place where companies build their own AI agents, checks permissions, job roles and process context before an agent does anything. Think of a school hall monitor who checks your pass before letting you through any door. SAP is also building Nvidia's OpenShell into its Business AI Platform to fence in what autonomous agents can touch, and the Joule Studio runtime stays free for customers and partners through October. Then came the money part. The free ride for <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-joule-for-developers-end-of-the-promotional-period-and-the-path-forward/ba-p/14490003">Joule for Developers</a> ended on September 30, and the ABAP coding features became a paid product on October 1. People already using the generative AI tools in SAP Build keep access through the end of 2026.</p>
+<p>The product keeps growing too, with September's <a href="https://help.sap.com/whats-new/762ba6531c9948ab9785aa76c8e9c21d?version=CLOUD">release notes</a> adding a Concur meeting planning agent and a way to report workplace safety observations just by describing them in plain language. The takeaway is that SAP is moving from the demo phase to the invoice phase, so expect the next stories to be about what AI at work really costs.</p>
+</section>
+<section>
+<span class="tool-chip">Salesforce Agentforce / Einstein</span>
+<h2>This Week in Salesforce Agentforce</h2>
+<p>Agentforce is Salesforce's platform for AI agents, little digital workers that handle jobs in sales, customer support and more. This week was the hangover after Dreamforce, the company's giant September conference, as everyone dug into what was actually announced.</p>
+<p>Salesforce put out a <a href="https://www.salesforce.com/blog/dreamforce-2026-announcements/">roundup of 21 announcements</a>, and a few stand out. Agentforce Coworker is an AI teammate that can answer questions across your customer data and Slack, then pull other agents together to get a plan done. Agent Optimizer is an agent that builds and tunes other agents, which is a bit like a coach who also designs the team. There is also Koa, Salesforce's own reasoning model, and AIforce, a way to bring Salesforce into places like Claude and Slack. Earlier in the month the company introduced <a href="https://www.salesforce.com/news/stories/agentforce-job-ready-ai-agents/">seven job-ready agents</a>, each with a first name and a role, such as Casey for help and Hunter for outbound sales. Six are ready now, and Hunter is expected in November. On top of that, new <a href="https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/">Core, Advanced and Max editions</a> bundle everything into simpler packages.</p>
+<p>The pattern is clear. Salesforce wants agents that act like named coworkers instead of mysterious chatbots, and it wants one control layer to keep them in line. The test now is whether real customers see the payoff.</p>
+</section>
+<section>
+<span class="tool-chip">GitHub Copilot</span>
+<h2>This Week in GitHub Copilot</h2>
+<p>GitHub Copilot is the AI pair programmer that suggests code, fixes bugs and now does whole chunks of work on its own. This week it got new brains, new hands and a few new chores it can take off your plate.</p>
+<p>First, the brains. According to the <a href="https://github.com/casanova-21-test-org/github-changelog-mcp/issues/173">weekly changelog report</a>, Claude Sonnet 5.5 became generally available across Copilot on September 28, and GPT-6.1 Sol followed on September 29, aimed at long, multi-step coding jobs. Then came HydraFusion, which reached <a href="https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases/">VS Code and the Copilot app</a> in research preview. Instead of one model, it orchestrates several, like a group project where one person drafts and another critiques. Now the hands. On October 1, GitHub said <a href="https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps">Copilot can use desktop apps</a>, reading what is on screen, clicking buttons, typing and moving between programs. It is in public preview in the CLI and app on macOS and Windows.</p>
+<p>The September VS Code update added automations that run on a schedule and an agent merge feature that handles review feedback, failed checks and merge conflicts. Heads up as well that GitHub plans to <a href="https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october/">retire some older models</a> in mid-October. The direction is simple: Copilot is turning from autocomplete into a teammate that can finish the job.</p>
+</section>
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>🔍 Tool Spotlight: Shopify Canvas</h2>
+<p>Imagine building a whole online store by simply chatting. That is Canvas, a new tool from Shopify that launched on October 1. Store owners talk to Sidekick, Shopify's AI assistant, and watch the shop redraw itself in front of them as they type. They can also click on any piece of the page, like a banner or a button, and change it directly. Shopify says a fully custom store can come together in about twenty minutes.</p>
+<p>What makes it interesting is that it is not a flimsy mockup. The changes are the real code behind the store, because Shopify gave Sidekick direct access to theme files and simplified how themes are built so the AI can understand them. That matters because designing a shop has usually meant hiring a developer or wrestling with templates. Small business owners, side-hustle sellers and anyone with a product idea are the obvious users. The surprise is the fine print. It is desktop-only for now, it is rolling out over several days, and it does not yet support third-party themes, app blocks or translations. Shopify says those are coming.</p>
+<p class="muted">Source: <a href="https://techbriefly.com/2026/10/02/shopify-canvas-ai-store-builder/">TechBriefly</a>, October 2026</p>
+</section>
+</article>
 <article class="edition" data-date="2026-10-02">
 <div class="ed-head">AI Developments &mdash; Friday, October 2, 2026</div>
 <section>
@@ -193,28 +224,6 @@
 <h2>Siri AI</h2>
 <p>Siri has been sitting quietly on a billion-plus iPhones for over a decade, mostly good for timers and weather, while flashier chatbots stole the spotlight &mdash; until this month, when Apple finally shipped the overhaul it had been promising for two years. Siri AI rolled out as a beta on September 14th alongside iOS 27, and the headline surprise is who's powering it under the hood: Google, Apple's biggest rival, through a landmark partnership that runs the new Siri on customized Gemini models. The upgraded Siri can search across your own messages, emails and photos to answer questions without you digging for them yourself, follow up on what you just said instead of forgetting it the moment you finish talking, see what's actually on your screen and act on it, and reach across apps to draft an email or turn a conversation into something useful elsewhere. Apple insists your data still isn't stored or read by Google, routing sensitive requests through its own private servers instead. It matters because it reaches roughly 1.5 billion people almost overnight, making it possibly the widest-reaching AI upgrade of the entire year, even if nobody ever expected Siri to be the exciting one.</p>
 <p class="muted">Source: Apple Newsroom / MacRumors, September 2026</p>
-</section>
-
-</article>
-<article class="edition" data-date="2026-09-25">
-<div class="ed-head">AI Developments &mdash; Friday, September 25, 2026</div>
-
-<section>
-<span class="tool-chip">ChatGPT</span>
-<h2>This Week in ChatGPT</h2>
-<p>ChatGPT is the chatbot that basically kicked off this whole AI moment &mdash; you type a question or a request, and it types back an answer, drafts a document, or these days even books things and browses the web for you. After a couple of weeks dominated by big-brain model launches and business-side money talk, this week OpenAI aimed squarely at the everyday user: cheaper, smarter models under the hood, and a couple of small features that quietly make the app more useful for ordinary things like studying for a test.</p>
-<p>The headline move landed on September 22nd with the launch of GPT-6 Sol and GPT-6 Luna, and the twist is that OpenAI didn't just make them better, it made them dramatically cheaper on purpose. GPT-6 Sol now costs $2 per million input tokens and $10 per million output tokens, half of what GPT-5.6 Sol cost, while GPT-6 Luna dropped to just $0.10 and $0.50, also half its predecessor's price &mdash; and an OpenAI spokesperson confirmed these are permanent prices, not some limited-time sale. Under the hood, OpenAI says Sol makes roughly half as many mistakes as the model it replaces, and Luna, the smaller and faster of the two, now matches the smarts of old GPT-5.6 Sol while running at around a hundredth of the cost when pushed to think harder. Picture a fast-food chain quietly upgrading the recipe and cutting the price at the same time instead of doing one or the other &mdash; that's roughly what happened here, and it rolled out immediately to Plus, Pro, Business, Enterprise and Edu users in ChatGPT Work and Codex, with free and Go users getting a taste of Luna in the desktop app.</p>
-<p>On the more visible, everyday side of the app, ChatGPT rolled out interactive flashcards on September 23rd for both mobile and web, available to everyone regardless of plan. Ask for flashcards on a topic you're trying to learn, or upload a page of messy notes and ask ChatGPT to turn them into cards, and it builds a deck you can flip through one at a time, tapping a checkmark if you knew the answer or an X if you need to see it again, with the whole deck automatically saved to come back to later &mdash; essentially a free, built-in version of the study apps students already pay for. Around the same time, ChatGPT for Word kept expanding its reach, adding ChatGPT Business accounts to the list of plans that can draft from notes, summarize a document, rewrite a selected paragraph, or fix formatting straight from a sidebar inside Microsoft Word, with OpenAI planning to switch that access on by default for Business accounts starting October 1st.</p>
-<p>None of this is a single flashy new brain the way GPT-6 Astra was a couple weeks back, but it's the same brain getting cheaper to run and showing up in more ordinary corners of people's lives, from a student cramming for a quiz to an office worker drafting a memo in Word. The thing worth watching next is whether OpenAI keeps up this pattern of quietly halving prices every few weeks, because if it does, running a serious AI habit is about to get a lot less expensive for everyone building on top of it.</p>
-</section>
-
-<section>
-<span class="tool-chip">Mistral AI</span>
-<h2>This Week in Mistral AI</h2>
-<p>Mistral is the French AI lab known for building serious, sometimes fully open models instead of just renting somebody else's American ones. The last couple of weeks were about outside validation &mdash; a record funding round, a new browser partnership &mdash; but this week the company turned inward and simplified its own front door, merging its two separate assistant experiences into one.</p>
-<p>Since September 22nd, Mistral's Chat and Work modes &mdash; previously two separate tabs inside its Vibe assistant, one for quick questions and one for longer, multi-step professional tasks &mdash; have merged into a single place to type. Instead of deciding upfront which tab your question belongs in, you now just ask, and a simple "Fast or Think" toggle sitting right in the message box controls how hard the model works on it, not which mode you happen to be in. It's a bit like a restaurant tearing down the wall between the quick-counter side and the sit-down dining side and just letting you order however much food you want from the same spot. The change is arriving gradually rather than all at once: the rollout actually started back on September 14th, with Free, Pro and Teams accounts migrating over the following days, while Enterprise customers get a much longer runway, starting October 1st with administrators given roughly a six-month window to choose exactly when their organization switches over.</p>
-<p>Once an account migrates, the practical upside is a single unified conversation list &mdash; no more hunting through one tab to find a chat you thought you started in the other &mdash; plus reusable "Skills," which are essentially saved sets of instructions that replace what used to be called Chat Agents, so a task you've set up once doesn't need rebuilding from scratch every time. It's a smaller, plumbing-level change compared to a new model launch, but it's the kind of change that shapes how millions of people actually experience using the product every single day.</p>
-<p>Compared to the funding fireworks and the Firefox deal of the past couple of weeks, this was a quieter, more housekeeping-focused stretch for Mistral &mdash; less about proving the company can compete on raw capability, and more about making sure the product itself doesn't feel like two different apps stitched together. The thing worth watching next is how smoothly that staged migration goes, especially once Enterprise customers start weighing in come October, since a messy rollout of your own front door tends to matter to users a lot more than a delayed model ever does.</p>
 </section>
 
 </article>
