@@ -23,6 +23,12 @@ Per person, parallel WebSearch:
 - "[Name] book article podcast 2026"
 - "[Name] podcast appearance 2026" / "[Name] podcast interview this week"
 
+SOURCE LINKS — every item of news must be traceable. While researching, record the URL of the
+page each fact came from (article, podcast episode page, newsletter post, video, official
+site) next to the fact. Never guess, rebuild or reuse a URL from memory: only link a URL a
+search or fetch actually returned in this run. If you have a fact but no URL for it, say so
+in the paragraph ("source link not found") rather than inventing one.
+
 Capture: new books, projects or interviews published; podcast appearances (show name, host,
 date, and a notable quote or topic — this is a priority category, not an afterthought);
 notable quotes; awards; sporting results (Fouts, Bueckers); tournament results (Carlsen);
@@ -61,6 +67,8 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
   p { font-size:14px; line-height:1.6; margin-bottom:8px; }
   ul { padding-left:20px; } li { font-size:14px; line-height:1.6; margin-bottom:5px; }
   .muted { color:var(--muted); font-size:13px; }
+  a { color:var(--navy); }
+  .src { font-size:13px; color:var(--muted); }
   footer { text-align:center; font-size:12px; color:var(--muted); padding:24px; }
 </style>
 </head>
@@ -84,7 +92,12 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <div class="ed-head">Week ending [Wednesday DD, YYYY]</div>
 <section><h2>This Week</h2><p>[One or two sentences: the most interesting update of the week across everyone]</p></section>
 <section><h2>Updates</h2>
-[per person: <h3>Name &mdash; Profession</h3><p>Update: [what happened, what was published, what was said — specific and interesting, quote if notable. If nothing: "No major updates this week."]</p>]
+[per person: <h3>Name &mdash; Profession</h3><p>Update: [what happened, what was published, what was said — specific and interesting, quote if notable. If nothing: "No major updates this week."]</p>
+  Under every person who has news, add one line of 1–3 source links:
+  <p class="src">Sources: <a href="URL">Outlet or show, Mon D</a> &middot; <a href="URL">...</a></p>
+  Link text names the outlet or show and the date, never a bare URL or "click here". Link the
+  specific item (the episode, the article), not a site home page. A person with no news gets
+  no Sources line.]
 </section>
 </article>
 
