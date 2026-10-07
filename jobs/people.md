@@ -16,6 +16,14 @@ roster and no warning banner. A missing or unreadable CSV is a FAILED page.
 This roster is long — pace the research so every person gets covered. Nobody is skipped: a
 person with no news gets "No major updates this week."
 
+## 2b — Batching and search depth
+Split the roster into batches of about 8 people, one research agent per batch, all run in
+parallel. Each agent runs the four searches below for every person in its batch, using WebSearch
+mode "extended" for the news and podcast queries. Budget at least 4 searches per person; an agent
+that finishes a batch in well under that has not searched enough. An undated search result is not
+a reason to drop an item: fetch the page, find its date, and include it if it falls in the window.
+Report "No major updates this week." only after all four searches (and any fetches) came up empty.
+
 ## 3 — Research, last 7 days
 Per person, parallel WebSearch:
 - "[Name] news 2026"
