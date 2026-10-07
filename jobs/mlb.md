@@ -29,6 +29,22 @@ If a player was inactive all week, say so rather than omitting him.
 Sources: ESPN, Baseball Reference, MLB.com. Parallel WebSearch. On a week with no games for a
 player (off-days, IL), report news only.
 
+## 3b — Winter ball (offseason check)
+Run this once the minor-league season is over (roughly mid-September through February), for every
+roster player who is in the minors or a prospect (blank team, or an "organization (minors)" entry)
+and for any big-leaguer reported to be playing winter ball. Do not skip it because the player has
+no news elsewhere.
+- Check for assignment or action in: Arizona Fall League (October to mid-November; MiLB.com/AFL
+  rosters and stats), Dominican (LIDOM), Venezuelan (LVBP), Mexican Pacific (LMP), Puerto Rican
+  (LBPRC), Colombian and Australian (ABL) winter leagues. Search "[Name] Arizona Fall League 2026"
+  and "[Name] winter ball 2026", and check each AFL team roster page.
+- Report the league and club, games played, and a stat line for the last 7 days (hitters AVG/HR/RBI/OPS,
+  pitchers IP/ERA/K), plus any assignment, promotion to a better league, shutdown or injury.
+- Add the result to that player's paragraph as "Winter ball: ...". If he is not playing winter ball
+  and nothing was found, say "Winter ball: none found" rather than omitting it.
+- Source-trace as everywhere else: report only what was retrieved this run, and mark an unconfirmed
+  assignment as reported-but-unconfirmed.
+
 ## 4 — Page shell
 Build stamp first line, above the doctype. Do not alter CSS variables or class names.
 
@@ -86,7 +102,7 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <div class="ed-head">Week ending [Tuesday DD, YYYY]</div>
 <section><h2>This Week</h2><p>[date range and one line on the top performer]</p></section>
 <section><h2>Players</h2>
-[per player: <h3>Name &mdash; Team &mdash; Pos</h3><p>This week: ... &middot; Stats: ... &middot; Highlights: ... &middot; News: ...</p>]
+[per player: <h3>Name &mdash; Team &mdash; Pos</h3><p>This week: ... &middot; Stats: ... &middot; Highlights: ... &middot; News: ...[ &middot; Winter ball: ... (minor leaguers and prospects, per 3b)]</p>]
 </section>
 <section><h2>Quick Summary</h2><table>
 <tr><th>Player</th><th>Team</th><th>Role</th><th>Key stats</th><th>Status</th></tr>
