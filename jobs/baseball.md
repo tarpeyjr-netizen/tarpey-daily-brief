@@ -1,19 +1,28 @@
 # baseball.html — College Baseball & Softball Weekly
 
-Cadence: Tuesdays, in season only. History: rolling 8-day window (today + prior editions
-1–7 days old). Roster: jobs/rosters/college-baseball.csv (player,college,position,sport)
+Cadence: every Tuesday in season; first Tuesday of the month in the off-season. History:
+rolling 8-day window (today + prior editions 1–7 days old). Roster:
+jobs/rosters/college-baseball.csv (player,college,position,sport)
 
 ## Gate
+Compute today's date and day of month fresh via bash `date` (America/New_York).
+
 IN-SEASON = February 1 through June 30, which covers spring practice, the regular season, the
-conference tournaments, the NCAA regionals and the College World Series.
+conference tournaments, the NCAA regionals and the College World Series. BUILD every Tuesday
+as a WEEKLY edition.
 
-OFF-SEASON = July 1 through January 31. SKIP with the reason "College baseball off-season — no
-games". Do not search. Outside the season every player returns "No games this week", so a full
-23-player research pass produces nothing but a page of blanks.
+OFF-SEASON = July 1 through January 31. BUILD a MONTHLY edition only when today is the first
+Tuesday of the month (day of month 1–7). On any other Tuesday, SKIP with the reason "College
+baseball off-season — monthly edition runs the first Tuesday". Do not search on a skip.
 
-## 1 — Week window
-The 7 days ending the previous Sunday. Compute fresh via bash `date`; ISO via `date +%F`.
-The edition's data-date is TODAY; the header reads "Week of [Mon DD] to [Sun DD, YYYY]".
+## 1 — Window
+WEEKLY (in season): the 7 days ending the previous Sunday. Header reads
+"Week of [Mon DD] to [Sun DD, YYYY]".
+
+MONTHLY (off-season): from the day after the previous month's first Tuesday through yesterday.
+Header reads "Off-season update: [Mon DD] to [Mon DD, YYYY]".
+
+Compute fresh via bash `date`; ISO via `date +%F`. The edition's data-date is TODAY.
 
 ## 2 — Roster
 Read jobs/rosters/college-baseball.csv from the clone. Split by the sport column into Baseball
@@ -31,9 +40,22 @@ Sources in order:
 3. WebSearch
 
 Use WebFetch and WebSearch. Coverage at this level is thin and uneven — that is expected.
-- No games in the window: "No games this week."
+- No games in the window: "No games this week." (monthly: "No games — off-season.")
 - Stats genuinely not findable: "Stats unavailable — check <URL>." Name the URL you checked.
 Never estimate or infer a stat line.
+
+MONTHLY editions: report fall-ball, scrimmage or exhibition stats only if the school published
+them for the window. Otherwise give the "Season" line as the final line from the most recent
+completed season, labelled with that year, and the "Weekly" line as "No games — off-season."
+
+## 3a — News, every edition
+For each player, search the school's own athletics site for news in the window: the team's
+news/press-release page and the player's roster bio page. Look for awards and honors, injuries,
+lineup or depth-chart changes, transfers (portal entries), MLB draft or pro signings,
+summer-league assignments, fall-ball notes, and features or quotes.
+- Report each item in one line with its date and link it to the article on the school site.
+- Nothing about the player in the window: "No news from <school> athletics."
+- Do not report items dated outside the window. Do not infer news from a stat line.
 
 ## 4 — Page shell
 Build stamp first line, above the doctype. Do not alter CSS variables or class names.
@@ -75,7 +97,7 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <header><div class="wrap">
 <a class="back" href="index.html">&larr; Back to dashboard</a>
 <h1>College Baseball &amp; Softball Weekly</h1>
-<div class="sub">Latest: week of [Mon DD] to [Sun DD, YYYY] &middot; showing the last 8 days</div>
+<div class="sub">Latest: [window header from section 1, lowercase first word] &middot; showing the last 8 days</div>
 </div></header>
 <main class="wrap">
 [TODAY'S EDITION]
@@ -88,10 +110,10 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 
 ## 5 — Today's edition block
 <article class="edition" data-date="[TODAY ISO]">
-<div class="ed-head">Week of [Mon DD] to [Sun DD, YYYY]</div>
-<section><h2>This Week</h2><p>[week window and a one-line top performer from each sport]</p></section>
+<div class="ed-head">[window header from section 1]</div>
+<section><h2>[This Week | This Month]</h2><p>[the window; weekly: a one-line top performer from each sport; monthly: the biggest news item from each sport]</p></section>
 <section><h2>Baseball &mdash; Pitchers</h2><span class="sport-label baseball">Baseball</span>
-[per pitcher: <h3>Name &mdash; College &mdash; Position</h3><p>Weekly: ...</p><p>Season: ...</p> optional one-line note]
+[per pitcher: <h3>Name &mdash; College &mdash; Position</h3><p>Weekly: ...</p><p>Season: ...</p><p>News: ...</p> optional one-line note]
 </section>
 <section><h2>Baseball &mdash; Hitters</h2><span class="sport-label baseball">Baseball</span>
 [per hitter, same shape]
