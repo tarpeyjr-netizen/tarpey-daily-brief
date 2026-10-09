@@ -1,4 +1,4 @@
-<!-- build: 2026-10-08T082311Z -->
+<!-- build: 2026-10-09T082258Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +35,33 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: October 8, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: October 9, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-10-09">
+<div class="ed-head">AI Developments &mdash; Friday, October 9, 2026</div>
+<section>
+<span class="tool-chip">ChatGPT</span>
+<h2>This Week in ChatGPT</h2>
+<p>ChatGPT just got a makeover in how it talks back to you. On October 7, OpenAI <a href="https://letsdatascience.com/news/openai-brings-gpt-6-and-intelligent-ui-to-chatgpt-4f0d797c">began rolling out GPT-6 along with something called Intelligent UI</a>, and it&rsquo;s a bit like going from texting to a mini app.</p>
+<p>Instead of only giving you paragraphs, ChatGPT can now drop interactive pieces right into its answer: charts you can explore, buttons, forms, diagrams, maps, even little calculators. Ask it to compare two phones and you might get a table you can poke at; ask what time it is in Tokyo and you&rsquo;ll still just get a sentence. The idea is that the format fits the question. Paid plans use a model called GPT-6 Sol for this, while Free and Go users get its smaller sibling, GPT-6 Luna, with the rollout reaching them on October 8. It&rsquo;s phased, so you may not see it yet, and you can ask for fewer visuals if it gets flashy.</p>
+<p>One catch: this is for the regular Chat tab only. The models behind ChatGPT&rsquo;s Work mode and Codex are separate. If the experiment works, chatting with an AI could start to feel less like reading and more like using software that builds itself around your question.</p>
+</section>
+<section>
+<span class="tool-chip">Le Chat / Mistral</span>
+<h2>This Week in Le Chat / Mistral</h2>
+<p>Mistral is the French AI lab that likes to prove Europe can build giants too, and this week it showed off its biggest one yet. On October 6 it introduced <a href="https://mistral.ai/news/mistral-large-4">Mistral Large 4</a>, a new flagship model that the company nicknamed &ldquo;le Chonk.&rdquo;</p>
+<p>&ldquo;Chonk&rdquo; is fair. The model has about one trillion parameters in total, but it&rsquo;s built as a &ldquo;mixture of experts,&rdquo; which is like a huge team of specialists where only a handful, about 52 billion parameters&rsquo; worth, step in for each word. It can read images as well as text and can switch between quick answers and step-by-step reasoning. Mistral says it trained it from scratch on thousands of NVIDIA chips in European data centers, and it&rsquo;s available now as a preview in Mistral Studio, with the open weights, the files you can download and run yourself, promised by the end of October. The scores are Mistral&rsquo;s own, so treat them as bragging rights until others test them, but the company reports strong results on coding and agent tasks and says human raters ranked it second of five on coding quality.</p>
+<p>This model comes right after the company&rsquo;s <a href="https://mistral.ai/news">September news</a>: a &euro;3 billion funding round, a new hub in Munich focused on industrial AI, and a partnership to put its models in Firefox. Watch for the open weights: if they land on time, anyone will be able to run a trillion-parameter model from Europe.</p>
+</section>
+<section>
+<span class="tool-chip">OpenAI Codex</span>
+<h2>This Week in OpenAI Codex</h2>
+<p>Codex, OpenAI&rsquo;s AI coding helper, got faster this week. On October 8 OpenAI added <a href="https://learn.chatgpt.com/docs/changelog">GPT-6.1 Sol Ultrafast</a>, a mode that makes the model spit out its answers more quickly in both Codex and ChatGPT Work.</p>
+<p>Think of it as the difference between a normal printer and one that&rsquo;s been told to hurry. It&rsquo;s aimed at people on the $500 Pro plan and on eligible Enterprise and Edu plans, and company admins have to switch it on. It builds on GPT-6.1 Sol, which arrived September 29 and is meant to match the bigger GPT-6 Astra on hard jobs at a lower cost, handy for long tasks where the AI works for a while on its own.</p>
+<p>The ChatGPT iPhone app also picked up Codex-friendly touches: version 1.2026.272 on October 7 lets Codex task links open in the app and adds a plugin finder. Speed and phone access point the same way: coding help you can start anywhere and get back sooner.</p>
+</section>
+</article>
 <article class="edition" data-date="2026-10-08">
 <div class="ed-head">AI Developments &mdash; Thursday, October 8, 2026</div>
 <section>
@@ -197,28 +221,6 @@
 <p>Codex is OpenAI&rsquo;s coding agent, basically a tireless junior programmer that you can hand a task to and check on later. This week was its big moment, because DevDay on September 29 was packed with Codex news.</p>
 <p>The biggest change is where Codex works. Until now, each cloud task was like a disposable sandbox that got thrown away afterward. Now OpenAI is giving Codex reusable cloud environments that stick around and can be opened from any device, so it is more like having your own workshop that is always set up the way you left it. In the command-line version, you can now start and steer tasks with your voice, and a new /agents view lets you hand out work to several helpers at once and watch them all, like a kitchen manager checking on every station. Ultrafast mode also reaches Codex, generating code up to eight times faster, and GPT-6.1 Sol is now the default model.</p>
 <p>There are a couple of grown-up additions too. A new code review experience in the ChatGPT desktop app lets you read summaries, explore changes, and ask Codex about worrying spots before you comment on a GitHub pull request or GitLab merge request. And Codex Security Cloud scans a project for security holes and prepares fixes on its own. Small updates shipped right behind the keynote, including instant interrupt so you can cut Codex off mid-thought and redirect it. The takeaway is that Codex is trying to stop being a tool you babysit and start being a teammate you can send off with a job.</p>
-</section>
-</article>
-<article class="edition" data-date="2026-10-01">
-<div class="ed-head">AI Developments &mdash; Thursday, October 1, 2026</div>
-<section>
-<span class="tool-chip">Anthropic Claude Code</span>
-<h2>This Week in Claude Code</h2>
-<p>Claude Code is the AI helper that lives in your terminal and your code editor, reading your project, writing code and fixing bugs while you watch. It had a busy week, and the biggest headline is a new brain: Claude Sonnet 5.5 showed up on September 27 and 28 and is now the default Sonnet model on Anthropic's API, with a giant one-million-token memory window and some promotional pricing to get people trying it.</p>
-<p>Around that new model, the tool itself kept getting sharper. Version 2.1.283 landed on September 25 with better controls for gateways, plugins and MCP connections (think of those as the plug sockets that let Claude talk to other apps), plus a handy /doctor check-up command and faster startup. Then 2.1.285 arrived on September 29 with more desktop and plugin controls, smoother VS Code and web experiences, and a bundle of fixes for sessions and permissions. Team and Enterprise admins can now even share a personal environment with their whole organization, which is a bit like handing your whole class the same perfectly set-up desk.</p>
-<p>It was not all smooth sailing: on September 29, Claude and Claude Code had a short hiccup with elevated errors that was fixed within about an hour. Anthropic also started a beta for Claude Code projects with cloud sessions for some Pro and Max users. The so-what: the tool is getting faster, safer to run in teams, and powered by a stronger model all at once.</p>
-</section>
-<section>
-<span class="tool-chip">Xai Grok</span>
-<h2>This Week in Grok</h2>
-<p>Grok is the chatbot from Elon Musk's company xAI, and lately it has been leaning hard into being a coding and "do things for you" assistant. The big news this week is that Grok 4.7 arrived in the xAI API on September 28, with a 500,000-token context window, which means it can hold a few really long books in its head at once, and it can look at both images and text.</p>
-<p>The speedy sibling, Grok 4.7 Fast, is also showing up inside Cursor and Grok Build, xAI's own coding tool. Grok Build itself got two updates: version 1.0.43 on September 26 fixed annoying prompts that went unanswered, and 1.0.44 on September 28 added macOS sandboxing (a safety bubble so code can't wander where it shouldn't), a slash command to manage the context window, and safer parallel tool calls. There is also Grok Build 0.1, a very fast coding model, in public beta through the API.</p>
-<p>The so-what: xAI is clearly racing to be a serious option for programmers, not just a chatbot with attitude, and the safety-bubble work suggests it knows developers will only trust it if it behaves.</p>
-</section>
-<section>
-<span class="tool-chip">Artlist AI</span>
-<h2>This Week in Artlist AI</h2>
-<p class="quiet">Quiet week for Artlist AI &mdash; no major announcements in the past seven days. The last notable move was the April 2026 launch of Artlist Studio, an AI production platform with shot-by-shot directorial control, announced alongside the company passing $300 million in annual recurring revenue.</p>
 </section>
 </article>
 </main>
