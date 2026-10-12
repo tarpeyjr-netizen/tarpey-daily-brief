@@ -15,6 +15,18 @@ Two WebSearches per artist:
 - "[Artist] new album song 2026"
 - "[Artist] tour dates 2026"
 
+### Links to music media
+Every item (release, video, tour date, announcement) carries an inline link to the article or
+listing, with the link on the source name, e.g. <a href="URL">(Rolling Stone, Oct. 5, 2026)</a>.
+Besides the two searches above, actively look for articles from music media. Where the plain
+searches surface little, add "[Artist]" site-restricted searches (WebSearch allowed_domains) across:
+Rolling Stone, Billboard, Pitchfork, Consequence, Stereogum, NPR Music, American Songwriter,
+Saving Country Music, Paste, UPROXX, Variety, The Guardian, NME, Hot Press and The Irish Times
+(Irish artists), Songkick/Bandsintown/Ticketmaster or the artist's own site for tour dates.
+Use only URLs that appeared in search results; never construct or guess a link. If only an
+aggregator is available, link that rather than omit the link. A tour-date item links to the venue,
+ticketing or tour listing it came from. Do not repeat an item the previous edition already linked.
+
 ## 3 — Alert searches — MANDATORY, do not skip
 Split the roster into two roughly equal halves in file order. Run EIGHT batched OR-queries,
 two per watched location:
@@ -42,7 +54,7 @@ Run all eight every time.
 Badge labels: 📍 NC · 📍 PHILLY · 📍 HOUSTON · 📍 GALWAY — combine when several apply, e.g.
 "📍 NC & PHILLY".
 
-Items are 1–2 sentences with source and date. Artists with no recent news go in the "No notable
+Items are 1–2 sentences with a linked source and date (see Links to music media). Artists with no recent news go in the "No notable
 news this week" list rather than getting their own heading.
 
 ## 5 — Page shell
