@@ -22,6 +22,23 @@ previous edition in the cloned nfl.html before writing and do not repeat an item
 carried — cover only what is new since that edition, unless there is a genuine development on
 the same story, in which case say what changed.
 
+### Links to major publications
+Every news item must carry an inline link to the article. Prefer major outlets: The Athletic,
+Sports Illustrated, The Ringer, ESPN, NFL.com, Yahoo Sports, CBS Sports, NBC Sports, Pro Football
+Talk, team sites. The link goes on the source name, e.g. <a href="URL">(ESPN, Oct. 5, 2026)</a>.
+Use only URLs that appeared in search results; never construct or guess a link. If only an
+aggregator (Rotowire, etc.) is available, link that rather than omit the link.
+
+### Season stats (regular season and playoffs only)
+IN-SEASON = the first NFL game of the regular season through the Super Bowl. During that window,
+add a season-to-date stat line under each player's heading, for EVERY roster player, including
+those listed under "No notable news" (give those a compact "Name (Team): stat line" entry with a
+link to the stats source). Use the position-appropriate line, e.g. QB: GP, comp/att, yds, TD, INT,
+rating; RB: GP, att, yds, avg, TD, rec, rec yds; WR/TE: GP, rec, tgt, yds, TD; defense: GP, tackles,
+sacks, TFL, INT, FF, PD. Sources in order: NFL.com or team site, ESPN, Pro-Football-Reference,
+then WebSearch. If stats are not findable, write "Stats unavailable" with the URL checked. Never
+estimate. Off-season: omit stats and say nothing about them.
+
 Players with no qualifying news are not written up individually; they are listed together in
 the "No notable news" section.
 
@@ -77,7 +94,7 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <article class="edition" data-date="[TODAY ISO]">
 <div class="ed-head">Digest for [Month D, YYYY] &middot; window: past 14 days</div>
 <section><h2>Player News</h2>
-[for each player WITH news: <h3>Name &mdash; Team</h3><ul><li>summary (Source, Date)</li></ul>]
+[for each player WITH news: <h3>Name &mdash; Team</h3><p class="muted">Season stats: [line, in season only]</p><ul><li>summary (<a href="URL">Source, Date</a>)</li></ul>]
 </section>
 <section><h2>No notable news</h2>
 <p class="muted">[comma-separated list of players with no news in the window]</p>
