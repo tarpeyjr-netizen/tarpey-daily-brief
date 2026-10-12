@@ -49,9 +49,9 @@ Run all eight every time.
 3. Tour and concert status and upcoming dates — FUTURE DATES ONLY, relative to today's run
    date. Never list a show that has already happened.
 4. An alert badge on any artist with a FUTURE date in North Carolina (any city),
-   Philadelphia PA, Houston TX, or Galway Ireland.
+   Philadelphia PA, Houston TX, Galway Ireland, or the Red Rocks Amphitheatre in Morrison CO.
 
-Badge labels: 📍 NC · 📍 PHILLY · 📍 HOUSTON · 📍 GALWAY — combine when several apply, e.g.
+Badge labels: 📍 NC · 📍 PHILLY · 📍 HOUSTON · 📍 GALWAY · 📍 RED ROCKS — combine when several apply, e.g.
 "📍 NC & PHILLY".
 
 Items are 1–2 sentences with a linked source and date (see Links to music media). Artists with no recent news go in the "No notable
