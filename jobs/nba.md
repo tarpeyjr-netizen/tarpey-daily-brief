@@ -63,6 +63,26 @@ Sources:
   for two-way and call-up movement, and the relevant European league sites for players abroad.
 - villanova.com for alumni features.
 
+### Season stats (all year)
+Every player's paragraph carries a season line, so the page has stats throughout the year:
+- NBA, G-League or overseas season in progress (including preseason and playoffs): current-season
+  per-game line (GP, MPG, PPG/RPG/APG, FG%, 3P%, plus blocks/steals where notable) and, for
+  hitters of note, a recent-games trend since the last edition.
+- Off-season: the final line from the most recent season (state which season and team), plus Summer
+  League or overseas preseason stats if he played.
+Sources in order: ESPN API, Basketball Reference, RealGM, the G-League or overseas league site, then
+WebSearch. If a line is not findable, write "stats unavailable" and name the URL checked. Never
+estimate. Write figures in the existing style (12.7 / 4.1 / 4.6, 40.1% from three).
+
+### Links to major publications
+Each news item in a paragraph carries an inline link to the article, with the link on the source
+name, e.g. <a href="URL">(ESPN, Oct. 5, 2026)</a>. Prefer major outlets: ESPN, The Athletic, Sports
+Illustrated, The Ringer, Yahoo Sports, CBS Sports, NBA.com, team sites, villanova.com for alumni
+features, plus the relevant league site for G-League or overseas players. Use only URLs that
+appeared in search results or the ESPN API; never construct or guess a link. If only an aggregator
+is available, link that rather than omit the link. Link the stats source for the season line too.
+Paragraphs stay prose (no bullets); the length limit rises to 60-180 words to fit the stats and links.
+
 Every claim about a signing, trade, injury or stat line must trace to something retrieved in
 this run. An unconfirmed rumor is either omitted or marked reported-but-unconfirmed with the
 outlet named.
@@ -120,7 +140,7 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <div class="ed-head">[Month] [D], [YYYY] Update &middot; [In-season update | Off-season update]</div>
 <section><h2>Roster Players</h2>
 <h3>[Player] &mdash; [Current Team]</h3>
-<p>[One paragraph, 60–140 words. Lead with what is NEW in the window. Include stat lines, contract figures and dates where they exist. If nothing is new, say so in the first clause and re-frame his current status in one or two sentences.]</p>
+<p>[One paragraph, 60–180 words. Lead with what is NEW in the window, with linked sources. Include the season stat line (see Season stats), contract figures and dates where they exist. contract figures and dates where they exist. If nothing is new, say so in the first clause and re-frame his current status in one or two sentences.]</p>
 [repeat for all players, in CSV order]
 </section>
 </article>
