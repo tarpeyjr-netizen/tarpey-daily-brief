@@ -43,8 +43,8 @@ Categorize each exercise:
   split squat, calf raise
 
 ## 4 — Structure, three levels
-1. Top-level sections: **Upper Body**, then **Lower Body**
-2. Within each: **Active**, then **Stalled**, then **Dormant**. Omit a subsection entirely when
+1. Top-level sections by status: **Active**, then **Stalled**, then **Dormant**
+2. Within each: **Upper Body**, then **Lower Body**. Omit a subsection entirely when
    it has no exercises for that body part
 3. Within each subsection: sort by Recent Weight, descending
 
@@ -124,8 +124,7 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
   <div class="sub">Updated [DAY, MONTH D YYYY] &nbsp;&middot;&nbsp; Source: 2026 training log &nbsp;&middot;&nbsp; ~60 days ago = [60D DATE]</div>
 </div></header>
 <main class="wrap">
-[UPPER BODY SECTION — section-header with count-upper, then Active / Stalled / Dormant subsections]
-[LOWER BODY SECTION — same, count-lower]
+[STATUS SECTIONS — Active, Stalled, Dormant: section-header with count-active / count-stalled / count-dormant, each with Upper Body then Lower Body subsections (count-upper / count-lower)]
 [SUMMARY BAR — div.summary]
 </main>
 <footer>The Daily Brief &middot; Training Dashboard</footer>
