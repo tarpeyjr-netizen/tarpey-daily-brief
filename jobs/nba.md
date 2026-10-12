@@ -67,7 +67,7 @@ Sources:
 Every player's paragraph carries a season line, so the page has stats throughout the year:
 - NBA, G-League or overseas season in progress (including preseason and playoffs): current-season
   per-game line (GP, MPG, PPG/RPG/APG, FG%, 3P%, plus blocks/steals where notable) and, for
-  hitters of note, a recent-games trend since the last edition.
+  players of note, a recent-games trend since the last edition.
 - Off-season: the final line from the most recent season (state which season and team), plus Summer
   League or overseas preseason stats if he played.
 Sources in order: ESPN API, Basketball Reference, RealGM, the G-League or overseas league site, then
@@ -140,7 +140,7 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <div class="ed-head">[Month] [D], [YYYY] Update &middot; [In-season update | Off-season update]</div>
 <section><h2>Roster Players</h2>
 <h3>[Player] &mdash; [Current Team]</h3>
-<p>[One paragraph, 60–180 words. Lead with what is NEW in the window, with linked sources. Include the season stat line (see Season stats), contract figures and dates where they exist. contract figures and dates where they exist. If nothing is new, say so in the first clause and re-frame his current status in one or two sentences.]</p>
+<p>[One paragraph, 60–180 words. Lead with what is NEW in the window, with linked sources. Include the season stat line (see Season stats), contract figures and dates where they exist. If nothing is new, say so in the first clause and re-frame his current status in one or two sentences.]</p>
 [repeat for all players, in CSV order]
 </section>
 </article>
