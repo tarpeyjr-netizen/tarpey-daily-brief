@@ -29,6 +29,22 @@ If a player was inactive all week, say so rather than omitting him.
 Sources: ESPN, Baseball Reference, MLB.com. Parallel WebSearch. On a week with no games for a
 player (off-days, IL), report news only.
 
+### Season-to-date stats (spring training, regular season, postseason)
+Alongside the last-7-days line, give every player a season-to-date line, so the page carries
+stats all year: pitchers G/GS, IP, W–L, ERA, WHIP, K, BB, SV where relevant; hitters GP, AVG/OBP/SLG,
+OPS, H, HR, RBI, R, SB. Minor leaguers and prospects get their current minor-league or college
+line. In the offseason use the final 2026 season line (already required above), then winter-ball
+stats per 3b. Sources in order: MLB.com, ESPN, Baseball Reference, MiLB.com, then WebSearch. If a
+line is not findable, write "Stats unavailable" with the URL checked. Never estimate.
+
+### Links to major publications
+Every news item (injury, transfer, roster move, call-up, highlight) carries an inline link to the
+article, with the link on the source name, e.g. <a href="URL">(MLB.com, Oct. 5, 2026)</a>. Prefer
+major outlets: MLB.com, MiLB.com, ESPN, The Athletic, Sports Illustrated, The Ringer, Yahoo Sports,
+CBS Sports, Baseball America, team sites. Use only URLs that appeared in search results; never
+construct or guess a link. If only an aggregator is available, link that rather than omit the link.
+Also link the stats source for each player's stat line.
+
 ## 3b — Winter ball (offseason check)
 Run this once the minor-league season is over (roughly mid-September through February), for every
 roster player who is in the minors or a prospect (blank team, or an "organization (minors)" entry)
@@ -102,7 +118,7 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <div class="ed-head">Week ending [Tuesday DD, YYYY]</div>
 <section><h2>This Week</h2><p>[date range and one line on the top performer]</p></section>
 <section><h2>Players</h2>
-[per player: <h3>Name &mdash; Team &mdash; Pos</h3><p>This week: ... &middot; Stats: ... &middot; Highlights: ... &middot; News: ...[ &middot; Winter ball: ... (minor leaguers and prospects, per 3b)]</p>]
+[per player: <h3>Name &mdash; Team &mdash; Pos</h3><p>This week: ... &middot; Stats (7 days): ... &middot; Season: ... &middot; Highlights: ... &middot; News: ... (<a href="URL">Source, Date</a>)[ &middot; Winter ball: ... (minor leaguers and prospects, per 3b)]</p>]
 </section>
 <section><h2>Quick Summary</h2><table>
 <tr><th>Player</th><th>Team</th><th>Role</th><th>Key stats</th><th>Status</th></tr>
