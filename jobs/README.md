@@ -42,6 +42,7 @@ session with this repo selected. Their old Google Sheets from July are stale and
     rosters/cities.csv        day,primary_city,secondary_city       — cities
     rosters/art-museums.csv   museum,city,country                   — art
     rosters/ai-tools.csv      tool,day_of_week                      — ai
+    rosters/podcasts.csv      sheet_name,podcast,feed_url           — podcasts
 
 Days 19–22 of `countries.csv` carry two rows each; both countries are covered that day.
 
