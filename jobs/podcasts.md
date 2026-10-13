@@ -1,6 +1,6 @@
 # podcasts.html — Podcast Tracker
 
-Cadence: daily (or on demand). History: rolling 7-day window (today + prior editions 1–6 days old).
+Cadence: daily, built by the Daily routine (4:00 AM ET). History: rolling 7-day window (today + prior editions 1–6 days old).
 Roster: jobs/rosters/podcasts.csv (sheet_name,podcast,feed_url)
 
 ## Gate
@@ -28,6 +28,11 @@ header row, and holds names only. Edit the CSV here.
 Fetch every feed directly from the shell (curl/python, User-Agent set). For each `<item>` with a
 `pubDate` inside the window keep: title, pubDate, itunes:duration, link, itunes:summary or
 description (HTML stripped). Record each show's newest pubDate even when it is outside the window.
+
+NETWORK — routine environments may restrict outbound hosts. If the shell fetch of a feed is
+refused (403, "host_not_allowed", connection blocked), fetch the same feed URL with WebFetch
+instead and read the items from its output. Do not retry the shell through another command.
+Only after both fail does the show go under "Couldn't check".
 
 A feed that fails to fetch or parse: list the show under "Couldn't check" with the error text.
 
