@@ -1,9 +1,10 @@
 # curio.html — On This Date (Morning Curio)
 
 Cadence: every day (Daily routine). History: rolling 8-day window (today + prior editions 1–7 days old).
-Rosters (read from the clone, never edited by this page):
+Rosters (read from the clone):
   jobs/rosters/curio-team-questions.csv   bucket,question   — 150 team-building questions
-  jobs/rosters/curio-writing-prompts.csv  prompt            — backup writing prompts
+  jobs/rosters/curio-writing-prompts.csv  prompt            — style examples for written prompts
+  jobs/rosters/curio-prompt-log.csv       date,source,prompt — every prompt used (this page appends)
 
 Replaced the original Morning Curio format on 2026-10-13 with the "On This Date" format.
 jobs/rosters/curio-topics.csv belongs to the old format; this spec does not read or write it.
@@ -53,17 +54,32 @@ Primary: https://www.reddit.com/r/WritingPrompts/top.json?t=day&limit=25 (send
 `User-Agent: tarpey-daily-brief/1.0`). Take the first post whose link_flair_text is exactly
 "Writing Prompt"; if none, retry with t=week. Strip a leading "[WP]" from the title.
 Reddit often refuses automated requests; that is normal, not a failure.
-Fallback: jobs/rosters/curio-writing-prompts.csv — row index = ORD mod (row count), counting
-data rows from 0. Never write a prompt yourself.
+
+Fallback: WRITE today's prompt yourself. This is the one section where original text is expected.
+- Style guide: jobs/rosters/curio-writing-prompts.csv. Read every row first and match them — one
+  sentence, second person or a clear premise, a single strange rule or object in an ordinary
+  setting, ends on an open question rather than a twist. Under 30 words. No gore, romance,
+  politics, real people or brand names.
+- No repeats: read jobs/rosters/curio-prompt-log.csv (date,source,prompt). Today's prompt must
+  not share its central conceit with any logged prompt or any row of the style guide —
+  compare the idea, not the wording ("mirror on a delay" and "reflection lagging behind" are
+  the same). Draft three candidates, discard any that collide, use the strongest survivor.
+- Never copy a style-guide row verbatim.
+
+Log: append one row to jobs/rosters/curio-prompt-log.csv for every edition (today's date,
+`reddit` or `claude`, the prompt text, CSV-quoted). A same-day re-run replaces that date's row.
+Commit the CSV with the page:  git add -- curio.html jobs/rosters/curio-prompt-log.csv
+A missing or unreadable style guide or log is a FAILED page.
+
 Caption:
 - Reddit: From r/WritingPrompts &middot; {score} upvotes &middot; <a href="https://www.reddit.com{permalink}">see thread</a>
-- Fallback: From the backup prompt pool
+- Written: Written for today by Claude
 This section is never skipped.
 
 ## 5 — Team Building Question of the Day
 No network. jobs/rosters/curio-team-questions.csv — row index = ORD mod (row count), counting
 data rows from 0. Use the question text verbatim. Never write one yourself. Never skipped.
-A missing or unreadable CSV for section 4's fallback or section 5 is a FAILED page.
+A missing or unreadable question CSV is a FAILED page.
 
 ## 6 — Launch Calendar
 Window: TODAY−3 through TODAY+10 inclusive. Launch Library 2 is rate-limited (~15 req/hour):
