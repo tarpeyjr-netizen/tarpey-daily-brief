@@ -8,6 +8,9 @@ None.
 
 ## 1 — Window
 The 48 hours ending at run time. Compute with bash `date`; ET for display, UTC for comparison.
+The window only limits what is fetched. It overlaps the previous run on purpose, so a missed
+day loses nothing. What gets published is decided by step 3b: each episode appears exactly once,
+in the first edition that found it.
 
 ## 2 — Roster
 Read jobs/rosters/podcasts.csv from the clone. Cover every show, in file order.
@@ -36,8 +39,26 @@ Only after both fail does the show go under "Couldn't check".
 
 A feed that fails to fetch or parse: list the show under "Couldn't check" with the error text.
 
+Also keep each item's `<guid>` (fall back to the enclosure URL if there is no guid).
+
 Collapse duplicate cuts of one episode (e.g. Chuck ToddCast posts "Full Episode", "Chuck's
 Commentary" and "Interview Only" versions): show the full episode once and note the other cuts.
+
+## 3b — Drop episodes already published (required)
+Before writing anything, read the current podcasts.html from the clone and collect every episode
+in the editions you are keeping (step 8 — not the same-date edition being replaced). Remove from
+today's list any episode that matches one of those:
+
+1. Same `data-guid` value (every episode section carries one — see step 7). Primary key.
+2. For older sections with no `data-guid`: same show name AND the same publish time in the meta
+   line ("Mon Oct 12, 5:00 AM ET").
+
+Do NOT match on title. Shows retitle episodes after release (Diary of a CEO renamed its Eric
+Weinstein episode overnight), and a title match lets the same episode through twice.
+
+A show whose in-window episodes were all removed counts as quiet for today (step 7).
+If nothing new remains for any show, still publish the edition: the header says
+"0 new episodes" and the quiet list shows every show. Never repeat old episodes to fill it.
 
 ## 4 — Summaries
 Write each summary yourself from the show notes: 2–3 sentences, who is on and what they cover.
@@ -56,17 +77,18 @@ Per episode, in this order:
 
 ## 6 — Page shell
 Same shell and CSS as people.html (navy header, white section cards, "Back to dashboard"),
-title "Podcast Tracker", sub-line "Latest: [Day Mon D, YYYY] · episodes from the last 48 hours
+title "Podcast Tracker", sub-line "Latest: [Day Mon D, YYYY] · new episodes since the last edition
 · showing the last 7 days". Build stamp first line, above the doctype.
 
 ## 7 — Edition block
 <article class="edition" data-date="[TODAY ISO]">
   ed-head: "[Weekday, Month D, YYYY] — [N] new episodes from [M] of [T] shows"
-  One <section class="ep"> per episode, newest first:
+  One <section class="ep" data-guid="[guid, HTML-escaped]"> per NEW episode, newest first:
     show name (small caps line) · episode title (h3) · "Mon D, h:mm AM ET · 1h 53m" ·
     summary paragraph · Spotify button + Show notes link
-  <section> "No new episodes in the last 48 hours": one line per quiet show with its last
-    release date ("Conversations with Tyler — last episode Sep 30").
+  <section> "Nothing new since the last edition": one line per show with no new episode today
+    (including shows whose recent episodes already appeared in an earlier edition), newest
+    first, with its last release date ("Conversations with Tyler — last episode Sep 30").
   Optional sections "Couldn't check" / "Couldn't find" only when non-empty.
 </article>
 
