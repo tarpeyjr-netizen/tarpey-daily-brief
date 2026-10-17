@@ -1,4 +1,4 @@
-<!-- build: 2026-10-16T082424Z -->
+<!-- build: 2026-10-17T081905Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +35,37 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: October 16, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: October 17, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-10-17">
+<div class="ed-head">AI Developments &mdash; Saturday, October 17, 2026</div>
+<section>
+<span class="tool-chip">SAP Joule</span>
+<h2>This Week in SAP Joule</h2>
+<p>Think of Joule as the helpful assistant living inside SAP, the giant software that big companies use to run everything from payroll to shipping. This month, SAP showed off a fresh batch of Joule helpers at its SAP Connect event, and the big news is that a lot of promises from May are finally turning into things people can actually use.</p>
+<p>The headline is a pile of new AI assistants and agents for different parts of a business, with general availability starting this month. Along with them comes Joule Work, a kind of workbench where agents and apps can pull in data from SAP and from other companies' systems too. SAP says its catalog of agents should top 400 by the end of the year. To keep those agents from wandering off and doing silly things, SAP uses a knowledge graph, basically a map of what each agent is allowed to look at, so answers stay on target. SAP also bought TechWolf, a company that tracks which skills employees have and what work they are doing.</p>
+<p>Not everyone is cheering without questions. One German analyst pointed out that SAP has detailed rules about who can do what, but hasn't said much about how agents would hold up against tricks like prompt injection, where an attacker hides sneaky instructions in the data an AI reads. The so-what: the agents are arriving fast, and the next story to watch is whether they stay safe once real companies hand them real work.</p>
+</section>
+<section>
+<span class="tool-chip">Salesforce Agentforce / Einstein</span>
+<h2>This Week in Salesforce Agentforce / Einstein</h2>
+<p class="quiet">Quiet week for Salesforce Agentforce / Einstein &mdash; no major announcements in the past seven days. The last notable move was the September 11 launch of a set of ready-made Agentforce agents for sales, service, commerce, employee support and back-office work, with the outbound-sales agent Hunter still in pilot and aimed at general availability in November.</p>
+</section>
+<section>
+<span class="tool-chip">GitHub Copilot</span>
+<h2>This Week in GitHub Copilot</h2>
+<p>GitHub Copilot is the AI pair programmer that suggests code while you type and, these days, can also go off and do whole chunks of work on its own. This past week was fairly calm on the headline front, so the most interesting recent news is a little over a week old.</p>
+<p>On October 7, the Copilot command-line tool, version 1.0.93, rolled out real-time sandboxing to everyone. A sandbox is like a fenced-in playground: the AI can run commands, but only inside the fence, so a bad guess can't wreck your computer. The same release gave companies tighter permission controls, and the releases just before it fixed sandbox problems on Windows and added an environment picker for choosing where work runs.</p>
+<p>The next big moment is close. GitHub Universe, the company's yearly conference, is set for October 28 and 29, and sessions on how Copilot is tuned across different AI models suggest that is where the bigger Copilot news will land. Until then, expect small, steady safety and polish updates.</p>
+</section>
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>Mistral Large 4 ("Le Chonk")</h2>
+<p>Mistral, the French AI company, just released a preview of a giant new model that people are nicknaming Le Chonk. It has about a trillion parameters, which you can think of as the adjustable dials inside the model's brain. But it uses a trick called mixture of experts: for every word it handles, only about 49 billion of those dials switch on, like calling in just the right specialists instead of the whole company. It handles images as well as text and reportedly can read a million tokens at once, roughly several long novels. Mistral calls it the best open-weight model from the US or Europe on combined tests, although outside scores put it only close to DeepSeek's 552-billion-parameter model, and some of Mistral's coding results haven't been independently repeated. The surprising part is the promise: Mistral plans to release the full weights, meaning anyone could download and run it, around October 27, though it hasn't said which license will apply. For now it is available through Mistral's API. Developers, researchers and companies that want control over their own AI will care the most.</p>
+<p class="muted">Source: TechCrunch, October 2026</p>
+</section>
+</article>
 <article class="edition" data-date="2026-10-16">
 <div class="ed-head">AI Developments &mdash; Friday, October 16, 2026</div>
 <section>
@@ -203,30 +231,6 @@
 <p>GLM-5.3 Fast is a speedier version of GLM-5.3, the model from Z.ai, the Chinese AI lab also known as Zhipu. It showed up on October 7 and, according to the LLM Gateway listing, does the same work as the regular model but produces answers about one and a half to two times faster. That is a bit like a sports car that is the same car with a better engine tune.</p>
 <p>It matters because speed is what makes AI feel usable. Slow answers kill the flow when you are coding or running an agent that makes dozens of calls in a row. The listing shows a huge one-million-token memory, meaning it can hold a very large pile of text in mind at once, at roughly $2.80 per million input tokens and $8.80 per million output tokens. Developers and teams building coding tools are the obvious users. The surprising bits: the base GLM-5.3 reached the world in August with its weights held back for a safety review, and the fast version is so new that only one provider serves it and some features, like tool calling, are missing through that route. Details are still sketchy, so treat it as one to watch.</p>
 <p class="muted">Source: <a href="https://llmgateway.io/models/glm-5.3-fast">LLM Gateway</a>, October 2026</p>
-</section>
-</article>
-<article class="edition" data-date="2026-10-09">
-<div class="ed-head">AI Developments &mdash; Friday, October 9, 2026</div>
-<section>
-<span class="tool-chip">ChatGPT</span>
-<h2>This Week in ChatGPT</h2>
-<p>ChatGPT just got a makeover in how it talks back to you. On October 7, OpenAI <a href="https://letsdatascience.com/news/openai-brings-gpt-6-and-intelligent-ui-to-chatgpt-4f0d797c">began rolling out GPT-6 along with something called Intelligent UI</a>, and it&rsquo;s a bit like going from texting to a mini app.</p>
-<p>Instead of only giving you paragraphs, ChatGPT can now drop interactive pieces right into its answer: charts you can explore, buttons, forms, diagrams, maps, even little calculators. Ask it to compare two phones and you might get a table you can poke at; ask what time it is in Tokyo and you&rsquo;ll still just get a sentence. The idea is that the format fits the question. Paid plans use a model called GPT-6 Sol for this, while Free and Go users get its smaller sibling, GPT-6 Luna, with the rollout reaching them on October 8. It&rsquo;s phased, so you may not see it yet, and you can ask for fewer visuals if it gets flashy.</p>
-<p>One catch: this is for the regular Chat tab only. The models behind ChatGPT&rsquo;s Work mode and Codex are separate. If the experiment works, chatting with an AI could start to feel less like reading and more like using software that builds itself around your question.</p>
-</section>
-<section>
-<span class="tool-chip">Le Chat / Mistral</span>
-<h2>This Week in Le Chat / Mistral</h2>
-<p>Mistral is the French AI lab that likes to prove Europe can build giants too, and this week it showed off its biggest one yet. On October 6 it introduced <a href="https://mistral.ai/news/mistral-large-4">Mistral Large 4</a>, a new flagship model that the company nicknamed &ldquo;le Chonk.&rdquo;</p>
-<p>&ldquo;Chonk&rdquo; is fair. The model has about one trillion parameters in total, but it&rsquo;s built as a &ldquo;mixture of experts,&rdquo; which is like a huge team of specialists where only a handful, about 52 billion parameters&rsquo; worth, step in for each word. It can read images as well as text and can switch between quick answers and step-by-step reasoning. Mistral says it trained it from scratch on thousands of NVIDIA chips in European data centers, and it&rsquo;s available now as a preview in Mistral Studio, with the open weights, the files you can download and run yourself, promised by the end of October. The scores are Mistral&rsquo;s own, so treat them as bragging rights until others test them, but the company reports strong results on coding and agent tasks and says human raters ranked it second of five on coding quality.</p>
-<p>This model comes right after the company&rsquo;s <a href="https://mistral.ai/news">September news</a>: a &euro;3 billion funding round, a new hub in Munich focused on industrial AI, and a partnership to put its models in Firefox. Watch for the open weights: if they land on time, anyone will be able to run a trillion-parameter model from Europe.</p>
-</section>
-<section>
-<span class="tool-chip">OpenAI Codex</span>
-<h2>This Week in OpenAI Codex</h2>
-<p>Codex, OpenAI&rsquo;s AI coding helper, got faster this week. On October 8 OpenAI added <a href="https://learn.chatgpt.com/docs/changelog">GPT-6.1 Sol Ultrafast</a>, a mode that makes the model spit out its answers more quickly in both Codex and ChatGPT Work.</p>
-<p>Think of it as the difference between a normal printer and one that&rsquo;s been told to hurry. It&rsquo;s aimed at people on the $500 Pro plan and on eligible Enterprise and Edu plans, and company admins have to switch it on. It builds on GPT-6.1 Sol, which arrived September 29 and is meant to match the bigger GPT-6 Astra on hard jobs at a lower cost, handy for long tasks where the AI works for a while on its own.</p>
-<p>The ChatGPT iPhone app also picked up Codex-friendly touches: version 1.2026.272 on October 7 lets Codex task links open in the app and adds a plugin finder. Speed and phone access point the same way: coding help you can start anywhere and get back sooner.</p>
 </section>
 </article>
 </main>
