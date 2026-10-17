@@ -18,10 +18,29 @@ means the company is not publicly traded (e.g. United Launch Alliance): leave it
 price table and ratings, and cover it only in its own News section as the notes say. No fallback list and no
 warning banner. A missing or unreadable CSV is a FAILED page.
 
+## 1b — Price source (Google Finance primary, Yahoo secondary)
+Prices and returns come from the Google Sheet "Tarpey Prices — Stocks", which calculates them
+with GOOGLEFINANCE() (Google Finance). This is the one sanctioned Drive read for the stocks page,
+alongside the roster sync. Read it with the Drive connector's read_file_content:
+
+  fileId: 1c0TWsyNwArz6NJqMJJcvsWGx1f0ufHQs98ZWLLEeAf4
+
+Columns: Ticker | GF Symbol | Price | Close ~1W ago | Close ~1M ago | Close ~1Y ago | As of.
+Compute 1W/1M/1Y % as (Price / close - 1) * 100. "As of" is a Sheets date serial (46311 = 2026-10-16).
+Rows follow stocks.csv minus "---". When a ticker is added to stocks.csv, add a row to the Sheet
+(copy the formulas from the row above and fix the row number in the B-column references).
+
+Fallback: use Yahoo Finance ONLY for a ticker/cell where the Sheet returns blank, and only that
+cell, e.g. curl "https://query1.finance.yahoo.com/v8/finance/chart/<SYM>?range=1y&interval=1d".
+Yahoo rate-limits the sandbox (HTTP 429), so keep calls few and spaced out. If both fail, show
+"&mdash;" for that figure (never estimate a price). A blank 1Y for a recent listing (e.g. SPCX,
+listed June 2026) is expected and shown as "&mdash;" without a Yahoo call.
+If the Drive read itself fails, try Yahoo for the whole roster; if that also fails the page FAILS.
+
 ## 2 — Data to gather, in parallel batches
 1. 3–5 USA economic headlines from the past 7 days.
 2. 3–5 global economic headlines from the past 7 days.
-3. Per ticker: current price; 1W, 1M and 1Y return %; 1–2 headlines from the past 7 days;
+3. Per ticker: current price; 1W, 1M and 1Y return % (from the section 1b Sheet); 1–2 headlines from the past 7 days;
    a Buy/Sell/Hold call with a one-sentence rationale.
    BTC is spot USD. Where an exact 1Y return is unavailable, estimate against the price about
    52 weeks ago and prefix the figure with "≈".
