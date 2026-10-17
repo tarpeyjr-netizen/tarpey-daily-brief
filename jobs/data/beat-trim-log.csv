@@ -1,0 +1,2 @@
+date,ticker,company,rule,price_at_pick,event,sp500_1y_return_at_pick,source
+2026-10-16,PEP,PepsiCo,beat-and-trim,131.49,"Q3 adj EPS $2.34 vs $2.29 est; cut core EPS growth outlook to 2.5-3%",-14.5%,https://finance.yahoo.com/markets/stocks/article/pepsico-beats-earnings-expectations-lowers-guidance-as-it-aims-to-stabilize-north-america-business-103147761.html

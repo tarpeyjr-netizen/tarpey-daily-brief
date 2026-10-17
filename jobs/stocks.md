@@ -47,6 +47,25 @@ If the Drive read itself fails, try Yahoo for the whole roster; if that also fai
 4. SpaceX: 1–3 notable headlines from the past 7 days.
 5. One additional stock idea outside the list: name, ticker, two-sentence thesis.
 
+## 2b — New Stock to Consider (beat-and-trim, else top S&P 500 1Y return)
+Hypothesis being tested: S&P 500 companies that beat earnings but trimmed guidance may be set up
+to rise. Rule, in order:
+1. WebSearch for S&P 500 companies that beat earnings estimates but lowered/trimmed/cut full-year
+   guidance within the 90 days before the report date (queries like "beats estimates lowers
+   guidance <month> 2026"). Keep only companies in the S&P 500 Sheet (below), each backed by a
+   source link showing BOTH the beat and the trimmed outlook. Withdrawn guidance does not count.
+2. Put the qualifiers in a Sheet like "Tarpey Prices — Beat and Trim"
+   (fileId 197FkyBMYUpk7FkEV5fE9xuL6ijGcZo5Vjg1VEKVKKUY; create a fresh one per run with the
+   same formulas if the tickers differ) and pick the qualifier with the HIGHEST 1Y return.
+3. If none qualifies, fall back to the S&P 500 stock with the highest 1Y return: read the Top 20
+   block (columns G:J) of "Tarpey Prices — S&P 500", fileId 1jMhane6W7KAKqXYQ5AaPiecp9vjATeZRNAcXD10235g.
+   Note: the Drive reader only returns about the first 250 rows of that Sheet, which is why the
+   Top 20 block sits in rows 2-21.
+Page text: name, ticker, which rule fired, the beat and the trim with a link, price and 1Y return
+from the Sheet, and the other qualifiers. Append a row to jobs/data/beat-trim-log.csv (date, ticker,
+company, rule, price at pick, event, 1Y return, source) so picks can be scored later. If neither
+rule yields a pick, write "Not readily available" with the reason.
+
 ## 3 — Page shell
 Build stamp first line, above the doctype. Do not alter CSS variables or class names.
 Positive percentages go in <span class="pos">, negative in <span class="neg">. Recommendation
