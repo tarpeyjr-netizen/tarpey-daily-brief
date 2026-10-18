@@ -75,6 +75,19 @@ The routine prompt lists the pages due today. For each one, in the order listed:
      git -c user.email="jamestarpeyjr@gmail.com" -c user.name="Daily Brief Bot" \
          commit -q -m "update: <page>.html $(date +%F)"
 
+RESEARCH BUDGET — WebSearch is capped (about 200 calls per turn) and the cap is SHARED by every
+sub-agent in the run. Launching all research agents at once lets the first ones spend the whole
+budget and starve the rest (this left the 2026-10-14 minor leaguers with no winter-ball check).
+When a page spec calls for parallel research agents:
+  - Run them in WAVES, not all at once. Start the page whose spec has a "dedicated pass" (see
+    mlb.md 3b) first, and wait for it to finish before starting the next wave.
+  - Give every agent an explicit quota in its brief (searches per person x people in its batch)
+    and tell it to prefer direct fetches of known source pages over open-ended searches.
+  - Tell each agent: if WebSearch refuses, report which people were not covered. Never write
+    "No major updates", "none found" or similar for someone who was not actually searched.
+  - After the agents report, count the people/players with incomplete coverage and re-run only
+    those in a later wave before building the page.
+
 PAGE ISOLATION — this is the point of committing per page. If research fails, a fetch
 times out, or the build errors for one page, record it as FAILED with the actual error
 text and CONTINUE to the next page. Never abort the run. Work already committed survives.

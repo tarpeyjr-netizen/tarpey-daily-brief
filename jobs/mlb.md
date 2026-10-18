@@ -61,6 +61,22 @@ no news elsewhere.
 - Source-trace as everywhere else: report only what was retrieved this run, and mark an unconfirmed
   assignment as reported-but-unconfirmed.
 
+### 3b is a DEDICATED PASS with its own budget
+Do not leave winter ball to the per-player batch agents; they run out of search budget before
+reaching it. Instead:
+- Run ONE winter-ball agent for all minor leaguers/prospects (blank-team rows and "organization
+  (minors)" rows) FIRST, before the general stats batches (see jobs/_publish.md RESEARCH BUDGET).
+  Its quota is at least 4 searches per player, and it must finish before the other MLB agents start.
+- Start from direct source pages, not open-ended search: MiLB.com Arizona Fall League stats and
+  team rosters; statsapi.mlb.com (sportId 17 is the AFL); and the league sites for LIDOM, LVBP,
+  LMP, LBPRC and ABL. Use searches only to fill gaps ("[Name] winter ball 2026").
+- Its output is one "Winter ball: ..." line per player, naming every league checked, e.g.
+  "Winter ball: none found (checked AFL, LIDOM, LVBP, LMP, LBPRC, ABL)". The general stats agents
+  receive these lines and paste them in unchanged.
+- If a league could not be checked (fetch blocked, search refused), the line must say which, e.g.
+  "AFL checked; LIDOM not checked (search limit)". "None found" without the league list is not allowed,
+  and an unchecked league is never reported as a negative result.
+
 ## 4 — Page shell
 Build stamp first line, above the doctype. Do not alter CSS variables or class names.
 
