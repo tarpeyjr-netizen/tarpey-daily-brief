@@ -39,8 +39,15 @@ Item format, one line each (omit the link if there is no clear source URL):
 ## 2 — Wikipedia Article of the Day
 URL: https://en.wikipedia.org/api/rest_v1/feed/featured/$YMD
 Fields: tfa.titles.normalized (TITLE), tfa.content_urls.desktop.page (URL), tfa.extract.
-FACT = the first sentence of the extract containing a digit or two consecutive capitalised
-words; else the extract's first sentence. If TITLE, URL or FACT is empty, omit the section.
+INTRO = the extract's first sentence (what the article is about).
+FACT = one genuinely interesting, specific fact from the BODY of the article, not the topic
+description and not the lead sentence. Fetch the article text (e.g.
+https://en.wikipedia.org/api/rest_v1/page/summary/{TITLE} is NOT enough; use
+https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&format=json&titles={TITLE}
+or the page itself) and pick a surprising detail: a number, an odd consequence, a little-known
+episode. Paraphrase it accurately in 1-2 sentences; never invent or embellish. If the article
+body cannot be fetched, omit FACT and show only INTRO. If TITLE, URL or INTRO is empty, omit
+the section.
 
 ## 3 — Quote of the Day
 URL: https://zenquotes.io/api/today → [0].q (QUOTE), [0].a (AUTHOR). ZenQuotes serves one
@@ -168,7 +175,8 @@ Sections in this order; an omitted section leaves no heading behind.
   <h3>Notable Deaths</h3><ul>[items]</ul>
 </section>
 <section><h2>Wikipedia Article of the Day</h2>
-  <p><a href="[URL]">[TITLE]</a> &mdash; [FACT]</p>
+  <p><a href="[URL]">[TITLE]</a> &mdash; [INTRO]</p>
+  <p><strong>Interesting fact:</strong> [FACT]</p>
 </section>
 <section><h2>Quote of the Day</h2>
   <blockquote>[QUOTE]</blockquote><p>&mdash; [AUTHOR] (via ZenQuotes)</p>
