@@ -1,4 +1,4 @@
-<!-- build: 2026-10-23T081201Z -->
+<!-- build: 2026-10-24T080742Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +35,39 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: October 23, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: October 24, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-10-24">
+<div class="ed-head">AI Developments &mdash; Saturday, October 24, 2026</div>
+<section>
+<span class="tool-chip">SAP Joule</span>
+<h2>This Week in SAP Joule</h2>
+<p>Joule is SAP's AI helper, the chatty assistant that lives inside the business software big companies use to run payroll, ship products and pay their bills. Think of it as a very well-read coworker who can open every spreadsheet in the building. This week the big news was less about a brand-new launch and more about SAP showing how the October rollout is going to feel for real customers.</p>
+<p>The story starts at SAP Connect on October 6, where SAP introduced Joule Work, a single place where you tell the AI what you want done, plus a new batch of "Joule Assistants" for specific jobs. Some are already live, like SAP Pay in the US and UK. Others are on a calendar: supply chain agents and trade-compliance helpers are due in the last three months of this year, customer experience and spend-analysis assistants in early 2027, and some finance helpers are only open to hand-picked early customers first. This week, SAP followed up on October 21 with its customer experience update, pitching an "autonomous" version of customer service where the AI does more of the legwork. The same day it reported third-quarter results and said customers are actually adopting its "Autonomous Enterprise" plan, not just nodding politely at it. It also announced a deal to buy TechWolf, a company that studies how work changes when AI joins the team.</p>
+<p>So what does it mean? Expect Joule to slide from demo stage into everyday tools over the next few months, one assistant at a time. The thing to watch is whether it can really finish jobs on its own, or just suggest them.</p>
+</section>
+<section>
+<span class="tool-chip">Salesforce Agentforce / Einstein</span>
+<h2>This Week in Salesforce Agentforce</h2>
+<p>Agentforce is Salesforce's line of AI agents, software workers that answer customers, qualify sales leads and handle routine office tasks. If a regular chatbot is a vending machine, an agent is more like a new hire who can actually go and do things.</p>
+<p>It was a quiet week for big announcements. The most concrete news was a real-world example: on October 15, Tottenham Hotspur launched "Ask Spurs," a fan assistant built on Agentforce, which shows how the tool is being used far outside the usual office setting. The larger changes arrived last month, when Salesforce unveiled a lineup of ready-made agents for sales, service, commerce and back-office work, plus Multi-Agent Orchestration, which lets several agents team up. Some pieces, like an Agent Optimizer that lets builders read an agent's session traces and fix mistakes, were slated to reach wide release in October, and an outbound-sales agent called Hunter is due in November. I could not confirm from Salesforce's own pages that those October items have shipped yet.</p>
+<p class="quiet">Quiet week for Agentforce &mdash; no major announcements in the past seven days. The last notable move was the September launch of Salesforce's job-ready agents and multi-agent orchestration.</p>
+</section>
+<section>
+<span class="tool-chip">GitHub Copilot</span>
+<h2>This Week in GitHub Copilot</h2>
+<p>GitHub Copilot is the AI pair programmer that sits inside a developer's editor and suggests code, answers questions and, lately, takes on whole chores by itself. It is a bit like having a patient teammate who never gets tired of fixing typos. GitHub ships changes almost daily, and this week was mostly about helping big teams keep it under control.</p>
+<p>The headline for companies is a new model policy API, released October 19, which lets administrators decide which AI models people in their enterprise, organization or team may use. Along the same lines, a batch of older models was retired that day, and more are set to go in mid-November, so anyone relying on a favorite model should check the list. On October 22, GitHub made a global default setting for Copilot features generally available, and added industry comparisons to its impact dashboard, so managers can see how their team's AI use stacks up. The usage metrics also learned to count custom skills, agents and MCP servers, and activity from outside tools such as OpenCode.</p>
+<p>There was a fun one for chat fans, too: on October 23, Copilot in Microsoft Teams gained the ability to turn a notification into code, so a message about a bug can become a starting point for a fix. Overall, the week says Copilot is growing up from a clever helper into something companies want to measure, govern and plug into everything else they use.</p>
+</section>
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>🔍 Tool Spotlight: Mercury 3</h2>
+<p>Most AI chatbots write one word, or word-piece, at a time, left to right, like someone typing. Mercury 3, released October 19 by a company called Inception, does it differently. It is a "diffusion" language model, which starts with a rough draft of the whole answer and cleans it up in several passes, a bit like a photo coming into focus. That trick is why it is so fast: Inception says it produces about 1,068 tokens (small chunks of text) per second on Nvidia chips and handles a million tokens of context, roughly several long novels at once. The company also claims it beats rivals like Claude Haiku 5.5 while running four to eight times faster, but those numbers are self-reported and nobody outside has tested them yet. It is available only through an API, including via OpenRouter, Baseten and Vercel, so it is aimed at developers building things like web-browsing agents, live search and customer support, where waiting a few seconds feels forever. The surprising part is the bigger claim: Inception says Mercury 3 is more than 40 times larger than its first model, and argues that diffusion models improve with size just as ordinary ones do.</p>
+<p class="muted">Source: Let's Data Science and Interesting Engineering, October 2026</p>
+</section>
+</article>
 <article class="edition" data-date="2026-10-23">
 <div class="ed-head">AI Developments &mdash; Friday, October 23, 2026</div>
 <section>
@@ -191,31 +221,6 @@
 <h2>Mistral Large 4 ("Le Chonk")</h2>
 <p>Mistral, the French AI company, just released a preview of a giant new model that people are nicknaming Le Chonk. It has about a trillion parameters, which you can think of as the adjustable dials inside the model's brain. But it uses a trick called mixture of experts: for every word it handles, only about 49 billion of those dials switch on, like calling in just the right specialists instead of the whole company. It handles images as well as text and reportedly can read a million tokens at once, roughly several long novels. Mistral calls it the best open-weight model from the US or Europe on combined tests, although outside scores put it only close to DeepSeek's 552-billion-parameter model, and some of Mistral's coding results haven't been independently repeated. The surprising part is the promise: Mistral plans to release the full weights, meaning anyone could download and run it, around October 27, though it hasn't said which license will apply. For now it is available through Mistral's API. Developers, researchers and companies that want control over their own AI will care the most.</p>
 <p class="muted">Source: TechCrunch, October 2026</p>
-</section>
-</article>
-
-<article class="edition" data-date="2026-10-16">
-<div class="ed-head">AI Developments &mdash; Friday, October 16, 2026</div>
-<section>
-<span class="tool-chip">ChatGPT</span>
-<h2>This Week in ChatGPT</h2>
-<p>ChatGPT is OpenAI's chatbot, the one that started the whole AI craze, and this week it got a big makeover. The headline is GPT-6, a new model that arrived on October 7 along with something called Intelligent UI, per <a href="https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/">TechCrunch</a>.</p>
-<p>Instead of only typing back walls of text, ChatGPT can now build little interactive tools right inside the conversation, like a calculator, a bill splitter or even a simple game, according to <a href="https://9to5mac.com/2026/10/07/openai-brings-gpt-6-to-chatgpt-and-debuts-intelligent-ui/">9to5Mac</a>. Imagine asking how to split a dinner check and getting a working app instead of a paragraph. It rolled out first to paid plans, with Free and Go users getting it starting the next day, and GPT-6 can also start answering while it is still thinking, then add more as it finds it. Then on October 15, a new voice model called GPT-Live-1.1 (plus a smaller one called Quip) began rolling out in ChatGPT Voice with more natural accents across languages, and earlier in the month a "Try on" button for clothes and the Finances feature for U.S. Free users arrived, as listed in OpenAI's <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">release notes</a>.</p>
-<p>The big idea is that chatbots are turning from talkers into builders. Watch for how many of these interactive screens show up in everyday apps.</p>
-</section>
-<section>
-<span class="tool-chip">Le Chat / Mistral</span>
-<h2>This Week in Le Chat / Mistral</h2>
-<p>Le Chat is the assistant from Mistral, the French AI company, though it has a new name: it was folded into a bigger product called Vibe in May 2026, per <a href="https://en.wikipedia.org/wiki/Mistral_Vibe">Wikipedia</a>. Vibe has a Work Mode for multi-step office tasks and a Code Mode for programming, and old Le Chat accounts and chats carried over, according to <a href="https://futurumgroup.com/insights/mistral-ai-shifts-to-full-stack-strategy-with-vibe-and-industrial-ai/">Futurum</a>.</p>
-<p>The real news this week is the model underneath. On October 6, Mistral previewed <a href="https://mistral.ai/news/mistral-large-4/">Mistral Large 4</a>, a giant model that <a href="https://www.cnbc.com/2026/10/06/mistral-ai-model-le-chonk.html">CNBC reports</a> has about a trillion parameters (think of parameters as the adjustable knobs inside the AI's brain) and that Mistral says rivals the best open systems from China. For now it is only in preview for developers, cybersecurity leaders and state authorities, with a wider release promised later this month.</p>
-<p>If the wider release happens on schedule, Mistral's assistant could get a serious upgrade before Halloween. We don't yet know pricing or licensing, so that is the thing to watch.</p>
-</section>
-<section>
-<span class="tool-chip">OpenAI Codex</span>
-<h2>This Week in OpenAI Codex</h2>
-<p>Codex is OpenAI's coding helper, an AI that can write and fix software while you supervise. It has been on a steady update streak this month.</p>
-<p>Codex CLI 0.162.0 landed on October 10 with managed Git worktrees (separate workspaces so several tasks don't trip over each other), pinned tasks, better transcript navigation and clickable links, plus better support for other model providers and sturdier sandboxing, per <a href="https://releasebot.io/updates/openai/codex">Releasebot</a>. A quick 0.162.1 patch followed to fix a crash and some startup failures. On October 9, a beta feature called Composer predictions began suggesting your next message after Codex answers, a bit like autocomplete for conversations, and faster steering went generally available the day before. One housekeeping note from the official <a href="https://developers.openai.com/codex/changelog">changelog</a>: GPT-5.5 retired from Codex for ChatGPT sign-ins on October 14.</p>
-<p>Taken together, Codex is getting better at juggling lots of jobs at once. Expect more of that.</p>
 </section>
 </article>
 
