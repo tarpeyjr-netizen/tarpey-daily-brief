@@ -1,4 +1,4 @@
-<!-- build: 2026-10-27T081035Z -->
+<!-- build: 2026-10-28T080810Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +35,41 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: October 27, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: October 28, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-10-28">
+<div class="ed-head">AI Developments &mdash; Wednesday, October 28, 2026</div>
+<section>
+<span class="tool-chip">DeepSeek</span>
+<h2>This Week in DeepSeek</h2>
+<p>DeepSeek is the Chinese AI lab that shocked everyone by building chatbots that rival the big American ones for a fraction of the price, and then giving many of them away for anyone to download. This week it quietly pushed out a fresh tune-up of its speedy model, called DeepSeek-V4.1-Flash-1017, on October 17.</p>
+<p>Think of &ldquo;Flash&rdquo; as the sports-car version of the lineup: not the biggest engine, but quick and cheap to run. DeepSeek says the new version scores better, finishes jobs faster and writes shorter answers than the one before it, which it calls a win on both performance and cost. It was trained with a trick where the model grades its own work and learns from it, and the demos were the fun kind: a 3D model of the Forbidden City, a racing game that runs in a web browser, and a Portal 2 recreation built in the Godot game engine. The old model names still work, but they now secretly point to the new one and are billed at the Flash price. The weights are open, so tinkerers can grab them from Hugging Face and ModelScope.</p>
+<p>The other big news is that DeepSeek now lets anyone use its Search and Fetch tools, which let a model look things up on the web and read pages, powered by the company&rsquo;s own search engine. It costs $0.75 per 1,000 calls, but calls made through DeepSeek Harness (its new coding-agent toolkit, now in developer preview), Claude Code and Codex are free until billing starts on October 31 at 16:00 UTC. So if you were curious, the free window is closing fast. The bigger story: DeepSeek is no longer just selling a brain, it is building the whole toolbox around it.</p>
+</section>
+<section>
+<span class="tool-chip">Eleven Labs</span>
+<h2>This Week in ElevenLabs</h2>
+<p>ElevenLabs makes the AI voices you have probably heard without realizing it: narrators, game characters, phone assistants that sound eerily human. Its biggest push right now is helping businesses build talking AI agents, and this week&rsquo;s updates lean hard into that.</p>
+<p>On October 19 the company introduced Eleven Realtime, a new family of voice models for its agent platform. There are two flavors. &ldquo;Mini&rdquo; is the default and the fastest, built to keep a conversation flowing without awkward pauses. &ldquo;Max&rdquo; stops to think before it answers, which helps when a caller asks something tricky or the agent has to do several steps in a row. It is rolling out gradually, so you may not see it everywhere yet. Also new for enterprise customers is Realtime Translation, which translates speech into another language while the person is still talking, like a very fast interpreter in your ear.</p>
+<p>For creators there is a new Video to Music tool. Upload a video, optionally describe the vibe or pick style tags, and it composes a soundtrack, even with sound effects. A week earlier, text-to-speech picked up optional audio effects such as reverb and stereo panning, and the speech-to-text side got a smarter way of guessing when someone has finished speaking. These all build on last month&rsquo;s Eleven v4 voice model. Put together, it is a clear sign that voice AI is moving from &ldquo;read this text aloud&rdquo; to &ldquo;hold a real conversation and score the movie too.&rdquo;</p>
+</section>
+<section>
+<span class="tool-chip">Adobe Firefly</span>
+<h2>This Week in Adobe Firefly</h2>
+<p>Adobe Firefly is Adobe&rsquo;s home for making images, video and audio with AI, and its big selling point is that it is trained to be safe for commercial use. It also lets you pick from other companies&rsquo; models inside the same app.</p>
+<p>It was a quiet week on the announcement front, at least so far. The most recent change I could confirm is Adobe adding more partner models across Firefly and apps like Photoshop, Illustrator and Express, including Kling 3.0 Omni for video, with a note that Google is retiring its older Gemini 2.5 image model. I could not find a new Adobe-made Firefly model this week.</p>
+<p>The reason may be timing: Adobe MAX 2026, the company&rsquo;s giant creative conference, starts today in Los Angeles and runs through October 30. Adobe usually saves its big Firefly reveals for that stage, so tomorrow&rsquo;s edition may look very different. Note that I could not read Adobe&rsquo;s own release-notes page this run, so small updates may have slipped past.</p>
+</section>
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">&#128269; Tool Spotlight</span>
+<h2>🔍 Tool Spotlight: Reflection Beam</h2>
+<p>Most of the world&rsquo;s smartest AI models are locked behind a company&rsquo;s servers. Reflection Beam is a rare exception. Released on October 16 by the AI lab Reflection, it is the company&rsquo;s first open-weight model, meaning anyone can download the whole thing and run it themselves. It is aimed at coding, reasoning and long-running &ldquo;agent&rdquo; jobs where an AI works on a task for a while on its own.</p>
+<p>The numbers are huge. Beam has about 501 billion parameters, but it is a &ldquo;mixture of experts,&rdquo; so only around 23 billion switch on for each word it writes, a bit like calling in only the specialists you need for a job. It can read a million tokens at once, roughly several novels&rsquo; worth. Reflection reports 81.6% on SWE-bench Verified, a test of fixing real software bugs, though those scores come from the company itself and have not been independently confirmed.</p>
+<p>The surprise is the license. It is Apache 2.0, which lets people use it commercially with almost no strings attached, unlike some rivals that add revenue limits or credit requirements. The catch: the full-size files weigh nearly a terabyte, so you need a serious stack of GPUs. Most people will try it through hosted services instead. Developers and companies that want a powerful, American-built model they fully control are the obvious audience.</p>
+<p class="muted">Source: Digital Applied and Reflection model card coverage, October 2026</p>
+</section>
+</article>
 <article class="edition" data-date="2026-10-27">
 <div class="ed-head">AI Developments &mdash; Tuesday, October 27, 2026</div>
 <section>
@@ -60,7 +92,6 @@
 <p class="quiet">Not covered today: I could not find a dated, reliable source for NotebookLM news in the past seven days (Google's help and Workspace update pages showed no entries and searches only turned up older items), so this is not a claim that nothing happened. The most recent items I could confirm were from earlier in 2026, including March updates to slide revisions and Cinematic Video Overviews. Check back next Tuesday.</p>
 </section>
 </article>
-
 <article class="edition" data-date="2026-10-26">
 <div class="ed-head">AI Developments &mdash; Monday, October 26, 2026</div>
 <section>
@@ -198,26 +229,6 @@
 <p class="muted">Source: WAM, HPCwire and Gulf News, October 2026</p>
 </section>
 </article>
-
-<article class="edition" data-date="2026-10-20">
-<div class="ed-head">AI Developments &mdash; Tuesday, October 20, 2026</div>
-<section>
-<span class="tool-chip">Anthropic Claude</span>
-<h2>This Week in Anthropic Claude</h2>
-<p class="quiet">Quiet week for Anthropic Claude &mdash; I couldn&rsquo;t confirm any major announcements from a primary source in the past seven days. One secondary news roundup dated October 14 says Anthropic will start cracking down on persistent misuse of Claude in November 2026, but I couldn&rsquo;t verify it against Anthropic itself. The last big moments I could confirm were the Claude 5 family (Sonnet 5, Opus 5 and more) and the Claude Science launch earlier this summer.</p>
-</section>
-<section>
-<span class="tool-chip">Perplexity AI</span>
-<h2>This Week in Perplexity AI</h2>
-<p class="quiet">Quiet week for Perplexity AI &mdash; I found no announcements dated in the past seven days. The most recent item I could find was from October 8, when integration notes said Perplexity is retiring its older Sonar Chat Completions API in favor of a new Agent API with presets from &ldquo;fast&rdquo; to &ldquo;xhigh&rdquo;.</p>
-</section>
-<section>
-<span class="tool-chip">NotebookLM</span>
-<h2>This Week in NotebookLM</h2>
-<p class="quiet">Quiet week for NotebookLM &mdash; I found no announcements dated in the past seven days. The last notable moves I could find were an upgrade to Reports (customizable reports, 80+ languages, plus Flashcards and Quizzes) and public link-sharing for notebooks, though those articles were undated.</p>
-</section>
-</article>
-
 </main>
 <footer>The Daily Brief &middot; AI Developments &middot; Updated daily at 4 AM</footer>
 <script>document.querySelectorAll('main a[href]').forEach(a=>{a.target='_blank';a.rel='noopener noreferrer';});</script>
