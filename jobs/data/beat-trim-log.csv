@@ -1,3 +1,4 @@
 date,ticker,company,rule,price_at_pick,event,sp500_1y_return_at_pick,source
 2026-10-16,PEP,PepsiCo,beat-and-trim,131.49,"Q3 adj EPS $2.34 vs $2.29 est; cut core EPS growth outlook to 2.5-3%",-14.5%,https://finance.yahoo.com/markets/stocks/article/pepsico-beats-earnings-expectations-lowers-guidance-as-it-aims-to-stabilize-north-america-business-103147761.html
 2026-10-23,SNDK,Sandisk,top-1y-return,1299.30,"No beat-and-trim qualifier verified; fallback to top S&P 500 1Y return",+827.0%,https://docs.google.com/spreadsheets/d/1jMhane6W7KAKqXYQ5AaPiecp9vjATeZRNAcXD10235g
+2026-10-30,MRNA,Moderna,top-1y-return,202.63,"No beat-and-trim qualifier verified; fallback to top S&P 500 1Y return",+671.9%,https://docs.google.com/spreadsheets/d/1jMhane6W7KAKqXYQ5AaPiecp9vjATeZRNAcXD10235g
