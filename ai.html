@@ -1,4 +1,4 @@
-<!-- build: 2026-10-29T081012Z -->
+<!-- build: 2026-10-30T080732Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +35,33 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: October 29, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: October 30, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-10-30">
+<div class="ed-head">AI Developments &mdash; Friday, October 30, 2026</div>
+<section>
+<span class="tool-chip">ChatGPT</span>
+<h2>This Week in ChatGPT</h2>
+<p>ChatGPT is the chatbot that taught the whole world to talk to a computer, and it keeps getting new tricks. This week the big news was a new model called GPT-6.1 Terra, which showed up on October 26. It is a step up from the GPT-6 that started rolling out earlier in the month, and it landed in ChatGPT's Work mode and in Codex for paying customers. It is not in the regular Chat view yet, so think of it as a new engine that went into the work truck before the family car.</p>
+<p>OpenAI also spent the week making ChatGPT more personal and more private. On October 20 it began rolling out locked chats, which let you put a conversation behind a lock, a bit like a diary with a clasp. On October 27 it added plugins for iCloud Mail and Calendar, so if you live on an iPhone, ChatGPT can finally peek at your schedule and your inbox when you ask it to. Then on October 28 came the odd one: a beta where U.S. Pro users can text their "dot" and get texts back, so the assistant can live in your messages like a friend would.</p>
+<p>The pattern is easy to spot. ChatGPT is slowly turning from a website you visit into a helper that sits inside the rest of your life: your mail, your calendar, your phone. The trade-off is trust, which is why the privacy tools matter just as much as the flashy ones. Expect Terra to reach the regular chat window soon.</p>
+</section>
+<section>
+<span class="tool-chip">Le Chat / Mistral</span>
+<h2>This Week in Le Chat / Mistral</h2>
+<p>Mistral is the French AI company behind the Le Chat assistant, and it has been shipping at a brisk pace. The headline this week came on October 29, when it released the open weights for a model called Le Chonk, built for coding and for cybersecurity. "Open weights" means anyone can download the model and run it themselves, instead of renting it through a website.</p>
+<p>It fits a busy month. Mistral launched Large 4 on October 6, a tiny forecasting model called Timestral on October 15, and Voxtral 3 on October 20, which is meant for agents that listen and speak. A day later it announced work with NVIDIA on AI tools for engineers. Together, that is a company trying to cover everything from chatting to forecasting to talking.</p>
+<p>The so-what: while the biggest American labs sell you a finished product, Mistral keeps handing out the parts. If you like tinkering, or you are a company that wants to keep your data close to home, that is a big deal. Watch for what developers build with Le Chonk.</p>
+</section>
+<section>
+<span class="tool-chip">OpenAI Codex</span>
+<h2>This Week in OpenAI Codex</h2>
+<p>Codex is OpenAI's AI coding helper, the one that can read a project, write code and fix bugs while you watch. It has had a very busy week, with three updates to its command-line version in seven days.</p>
+<p>The star was GPT-6.1 Terra, which arrived in Codex on October 26 and was added to the tool's built-in model list the next day. Version 0.165 on October 27 also added a Google Cloud Vertex AI connection, a repository filter for finding old sessions, and turned on a newer memory system by default, so Codex remembers more about how you like to work. Version 0.164 on October 23 added ten saved-prompt "presets," like speed-dial buttons for your favorite instructions, plus image previews right in the terminal.</p>
+<p>On October 29, version 0.166 brought a transcript you can search with the keyboard, a network checkup command, and clearer explanations when Codex refuses something for safety reasons. These are small touches, but they add up. A tool people use all day gets better when the little annoyances disappear.</p>
+</section>
+</article>
 <article class="edition" data-date="2026-10-29">
 <div class="ed-head">AI Developments &mdash; Thursday, October 29, 2026</div>
 <section>
@@ -200,28 +224,6 @@
 <p>Codex is OpenAI's coding assistant, which can write, fix and run code for you. This week was about small, handy upgrades to its command-line version, based on the <a href="https://www.havoptic.com/releases/openai-codex/2026/10">October release log</a>.</p>
 <p>Version 0.163.0 (October 15) lets you send follow-up messages while Codex is still working, so you can steer it mid-task instead of waiting, and added a searchable settings command and a shortcut key setup. Version 0.164.0, out today, adds ten preset slots for saved prompts, model and permission settings shown inline, and image previews inside the terminal. The log's descriptions were cut off, so there may be more in each release.</p>
 <p>Earlier this month, version 0.161.0 (October 7) made GPT-6.1 Sol the default model, according to the same log. The takeaway: Codex is shipping roughly weekly, and the direction is making it feel less like a tool you wait on and more like a coworker you can interrupt.</p>
-</section>
-</article>
-<article class="edition" data-date="2026-10-22">
-<div class="ed-head">AI Developments &mdash; Thursday, October 22, 2026</div>
-<section>
-<span class="tool-chip">Anthropic Claude Code</span>
-<h2>This Week in Anthropic Claude Code</h2>
-<p>Claude Code is Anthropic's AI coding helper that lives right in your terminal and can read a whole project, write code and fix bugs on its own. Imagine a very fast coding partner who never gets tired. This week it learned to double-check other people's work, too.</p>
-<p>The big news landed on October 15, when Anthropic made Code Review generally available for Team and Enterprise customers. It works like a group of editors reading your essay at once: several AI helpers look over a pull request (a proposed change to a codebase) in parallel. Anthropic says reviews now finish about three times faster than during the test run, dropping from roughly 20 minutes to 6&ndash;10. The company also shared how its own Claude Code team handles reviews. It says Claude writes about 90% of Claude Code's code, and that after one review loop ran more than 50 rounds overnight, the team added a rule: after three rounds, rethink your approach. Those numbers come from Anthropic itself, not an outside check.</p>
-<p>Meanwhile, the tool keeps getting small, steady upgrades. The newest releases (around version 2.1.307) added a guided <em>/auto-mode-setup</em> so the safety classifier learns your environment, new safety-event logging for blocked or prompted actions, and better recovery when the AI fumbles a tool call. Anthropic also opened applications for a Women in AI hackathon built around Claude Code. The so-what: coding tools are shifting from writing code to checking it, and that is where the trust gets built.</p>
-</section>
-<section>
-<span class="tool-chip">Xai Grok</span>
-<h2>This Week in Xai Grok</h2>
-<p>Grok is the chatbot from xAI, Elon Musk's AI company, now part of the SpaceX family. It's known for being plugged into X and for having a cheeky personality. This week the action was less about chatting and more about talking out loud.</p>
-<p>On October 14, a little over a week ago, xAI launched Grok Voice 3.0, a speech-to-speech model for building voice agents, the kind of AI that can answer a phone call and actually hold a conversation. xAI says it tops an independent speech-to-speech ranking with a score of 86.9 and responds in under a second, at $0.08 a minute. Think of it as a call-center worker that never needs a break. One blog claims it already handles some Starlink and Tesla customer calls, but that source looks shaky, so take it with salt.</p>
-<p>For developers, Grok Build, xAI's coding command-line tool, rolled out versions 1.0.59 through 1.0.62 between October 14 and 16, mostly fixing crashes and smoothing out the dashboard. Earlier in the month, Grok 4.7 landed on Microsoft Foundry and a new video model, Grok Imagine Video 1.5 Lite, appeared. The takeaway: xAI is pushing hard to make Grok something businesses plug in, not just something you chat with. Most of this came from third-party trackers rather than xAI's own announcements.</p>
-</section>
-<section>
-<span class="tool-chip">Artlist AI</span>
-<h2>This Week in Artlist AI</h2>
-<p class="quiet">Quiet week for Artlist AI &mdash; I couldn't find any major announcements in the past seven days. The last notable move I found was the March 26, 2026 launch of AI Music, built on Google's Lyria 3 models. Artlist's blog has kept busy with guides (an AI image editing guide on October 6, a Nano Banana 2.1 explainer on October 8, and an AI voiceover comparison against ElevenLabs on October 18), and some Trustpilot reviewers are grumbling about credit costs, but nothing counted as a real product launch.</p>
 </section>
 </article>
 </main>
