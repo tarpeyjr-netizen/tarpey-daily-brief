@@ -13,7 +13,7 @@ set -o pipefail
 REPO="tarpeyjr-netizen/tarpey-daily-brief"
 WORKDIR=$(mktemp -d)
 
-git clone --depth 1 -q "https://github.com/$REPO" "$WORKDIR" || { echo "FAIL_CLONE: cannot clone $REPO"; exit 1; }
+git clone --depth 1 -q "https://github.com/$REPO" "$WORKDIR"   # on failure report FAIL_CLONE and stop
 cd "$WORKDIR"
 echo "WORKDIR=$WORKDIR"
 
@@ -71,9 +71,9 @@ The routine prompt lists the pages due today. For each one, in the order listed:
 6. Commit that page on its own, immediately:
 
    git add -- <page>.html
-   git diff --cached --quiet && { echo "PAGE_NOCHANGE: <page>"; } || \
+   if git diff --cached --quiet; then echo "PAGE_NOCHANGE: <page>"; else
      git -c user.email="jamestarpeyjr@gmail.com" -c user.name="Daily Brief Bot" \
-         commit -q -m "update: <page>.html $(date +%F)"
+         commit -q -m "update: <page>.html $(date +%F)"; fi
 
 RESEARCH BUDGET — WebSearch is capped (about 200 calls per turn) and the cap is SHARED by every
 sub-agent in the run. Launching all research agents at once lets the first ones spend the whole
@@ -100,13 +100,11 @@ Do NOT modify index.html unless a page's own spec explicitly instructs it.
 ===============================================================
 C — PUSH ONCE
 ===============================================================
-cd "$WORKDIR"
-if git log origin/main..HEAD --oneline | grep -q .; then
-  git push origin main 2>&1 || { echo "FAIL_PUSH: push rejected — is $REPO selected in this routine's Repositories field?"; exit 1; }
-  echo "Pushed $(git log origin/main..HEAD --oneline | wc -l) commit(s) — head $(git log -1 --format=%h)"
-else
-  echo "NOTHING_TO_PUSH: every page skipped or unchanged"
-fi
+Run the script (no inline brace groups — they trigger permission prompts in unattended runs):
+
+  bash "$WORKDIR/jobs/push.sh" "$WORKDIR"
+
+It prints "Pushed N commit(s)", NOTHING_TO_PUSH, or FAIL_PUSH (exit 1).
 
 ===============================================================
 D — VERIFY EACH PUBLISHED PAGE
@@ -115,20 +113,10 @@ Verify only the pages actually committed this run. A matching date is NOT suffic
 only a matching build stamp proves the new file is live. A stale page returns HTTP 200
 indefinitely, which is how a silent failure hides.
 
-sleep 45
-for PAGE in <pages committed this run>; do
-  STAMP=$(grep -m1 -o '<!-- build: [^ ]*' "$WORKDIR/$PAGE.html" | sed 's/.*build: //')
-  LIVE=$(curl -sL --max-time 20 "https://tarpey-daily-brief.pages.dev/$PAGE.html")
-  if echo "$LIVE" | grep -q "build: $STAMP"; then
-    echo "VERIFY_OK: $PAGE"
-  else
-    sleep 30
-    LIVE=$(curl -sL --max-time 20 "https://tarpey-daily-brief.pages.dev/$PAGE.html")
-    echo "$LIVE" | grep -q "build: $STAMP" && echo "VERIFY_OK: $PAGE" || {
-      echo "FAIL_VERIFY: $PAGE — live stamp: $(echo "$LIVE" | grep -o '<!-- build: [^>]*-->' | head -1)"
-    }
-  fi
-done
+  bash "$WORKDIR/jobs/verify.sh" "$WORKDIR" <pages committed this run>
+
+It polls with short sleeps and prints VERIFY_OK or FAIL_VERIFY per page. Do not write your own
+sleep/curl loop or use `{ ...; }` groups in Bash: both are blocked or need approval.
 
 If verify fails with 403 or "host_not_allowed", the routine's environment needs
 tarpey-daily-brief.pages.dev in its custom network allowlist. The push travels through the
