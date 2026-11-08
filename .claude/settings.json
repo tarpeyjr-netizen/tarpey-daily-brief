@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(mkdir:*)",
+      "Bash(cd:*)",
+      "Bash(sleep:*)",
+      "Edit(/tmp/**)",
+      "Write(/tmp/**)"
+    ],
+    "additionalDirectories": ["/tmp"]
+  }
+}
