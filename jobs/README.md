@@ -17,6 +17,8 @@ read and edit them.
     _publish.md              shared clone / build / commit / push / verify block
     <page>.md                one per published page
     rosters/*.csv            data the specs read at run time
+    tools/*.py               scripts the specs run: people_feeds.py (people page feeds),
+                             quotes.py (stock-analysis prices)
 
 ## Rosters
 
@@ -58,3 +60,7 @@ edition block, merge rule — and add the page name to the routine that should b
   date — a stale page returns HTTP 200 indefinitely.
 - One edition per date. A same-day re-run replaces, never duplicates.
 - Don't touch `index.html` unless a spec says to.
+
+`rosters/people-sources.csv` is repo-only (not in a Sheet): one row per feed a person on the
+people roster owns. Add a person to the People Sheet as before; add their feed here, or let the
+Wednesday run find it (people.md step 2c).

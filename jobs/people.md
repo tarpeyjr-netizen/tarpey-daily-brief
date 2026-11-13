@@ -1,7 +1,7 @@
 # people.html — People Update
 
 Cadence: Wednesdays. History: rolling 8-day window (today + prior editions 1–7 days old).
-Roster: jobs/rosters/people.csv (person,profession)
+Roster: jobs/rosters/people.csv (person,profession) + jobs/rosters/people-sources.csv (their feeds)
 
 ## Gate
 None. Runs every Wednesday.
@@ -13,23 +13,66 @@ The 7 days ending yesterday. Compute fresh via bash `date`; ISO via `date +%F`.
 Read jobs/rosters/people.csv from the clone. Cover every person, in file order. No fallback
 roster and no warning banner. A missing or unreadable CSV is a FAILED page.
 
-This roster is long — pace the research so every person gets covered. Nobody is skipped: a
-person with no news gets "No major updates this week."
+jobs/rosters/people-sources.csv (person,kind,source,url,match) lists each person's OWN
+channels — newsletter, blog, column, podcast — as RSS/Atom feeds. It is edited in the repo, not
+in the Google Sheet, and the roster sync never touches it. A person with no row there is
+covered by search only.
 
-## 2b — Batching and search depth
-Split the roster into batches of about 8 people, one research agent per batch, all run in
-parallel. Each agent runs the four searches below for every person in its batch, using WebSearch
-mode "extended" for the news and podcast queries. Budget at least 4 searches per person; an agent
-that finishes a batch in well under that has not searched enough. An undated search result is not
-a reason to drop an item: fetch the page, find its date, and include it if it falls in the window.
-Report "No major updates this week." only after all four searches (and any fetches) came up empty.
+## 2a — Feeds first (costs no searches)
+Why: on 2026-11-11 this page reported "No major updates" for 48 of 59 people. The page ran
+last on its routine and the shared WebSearch budget was gone before most people were searched.
+Feeds are fetched from the shell and do not touch that budget.
+
+Run once, before any search:
+
+  python3 jobs/tools/people_feeds.py 8
+
+It prints, per person: FEED_ITEM lines (date | source | title | link | summary) for everything
+they published in the window, FEED_QUIET when a feed had nothing new, FEED_FAILED when a feed
+could not be read, or NO_FEED.
+
+- FEED_ITEM: these are the person's update. Keep items dated inside the step 1 week. Write the
+  update from the titles and summaries; when a summary is too thin to say something specific,
+  WebFetch that item's link. Link the items in the Sources line. Do not pad: 2–4 of the most
+  interesting items, not the whole list (Tyler Cowen and Simon Willison post many times a day).
+- FEED_FAILED: fetch the same url with WebFetch and read the items from it. Do not retry the
+  shell another way.
+- A podcast feed gives the person's own show. Guest spots on other shows still need step 3.
+
+## 2b — Search plan and budget
+WebSearch is capped per run and shared with the other pages on the routine (see _publish.md,
+RESEARCH BUDGET). Spend it in this order, in waves of about 8 people per research agent:
+
+  Wave 1 — everyone with NO_FEED, or with feeds but no FEED_ITEM in the week: the three
+           searches in step 3, mode "extended".
+  Wave 2 — everyone who already has feed items: ONE search,
+           "[Name] interview OR podcast guest [Month YYYY]", to catch appearances elsewhere.
+
+Give each agent its quota (people x searches) in its brief. An undated result is not a reason
+to drop an item: fetch the page, find its date, include it if it falls in the week.
+
+If WebSearch refuses mid-run, stop searching and build the page from what is in hand. Every
+agent reports which people it did not finish.
+
+Three outcomes per person — they are different and must not be merged:
+  - has news                      → the update paragraph and a Sources line
+  - searched, nothing found       → "No major updates this week."
+  - not searched (budget ran out, no feed) → "Not checked this week."
+Never write "No major updates this week." for someone who was not actually searched.
+
+## 2c — Keep the sources file growing
+When a search this run turns up a channel the person owns (their newsletter, blog or podcast —
+not an outlet that merely covered them), find its feed URL, add a row to
+jobs/rosters/people-sources.csv, and re-run the tool. Keep the row only if the tool prints
+FEED_ITEM or FEED_QUIET for it; delete it on FEED_FAILED. Check the feed is really theirs —
+a same-name stranger's newsletter has been cited on this page before. Commit the CSV with
+people.html and name the additions in the STEP E line.
 
 ## 3 — Research, last 7 days
-Per person, parallel WebSearch:
-- "[Name] news 2026"
-- "[Name] interview 2026"
-- "[Name] book article podcast 2026"
-- "[Name] podcast appearance 2026" / "[Name] podcast interview this week"
+Per person in Wave 1:
+- "[Name] news [Month YYYY]"
+- "[Name] interview OR podcast [Month YYYY]"
+- "[Name] new book OR article OR column [Month YYYY]"
 
 SOURCE LINKS — every item of news must be traceable. While researching, record the URL of the
 page each fact came from (article, podcast episode page, newsletter post, video, official
@@ -97,10 +140,10 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 
 ## 5 — Today's edition block
 <article class="edition" data-date="[TODAY ISO]">
-<div class="ed-head">Week ending [Wednesday DD, YYYY]</div>
+<div class="ed-head">Week ending [Wednesday DD, YYYY] &middot; [N] with news &middot; [N] quiet &middot; [N] not checked</div>
 <section><h2>This Week</h2><p>[One or two sentences: the most interesting update of the week across everyone]</p></section>
 <section><h2>Updates</h2>
-[per person: <h3>Name &mdash; Profession</h3><p>Update: [what happened, what was published, what was said — specific and interesting, quote if notable. If nothing: "No major updates this week."]</p>
+[per person: <h3>Name &mdash; Profession</h3><p>Update: [what happened, what was published, what was said — specific and interesting, quote if notable. If searched and nothing found: "No major updates this week." If not searched: "Not checked this week."]</p>
   Under every person who has news, add one line of 1–3 source links:
   <p class="src">Sources: <a href="URL">Outlet or show, Mon D</a> &middot; <a href="URL">...</a></p>
   Link text names the outlet or show and the date, never a bare URL or "click here". Link the

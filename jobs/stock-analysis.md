@@ -33,14 +33,28 @@ out rather than guess.
 Per qualifying stock record: report date, the beat (metric and magnitude if available), the
 guidance change (old vs new range if available).
 
-Then three price points via WebSearch ("[ticker] stock 52 week high", "[ticker] stock price
-[report date]", "[ticker] stock price today"):
-- 52-week high, current
-- Post-trim price — the close within 1–2 trading days after the guidance-cut report
-- Current price — latest available quote
+## 1b — Prices (Yahoo Finance daily history — never WebSearch)
+Prices come from a script in the clone, not from searches. News searches do not return usable
+quotes; every price cell on this page was "n/a" until this changed (2026-11-12).
 
-These are news-search-derived, not live quotes. The page says so in its note; keep that note.
-Prefix approximate figures with "≈".
+Run it once for all qualifying stocks, passing each ticker with its report date:
+
+  python3 jobs/tools/quotes.py PEP:2026-10-08 COO:2026-09-09 ...
+
+It prints one CSV row per ticker: high_52w (highest daily high, trailing 12 months),
+post_trim_close (close of the first trading day after the report date), current (latest
+close), pct_since_trim (current vs post_trim_close), plus the date of each and a status.
+
+- status "ok": use the figures exactly as printed, formatted $X.XX. No "≈" on these.
+- status "error" or a blank cell: wait 60 seconds and re-run the script for those tickers
+  only, once. If still failing, fetch
+  https://query1.finance.yahoo.com/v8/finance/chart/<TICKER>?range=1y&interval=1d
+  with WebFetch and read the same three figures from it.
+- Still nothing: show "&mdash;" in that cell and name the ticker and the error text in the
+  STEP E report line for this page. Never estimate a price and never take one from a news
+  article or search snippet.
+
+If every stock comes back without prices, the page is FAILED — do not publish a table of dashes.
 
 Sort by report date, most recent first. If nothing qualifies, still render the section with its
 empty-state row rather than omitting it.
@@ -120,10 +134,10 @@ Upcoming Earnings, then the disclaimer.
   <section>
     <h2>Beat &amp; Trim — Trailing 6 Months</h2>
     <div class="tablescroll"><table>
-      <thead><tr><th class="l">Ticker</th><th class="l">Company</th><th>Report Date</th><th class="l">What Beat</th><th class="l">What Got Trimmed</th><th>52-Wk High</th><th>Post-Trim Price</th><th>Current Price</th></tr></thead>
-      <tbody>[one tr per qualifying stock, most recent first, OR <tr><td colspan="8" class="empty">No qualifying beat-and-trim reports found in the trailing 6 months as of this run.</td></tr>]</tbody>
+      <thead><tr><th class="l">Ticker</th><th class="l">Company</th><th>Report Date</th><th class="l">What Beat</th><th class="l">What Got Trimmed</th><th>52-Wk High</th><th>Post-Trim Price</th><th>Current Price</th><th>Since Trim</th></tr></thead>
+      <tbody>[one tr per qualifying stock, most recent first: <td class="tk">TICKER</td><td>Company</td><td class="ctr">YYYY-MM-DD</td><td>beat</td><td>trim</td><td class="num">$high_52w</td><td class="num">$post_trim_close</td><td class="num">$current</td><td class="num"><span class="pos|neg">±X.X%</span></td> — pos when pct_since_trim is above zero, neg when below. OR <tr><td colspan="9" class="empty">No qualifying beat-and-trim reports found in the trailing 6 months as of this run.</td></tr>]</tbody>
     </table></div>
-    <p class="note">Prices are news-search-derived approximations (52-week high, price shortly after the guidance-cut report, and latest available quote), not live market data &mdash; treat as directional. &asymp; indicates an approximate or estimated figure.</p>
+    <p class="note">Prices are daily closes from Yahoo Finance as of [current_date from the script]. 52-Wk High is the highest intraday price in the trailing 12 months. Post-Trim Price is the close on the first trading day after the report. Since Trim compares the current price with that close. &mdash; means the figure could not be retrieved this run.</p>
   </section>
   <section>
     <h2>Upcoming Earnings — Next 5 Business Days</h2>
