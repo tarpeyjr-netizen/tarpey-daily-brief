@@ -12,7 +12,8 @@ None. Build every day.
 The tool fetches weather (Open-Meteo), the three index closes (Yahoo Finance), every
 roster team's schedule (ESPN site API), the No. 1 film of the latest US weekend (Box Office
 Mojo), and the No. 1 on five Billboard charts (Hot 100, Billboard 200, Americana/Folk Albums,
-Bluegrass Albums, Hot Rock Songs), then writes the complete page. It applies the rules
+Bluegrass Albums, Hot Rock Songs), and the No. 1 show on Apple Podcasts (US, official
+Apple feed), then writes the complete page. It applies the rules
 below itself. Do not re-derive or "correct" its figures.
 
     BUILD_ID="$BUILD_ID" node jobs/tools/today.mjs "$WORKDIR/today.html" > "$WORKDIR/today.json"

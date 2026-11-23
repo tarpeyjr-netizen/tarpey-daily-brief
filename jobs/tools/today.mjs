@@ -92,7 +92,23 @@ async function boxOffice() {
   } catch (e) { gaps.push(`Box office: ${e.message}`); return { error: true }; }
 }
 
-const shortWeek = (w) => w.replace(/^([A-Z][a-z]{2})[a-z]*/, "$1.").replace("May.", "May").replace(/, \d{4}$/, "");
+async function topPodcast() {
+  try {
+    const j = await getJSON("https://rss.marketingtools.apple.com/api/v2/us/podcasts/top/1/podcasts.json");
+    const r = j.feed.results[0];
+    if (!r?.name) throw new Error("empty chart");
+    return { name: r.name, by: r.artistName, genre: r.genres?.[0]?.name, url: r.url };
+  } catch (e) { gaps.push(`Apple Podcasts: ${e.message}`); return { error: true }; }
+}
+function podcastTile(p) {
+  if (p.error) return `<div class="tile"><div class="t-label">No. 1 podcast</div><div class="t-line muted">Unavailable</div></div>`;
+  return `<div class="tile"><div class="t-label">No. 1 podcast</div>
+<div class="t-title"><a href="${esc(p.url)}">${esc(p.name)}</a></div>
+<div class="t-line">${esc(p.by)}</div>
+<div class="t-line muted">${p.genre ? esc(p.genre) + " &middot; " : ""}Apple Podcasts, US</div></div>`;
+}
+
+const shortWeek =(w) => w.replace(/^([A-Z][a-z]{2})[a-z]*/, "$1.").replace("May.", "May").replace(/, \d{4}$/, "");
 function chartTile(c, kind) {
   if (c.error) return `<div class="tile"><div class="t-label">No. 1 ${kind}</div><div class="t-line muted">Unavailable</div></div>`;
   const move = c.lw === "1" ? "Holds at No. 1" : c.lw && c.lw !== "-" ? `Up from No. ${esc(c.lw)}` : "New at No. 1";
@@ -216,7 +232,7 @@ const timeOf = (g) => (g.timeTBD ? "TBD" : etTime(g.start) + " ET");
 async function main() {
   const [wx, mk] = await Promise.all([Promise.all(CITIES.map(weatherTile)), Promise.all(INDEXES.map(market))]);
   const mDate = mk.find((m) => !m.error)?.date;
-  const [movie, song, album, ...genre] = await Promise.all([boxOffice(),
+  const [movie, podcast, song, album, ...genre] = await Promise.all([boxOffice(), topPodcast(),
     billboardTop("hot-100", "Hot 100"), billboardTop("billboard-200", "Billboard 200"),
     billboardTop("americana-folk-albums", "Americana/Folk Albums"), billboardTop("bluegrass-albums", "Bluegrass Albums"), billboardTop("hot-rock-songs", "Hot Rock Songs")]);
   const chartWeek = [song, album, ...genre].find((c) => !c.error)?.week;
@@ -283,6 +299,7 @@ async function main() {
   .t-big { font-size:22px; font-weight:700; margin:2px 0; font-variant-numeric:tabular-nums; }
   .t-line { font-size:13px; line-height:1.45; font-variant-numeric:tabular-nums; }
   .t-title { font-size:16px; font-weight:700; line-height:1.3; margin:3px 0 2px; overflow-wrap:anywhere; }
+  .t-title a { color:inherit; text-decoration:none; } .t-title a:hover, .t-title a:focus-visible { color:var(--accent); text-decoration:underline; }
   .up { color:var(--up); } .down { color:var(--down); }
   .note { font-size:13px; margin:10px 0 0; padding-left:10px; border-left:3px solid var(--accent); }
   table { width:100%; border-collapse:collapse; font-size:13.5px; }
@@ -345,6 +362,7 @@ ${offSeason.length ? `<p class="muted" style="margin-top:10px">Off-season: ${off
 ${movieTile(movie)}
 ${chartTile(song, "song")}
 ${chartTile(album, "album")}
+${podcastTile(podcast)}
 </div>
 <div class="tbl-wrap" style="margin-top:12px"><table><thead><tr><th>Billboard chart</th><th>No. 1</th><th>Artist</th></tr></thead><tbody>
 ${genreRows.join("\n")}
@@ -355,7 +373,7 @@ ${genreRows.join("\n")}
 
 <section>
 <h2>Sources</h2>
-<p class="sources">Weather: Open-Meteo. Markets: Yahoo Finance daily closes. Scores and schedules: ESPN. Box office: Box Office Mojo. Charts: Billboard. Headlines: Associated Press, via PBS NewsHour (linked on each item).</p>
+<p class="sources">Weather: Open-Meteo. Markets: Yahoo Finance daily closes. Scores and schedules: ESPN. Box office: Box Office Mojo. Charts: Billboard. Podcasts: Apple Podcasts top shows (US). Headlines: Associated Press, via PBS NewsHour (linked on each item).</p>
 <p class="sources">Gaps: ${gaps.length ? gaps.map(esc).join("; ").replace(/&amp;mdash;/g, "&mdash;") : "none"}.</p>
 </section>
 </article>
