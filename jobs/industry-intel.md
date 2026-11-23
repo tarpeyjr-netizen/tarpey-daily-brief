@@ -148,7 +148,7 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <div class="sub">Latest: [Month D, YYYY] &middot; showing the last 4 weeks</div>
 </div></header>
 <main class="wrap">
-<nav class="toc"><a href="#roles">Role Market</a><a href="#consulting">Consulting &amp; Defense</a><a href="#independent">Independent Work</a><a href="#playbook">Claude Playbook</a></nav>
+<nav class="toc"><a href="#consulting">Consulting &amp; Defense</a><a href="#roles">Role Market</a><a href="#independent">Independent Work</a><a href="#playbook">Claude Playbook</a></nav>
 [TODAY'S EDITION]
 [PRIOR EDITIONS 7–27 DAYS OLD]
 </main>
@@ -158,11 +158,21 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 </html>
 
 ## 6 — Today's edition block
+Section order on the page is fixed: Consulting & Defense Intel, Role Market Watch,
+Independent Work, Claude & Automation Playbook. Research may run in any order.
 Only the newest edition carries the section ids (roles, consulting, independent, playbook).
 When merging, strip the id attributes from prior editions so ids stay unique.
 
 <article class="edition" data-date="[TODAY ISO]">
 <div class="ed-head">Week of [Month D, YYYY]</div>
+<section id="consulting">
+<h2>🏢 Consulting &amp; Defense Intel</h2>
+<h3>[Firm]</h3><p>[block]</p>
+[repeat per consulting firm]
+<h3>Boeing &amp; ULA</h3><ul>[items]</ul>
+<h3>DFARS &amp; interchangeability</h3><ul>[items]</ul>
+<h3>Defense budget</h3><ul>[items]</ul>
+</section>
 <section id="roles">
 <h2>💼 Role Market Watch</h2>
 <h3>Open roles</h3>
@@ -173,14 +183,6 @@ When merging, strip the id attributes from prior editions so ids stay unique.
 <p class="note">Remote US or Triangle NC only; relocation-required roles excluded. Listings come from search results and career pages. Confirm on the employer's site before applying.</p>
 <h3>Hiring signals</h3>
 <ul>[bullets]</ul>
-</section>
-<section id="consulting">
-<h2>🏢 Consulting &amp; Defense Intel</h2>
-<h3>[Firm]</h3><p>[block]</p>
-[repeat per consulting firm]
-<h3>Boeing &amp; ULA</h3><ul>[items]</ul>
-<h3>DFARS &amp; interchangeability</h3><ul>[items]</ul>
-<h3>Defense budget</h3><ul>[items]</ul>
 </section>
 <section id="independent">
 <h2>💡 Independent Work</h2>
