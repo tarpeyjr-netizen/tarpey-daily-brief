@@ -179,14 +179,36 @@ def build(args):
                       'wm': round(rm * MI, 2), 'wt': round(rt, 1),
                       'bench': l.get('bench'), 'squat': l.get('squat'), 'dead': l.get('deadlift'), 'ohp': l.get('ohp')})
         w += dt.timedelta(days=7)
+    weeks = apply_history(weeks, args, today)
     return weeks, row_asof, today
+
+HIST_KEYS = ['w', 'runs', 'rm', 'rt', 'wm', 'wt', 'bench', 'squat', 'dead', 'ohp']
+
+def apply_history(weeks, args, today):
+    """Weeks older than the recent window are taken from the saved history (they rarely change);
+    weeks inside the window use the freshly computed values. The merged table is saved back."""
+    hp = getattr(args, 'history', None)
+    if not hp: return weeks
+    cutoff = monday(today - dt.timedelta(days=args.recent_days)).isoformat()
+    hist = {}
+    try:
+        with open(hp, newline='') as f:
+            for r in csv.DictReader(f):
+                hist[r['w']] = {k: (r['w'] if k == 'w' else None if r[k] == '' else int(r[k]) if k == 'runs' else float(r[k])) for k in HIST_KEYS}
+    except FileNotFoundError:
+        pass
+    merged = [hist[x['w']] if (x['w'] < cutoff and x['w'] in hist) else x for x in weeks]
+    with open(hp, 'w', newline='') as f:
+        wr = csv.writer(f); wr.writerow(HIST_KEYS)
+        for x in merged: wr.writerow(['' if x[k] is None else x[k] for k in HIST_KEYS])
+    return merged
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--xlsx', required=True); ap.add_argument('--doc', required=True)
     ap.add_argument('--rowing', required=True); ap.add_argument('--template', required=True)
     ap.add_argument('--out', required=True); ap.add_argument('--build-id', required=True)
-    ap.add_argument('--today', required=True); ap.add_argument('--dump-weekly')
+    ap.add_argument('--today', required=True); ap.add_argument('--history'); ap.add_argument('--recent-days', type=int, default=30); ap.add_argument('--dump-weekly')
     a = ap.parse_args()
     weeks, row_asof, today = build(a)
     if a.dump_weekly:

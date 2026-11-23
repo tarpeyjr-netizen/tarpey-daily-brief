@@ -35,7 +35,7 @@ c. Rowing — Concept2 logbook API.
    Read it with read_file_content; `fileContent` is the bare token. Write it to
    `$WORKDIR/c2tok` (printf '%s', no newline) and never print it, log it, put it in a commit, or
    echo it in the report. Then:
-     python3 tools/concept2_weekly.py --token-file "$WORKDIR/c2tok" --out "$WORKDIR/rowing.csv" --today "$TODAY"
+     python3 tools/concept2_weekly.py --token-file "$WORKDIR/c2tok" --recent-days 30 --out "$WORKDIR/rowing.csv" --today "$TODAY"
    and delete `$WORKDIR/c2tok` afterwards. Use `$WORKDIR/rowing.csv` as the --rowing input.
    If the token read or the API call fails (network blocked, 401 = token expired), do NOT fail the
    page: fall back to `jobs/data/rowing-weekly.csv` from the clone. Its `# as_of:` date is then
@@ -55,7 +55,8 @@ TODAY=$(TZ=America/New_York date +%F)
 python3 tools/weekly_training.py \
   --xlsx "$WORKDIR/tracker.xlsx" --doc "<path to the doc result file>" \
   --rowing "$ROWING_CSV" --template tools/weekly_training_template.html \
-  --out "$WORKDIR/weekly-training.html" --build-id "$BUILD_ID" --today "$TODAY"
+  --out "$WORKDIR/weekly-training.html" --build-id "$BUILD_ID" --today "$TODAY" \
+  --history jobs/data/weekly-training-history.csv --recent-days 30
 
 The script prints one line: `weeks=N runs_total=N rowing_as_of=DATE -> <file>`. Sanity checks
 before committing — if either fails, record the page FAILED and do not commit:
@@ -64,6 +65,15 @@ before committing — if either fails, record the page FAILED and do not commit:
 
 The build stamp is the first line of the file; the shared publish block (STEP B 6 and STEP D) then
 commits and verifies it like any other page.
+
+## 2b — History (only the last 30 days is refreshed)
+`jobs/data/weekly-training-history.csv` holds every finished week. Each run recomputes only weeks
+starting on or after the Monday of (today − 30 days) and keeps older weeks exactly as saved, then
+rewrites the file. The Sheet and Doc are still read whole (the connector cannot read a slice), but
+the rowing API call fetches only the last 30 days. Commit the updated history file together with
+weekly-training.html in the same page commit. If the history file is missing, the script rebuilds
+every week from the sources (full rebuild). To force a full refresh of older weeks, delete the
+history file and run once.
 
 ## 3 — Limits to know about
 - The running log is the "Workout Log" tab of the 2026 Tracker; the script assumes its rows carry

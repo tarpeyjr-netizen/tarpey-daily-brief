@@ -21,10 +21,12 @@ def fetch(tok, start):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--token-file"); ap.add_argument("--out", required=True)
-    ap.add_argument("--start", default="2025-12-29"); ap.add_argument("--today", required=True)
+    ap.add_argument("--start"); ap.add_argument("--recent-days", type=int); ap.add_argument("--today", required=True)
     a = ap.parse_args()
     tok = os.environ.get("C2_TOKEN") or open(a.token_file).read().strip()
-    rows = fetch(tok, a.start)
+    t = dt.date.fromisoformat(a.today)
+    start = a.start or (str(t - dt.timedelta(days=a.recent_days + t.weekday())) if a.recent_days else "2025-12-29")
+    rows = fetch(tok, start)
     ids = {r["id"]: r for r in rows}  # dedupe
     w = collections.defaultdict(lambda: [0, 0])
     for r in ids.values():
