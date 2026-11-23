@@ -29,10 +29,19 @@ b. Lifting log — Google Doc, fileId `1kOu681X9cQD3vYJNJhWiYSriB22qlzVxGyMYNoW8
    file as-is (the script accepts the raw JSON `{"fileContent": ...}` or plain text). If the result
    comes back inline, write it unchanged to `$WORKDIR/lifting-doc.txt`.
 
-c. Rowing — `jobs/data/rowing-weekly.csv` in the clone (weekly meters and minutes from the Concept2
-   logbook, with an `# as_of:` date on the third line). No connector reads Concept2. If the file's
-   as_of is more than 3 days old the page shows a stale-rowing warning on its own; that is
-   expected, not a failure. Never edit this file from a routine unless a human asked.
+c. Rowing — Concept2 logbook API.
+   The API token is the text of the private Google Doc "concept2-token.txt", fileId
+   `1XcQGv3xYs8CYRDe1kOMaFuN1jovAHx905__j_ABxvkk` (owned by the Drive connector's account).
+   Read it with read_file_content; `fileContent` is the bare token. Write it to
+   `$WORKDIR/c2tok` (printf '%s', no newline) and never print it, log it, put it in a commit, or
+   echo it in the report. Then:
+     python3 tools/concept2_weekly.py --token-file "$WORKDIR/c2tok" --out "$WORKDIR/rowing.csv" --today "$TODAY"
+   and delete `$WORKDIR/c2tok` afterwards. Use `$WORKDIR/rowing.csv` as the --rowing input.
+   If the token read or the API call fails (network blocked, 401 = token expired), do NOT fail the
+   page: fall back to `jobs/data/rowing-weekly.csv` from the clone. Its `# as_of:` date is then
+   old, and once it is more than 3 days old the page shows a stale-rowing warning by itself.
+   Report "rowing: fallback" in the page's report line so the owner knows to regenerate the token
+   (Concept2 > Edit Profile > Applications > Concept2 Logbook API integration).
 
 If a. or b. fails or comes back empty, this is a FAILED page — report the error. Do not publish a
 page built from stale or invented data. The page keeps the last good version.
@@ -42,9 +51,10 @@ python3 -c "import openpyxl" 2>/dev/null || pip install -q --break-system-packag
 
 BUILD_ID=$(date -u +%Y-%m-%dT%H%M%SZ)
 TODAY=$(TZ=America/New_York date +%F)
+# ROWING_CSV=$WORKDIR/rowing.csv, or jobs/data/rowing-weekly.csv when falling back (see 1c)
 python3 tools/weekly_training.py \
   --xlsx "$WORKDIR/tracker.xlsx" --doc "<path to the doc result file>" \
-  --rowing jobs/data/rowing-weekly.csv --template tools/weekly_training_template.html \
+  --rowing "$ROWING_CSV" --template tools/weekly_training_template.html \
   --out "$WORKDIR/weekly-training.html" --build-id "$BUILD_ID" --today "$TODAY"
 
 The script prints one line: `weeks=N runs_total=N rowing_as_of=DATE -> <file>`. Sanity checks

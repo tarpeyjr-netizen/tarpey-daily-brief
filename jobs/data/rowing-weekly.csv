@@ -1,5 +1,4 @@
-# Weekly rowing totals from the Concept2 logbook (log.concept2.com/season/<year>/weeks), Monday-start weeks.
-# Weeks not listed had no rowing. Minutes are Concept2's total time (rest included in interval workouts).
+# Weekly rowing totals from the Concept2 logbook API (meters and minutes include rest).
 # as_of: 2026-11-22
 week_start,meters,minutes
 2025-12-29,1603,8.09
