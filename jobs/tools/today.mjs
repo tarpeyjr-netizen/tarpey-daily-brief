@@ -146,7 +146,7 @@ function resultCell(g) {
   if (!g.final) return null;
   const r = g.winner ? "W" : g.oppWinner ? "L" : "T", cls = r === "W" ? "win" : r === "L" ? "loss" : "tie";
   const ot = /OT|SO|\/\d/.test(g.detail) ? ` <span class="muted">(${esc(g.detail.replace(/^Final\/?/, "") || "OT")})</span>` : "";
-  return `<span class="res ${cls}">${r}</span> ${esc(g.my)}&ndash;${esc(g.their)}${ot}`;
+  return `<span class="nw"><span class="res ${cls}">${r}</span> ${esc(g.my)}&ndash;${esc(g.their)}</span>${ot}`;
 }
 const timeOf = (g) => (g.timeTBD ? "TBD" : etTime(g.start) + " ET");
 
@@ -221,6 +221,7 @@ async function main() {
   td { padding:7px 6px 7px 0; border-bottom:1px solid var(--line); line-height:1.4; vertical-align:top; font-variant-numeric:tabular-nums; }
   .tbl-wrap { overflow-x:auto; }
   .res { display:inline-block; min-width:18px; text-align:center; font-size:11px; font-weight:700; padding:1px 4px; border-radius:4px; color:#fff; }
+  td .res { margin-right:3px; } .nw { white-space:nowrap; }
   .win { background:var(--up); } .loss { background:var(--down); } .tie { background:var(--muted); }
   ul.heads { list-style:none; } ul.heads li { padding:8px 0; border-bottom:1px solid var(--line); font-size:14px; line-height:1.5; }
   ul.heads li:last-child { border-bottom:none; }
