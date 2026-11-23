@@ -89,14 +89,57 @@ compliance, master data, MRO), source link. Quiet categories say so in one line.
   how they charge and a link.
 
 ## 4 — Claude & Automation Playbook
-Short digest, 3–6 items, from the 7-day window. Sources: anthropic.com/news, Claude release
-notes (docs.claude.com and support.claude.com release notes), the Claude Code CHANGELOG on
-GitHub (anthropics/claude-code), the Claude connectors directory, and Anthropic engineering
-posts. Skip industry-wide AI news; the AI Developments page covers that.
-Each item: **Feature**, what it does in one sentence, then "Build next:" with one concrete
-idea that applies it to this reader's setup (Daily Brief routines on GitHub + Cloudflare
-Pages, Google Drive / Gmail / Calendar connectors, SAP program deliverables such as workshop
-decks and RAID logs).
+PURPOSE: a short weekly answer to "what new Claude capability could I put to use this week,
+and how?" The reader is a power user, not a developer. The reader uses Claude through the claude.ai
+app, the desktop app (Chat, Cowork and Code tabs), scheduled routines, and connectors
+(Google Drive, Gmail, Google Calendar), builds automations like this Daily Brief, uses
+Claude for SAP program deliverables (workshop decks, RAID logs, org charts, status reports),
+and is looking for side-income ideas. Write for this reader in plain English.
+
+### What counts
+New or changed, in the 7-day window, AND something a user (not a programmer) can turn on or use:
+- Features in the Claude apps: chat, projects, artifacts, memory, research, file creation
+  (decks, docs, spreadsheets), voice, mobile, Cowork, desktop Code tab.
+- Automation: routines and scheduled tasks, triggers, agents working in the background.
+- Connectors and integrations: new connectors, new abilities in existing ones (Drive, Gmail,
+  Calendar, Slack, Microsoft 365, and others), browser and computer use.
+- Skills and plugins: new skills, plugin marketplaces, notable new published plugins.
+- Plan and limit changes that change what is practical (usage caps, new plan features).
+
+### What does NOT count — leave it out
+- Developer-only changes: CLI flags, slash-command internals, hook settings, SDK and API
+  parameters, version-numbered changelog lines, bug fixes, performance tweaks.
+- Company news (funding, IPO, hires, policy, safety research) and industry AI news; the AI
+  Developments page covers those.
+A Claude Code change counts only when a non-programmer would notice and use it.
+
+### Sources
+Anthropic news (anthropic.com/news), Claude app release notes (support.claude.com release
+notes), the Claude blog (claude.com/blog), the connectors and plugin directories, and
+credible coverage (The Verge, TechCrunch, Ars Technica) or practitioner write-ups (newsletters,
+blog posts) showing how people use a new feature. Use the Claude Code changelog only to confirm
+a user-visible feature, never as the source of an item on its own.
+
+### Format
+2–4 feature items, then one "Pattern of the week". Fewer is fine. If nothing qualifying
+shipped, write one line: "Quiet week for user-facing Claude features." and still include the
+pattern.
+
+Each feature item, about 60–90 words:
+- **[Feature name]**, then one or two plain sentences on what it does, with no jargon. If a
+  term like "connector" or "routine" is needed, it is fine; anything more technical gets a
+  short explanation.
+- *Why it matters to you:* one sentence tied to the reader's actual work.
+- *Try this:* one concrete, doable idea, with effort shown as (10 min), (an hour) or (an
+  afternoon). Example of the right altitude: "Have the Friday routine read the week's RAID
+  log from Drive and email you the five overdue items (an hour)." Not right: anything that
+  needs writing code, editing config files, or setting up hooks.
+- Source link.
+
+Pattern of the week, about 80–120 words: one way other people are using Claude, from a
+practitioner write-up or credible coverage in the last 30 days, that this reader could copy for
+work, the Daily Brief, or side income. Say what they do, what it saves or earns, and the first
+step to try it. Source link.
 
 ## 5 — Page shell
 Build stamp first line, above the doctype. Do not alter CSS variables or class names.
@@ -193,7 +236,13 @@ When merging, strip the id attributes from prior editions so ids stay unique.
 </section>
 <section id="playbook">
 <h2>⚙️ Claude &amp; Automation Playbook</h2>
-<ul><li><strong>[Feature]</strong> [what it does]. <em>Build next:</em> [idea]. <a href="[url]">Source</a></li></ul>
+<h3>[Feature name]</h3>
+<p>[What it does, plain English.]</p>
+<p><strong>Why it matters to you:</strong> [one sentence]</p>
+<p><strong>Try this:</strong> [concrete idea] <span class="note">([effort])</span> &middot; <a href="[url]">Source</a></p>
+[repeat per feature item]
+<h3>Pattern of the week: [short title]</h3>
+<p>[what people do, what it saves or earns, first step] <a href="[url]">Source</a></p>
 </section>
 </article>
 
