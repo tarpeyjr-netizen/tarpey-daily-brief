@@ -45,6 +45,70 @@ async function getJSON(url, tries = 3) {
   throw new Error(`${last} (${url.split("?")[0]})`);
 }
 
+async function getText(url, tries = 2) {
+  let last = "";
+  for (let i = 0; i < tries; i++) {
+    if (i) await new Promise((r) => setTimeout(r, 5000));
+    try {
+      const r = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0", Accept: "text/html" }, signal: AbortSignal.timeout(30000) });
+      if (!r.ok) { last = `HTTP ${r.status}`; continue; }
+      return await r.text();
+    } catch (e) { last = `${e.name}: ${e.message}`; }
+  }
+  throw new Error(`${last} (${url})`);
+}
+const unent = (s) => s.replace(/<[^>]+>/g, "").replace(/&#0?39;|&rsquo;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+
+// ---------- entertainment ----------
+// Billboard chart pages: the No. 1 row is the first .o-chart-results-list-row-container; its first three
+// small labels are last week, peak, weeks on chart. Box Office Mojo: the newest weekend with a No. 1 film.
+async function billboardTop(slug, label) {
+  try {
+    const h = await getText(`https://www.billboard.com/charts/${slug}/`);
+    const row = h.split("o-chart-results-list-row-container")[1] ?? "";
+    const title = unent((row.match(/<h3[^>]*id="title-of-a-story"[^>]*>([\s\S]*?)<\/h3>/) || [])[1] || "");
+    const artist = unent((row.match(/<h3[^>]*id="title-of-a-story"[^>]*>[\s\S]*?<\/h3>\s*<span[^>]*>([\s\S]*?)<\/span>/) || [])[1] || "");
+    const [lw, , wks] = [...row.matchAll(/<span class="c-label[^"]*u-font-size-12[^"]*"[^>]*>\s*([^<]*?)\s*<\/span>/g)].map((m) => m[1]).filter(Boolean);
+    const week = (h.match(/Week of ([A-Z][a-z]+ \d{1,2}, \d{4})/) || [])[1];
+    if (!title || !artist || !week) throw new Error("chart layout not recognised");
+    return { label, slug, title, artist, week, lw, wks };
+  } catch (e) { gaps.push(`Billboard ${label}: ${e.message}`); return { label, slug, error: true }; }
+}
+
+async function boxOffice() {
+  try {
+    const cal = await getText("https://www.boxofficemojo.com/weekend/");
+    const row = (cal.match(/<tr[\s\S]*?<\/tr>/g) || []).find((r) => /\/release\/rl/.test(r));
+    const href = row && (row.match(/href="(\/weekend\/\d{4}W\d+\/)/) || [])[1];
+    if (!href) throw new Error("no completed weekend listed");
+    const wk = await getText("https://www.boxofficemojo.com" + href);
+    const rows = wk.match(/<tr[\s\S]*?<\/tr>/g) || [];
+    const cells = (r) => (r.match(/<t[dh][^>]*>[\s\S]*?<\/t[dh]>/g) || []).map(unent);
+    const head = cells(rows[0]), top = cells(rows[1]), col = (n) => top[head.indexOf(n)];
+    const dates = unent((row.match(/<td[^>]*>([\s\S]*?)<\/td>/) || [])[1] || "").replace("-", "–");
+    if (col("Rank") !== "1") throw new Error("weekend table layout not recognised");
+    const g = +String(col("Gross")).replace(/[$,]/g, "");
+    return { title: col("Release"), gross: g ? `$${(g / 1e6).toFixed(1)}M` : col("Gross"), weeks: col("Weeks"), dist: col("Distributor"), est: col("Estimated") === "true", dates, url: "https://www.boxofficemojo.com" + href };
+  } catch (e) { gaps.push(`Box office: ${e.message}`); return { error: true }; }
+}
+
+const shortWeek = (w) => w.replace(/^([A-Z][a-z]{2})[a-z]*/, "$1.").replace("May.", "May").replace(/, \d{4}$/, "");
+function chartTile(c, kind) {
+  if (c.error) return `<div class="tile"><div class="t-label">No. 1 ${kind}</div><div class="t-line muted">Unavailable</div></div>`;
+  const move = c.lw === "1" ? "Holds at No. 1" : c.lw && c.lw !== "-" ? `Up from No. ${esc(c.lw)}` : "New at No. 1";
+  return `<div class="tile"><div class="t-label">No. 1 ${kind}</div>
+<div class="t-title">${esc(c.title)}</div>
+<div class="t-line">${esc(c.artist)}</div>
+<div class="t-line muted">${move} &middot; ${esc(c.wks)} wks on chart</div></div>`;
+}
+function movieTile(m) {
+  if (m.error) return `<div class="tile"><div class="t-label">No. 1 movie</div><div class="t-line muted">Unavailable</div></div>`;
+  return `<div class="tile"><div class="t-label">No. 1 movie</div>
+<div class="t-title">${esc(m.title)}</div>
+<div class="t-line">${esc(m.gross)} weekend${m.est ? " (est.)" : ""}</div>
+<div class="t-line muted">${esc(m.dates)} &middot; ${m.weeks === "1" ? "opening weekend" : `week ${esc(m.weeks)}`}</div></div>`;
+}
+
 // ---------- weather ----------
 const WMO = { 0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Cloudy", 45: "Fog", 48: "Freezing fog", 51: "Light drizzle", 53: "Drizzle", 55: "Heavy drizzle", 56: "Freezing drizzle", 57: "Freezing drizzle", 61: "Light rain", 63: "Rain", 65: "Heavy rain", 66: "Freezing rain", 67: "Freezing rain", 71: "Light snow", 73: "Snow", 75: "Heavy snow", 77: "Snow grains", 80: "Rain showers", 81: "Rain showers", 82: "Heavy showers", 85: "Snow showers", 86: "Heavy snow showers", 95: "Thunderstorms", 96: "Thunderstorms, hail", 99: "Thunderstorms, hail" };
 const CITIES = [["Durham, NC", 35.994, -78.8986], ["Denver, CO", 39.7392, -104.9903]];
@@ -152,6 +216,13 @@ const timeOf = (g) => (g.timeTBD ? "TBD" : etTime(g.start) + " ET");
 async function main() {
   const [wx, mk] = await Promise.all([Promise.all(CITIES.map(weatherTile)), Promise.all(INDEXES.map(market))]);
   const mDate = mk.find((m) => !m.error)?.date;
+  const [movie, song, album, ...genre] = await Promise.all([boxOffice(),
+    billboardTop("hot-100", "Hot 100"), billboardTop("billboard-200", "Billboard 200"),
+    billboardTop("americana-folk-albums", "Americana/Folk Albums"), billboardTop("bluegrass-albums", "Bluegrass Albums"), billboardTop("hot-rock-songs", "Hot Rock Songs")]);
+  const chartWeek = [song, album, ...genre].find((c) => !c.error)?.week;
+  const genreRows = genre.map((c) => c.error
+    ? `<tr><td>${esc(c.label)}</td><td class="muted" colspan="2">Unavailable</td></tr>`
+    : `<tr><td>${esc(c.label)}</td><td><strong>${esc(c.title)}</strong></td><td>${esc(c.artist)}</td></tr>`);
 
   const yRows = [], tRows = [], offSeason = [], noResult = [];
   for (const t of readRoster()) {
@@ -211,6 +282,7 @@ async function main() {
   .t-label { font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); }
   .t-big { font-size:22px; font-weight:700; margin:2px 0; font-variant-numeric:tabular-nums; }
   .t-line { font-size:13px; line-height:1.45; font-variant-numeric:tabular-nums; }
+  .t-title { font-size:16px; font-weight:700; line-height:1.3; margin:3px 0 2px; overflow-wrap:anywhere; }
   .up { color:var(--up); } .down { color:var(--down); }
   .note { font-size:13px; margin:10px 0 0; padding-left:10px; border-left:3px solid var(--accent); }
   table { width:100%; border-collapse:collapse; font-size:13.5px; }
@@ -266,11 +338,24 @@ ${table(["Team", "Opponent", "Time / Final", "Site"], tRows, "None of your in-se
 ${offSeason.length ? `<p class="muted" style="margin-top:10px">Off-season: ${offSeason.map(esc).join(", ")}.</p>` : ""}
 </section>
 
+<section>
+<h2>Entertainment</h2>
+<p class="muted">Box office: US weekend${movie.error ? "" : `, ${esc(movie.dates)}`}. Billboard charts: week of ${chartWeek ? esc(shortWeek(chartWeek)) : "the latest chart"}.</p>
+<div class="tiles">
+${movieTile(movie)}
+${chartTile(song, "song")}
+${chartTile(album, "album")}
+</div>
+<div class="tbl-wrap" style="margin-top:12px"><table><thead><tr><th>Billboard chart</th><th>No. 1</th><th>Artist</th></tr></thead><tbody>
+${genreRows.join("\n")}
+</tbody></table></div>
+</section>
+
 <!-- HEADLINES -->
 
 <section>
 <h2>Sources</h2>
-<p class="sources">Weather: Open-Meteo. Markets: Yahoo Finance daily closes. Scores and schedules: ESPN. Headlines: Associated Press, via PBS NewsHour (linked on each item).</p>
+<p class="sources">Weather: Open-Meteo. Markets: Yahoo Finance daily closes. Scores and schedules: ESPN. Box office: Box Office Mojo. Charts: Billboard. Headlines: Associated Press, via PBS NewsHour (linked on each item).</p>
 <p class="sources">Gaps: ${gaps.length ? gaps.map(esc).join("; ").replace(/&amp;mdash;/g, "&mdash;") : "none"}.</p>
 </section>
 </article>

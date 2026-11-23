@@ -1,4 +1,4 @@
-<!-- build: 2026-11-23T023851Z -->
+<!-- build: 2026-11-23T024748Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +28,7 @@
   .t-label { font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); }
   .t-big { font-size:22px; font-weight:700; margin:2px 0; font-variant-numeric:tabular-nums; }
   .t-line { font-size:13px; line-height:1.45; font-variant-numeric:tabular-nums; }
+  .t-title { font-size:16px; font-weight:700; line-height:1.3; margin:3px 0 2px; overflow-wrap:anywhere; }
   .up { color:var(--up); } .down { color:var(--down); }
   .note { font-size:13px; margin:10px 0 0; padding-left:10px; border-left:3px solid var(--accent); }
   table { width:100%; border-collapse:collapse; font-size:13.5px; }
@@ -35,6 +36,7 @@
   td { padding:7px 6px 7px 0; border-bottom:1px solid var(--line); line-height:1.4; vertical-align:top; font-variant-numeric:tabular-nums; }
   .tbl-wrap { overflow-x:auto; }
   .res { display:inline-block; min-width:18px; text-align:center; font-size:11px; font-weight:700; padding:1px 4px; border-radius:4px; color:#fff; }
+  td .res { margin-right:3px; } .nw { white-space:nowrap; }
   .win { background:var(--up); } .loss { background:var(--down); } .tie { background:var(--muted); }
   ul.heads { list-style:none; } ul.heads li { padding:8px 0; border-bottom:1px solid var(--line); font-size:14px; line-height:1.5; }
   ul.heads li:last-child { border-bottom:none; }
@@ -58,11 +60,11 @@
 <div class="tiles">
 <div class="tile"><div class="t-label">Durham, NC</div>
 <div class="t-big">58&deg;F</div>
-<div class="t-line">Cloudy</div>
+<div class="t-line">Drizzle</div>
 <div class="t-line">Today 59&deg; / 55&deg; &middot; 78% precip</div>
 <div class="t-line muted">Tomorrow 68&deg; / 53&deg;</div></div>
 <div class="tile"><div class="t-label">Denver, CO</div>
-<div class="t-big">32&deg;F</div>
+<div class="t-big">31&deg;F</div>
 <div class="t-line">Clear</div>
 <div class="t-line">Today 44&deg; / 23&deg; &middot; 0% precip</div>
 <div class="t-line muted">Tomorrow 42&deg; / 25&deg;</div></div>
@@ -90,22 +92,46 @@
 <h2>Yesterday&rsquo;s scores</h2>
 <p class="muted">Saturday, November 21, 2026</p>
 <div class="tbl-wrap"><table><thead><tr><th>Team</th><th>Result</th><th>Opponent</th><th>Site</th></tr></thead><tbody>
-<tr><td><strong>Philadelphia 76ers</strong></td><td><span class="res win">W</span> 132&ndash;129</td><td>vs. Bucks</td><td>Home</td></tr>
-<tr><td><strong>Philadelphia Flyers</strong></td><td><span class="res win">W</span> 4&ndash;3</td><td>at Canadiens</td><td>Away</td></tr>
-<tr><td><strong>Philadelphia Union</strong></td><td><span class="res loss">L</span> 0&ndash;2</td><td>at New England</td><td>Away</td></tr>
-<tr><td><strong>Villanova Basketball</strong></td><td><span class="res win">W</span> 79&ndash;73</td><td>vs. Michigan</td><td>Home</td></tr>
-<tr><td><strong>Texas A&amp;M Football</strong></td><td><span class="res loss">L</span> 7&ndash;28</td><td>at Oklahoma</td><td>Away</td></tr>
-<tr><td><strong>Carolina Hurricanes</strong></td><td><span class="res win">W</span> 7&ndash;4</td><td>vs. Oilers</td><td>Home</td></tr>
+<tr><td><strong>Philadelphia 76ers</strong></td><td><span class="nw"><span class="res win">W</span> 132&ndash;129</span></td><td>vs. Bucks</td><td>Home</td></tr>
+<tr><td><strong>Philadelphia Flyers</strong></td><td><span class="nw"><span class="res win">W</span> 4&ndash;3</span></td><td>at Canadiens</td><td>Away</td></tr>
+<tr><td><strong>Philadelphia Union</strong></td><td><span class="nw"><span class="res loss">L</span> 0&ndash;2</span></td><td>at New England</td><td>Away</td></tr>
+<tr><td><strong>Villanova Basketball</strong></td><td><span class="nw"><span class="res win">W</span> 79&ndash;73</span></td><td>vs. Michigan</td><td>Home</td></tr>
+<tr><td><strong>Texas A&amp;M Football</strong></td><td><span class="nw"><span class="res loss">L</span> 7&ndash;28</span></td><td>at Oklahoma</td><td>Away</td></tr>
+<tr><td><strong>Carolina Hurricanes</strong></td><td><span class="nw"><span class="res win">W</span> 7&ndash;4</span></td><td>vs. Oilers</td><td>Home</td></tr>
 </tbody></table></div>
 </section>
 
 <section>
 <h2>Today&rsquo;s games</h2>
 <div class="tbl-wrap"><table><thead><tr><th>Team</th><th>Opponent</th><th>Time / Final</th><th>Site</th></tr></thead><tbody>
-<tr><td><strong>Philadelphia Eagles</strong></td><td>vs. Steelers</td><td><span class="res win">W</span> 19&ndash;16</td><td>Home</td></tr>
-<tr><td><strong>Carolina Hurricanes</strong></td><td>at Rangers</td><td><span class="res win">W</span> 5&ndash;2</td><td>Away</td></tr>
+<tr><td><strong>Philadelphia Eagles</strong></td><td>vs. Steelers</td><td><span class="nw"><span class="res win">W</span> 19&ndash;16</span></td><td>Home</td></tr>
+<tr><td><strong>Carolina Hurricanes</strong></td><td>at Rangers</td><td><span class="nw"><span class="res win">W</span> 5&ndash;2</span></td><td>Away</td></tr>
 </tbody></table></div>
 <p class="muted" style="margin-top:10px">Off-season: Philadelphia Phillies, Texas A&amp;M Baseball, Texas A&amp;M Softball, Villanova Softball, College of Wooster Baseball, Durham Academy Softball.</p>
+</section>
+
+<section>
+<h2>Entertainment</h2>
+<p class="muted">Box office: US weekend, Nov 20–22. Billboard charts: week of Nov. 21.</p>
+<div class="tiles">
+<div class="tile"><div class="t-label">No. 1 movie</div>
+<div class="t-title">The Hunger Games: Sunrise on the Reaping</div>
+<div class="t-line">$120.0M weekend (est.)</div>
+<div class="t-line muted">Nov 20–22 &middot; opening weekend</div></div>
+<div class="tile"><div class="t-label">No. 1 song</div>
+<div class="t-title">Choosin' Texas</div>
+<div class="t-line">Ella Langley</div>
+<div class="t-line muted">Holds at No. 1 &middot; 28 wks on chart</div></div>
+<div class="tile"><div class="t-label">No. 1 album</div>
+<div class="t-title">you seem pretty sad for a girl so in love</div>
+<div class="t-line">Olivia Rodrigo</div>
+<div class="t-line muted">Holds at No. 1 &middot; 5 wks on chart</div></div>
+</div>
+<div class="tbl-wrap" style="margin-top:12px"><table><thead><tr><th>Billboard chart</th><th>No. 1</th><th>Artist</th></tr></thead><tbody>
+<tr><td>Americana/Folk Albums</td><td><strong>The Great Divide</strong></td><td>Noah Kahan</td></tr>
+<tr><td>Bluegrass Albums</td><td><strong>So Much For Goodbyes</strong></td><td>Billy Strings</td></tr>
+<tr><td>Hot Rock Songs</td><td><strong>Dracula</strong></td><td>Tame Impala &amp; JENNIE</td></tr>
+</tbody></table></div>
 </section>
 
 <section>
@@ -119,7 +145,7 @@
 
 <section>
 <h2>Sources</h2>
-<p class="sources">Weather: Open-Meteo. Markets: Yahoo Finance daily closes. Scores and schedules: ESPN. Headlines: Associated Press, via PBS NewsHour (linked on each item).</p>
+<p class="sources">Weather: Open-Meteo. Markets: Yahoo Finance daily closes. Scores and schedules: ESPN. Box office: Box Office Mojo. Charts: Billboard. Headlines: Associated Press, via PBS NewsHour (linked on each item).</p>
 <p class="sources">Gaps: none.</p>
 </section>
 </article>

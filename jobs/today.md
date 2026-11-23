@@ -9,8 +9,10 @@ Timezone for every date and time: America/New_York.
 None. Build every day.
 
 ## 2 — Build the data sections with the tool
-The tool fetches weather (Open-Meteo), the three index closes (Yahoo Finance), and every
-roster team's schedule (ESPN site API), then writes the complete page. It applies the rules
+The tool fetches weather (Open-Meteo), the three index closes (Yahoo Finance), every
+roster team's schedule (ESPN site API), the No. 1 film of the latest US weekend (Box Office
+Mojo), and the No. 1 on five Billboard charts (Hot 100, Billboard 200, Americana/Folk Albums,
+Bluegrass Albums, Hot Rock Songs), then writes the complete page. It applies the rules
 below itself. Do not re-derive or "correct" its figures.
 
     BUILD_ID="$BUILD_ID" node jobs/tools/today.mjs "$WORKDIR/today.html" > "$WORKDIR/today.json"
@@ -23,6 +25,8 @@ Rules the tool already applies, for reference:
 - A team outside its roster season window, or with no game within 3 weeks either side of
   today, is listed in the muted "Off-season" footnote and gets no rows.
 - An in-season game with no final score in the feed shows "No result found". Never a guessed score.
+- Entertainment: a box-office figure still marked estimated by Box Office Mojo shows "(est.)".
+  A chart or box-office fetch that fails shows "Unavailable" and is listed under Gaps.
 - W/L is shown as a letter chip and by colour, gains and losses by sign, arrow, and colour.
 
 If the tool exits non-zero, record the page as FAILED with its stderr. Do not hand-build the
