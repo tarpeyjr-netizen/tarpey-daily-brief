@@ -1,6 +1,6 @@
 # triangle-nc.html — Triangle NC News Digest
 
-Cadence: every day. History: today + up to 3 prior editions (4 total).
+Cadence: every day. History: none. Today's edition only; each run replaces the whole page.
 Roster: none.
 
 ## Gate
@@ -83,11 +83,10 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>Triangle NC News Digest</h1>
-<div class="sub">Raleigh &middot; Durham &middot; Chapel Hill &middot; Cary &middot; Updated daily &middot; showing the last 4 editions</div>
+<div class="sub">Raleigh &middot; Durham &middot; Chapel Hill &middot; Cary &middot; Updated daily</div>
 </div></header>
 <main class="wrap">
 [TODAY'S EDITION]
-[UP TO 3 PRIOR EDITIONS]
 </main>
 <footer>The Daily Brief &middot; Triangle NC News Digest</footer>
 <script>document.querySelectorAll('main a[href]').forEach(a=>{a.target='_blank';a.rel='noopener noreferrer';});</script>
@@ -107,3 +106,8 @@ Build stamp first line, above the doctype. Do not alter CSS variables or class n
 <ul><li><a href="[URL]">[Headline] — [Outlet]</a></li>[one per source used]</ul>
 </div>
 </article>
+
+## 5 — No history
+Write the page with today's edition only. Do not fetch, read or merge the existing
+triangle-nc.html, and do not carry any prior <article class="edition"> forward. A same-day
+re-run simply replaces the file. Commit per _publish.md B6.
