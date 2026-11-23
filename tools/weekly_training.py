@@ -176,13 +176,13 @@ def build(args):
     while w <= last:
         r = run.get(w, [0, 0.0, 0.0]); rm, rt = row.get(w.isoformat(), (0.0, 0.0)); l = lift.get(w, {})
         weeks.append({'w': w.isoformat(), 'runs': r[0], 'rm': round(r[1], 2), 'rt': round(r[2], 1),
-                      'wm': round(rm * MI, 2), 'wt': round(rt, 1),
+                      'wk': round(rm / 1000, 2), 'wt': round(rt, 1),
                       'bench': l.get('bench'), 'squat': l.get('squat'), 'dead': l.get('deadlift'), 'ohp': l.get('ohp')})
         w += dt.timedelta(days=7)
     weeks = apply_history(weeks, args, today)
     return weeks, row_asof, today
 
-HIST_KEYS = ['w', 'runs', 'rm', 'rt', 'wm', 'wt', 'bench', 'squat', 'dead', 'ohp']
+HIST_KEYS = ['w', 'runs', 'rm', 'rt', 'wk', 'wt', 'bench', 'squat', 'dead', 'ohp']
 
 def apply_history(weeks, args, today):
     """Weeks older than the recent window are taken from the saved history (they rarely change);

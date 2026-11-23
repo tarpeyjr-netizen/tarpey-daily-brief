@@ -66,7 +66,7 @@
 
   <div class="section-header">Rowing, weekly</div>
   <div class="grid">
-    <div class="card"><h3>Miles per week</h3><div class="chart" data-f="wm" data-k="bar" data-u="mi" data-d="2"></div></div>
+    <div class="card"><h3>Kilometers per week</h3><div class="chart" data-f="wk" data-k="bar" data-u="km" data-d="2"></div></div>
     <div class="card"><h3>Minutes per week</h3><div class="chart" data-f="wt" data-k="bar" data-u="min" data-d="1"></div></div>
   </div>
   <p class="note" id="rownote"></p>
@@ -82,14 +82,14 @@
 
   <div class="section-header">Week by week</div>
   <div class="tbl-wrap"><table id="wk"><thead><tr>
-    <th>Week starting (Mon)</th><th>Runs</th><th>Run miles</th><th>Run minutes</th><th>Row miles</th><th>Row minutes</th>
+    <th>Week starting (Mon)</th><th>Runs</th><th>Run miles</th><th>Run minutes</th><th>Row km</th><th>Row minutes</th>
     <th>Bench max (lb)</th><th>Squat max (lb)</th><th>Deadlift max (lb)</th><th>OH press max (lb)</th>
   </tr></thead><tbody></tbody><tfoot></tfoot></table></div>
   <p class="note">One row per week, newest first. A dash means nothing was logged for that lift that week. The Average row counts every week for running and rowing, zero weeks included, and only weeks with a logged set for each lift. The first week (starting Dec 29) is partial: the logs begin Jan 1.</p>
 
   <details><summary>How these are measured</summary>
     <p>Running: sum of distance (miles) and time (minutes) of runs in the 2026 Tracker Workout Log, by Monday-start week.</p>
-    <p>Rowing: Concept2 logbook weekly summaries (all machine types). Meters are converted to miles. Time is Concept2's total time, which includes rest in interval workouts.</p>
+    <p>Rowing: Concept2 logbook weekly summaries (all machine types). Meters are converted to kilometers. Time is Concept2's total time, which includes rest in interval workouts.</p>
     <p>Lift max: the heaviest set weight logged that week, not an estimated one-rep max. Bench is barbell flat bench, squat is barbell back squat, deadlift includes hex-bar. Overhead press combines barbell, Swiss bar and dumbbell presses: the heaviest weight that week, with dumbbells counted as the pair. Smith machine, goblet, landmine, front-squat and Romanian variations are left out. Weights are parsed from the free-text lifting log, so odd entries may be missed.</p>
   </details>
 </main>
@@ -123,7 +123,7 @@ const META = __META_JSON__;
   const hits = LIFTS.filter(([k]) => prSet[k].has(L.w)).map(([k, n]) => n + ' ' + L[k] + ' lb');
 
   // lede
-  $('#lede').innerHTML = 'Week of <b>' + fmtWeek(L.w) + '</b>: <b>' + fx(L.rm, 2) + '</b> miles and <b>' + fx(L.rt, 1) + '</b> minutes running, <b>' + fx(L.wm, 2) + '</b> miles rowing. ' +
+  $('#lede').innerHTML = 'Week of <b>' + fmtWeek(L.w) + '</b>: <b>' + fx(L.rm, 2) + '</b> miles and <b>' + fx(L.rt, 1) + '</b> minutes running, <b>' + fx(L.wk, 2) + '</b> km rowing. ' +
     (hits.length ? 'New 2026 high: <b>' + hits.join(', ') + '</b>.' : 'No new lift highs this week.');
 
   // tiles
@@ -136,7 +136,7 @@ const META = __META_JSON__;
   const [b, bp] = lastTwo('bench'), [s, sp] = lastTwo('squat'), [d, dp] = lastTwo('dead'), [o, op] = lastTwo('ohp');
   $('#tiles').innerHTML =
     tile('Running distance', L.rm, 'mi', r2(L.rm - P.rm), 'mi', 2) + tile('Running time', L.rt, 'min', r2(L.rt - P.rt), 'min', 1) +
-    tile('Rowing distance', L.wm, 'mi', r2(L.wm - P.wm), 'mi', 2) + tile('Rowing time', L.wt, 'min', r2(L.wt - P.wt), 'min', 1) +
+    tile('Rowing distance', L.wk, 'km', r2(L.wk - P.wk), 'km', 2) + tile('Rowing time', L.wt, 'min', r2(L.wt - P.wt), 'min', 1) +
     tile('Bench max', b, 'lb', bp === null ? null : b - bp, 'lb', 0) + tile('Squat max', s, 'lb', sp === null ? null : s - sp, 'lb', 0) +
     tile('Deadlift max', d, 'lb', dp === null ? null : d - dp, 'lb', 0) + tile('Overhead press max', o, 'lb', op === null ? null : o - op, 'lb', 0);
 
@@ -189,13 +189,13 @@ const META = __META_JSON__;
   weeks.slice().reverse().forEach(r => {
     const cell = (v, d) => '<td>' + (has(v) ? (d === null ? v : fx(v, d)) : '—') + '</td>';
     const tr = document.createElement('tr');
-    tr.innerHTML = '<td>' + r.w + '</td>' + cell(r.runs, null) + cell(r.rm, 2) + cell(r.rt, 1) + cell(r.wm, 2) + cell(r.wt, 1) + cell(r.bench, 0) + cell(r.squat, 0) + cell(r.dead, 0) + cell(r.ohp, 0);
+    tr.innerHTML = '<td>' + r.w + '</td>' + cell(r.runs, null) + cell(r.rm, 2) + cell(r.rt, 1) + cell(r.wk, 2) + cell(r.wt, 1) + cell(r.bench, 0) + cell(r.squat, 0) + cell(r.dead, 0) + cell(r.ohp, 0);
     tb.appendChild(tr);
   });
   const allAvg = k => weeks.reduce((a, r) => a + (has(r[k]) ? r[k] : 0), 0) / weeks.length;
   const liftAvg = k => { const v = weeks.filter(r => has(r[k]) && r[k] > 0).map(r => r[k]); return v.length ? v.reduce((a, c) => a + c, 0) / v.length : null; };
   const a = (v, d) => '<td>' + (v === null ? '—' : fx(v, d)) + '</td>';
-  $('#wk tfoot').innerHTML = '<tr><td>Average</td>' + a(allAvg('runs'), 2) + a(allAvg('rm'), 2) + a(allAvg('rt'), 2) + a(allAvg('wm'), 2) + a(allAvg('wt'), 2) +
+  $('#wk tfoot').innerHTML = '<tr><td>Average</td>' + a(allAvg('runs'), 2) + a(allAvg('rm'), 2) + a(allAvg('rt'), 2) + a(allAvg('wk'), 2) + a(allAvg('wt'), 2) +
     a(liftAvg('bench'), 2) + a(liftAvg('squat'), 2) + a(liftAvg('dead'), 2) + a(liftAvg('ohp'), 2) + '</tr>';
 })();
 document.querySelectorAll('main a[href]').forEach(a=>{a.target='_blank';a.rel='noopener noreferrer';});

@@ -4,7 +4,7 @@ Cadence: every day (part of the Daily routine). History: NONE — the page is re
 run by a script, no editions and no merge step. It sits beside training.html (the per-exercise
 tracker, Mondays and Fridays); the two pages do not share code or data.
 
-Shows, per Monday-start week: running miles and minutes, rowing miles and minutes, and the weekly
+Shows, per Monday-start week: running miles and minutes, rowing kilometers and minutes, and the weekly
 max for bench, squat, deadlift and overhead press (barbell, Swiss bar and dumbbell combined,
 dumbbells counted as the pair). Tiles, charts, one-row-per-week table with an Average row, and a
 new-high ring on the lift charts.
