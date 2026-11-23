@@ -120,6 +120,17 @@ credible coverage (The Verge, TechCrunch, Ars Technica) or practitioner write-up
 blog posts) showing how people use a new feature. Use the Claude Code changelog only to confirm
 a user-visible feature, never as the source of an item on its own.
 
+Reddit: r/ClaudeAI, r/ClaudeCode and r/Anthropic. Find posts with WebSearch, for example
+"site:reddit.com/r/ClaudeAI workflow", "site:reddit.com/r/ClaudeCode routine", or
+"site:reddit.com/r/ClaudeAI new feature". Fetching reddit.com may be blocked; search results
+are enough when they show the post and its counts.
+- Threshold: use a Reddit post only if it has at least 10 upvotes OR at least 10 comments.
+  If neither count can be confirmed from the search result or the page, skip the post.
+- Pattern of the week may come from Reddit alone. A post does not need setup detail; an
+  interesting idea is enough. Write what the idea is and note the upvote/comment count.
+- Feature items: Reddit can surface a feature, but each feature item still needs an official
+  source or credible press coverage. Without one, leave the feature out.
+
 ### Format
 2–4 feature items, then one "Pattern of the week". Fewer is fine. If nothing qualifying
 shipped, write one line: "Quiet week for user-facing Claude features." and still include the
@@ -137,9 +148,10 @@ Each feature item, about 60–90 words:
 - Source link.
 
 Pattern of the week, about 80–120 words: one way other people are using Claude, from a
-practitioner write-up or credible coverage in the last 30 days, that this reader could copy for
-work, the Daily Brief, or side income. Say what they do, what it saves or earns, and the first
-step to try it. Source link.
+practitioner write-up, credible coverage, or a Reddit post that meets the threshold, in the
+last 30 days, that this reader could copy for work, the Daily Brief, or side income. Say what
+they do, what it saves or earns if stated, and a first step to try it. Source link; for Reddit,
+add the counts, e.g. "(r/ClaudeAI, 240 upvotes, 58 comments)".
 
 ## 5 — Page shell
 Build stamp first line, above the doctype. Do not alter CSS variables or class names.
