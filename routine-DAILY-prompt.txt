@@ -25,9 +25,9 @@ jobs/<page>.md — read that file before building that page:
 Several specs carry their own gate. Check it before doing any research for that page. A gated
 skip is a normal outcome, recorded as skipped, never as a failure.
 
-Rosters are CSV files in jobs/rosters/ inside the clone. There is no Google Drive connector on
-this routine and no fallback table — a missing or unreadable roster is a failed page, not a
-reason to fall back to hardcoded data.
+Rosters are CSV files in jobs/rosters/ inside the clone. The Google Drive connector is used ONLY by
+weekly-training (see its spec); no other page uses it and there is no fallback table — a missing
+or unreadable roster is a failed page, not a reason to fall back to hardcoded data.
 
 If one page fails, record it and continue to the next. Never abort the run.
 
