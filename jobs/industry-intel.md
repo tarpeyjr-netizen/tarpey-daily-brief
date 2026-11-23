@@ -124,6 +124,8 @@ Reddit: r/ClaudeAI, r/ClaudeCode and r/Anthropic. Find posts with WebSearch, for
 "site:reddit.com/r/ClaudeAI workflow", "site:reddit.com/r/ClaudeCode routine", or
 "site:reddit.com/r/ClaudeAI new feature". Fetching reddit.com may be blocked; search results
 are enough when they show the post and its counts.
+- Cap: at most 2 Reddit posts per edition across the whole playbook section (feature items
+  and Pattern of the week combined). If more qualify, keep the 2 most interesting.
 - Threshold: use a Reddit post only if it has at least 10 upvotes OR at least 10 comments.
   If neither count can be confirmed from the search result or the page, skip the post.
 - Pattern of the week may come from Reddit alone. A post does not need setup detail; an
