@@ -1,0 +1,36 @@
+group,name,notes
+consulting,Capgemini,Employer - deals/leadership/layoffs only; never list its job openings
+consulting,Accenture,
+consulting,Deloitte,
+consulting,IBM Consulting,
+consulting,Infosys,
+hiring_firm,Accenture,Consulting competitor
+hiring_firm,Deloitte,Consulting competitor
+hiring_firm,IBM Consulting,Consulting competitor
+hiring_firm,Infosys,Consulting competitor
+hiring_firm,KPMG,Consulting competitor
+hiring_firm,PwC,Consulting competitor
+hiring_firm,EY,Consulting competitor
+hiring_firm,TCS,Consulting competitor
+hiring_firm,Cognizant,Consulting competitor
+hiring_firm,Wipro,Consulting competitor
+hiring_firm,NTT DATA,SAP partner
+hiring_firm,Fujitsu,SAP partner
+hiring_firm,HCLTech,SAP partner
+hiring_firm,LTIMindtree,SAP partner
+hiring_firm,Westernacher,SAP partner
+hiring_firm,Clarkston Consulting,SAP partner - Life Sciences
+hiring_firm,Navigator Business Solutions,SAP partner
+hiring_firm,SAP,Vendor - SAP Services / Customer Success
+defense,Boeing,Client sector
+defense,United Launch Alliance,Client sector
+platform,Toptal,Freelance marketplace
+platform,Catalant,Fractional / project marketplace
+platform,Business Talent Group,Fractional / interim executive
+platform,Upwork,Freelance marketplace
+platform,freelancermap,SAP freelance board
+platform,GLG,Expert network
+platform,AlphaSights,Expert network
+platform,Guidepoint,Expert network
+platform,Third Bridge,Expert network
+platform,Coleman Research,Expert network
