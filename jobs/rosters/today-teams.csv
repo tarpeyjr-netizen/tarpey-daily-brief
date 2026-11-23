@@ -1,0 +1,14 @@
+team,espn_path,espn_id,season,fallback_source
+Philadelphia Eagles,football/nfl,21,Aug-Feb,philadelphiaeagles.com
+Philadelphia 76ers,basketball/nba,20,Oct-Jun,nba.com/sixers
+Philadelphia Flyers,hockey/nhl,15,Oct-Jun,nhl.com/flyers
+Philadelphia Phillies,baseball/mlb,22,Feb-Nov,mlb.com/phillies
+Philadelphia Union,soccer/usa.1,10739,Feb-Dec,philadelphiaunion.com
+Villanova Basketball,basketball/mens-college-basketball,222,Nov-Apr,villanova.com
+Texas A&M Football,football/college-football,245,Aug-Jan,12thman.com
+Texas A&M Baseball,baseball/college-baseball,245,Feb-Jun,12thman.com
+Texas A&M Softball,softball/college-softball,245,Feb-Jun,12thman.com
+Villanova Softball,softball/college-softball,222,Feb-May,villanova.com
+College of Wooster Baseball,,,Feb-May,woosterathletics.com
+Carolina Hurricanes,hockey/nhl,7,Oct-Jun,nhl.com/hurricanes
+Durham Academy Softball,,,Feb-May,maxpreps.com

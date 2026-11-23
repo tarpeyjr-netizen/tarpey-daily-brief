@@ -21,6 +21,8 @@ jobs/<page>.md — read that file before building that page:
   9. mlb-game-of-the-day      — has its own season and off-day gates; skip when they say so
  10. college-football         — has its own season gate; skip when it says so
  11. podcasts                 — Podcast Tracker; reads each show's RSS feed directly, no gate
+ 12. weekly-training          — Weekly Training; script-built from the Drive Sheet and Doc, no gate
+ 13. today                    — Today morning page; script-built by jobs/tools/today.mjs, no gate
 
 Several specs carry their own gate. Check it before doing any research for that page. A gated
 skip is a normal outcome, recorded as skipped, never as a failure.
