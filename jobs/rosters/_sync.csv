@@ -11,3 +11,4 @@ nba.csv,nba,1iwXp7nOuBUdJ0xIw8XirKq3jGmQ8HZBXwBYZs5weJds,Tarpey Roster — NBA,P
 college-baseball.csv,baseball,12Cp6D8FjvrjRJuLBATHq9H2JeigKYGdXIj6kW2aV7X8,Tarpey Roster — College Baseball Weekly,Player=player; College=college; Position=position; Sport=sport,2026-07-13T12:19:51.145Z
 college-football.csv,college-football,1DWm0AnRHZx0p2izU9ThTJJmp_eUq5RNic88h9FVF9jg,Tarpey Roster - NCAA Football,Level=group; School=school,2026-08-26T12:06:31.548Z
 sap-vendors.csv,sap-migration,1j_TmfMZtjOAhj53PHzFUiVdq1ZWxKrzK-actRX4tLCQ,Tarpey Roster - Migration Tools,Type of Tool=tool_type; Name=vendor,2026-07-23T22:32:38.244Z
+industry-intel.csv,industry-intel,1q1F5Y08mo5ADe9Yn4mAFDTmMTZqz5IIEXVfNuNSquE4,Tarpey Roster — Industry Intel,Group=group; Name=name; Notes=notes,2026-11-23T01:58:07.620Z

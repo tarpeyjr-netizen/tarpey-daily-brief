@@ -1,7 +1,8 @@
 # industry-intel.html — Weekly Industry Intel
 
 Cadence: Mondays. History: rolling 4 weekly editions (today + prior editions 7–27 days old).
-Roster: jobs/rosters/industry-intel.csv (group,name,notes)
+Roster: jobs/rosters/industry-intel.csv (group,name,notes), synced from the Google Sheet
+"Tarpey Roster — Industry Intel" by jobs/_roster-sync.md. Edit the Sheet, not the CSV.
   group = consulting  → firms for section 2 (consulting news)
   group = hiring_firm → firms for section 1 (role openings and hiring signals)
   group = defense     → companies for section 2 (defense and client-sector news)
