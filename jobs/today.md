@@ -51,12 +51,12 @@ fewer than three can be confirmed, show the ones you have and add the shortfall 
 
 ## 4 — Teams the feed could not cover
 For each entry in today.json `manual` (in-season teams with no ESPN feed, or a failed
-fetch), check its fallback_source site for a game yesterday, today, and the next game. Replace
+fetch), check its fallback_source site for a game yesterday or today. Replace
 the line `<!-- MANUAL_TEAMS -->` with:
 
-    <p class="muted" style="margin-top:10px"><strong>[Team]:</strong> [Yesterday: W/L score vs./at Opp] &middot; [Today: vs./at Opp, time ET] &middot; [Next: Day, Mon D vs./at Opp]</p>
+    <p class="muted" style="margin-top:10px"><strong>[Team]:</strong> [Yesterday: W/L score vs./at Opp] &middot; [Today: vs./at Opp, time ET or final]</p>
 
-Leave out any part with no game. If the site shows a game but no final score, write
+Leave out any part with no game; if neither day has a game, leave the team out. This page covers yesterday and today only: no next-game lines. If the site shows a game but no final score, write
 "No result found". If `manual` is empty, delete the placeholder line.
 
 ## 5 — Email (not on this page)

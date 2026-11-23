@@ -27,7 +27,6 @@ const TODAY = dArg > 0 ? process.argv[dArg + 1] : etDate(new Date());
 const addDays = (iso, n) => { const d = new Date(iso + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
 const YESTERDAY = addDays(TODAY, -1);
 const longDate = (iso) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
-const shortDate = (iso) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "short", month: "short", day: "numeric" });
 const etTime = (d) => d.toLocaleTimeString("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit" }).replace(":00", "").replace(" AM", " a.m.").replace(" PM", " p.m.");
 
 const gaps = [], manual = [], skipped = [];
@@ -154,7 +153,7 @@ async function main() {
   const [wx, mk] = await Promise.all([Promise.all(CITIES.map(weatherTile)), Promise.all(INDEXES.map(market))]);
   const mDate = mk.find((m) => !m.error)?.date;
 
-  const yRows = [], tRows = [], nRows = [], offSeason = [], noResult = [];
+  const yRows = [], tRows = [], offSeason = [], noResult = [];
   for (const t of readRoster()) {
     if (!inWindow(t.season, TODAY)) { offSeason.push(t.team); continue; }
     if (!t.espn_path) { manual.push({ team: t.team, source: t.fallback_source, reason: "no feed for this team" }); continue; }
@@ -172,8 +171,6 @@ async function main() {
     }
     for (const g of ev.filter((g) => g.date === TODAY))
       tRows.push(`<tr><td>${name}</td><td>${vsAt(g)} ${esc(g.opp)}</td><td>${resultCell(g) ?? (g.state === "in" ? `<span class="muted">Live &middot; ${esc(g.detail)}</span>` : timeOf(g))}</td><td>${loc(g)}</td></tr>`);
-    const nx = ev.find((g) => g.date > TODAY && !g.final);
-    if (nx) nRows.push([nx.start, `<tr><td>${name}</td><td>${vsAt(nx)} ${esc(nx.opp)}</td><td>${shortDate(nx.date)} &middot; ${timeOf(nx)}</td></tr>`]);
   }
   if (noResult.length) gaps.push(`No final score in the ESPN feed for: ${noResult.join(", ")}`);
   for (const m of manual) gaps.push(`${m.team}: not in the ESPN feed &mdash; checked ${m.source} by hand`);
@@ -265,11 +262,6 @@ ${table(["Team", "Result", "Opponent", "Site"], yRows, "None of your in-season t
 <section>
 <h2>Today&rsquo;s games</h2>
 ${table(["Team", "Opponent", "Time / Final", "Site"], tRows, "None of your in-season teams play today.")}
-</section>
-
-<section>
-<h2>Next up</h2>
-${table(["Team", "Opponent", "When (ET)"], nRows.sort((a, b) => a[0] - b[0]).map((r) => r[1]), "No upcoming games found.")}
 <!-- MANUAL_TEAMS -->
 ${offSeason.length ? `<p class="muted" style="margin-top:10px">Off-season: ${offSeason.map(esc).join(", ")}.</p>` : ""}
 </section>
