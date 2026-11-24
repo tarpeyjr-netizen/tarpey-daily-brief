@@ -1,7 +1,7 @@
 csv,pages,sheet_id,sheet_title,column_map,synced_modified_time
 music.csv,music,1RUdbhW1fzKam_3o_acnHA3sMZZwdVL-DEKFxHnEhMZ4,Tarpey Roster — Music,Artist=artist,2026-09-28T12:14:48.782Z
 mlb.csv,mlb,1pz-lLL8kAcsnMIXJGfNP7b3MliZElSFFoQ7WsyXQb7c,Tarpey Roster — MLB,Player=player; Team=team; Position=position,2026-09-20T00:48:28.038Z
-nfl.csv,nfl,164sWnvwZ1ZhSOpGUbvpUr4Yo_Dx8u4P0UZKatYh4t50,Tarpey Roster — NFL,Player=player,2026-09-20T01:03:28.342Z
+nfl.csv,nfl,164sWnvwZ1ZhSOpGUbvpUr4Yo_Dx8u4P0UZKatYh4t50,Tarpey Roster — NFL,Player=player,2026-11-23T01:54:21.572Z
 track.csv,track,1IajxIbG-BVyJZEPv6pWwwRmZnP9Cb_1M5NyRxKhGFSo,Tarpey Roster — Track,Athlete=athlete,2026-09-20T00:58:32.279Z
 people.csv,people,1SXO8AbuUGAezNxfhIpplcaoZVdFGplVbiVYHc_CCP_4,Tarpey Roster — People,Person=person; Profession=profession,2026-10-01T19:07:05.201Z
 sports-teams.csv,sports,1PyjCw9wPl7AN1kmLvBLLsiztuswN6lu6KP779UpwT38,Tarpey Roster — Sports,Team=team; # of Articles=max_articles; Group=group; season=season,2026-09-20T00:52:38.783Z
