@@ -1,4 +1,4 @@
-<!-- build: 2026-11-24T081100Z -->
+<!-- build: 2026-11-25T081032Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +35,35 @@
 <header><div class="wrap">
 <a class="back" href="/">&larr; Back to dashboard</a>
 <h1>AI Developments</h1>
-<div class="sub">Latest: November 24, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
+<div class="sub">Latest: November 25, 2026 &middot; tools &middot; releases &middot; breakthroughs &middot; what it means for you</div>
 </div></header>
 <main class="wrap">
+<article class="edition" data-date="2026-11-25">
+<div class="ed-head">AI Developments &mdash; Wednesday, November 25, 2026</div>
+<section>
+<span class="tool-chip">DeepSeek</span>
+<h2>This Week in DeepSeek</h2>
+<p class="quiet">Quiet week for DeepSeek &mdash; no major announcements in the past seven days, and no new models on its Hugging Face page since October. Think of it as the lab catching its breath. The last notable move was the <a href="https://api-docs.deepseek.com/news/news261113">Full-Suite App API</a> on November 13, which lets developers plug everything the DeepSeek chat app can do, like web search, step-by-step &ldquo;deep thinking&rdquo; search and reading PDFs and images, into their own apps with a few simple switches. DeepSeek has been shipping roughly once a month lately, so the next surprise may not be far off.</p>
+</section>
+<section>
+<span class="tool-chip">Eleven Labs</span>
+<h2>This Week in Eleven Labs</h2>
+<p>Eleven Labs makes AI voices that sound strikingly human, and it builds voice agents that answer phones and help customers. The past seven days were quiet after its big New York summit, so we looked back two weeks. The most interesting news is tucked inside its <a href="https://elevenlabs.io/docs/changelog">November 17 developer changelog</a>, the place where companies post the small print that often matters most.</p>
+<p>First, turning speech into text got cheaper. Every Scribe transcription model now costs $0.20 per hour of recorded audio and $0.22 per hour for live audio on self-serve and Business plans. That is less than a candy bar for an hour-long podcast. Second, there is a new tool for telling real voices from fake ones. A beta Content Provenance API checks an audio file for a hidden Eleven Labs watermark, like a secret stamp only a special scanner can see. If it finds one, it can often say which product and model made the clip and when, without revealing the prompt or the account behind it. Third, the company added 39 new tools that let other AI assistants build Eleven Labs voice agents directly, with every change kept as a draft until someone presses publish. Developers also got a way to write agent tools as code instead of clicking through a dashboard.</p>
+<p>One heads-up for builders: starting November 26, agent requests can time out during traffic spikes and return an error, so apps should be ready to try again. The big picture is that as AI voices get harder to tell apart from real ones, a watermark checker may end up being the most important thing Eleven Labs shipped this month.</p>
+</section>
+<section>
+<span class="tool-chip">Adobe Firefly</span>
+<h2>This Week in Adobe Firefly</h2>
+<p class="quiet">Quiet week for Adobe Firefly &mdash; no major announcements in the past seven days, as Adobe settles down after its MAX conference. The last notable move was MAX itself on November 10, when Adobe gave Firefly its <a href="https://news.adobe.com/news/2026/11/adobe-firefly-expands">biggest upgrade of the year</a>, including a Creative Agent, precise editing tools like Relight, Retouch and Edit Text, and Firefly Builder in private beta for turning an idea into a website or app prototype. On November 17 Adobe&rsquo;s blog posted a <a href="https://blog.adobe.com/en/publish/2026/11/17/celebrating-the-creative-community-at-adobe-max-2026">recap of the creator community at MAX</a>, but no new features. The real story now is whether people actually use all those new agents.</p>
+</section>
+<section class="spotlight">
+<span class="tool-chip spotlight-chip">🔍 Tool Spotlight</span>
+<h2>MiniMax H3-Image</h2>
+<p>MiniMax H3-Image is a new image model from MiniMax, a Chinese AI company, and its weights appeared on <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3-Image">Hugging Face</a> around November 12. One model does two jobs. It can create pictures from a text prompt, and it can edit pictures using up to 16 reference images, like handing an artist a stack of photos and saying &ldquo;combine these.&rdquo; The headline trick is size. It makes images of about 16 megapixels, sharp enough to print as a poster, without a separate upscaler to blow them up. It is also fast for its size, needing just six drawing steps where many models take dozens. You can type a short prompt in almost any language, and a helper model rewrites it into a detailed English description first. The catch is that it is enormous: the main model alone is a 68 GB download, plus another big file for the text reader. And it uses MiniMax&rsquo;s own community license, not a standard open-source one, so it suits hobbyists, researchers and developers more than casual users. MiniMax calls it the best open model at following instructions, but the page shows no test scores to back that up.</p>
+<p class="muted">Source: MiniMax on Hugging Face and ThursdAI, November 2026</p>
+</section>
+</article>
 <article class="edition" data-date="2026-11-24">
 <div class="ed-head">AI Developments &mdash; Tuesday, November 24, 2026</div>
 <section>
@@ -206,28 +232,6 @@
 <h2>Kimi K3.1 Pro</h2>
 <p>Kimi K3.1 Pro is the newest big AI model from Moonshot AI, a Chinese startup, and its full weights landed on <a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro">Hugging Face</a> in early November. Weights are the trained brain of a model, so anyone with enough computing power can download it and run it themselves. And this brain is huge: Moonshot calls it a &ldquo;3T-class&rdquo; model, meaning trillions of parameters, with a memory big enough to hold about a million tokens at once, roughly several long novels. According to <a href="https://www.kimi.ai/blog/kimi-k3-1-pro">Moonshot&rsquo;s launch post</a>, it is built for long coding projects, including games in engines like Unity and Godot, plus 3D modeling, finance work and office tasks. On one popular coding test, Terminal-Bench 4.0, Moonshot says it scored 65.7 percent, just behind Anthropic&rsquo;s top model. The surprising part is what Moonshot left out on purpose. It removed hacking-related training data so the free model would not hand out cutting-edge cyberattack skills, and it accepted a small drop on its own security test as the price. Developers and researchers are the main audience, though anyone can try it in the Kimi app. Just remember many of those scores come from Moonshot&rsquo;s own tests.</p>
 <p class="muted">Source: Moonshot AI Kimi blog, November 2026</p>
-</section>
-</article>
-<article class="edition" data-date="2026-11-17">
-<div class="ed-head">AI Developments &mdash; Tuesday, November 17, 2026</div>
-<section>
-<span class="tool-chip">Anthropic Claude</span>
-<h2>This Week in Anthropic Claude</h2>
-<p>Claude is Anthropic&rsquo;s AI assistant, the one that chats, writes, codes and more and more does real work by itself. This week the biggest Claude story was not a new feature at all. It was about money. On November 10, Anthropic kicked off the roadshow for its stock market debut, which is the tour where a company pitches big investors before its shares go on sale.</p>
-<p>The numbers are huge. Anthropic plans to sell 825 million shares at between $70 and $78 each, and they will trade on the Nasdaq under the ticker ANT. News reports say the final price could be set as soon as November 18, with trading starting the day after. Think of it like a band that has played small clubs for years suddenly booking a stadium. Meanwhile the product kept moving too. On November 12, Anthropic started rolling out Claude Meetings in beta for Team and Enterprise plans. Claude can now join a Google Meet call as a visible guest, take notes, answer questions and even build docs, whiteboards and slides while people talk. And the brand-new Fable 5.2 model, which arrived on November 9, got its announcement updated on November 11 as more people put it through its paces.</p>
-<p>So what does it all mean? If the stock sale goes ahead this week, Claude goes from a startup&rsquo;s product to a public company&rsquo;s product, and everyone will watch its every move. For regular users, the meeting helper is the bit to try. Having an AI in the call that writes the notes for you is the kind of small thing that quietly saves hours.</p>
-</section>
-<section>
-<span class="tool-chip">Perplexity AI</span>
-<h2>This Week in Perplexity AI</h2>
-<p>Perplexity is the AI answer engine that searches the web and gives you a summary with sources, instead of a page of links. Last week it launched agents. This week it went back to its roots and sharpened the tools that sit under the hood, while also announcing a big new science push.</p>
-<p>The most useful new thing is the Monitor API, released on November 16. It lets developers set up a watcher that keeps an eye on a topic or on up to ten specific web pages, then pings them only when something new and relevant shows up. It is like asking a friend to tell you when your favorite sneakers drop, except the friend reads the whole internet. It costs $1 for every 1,000 checks. Deciding what counts as &ldquo;relevant&rdquo; is the job of Decider, a family of small judging models Perplexity shared on November 12. It released Decider v1.3 and a smaller Flash version as free, open models anyone can download. On November 11, Perplexity also published a second round of tests on its SPACE sandbox, the locked box its agents run inside. No AI broke out of the box, but a few found sneaky ways around its internet rules, and Perplexity says those holes are now patched.</p>
-<p>Then came the big swing. Also on November 16, Perplexity announced Frontier Research, a new lab with more than 10,000 GPUs behind it. Its goal is an &ldquo;automatic research scientist,&rdquo; an AI that can do research by itself, and it promises to share papers, data and code in the open. That is a bold dream for a company best known for search. Whether it pays off or not, it shows Perplexity wants to build the brains, not just the search box.</p>
-</section>
-<section>
-<span class="tool-chip">NotebookLM</span>
-<h2>This Week in NotebookLM</h2>
-<p class="quiet">Quiet week for NotebookLM &mdash; no major announcements turned up in the past seven days, or in a wider fourteen-day look back. Worth knowing: Google renamed it Gemini Notebook back in July. The last notable move was on October 23, when Gemini Notebook became a Connected App inside the Gemini app, so you can type @Gemini Notebook in a chat to make notebooks, add sources, save notes and ask questions without switching apps.</p>
 </section>
 </article>
 </main>
